@@ -1,0 +1,16 @@
+{
+    "name": "AD_PoolingSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8b79ac0eb3dd8d546bb28751cd579110"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
