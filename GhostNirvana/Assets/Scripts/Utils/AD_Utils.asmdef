@@ -1,9 +1,7 @@
 {
-    "name": "Pooling System",
+    "name": "Utils",
     "rootNamespace": "",
-    "references": [
-        "GUID:8b79ac0eb3dd8d546bb28751cd579110"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
