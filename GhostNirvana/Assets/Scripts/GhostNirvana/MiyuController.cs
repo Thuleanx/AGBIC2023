@@ -7,28 +7,30 @@ using Control;
 
 namespace GhostNirvana {
 
-public class MiyuController : MonoBehaviour, IPossessor<Miyu.ControllerInput> {
+public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
 
-    public IDoll<Miyu.ControllerInput> _possessed;
-    IDoll<Miyu.ControllerInput> IPossessor<Miyu.ControllerInput>.Possessed {
+    public IDoll<Miyu.Input> _possessed;
+    IDoll<Miyu.Input> IPossessor<Miyu.Input>.Possessed {
         get => _possessed;
         set => _possessed = value;
     }
 
-    public Miyu.ControllerInput GetCommand() {
-        return new Miyu.ControllerInput {
-            desiredMovement = MovementToWorldDir(Movement)
+    public Miyu.Input GetCommand() {
+        return new Miyu.Input {
+            desiredMovement = MovementToWorldDir(movement),
+            targetPositionWS = MouseScreenToWorld(mousePosSS)
         };
     }
 
     [SerializeField] Miyu miyu;
 
-    IPossessor<Miyu.ControllerInput> MiyuPossessor => this;
+    IPossessor<Miyu.Input> MiyuPossessor => this;
 
-    [SerializeField, ReadOnly]
-    Vector2 Movement;
+    [SerializeField, ReadOnly] Vector2 movement;
+    [SerializeField, ReadOnly] Vector2 mousePosSS;
 
-    public void OnMovement(InputAction.CallbackContext ctx) => Movement = ctx.ReadValue<Vector2>();
+    public void OnMovement(InputAction.CallbackContext ctx) => movement = ctx.ReadValue<Vector2>();
+    public void OnMousePos(InputAction.CallbackContext ctx) => mousePosSS = ctx.ReadValue<Vector2>();
 
     void Awake() {
         MiyuPossessor.Possess(miyu);
@@ -42,6 +44,20 @@ public class MiyuController : MonoBehaviour, IPossessor<Miyu.ControllerInput> {
         return Quaternion.Euler(
             0, Camera.main.transform.eulerAngles.y, 0f
         ) * inputDir;
+    }
+
+    Vector3 MouseScreenToWorld(Vector2 mousePosScreenSpace) {
+        Camera cam = Camera.main;
+        Ray ray = Camera.main.ScreenPointToRay(mousePosSS);
+        if (Physics.Raycast(ray, out RaycastHit hit)) 
+            return hit.point;
+
+        Plane plane = new Plane(Vector3.up, miyu ? miyu.transform.position : transform.position);
+        if (plane.Raycast(ray, out float dist)) {
+            Vector3 pos = ray.GetPoint(dist);
+            return pos;
+        }
+        return Camera.main.ScreenToWorldPoint(mousePosSS);
     }
 }
 

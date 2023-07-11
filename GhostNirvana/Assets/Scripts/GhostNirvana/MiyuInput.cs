@@ -4,9 +4,9 @@ using Optimization;
 namespace GhostNirvana {
 
 public partial class Miyu {
-    public struct ControllerInput {
+    public struct Input {
         public Vector3 desiredMovement;
-        public Vector2 targetPositionWS;
+        public Vector3 targetPositionWS;
     }
 }
 

@@ -10,7 +10,7 @@ namespace Optimization {
 public partial class ObjectPoolManager : MonoBehaviour {
     public class Bubble : MonoBehaviour {
         public bool InQueue {get; private set; } = true;
-        public UnityEvent<Bubble> DisposalEvent;
+        public UnityEvent<Bubble> DisposalEvent = new UnityEvent<Bubble>();
 
         public void OnSpawn() => InQueue = true;
 
@@ -84,10 +84,12 @@ public partial class ObjectPoolManager : MonoBehaviour {
     public T Borrow<T>(Scene scene, T Prefab,
         Vector3? position, Quaternion? rotation) where T : MonoBehaviour {
 
-        if (!(Prefab.GetComponentInParent<Entity>() is PoolableEntity))
-            Debug.LogError("Entity spawned with the object pool system must be a PoolableEntity.");
-
         if (!Prefab) return null;
+
+        Entity prefabEntity = Prefab.GetComponent<Entity>() ?? Prefab.GetComponentInParent<Entity>();
+
+        if (!(prefabEntity is PoolableEntity))
+            Debug.LogError("Entity spawned with the object pool system must be a PoolableEntity.");
 
         int prefabID = Prefab.GetInstanceID();
 

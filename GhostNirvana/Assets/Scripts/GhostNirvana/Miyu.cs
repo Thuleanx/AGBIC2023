@@ -4,21 +4,28 @@ using UnityEngine;
 using Optimization;
 using NaughtyAttributes;
 using Control;
+using Danmaku;
 
 namespace GhostNirvana {
 
-public partial class Miyu : PoolableEntity, IDoll<Miyu.ControllerInput> {
+public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
     public enum States {
         Grounded,
         Dash,
     }
 
-#region Components
-    public CharacterController Controller { get; private set; }
-    public MiyuStateMachine StateMachine { get; private set; }
-#endregion
+    #region Components
+    public CharacterController Controller {
+        get;
+        private set;
+    }
+    public MiyuStateMachine StateMachine {
+        get;
+        private set;
+    }
+    #endregion
 
-#region Movement
+    #region Movement
     [HorizontalLine(color:EColor.Blue)]
     [BoxGroup("Movement"), Range(0, 10), SerializeField] float movementSpeed = 4;
     [BoxGroup("Movement"), Range(0, 64), SerializeField] float accelerationAlpha = 24;
@@ -26,19 +33,27 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.ControllerInput> {
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 24;
 
     protected Vector3 Velocity;
-#endregion
+    #endregion
 
-    ControllerInput Input;
+    #region Combat
+    [HorizontalLine(color:EColor.Blue)]
+    [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview]
+    Projectile projectilePrefab;
+    [BoxGroup("Combat"), Range(0, 5), SerializeField] float attackSpeed = 1;
+    [BoxGroup("Combat"), Range(0, 5), SerializeField] float bulletSpeed = 10;
+    #endregion
 
-#region Doll Interface Implementation
-    IDoll<ControllerInput> MiyuAsDoll => this;
+    #region Doll Interface Implementation
+    IDoll<Input> MiyuAsDoll => this;
 
-    IPossessor<ControllerInput> _possessor;
-    IPossessor<ControllerInput> IDoll<ControllerInput>.Possessor {
+    IPossessor<Input> _possessor;
+    IPossessor<Input> IDoll<Input>.Possessor {
         get => _possessor;
         set => _possessor = value;
     }
-#endregion
+    #endregion
+
+    public Input input { get; private set; }
 
     void Awake() {
         Controller = GetComponent<CharacterController>();
@@ -48,7 +63,7 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.ControllerInput> {
     void Update() {
         // grab input from possessor
         if (MiyuAsDoll.IsPossessed)
-            Input = MiyuAsDoll.GetCommand();
+            input = MiyuAsDoll.GetCommand();
 
         StateMachine?.RunUpdate();
 
