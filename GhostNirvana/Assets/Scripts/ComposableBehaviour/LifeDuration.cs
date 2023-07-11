@@ -9,18 +9,19 @@ public class LifeDuration : MonoBehaviour {
     [SerializeField] float durationSeconds;
 
     float timeEnabled;
+    bool disposalRequested;
 
     void OnEnable() {
         timeEnabled = Time.time;
-        this.enabled = true;
+        disposalRequested = false;
     }
 
     void Update() {
-        if (Time.time - timeEnabled >= durationSeconds) {
+        bool canDispose = !disposalRequested && Time.time - timeEnabled >= durationSeconds;
+        if (canDispose) {
             Entity entity = GetComponentInParent<Entity>();
             entity.Dispose(); // should only be called once when lifetime ends
-
-            this.enabled = false;
+            disposalRequested = true;
         }
     }
 }
