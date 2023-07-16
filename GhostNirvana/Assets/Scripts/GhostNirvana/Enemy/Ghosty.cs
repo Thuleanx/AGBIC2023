@@ -55,7 +55,10 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
     void Awake() {
         Controller = GetComponent<CharacterController>();
         Status = GetComponent<Status>();
+    }
 
+    void OnEnable() {
+        Status.OnDeath.AddListener(OnDeath);
         foreach (Hurtbox hurtbox in GetComponentsInChildren<Hurtbox>())
             hurtbox.HurtResponder = this;
     }
@@ -87,6 +90,16 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
     bool IHurtResponder.ValidateHit(Hit hit) => true;
 
     void IHurtResponder.RespondToHit(Hit hit) {
+    }
+
+    void OnDeath() {
+        Status.OnDeath.RemoveListener(OnDeath);
+        Dispose();
+    }
+
+    protected override IEnumerator IDispose() {
+        // actually dispose the thing
+        yield return base.IDispose();
     }
 }
 
