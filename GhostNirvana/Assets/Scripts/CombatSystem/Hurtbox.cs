@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace CombatSystem {
-    [RequireComponent(typeof(BoxCollider))]
     public class Hurtbox : MonoBehaviour, IHurtbox {
         [SerializeField] bool _active = true;
         private IHurtResponder _hurtResponder;

@@ -6,7 +6,7 @@ namespace CombatSystem {
 
 [RequireComponent(typeof(Collider))]
 public class Hitbox : MonoBehaviour, IHitbox {
-    [SerializeField] BoxCollider _collider;
+    [SerializeField] Collider _collider;
     [SerializeField] LayerMask _hurtboxMask;
 
     float _thickness = 0.025f;
@@ -17,51 +17,84 @@ public class Hitbox : MonoBehaviour, IHitbox {
         set => _hitResponder = value;
     }
 
+    void Awake() {
+        _collider = GetComponent<Collider>();
+    }
+
     public void CheckForHits() {
-        Vector3 scaledSize = new Vector3(
-            _collider.size.x * transform.lossyScale.x,
-            _collider.size.y * transform.lossyScale.y,
-            _collider.size.z * transform.lossyScale.z
-        );
 
-        float distance = scaledSize.y - _thickness;
-        Vector3 direction = transform.up;
-        Vector3 center = transform.TransformPoint(_collider.center);
-        Vector3 start = center - direction * distance / 2;
-        Vector3 halfExtents = new Vector3(
-                scaledSize.x, _thickness, scaledSize.z) / 2;
-        Quaternion orientation = transform.rotation;
-
-        RaycastHit[] hits = Physics.BoxCastAll(
-            start, halfExtents, direction, orientation, distance, _hurtboxMask);
-
-        foreach (RaycastHit hit in hits) {
-            IHurtbox hurtbox = hit.collider.GetComponent<IHurtbox>();
-            if (hurtbox == null || hurtbox.Active) 
-                continue;
-
-            Hit hitData = new Hit(
-                hit.point == Vector3.zero ? center : hit.point,
-                hit.normal,
-                Time.time,
-                this,
-                hurtbox
-            );
-
+        void ValidateAndSendHit(IHurtbox hurtbox, Hit hitData) {
             // validate the hit
-            // we dont validate for the hitbox, because it's assumed that 
+            // we dont validate for the hitbox, because it's assumed that
             // the hitbox can validate the hit itself before this point
-            bool hitValid = 
-                hurtbox.HurtResponder != null && 
-                _hitResponder != null &&
-                hurtbox.ValidateHit(hitData) && 
+            bool hitValid =
+                hurtbox.ValidateHit(hitData) &&
                 hurtbox.HurtResponder.ValidateHit(hitData) &&
                 _hitResponder.ValidateHit(hitData);
 
-            if (!hitValid) continue;
+            if (!hitValid) return;
 
             hurtbox.HurtResponder?.RespondToHit(hitData);
             _hitResponder?.RespondToHit(hitData);
+        }
+
+        if (_collider is BoxCollider) {
+            BoxCollider boxCollider = _collider as BoxCollider;
+            Vector3 scaledSize = new Vector3(
+                boxCollider.size.x * transform.lossyScale.x,
+                boxCollider.size.y * transform.lossyScale.y,
+                boxCollider.size.z * transform.lossyScale.z
+            );
+
+            float distance = scaledSize.y - _thickness;
+            Vector3 direction = transform.up;
+            Vector3 center = transform.TransformPoint(boxCollider.center);
+            Vector3 start = center - direction * distance / 2;
+            Vector3 halfExtents = new Vector3(
+                scaledSize.x, _thickness, scaledSize.z) / 2;
+            Quaternion orientation = transform.rotation;
+
+            RaycastHit[] hits = Physics.BoxCastAll(start, halfExtents, direction, orientation, distance, _hurtboxMask, QueryTriggerInteraction.Collide);
+
+            foreach (RaycastHit hit in hits) {
+                IHurtbox hurtbox = hit.collider.GetComponent<IHurtbox>();
+                if (hurtbox == null || !hurtbox.Active)
+                    continue;
+
+                Hit hitData = new Hit(
+                    hit.point == Vector3.zero ? center : hit.point,
+                    hit.normal,
+                    Time.time,
+                    this,
+                    hurtbox
+                );
+
+                ValidateAndSendHit(hurtbox, hitData);
+            }
+        } else if (_collider is SphereCollider) {
+            SphereCollider sphereCollider = _collider as SphereCollider;
+            Vector3 center = sphereCollider.center;
+            Collider[] colliders = Physics.OverlapSphere(
+                transform.TransformPoint(sphereCollider.center),
+                sphereCollider.radius * transform.lossyScale.x, _hurtboxMask, QueryTriggerInteraction.Collide);
+
+            foreach (Collider collider in colliders) {
+                IHurtbox hurtbox = collider.GetComponent<IHurtbox>();
+                if (hurtbox == null || !hurtbox.Active)
+                    continue;
+
+                Vector3 directionToHitbox = (transform.position - collider.transform.position).normalized;
+
+                Hit hitData = new Hit(
+                    collider.transform.position + directionToHitbox * sphereCollider.radius,
+                    -directionToHitbox,
+                    Time.time,
+                    this,
+                    hurtbox
+                );
+
+                ValidateAndSendHit(hurtbox, hitData);
+            }
         }
     }
 }

@@ -49,7 +49,6 @@ public partial class ObjectPoolManager : MonoBehaviour {
         }
 
         public void Collect(Bubble bubble) {
-            Debug.Log("Trying to collect " + bubble);
             // give up collecting the bubble, someone illegally borrowed it
             if (bubble.transform.parent != null)
                 return;

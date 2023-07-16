@@ -25,42 +25,41 @@ public class MiyuStateMachine : StateMachine<Miyu, Miyu.States> {
 }
 
 public partial class Miyu {
-    public class MiyuGrounded : State<Miyu, Miyu.States> {
-        public override Miyu.States? Update(StateMachine<Miyu, Miyu.States> stateMachine, Miyu miyu) {
-            Vector3 desiredVelocity = miyu.input.desiredMovement * miyu.movementSpeed;
 
-            miyu.Velocity = Mathx.Damp(Vector3.Lerp, miyu.Velocity, desiredVelocity,
-                                       (miyu.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude) ? miyu.deccelerationAlpha : miyu.accelerationAlpha, Time.deltaTime);
+public class MiyuGrounded : State<Miyu, Miyu.States> {
+    public override Miyu.States? Update(StateMachine<Miyu, Miyu.States> stateMachine, Miyu miyu) {
+        Vector3 desiredVelocity = miyu.input.desiredMovement * miyu.movementSpeed;
 
-            bool isNotStationary = miyu.Velocity != Vector3.zero;
-            if (isNotStationary)
-                miyu.TurnToFace(miyu.Velocity, miyu.turnSpeed);
+        miyu.Velocity = Mathx.Damp(Vector3.Lerp, miyu.Velocity, desiredVelocity,
+                                    (miyu.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude) ? miyu.deccelerationAlpha : miyu.accelerationAlpha, Time.deltaTime);
 
+        bool isNotStationary = miyu.Velocity != Vector3.zero;
+        if (isNotStationary)
+            miyu.TurnToFace(miyu.Velocity, miyu.turnSpeed);
 
-            float lastAttackTime = (float) (stateMachine.Blackboard["lastAttackTime"] ?? 0.0f);
-            float timeSinceLastAttack = (Time.time - lastAttackTime);
-            bool canAttack = timeSinceLastAttack * miyu.attackSpeed > 1;
+        float lastAttackTime = (float) (stateMachine.Blackboard["lastAttackTime"] ?? 0.0f);
+        float timeSinceLastAttack = (Time.time - lastAttackTime);
+        bool canAttack = timeSinceLastAttack * miyu.attackSpeed > 1;
 
-            if (canAttack) {
-                Projectile bullet = ObjectPoolManager.Instance.Borrow(miyu.gameObject.scene,
-                        miyu.projectilePrefab, miyu.transform.position, miyu.transform.rotation);
+        if (canAttack) {
+            Projectile bullet = ObjectPoolManager.Instance.Borrow(miyu.gameObject.scene,
+                    miyu.projectilePrefab, miyu.transform.position, miyu.transform.rotation);
 
-                Vector3 targetDirection = miyu.input.targetPositionWS - miyu.transform.position;
+            Vector3 targetDirection = miyu.input.targetPositionWS - miyu.transform.position;
 
-                targetDirection.y = 0;
-                if (targetDirection.sqrMagnitude == 0) 
-                    targetDirection = miyu.transform.forward;
+            targetDirection.y = 0;
+            if (targetDirection.sqrMagnitude == 0) 
+                targetDirection = miyu.transform.forward;
 
-                targetDirection.Normalize();
-                bullet.Initialize(targetDirection * miyu.bulletSpeed);
-                stateMachine.Blackboard["lastAttackTime"] = Time.time;
-            }
-
-
-            return null;
+            targetDirection.Normalize();
+            bullet.Initialize(targetDirection * miyu.bulletSpeed);
+            stateMachine.Blackboard["lastAttackTime"] = Time.time;
         }
 
+        return null;
     }
+}
+
 }
 
 }

@@ -9,6 +9,8 @@ using Danmaku;
 namespace GhostNirvana {
 
 public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
+    public static Miyu Instance;
+
     public enum States {
         Grounded,
         Dash,
@@ -58,6 +60,7 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
     void Awake() {
         Controller = GetComponent<CharacterController>();
         StateMachine = GetComponent<MiyuStateMachine>();
+        Instance = this;
     }
 
     void Update() {
