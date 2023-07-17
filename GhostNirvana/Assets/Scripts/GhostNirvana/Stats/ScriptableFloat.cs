@@ -4,7 +4,7 @@ namespace GhostNirvana {
 
 public class ScriptableFloat : ScriptableObject {
     [field:System.NonSerialized]
-    public float Value {get; protected set; }
+    public float Value;
 }
 
 }

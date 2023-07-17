@@ -39,7 +39,9 @@ public class MiyuGrounded : State<Miyu, Miyu.States> {
 
         float lastAttackTime = (float) (stateMachine.Blackboard["lastAttackTime"] ?? 0.0f);
         float timeSinceLastAttack = (Time.time - lastAttackTime);
-        bool canAttack = timeSinceLastAttack * miyu.attackSpeed.Value > 1;
+
+        bool outOfBullets = miyu.magazine.Value <= 0;
+        bool canAttack = !outOfBullets && timeSinceLastAttack * miyu.attackSpeed.Value > 1;
 
         if (canAttack) {
             stateMachine.Blackboard["lastAttackTime"] = Time.time;
@@ -52,6 +54,22 @@ public class MiyuGrounded : State<Miyu, Miyu.States> {
             targetDirection.Normalize();
 
             miyu.ShootProjectile(targetDirection);
+            miyu.magazine.Value--;
+
+        } else if (outOfBullets){
+            float timeLeftUntilReload = (float) (stateMachine.Blackboard["timeLeftUntilReload"] ?? 0.0f);
+
+            // this was from previous reload or first reload
+            if (timeLeftUntilReload <= 0)
+                timeLeftUntilReload = 1 / miyu.reloadRate.Value;
+
+            timeLeftUntilReload -= Time.deltaTime;
+
+            // reload completed
+            if (timeLeftUntilReload <= 0)
+                miyu.magazine.Value = miyu.magazine.Limiter;
+
+            stateMachine.Blackboard["timeLeftUntilReload"] = timeLeftUntilReload;
         }
 
         return null;
