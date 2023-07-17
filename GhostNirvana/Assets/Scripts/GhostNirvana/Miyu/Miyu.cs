@@ -29,7 +29,7 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
 
     #region Movement
     [HorizontalLine(color:EColor.Blue)]
-    [BoxGroup("Movement"), Range(0, 10), SerializeField] float movementSpeed = 4;
+    [BoxGroup("Movement"), SerializeField, Expandable] LinearFloat movementSpeed;
     [BoxGroup("Movement"), Range(0, 64), SerializeField] float accelerationAlpha = 24;
     [BoxGroup("Movement"), Range(0, 64), SerializeField] float deccelerationAlpha = 12;
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 24;
@@ -41,8 +41,11 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
     [HorizontalLine(color:EColor.Blue)]
     [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview]
     Projectile projectilePrefab;
-    [BoxGroup("Combat"), Range(0, 5), SerializeField] float attackSpeed = 1;
-    [BoxGroup("Combat"), Range(0, 5), SerializeField] float bulletSpeed = 10;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat health;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat attackSpeed;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletSpeed;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat magazine;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     #endregion
 
     #region Doll Interface Implementation
@@ -81,6 +84,13 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
             Quaternion desiredRotation = Quaternion.LookRotation(dir, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, Time.deltaTime * turnSpeed);
         }
+    }
+
+    public void ShootProjectile(Vector3 targetDirection) {
+        Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
+                projectilePrefab, transform.position, transform.rotation);
+
+        bullet.Initialize(targetDirection * bulletSpeed.Value);
     }
 }
 

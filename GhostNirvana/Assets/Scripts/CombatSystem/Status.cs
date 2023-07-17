@@ -5,11 +5,12 @@ using NaughtyAttributes;
 
 namespace CombatSystem {
 
-public class Status : MonoBehaviour {
-    [field:SerializeField]
-    public float MaxHealth {
+[System.Serializable]
+public class Status {
+    [field:SerializeField, Expandable, Required]
+    public BaseStats BaseStats {
         get;
-        protected set;
+        protected set; 
     }
 
     [field:SerializeField, ReadOnly]
@@ -17,6 +18,8 @@ public class Status : MonoBehaviour {
         get;
         protected set;
     }
+
+    [HideInInspector] public Entity Owner;
 
     public bool IsDead => Health <= 0;
     public UnityEvent OnDeath;
@@ -28,10 +31,6 @@ public class Status : MonoBehaviour {
         if (Health <= 0) Health = 0;
 
         if (isKillingHit) OnDeath?.Invoke();
-    }
-
-    void Awake() {
-        Health = MaxHealth;
     }
 }
 

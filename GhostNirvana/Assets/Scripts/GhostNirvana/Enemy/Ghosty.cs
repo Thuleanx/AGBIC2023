@@ -12,7 +12,6 @@ using Base;
 namespace GhostNirvana {
 
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(Status))]
 public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IHurtResponder {
 
     Entity IHurtResponder.Owner => this;
@@ -32,6 +31,7 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
         get;
         private set;
     }
+    [field:SerializeField]
     public Status Status {
         get;
         private set;
@@ -48,13 +48,9 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
         private set;
     }
 
-    [SerializeField] float movementSpeed;
-    [SerializeField] float accelerationAlpha;
-    [SerializeField] float deccelerationAlpha;
-
     void Awake() {
         Controller = GetComponent<CharacterController>();
-        Status = GetComponent<Status>();
+        Status.Owner = this;
     }
 
     void OnEnable() {
@@ -74,11 +70,11 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
     void Update() {
         if (_possessor != null) input = _possessor.GetCommand();
 
-        Vector3 desiredVelocity = input.desiredMovement * movementSpeed;
+        Vector3 desiredVelocity = input.desiredMovement * Status.BaseStats.MovementSpeed;
 
         Velocity = Mathx.Damp(Vector3.Lerp, Velocity, desiredVelocity,
                               (Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
-                              ? deccelerationAlpha : accelerationAlpha,
+                              ? Status.BaseStats.DeccelerationAlpha : Status.BaseStats.AccelerationAlpha,
                               Time.deltaTime);
 
         Controller.Move(Velocity * Time.deltaTime);
@@ -91,7 +87,6 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
 
     void IHurtResponder.RespondToHit(Hit hit) {
     }
-
     void OnDeath() {
         Status.OnDeath.RemoveListener(OnDeath);
         Dispose();

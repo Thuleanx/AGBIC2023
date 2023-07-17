@@ -99,13 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d0b7077373db449b0c60d0fba90a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
   accelerationAlpha: 24
   deccelerationAlpha: 12
   turnSpeed: 24
   projectilePrefab: {fileID: 7531139996555314367, guid: 7bd32c0ea4fa9e84e9ad446556e782ec, type: 3}
-  attackSpeed: 5
-  bulletSpeed: 10
+  attackSpeed: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
+  bulletSpeed: {fileID: 11400000, guid: 3b5f266d4e365e948a8ac919b51b450c, type: 2}
 --- !u!114 &3751458875445000392
 MonoBehaviour:
   m_ObjectHideFlags: 0

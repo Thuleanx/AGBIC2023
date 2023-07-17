@@ -347,7 +347,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &537906143
 GameObject:
@@ -813,7 +813,6 @@ GameObject:
   - component: {fileID: 1044625914}
   - component: {fileID: 1044625913}
   - component: {fileID: 1044625912}
-  - component: {fileID: 1044625911}
   m_Layer: 0
   m_Name: Ghosty (6)
   m_TagString: Untagged
@@ -821,20 +820,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1044625911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044625910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &1044625912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,9 +844,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &1044625914
 CharacterController:
   m_ObjectHideFlags: 0
@@ -909,7 +898,6 @@ GameObject:
   - component: {fileID: 1056901249}
   - component: {fileID: 1056901248}
   - component: {fileID: 1056901247}
-  - component: {fileID: 1056901246}
   m_Layer: 0
   m_Name: Ghosty (1)
   m_TagString: Untagged
@@ -917,20 +905,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1056901246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056901245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &1056901247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,9 +929,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &1056901249
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1005,7 +983,6 @@ GameObject:
   - component: {fileID: 1088746792}
   - component: {fileID: 1088746791}
   - component: {fileID: 1088746790}
-  - component: {fileID: 1088746789}
   m_Layer: 0
   m_Name: Ghosty (5)
   m_TagString: Untagged
@@ -1013,20 +990,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1088746789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088746788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &1088746790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,9 +1014,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &1088746792
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1477,7 +1444,6 @@ GameObject:
   - component: {fileID: 1376343204}
   - component: {fileID: 1376343203}
   - component: {fileID: 1376343202}
-  - component: {fileID: 1376343201}
   m_Layer: 0
   m_Name: Ghosty (4)
   m_TagString: Untagged
@@ -1485,20 +1451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1376343201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376343200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &1376343202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,9 +1475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &1376343204
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1573,7 +1529,6 @@ GameObject:
   - component: {fileID: 1564967558}
   - component: {fileID: 1564967557}
   - component: {fileID: 1564967560}
-  - component: {fileID: 1564967561}
   m_Layer: 0
   m_Name: Ghosty
   m_TagString: Untagged
@@ -1593,9 +1548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &1564967558
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1629,7 +1588,7 @@ Transform:
   - {fileID: 2008857750}
   - {fileID: 1201987224}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1564967560
 MonoBehaviour:
@@ -1643,20 +1602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cbc62bbef23c743a36145f336e6986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1564967561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564967556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &1622784182 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3751458875445000395, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
@@ -1980,7 +1925,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2013,7 +1958,6 @@ GameObject:
   - component: {fileID: 2005496107}
   - component: {fileID: 2005496106}
   - component: {fileID: 2005496105}
-  - component: {fileID: 2005496104}
   m_Layer: 0
   m_Name: Ghosty (3)
   m_TagString: Untagged
@@ -2021,20 +1965,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2005496104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005496103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &2005496105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,9 +1989,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &2005496107
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2403,7 +2337,6 @@ GameObject:
   - component: {fileID: 2034711977}
   - component: {fileID: 2034711976}
   - component: {fileID: 2034711975}
-  - component: {fileID: 2034711974}
   m_Layer: 0
   m_Name: Ghosty (2)
   m_TagString: Untagged
@@ -2411,20 +2344,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2034711974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034711973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 10
-  <Health>k__BackingField: 0
 --- !u!114 &2034711975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2449,9 +2368,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  accelerationAlpha: 24
-  deccelerationAlpha: 12
+  <Status>k__BackingField:
+    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+    <Health>k__BackingField: 10
+    Owner: {fileID: 0}
+    OnDeath:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!143 &2034711977
 CharacterController:
   m_ObjectHideFlags: 0

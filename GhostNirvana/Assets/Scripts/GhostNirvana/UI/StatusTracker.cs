@@ -18,9 +18,9 @@ public class StatusTracker : MonoBehaviour {
     [SerializeField] Slider healthSlider;
 
     void LateUpdate() {
-        if (_trackingStatus) {
-            healthSlider.value = Mathf.Clamp01((float) _trackingStatus.Health / _trackingStatus.MaxHealth);
-            transform.position = _trackingStatus.transform.position + Vector3.up * hoverDistance;
+        if (_trackingStatus != null) {
+            healthSlider.value = Mathf.Clamp01((float) _trackingStatus.Health / _trackingStatus.BaseStats.MaxHealth);
+            transform.position = _trackingStatus.Owner.transform.position + Vector3.up * hoverDistance;
         }
     }
 }
