@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AI;
 using Danmaku;
-using Thuleanx.Utils;
+using Utils;
 using Optimization;
 
 namespace GhostNirvana {

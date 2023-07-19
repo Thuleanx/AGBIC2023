@@ -81,7 +81,7 @@ public partial class ObjectPoolManager : MonoBehaviour {
     }
 
     public T Borrow<T>(Scene scene, T Prefab,
-        Vector3? position, Quaternion? rotation) where T : MonoBehaviour {
+        Vector3? position = null, Quaternion? rotation = null) where T : MonoBehaviour {
 
         if (!Prefab) return null;
 

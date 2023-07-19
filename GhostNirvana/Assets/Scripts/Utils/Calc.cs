@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Thuleanx.Utils {
+namespace Utils {
 	/// <summary>
 	/// Class <c>Calc</c> contains general utility functions.
 	/// </summary>

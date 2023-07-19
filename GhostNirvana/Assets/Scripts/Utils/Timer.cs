@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Thuleanx.Utils {
+namespace Utils {
 	public struct Timer {
 		public float Duration { get; private set; }
 		public bool Paused { get; private set; }

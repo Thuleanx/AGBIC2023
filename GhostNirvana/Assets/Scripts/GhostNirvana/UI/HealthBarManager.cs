@@ -16,7 +16,10 @@ public class HealthBarManager : MonoBehaviour {
 
     void Awake() => Instance = this;
 
+    public bool IsTrackingStatus(Status status) => statusTrackerMap.ContainsKey(status);
+
     public void AddStatus(Status status) {
+        if (IsTrackingStatus(status)) return; // avoid double adding
         if (statusTrackerPool.Count == 0) ExpandPool(poolExpansionRate);
 
         StatusTracker tracker = statusTrackerPool.Dequeue();
@@ -27,14 +30,15 @@ public class HealthBarManager : MonoBehaviour {
     }
 
     public void RemoveStatus(Status status) {
-        if (!statusTrackerMap[status]) return;
-        statusTrackerPool.Enqueue(statusTrackerMap[status]);
+        if (!IsTrackingStatus(status)) return; //nothing to remove
 
-        statusTrackerMap[status].TrackingStatus = null;
-        if (statusTrackerMap[status].gameObject)
-            statusTrackerMap[status].gameObject.SetActive(false);
-
+        StatusTracker tracker = statusTrackerMap[status];
         statusTrackerMap.Remove(status);
+        if (tracker == null) return;
+        tracker.TrackingStatus = null;
+        if (tracker.gameObject != null)
+            tracker.gameObject.SetActive(false);
+        statusTrackerPool.Enqueue(tracker);
     }
 
     void ExpandPool(int count) {
@@ -43,9 +47,7 @@ public class HealthBarManager : MonoBehaviour {
 
             // Important: this prevents any OnEnables from running
             statusTrackerPrefab.gameObject.SetActive(false);
-
             statusTrackerPool.Enqueue(Instantiate(statusTrackerPrefab, transform));
-
             statusTrackerPrefab.gameObject.SetActive(prefabIsActive);
         }
     }

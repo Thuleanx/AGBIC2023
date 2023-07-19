@@ -10,7 +10,7 @@ public class Status {
     [field:SerializeField, Expandable, Required]
     public BaseStats BaseStats {
         get;
-        protected set; 
+        protected set;
     }
 
     [field:SerializeField, ReadOnly]
@@ -32,6 +32,8 @@ public class Status {
 
         if (isKillingHit) OnDeath?.Invoke();
     }
+
+    public void HealToFull() => Health = BaseStats.MaxHealth;
 }
 
 }

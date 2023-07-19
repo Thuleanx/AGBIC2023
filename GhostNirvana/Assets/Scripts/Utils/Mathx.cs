@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Assertions;
 
-namespace Thuleanx.Utils {
+namespace Utils {
 	/// <summary>
 	/// Certified
 	/// </summary>

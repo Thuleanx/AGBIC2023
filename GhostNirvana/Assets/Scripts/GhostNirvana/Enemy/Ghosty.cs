@@ -6,7 +6,7 @@ using Optimization;
 using Control;
 using Danmaku;
 using CombatSystem;
-using Thuleanx.Utils;
+using Utils;
 using Base;
 
 namespace GhostNirvana {
@@ -57,10 +57,14 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
         Status.OnDeath.AddListener(OnDeath);
         foreach (Hurtbox hurtbox in GetComponentsInChildren<Hurtbox>())
             hurtbox.HurtResponder = this;
+        if (HealthBarManager.Instance)
+            HealthBarManager.Instance.AddStatus(Status);
+        Status.HealToFull();
     }
 
     void Start() {
-        HealthBarManager.Instance.AddStatus(Status);
+        if (!HealthBarManager.Instance.IsTrackingStatus(Status))
+            HealthBarManager.Instance.AddStatus(Status);
     }
 
     void OnDisable() {

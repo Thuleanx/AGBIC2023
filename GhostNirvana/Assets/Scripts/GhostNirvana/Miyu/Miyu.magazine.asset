@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811866521e645184c88531d50a8206c0, type: 3}
   m_Name: Miyu.magazine
   m_EditorClassIdentifier: 
-  BaseMaxValue: 10
+  BaseMaxValue: 100

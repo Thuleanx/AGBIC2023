@@ -36,7 +36,8 @@ public class Projectile : PoolableEntity, IHitResponder {
         Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
         (targetOwner as IHurtable)?.TakeDamage(damage, null, hit);
 
-        this.Dispose();
+		if (this.gameObject.activeInHierarchy) 
+			this.Dispose();
     }
 
     void Update() {
