@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6133858924970157919}
   - component: {fileID: 6133858924970157906}
   m_Layer: 0
-  m_Name: Ghosty
+  m_Name: pf_Ghosty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

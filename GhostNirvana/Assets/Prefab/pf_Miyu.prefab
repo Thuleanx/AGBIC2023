@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3751458875445000392}
   - component: {fileID: 3751458875445000394}
   m_Layer: 0
-  m_Name: Miyu
+  m_Name: pf_Miyu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
