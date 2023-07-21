@@ -1,9 +1,7 @@
 {
-    "name": "Base",
+    "name": "PrettyPatterns",
     "rootNamespace": "",
-    "references": [
-        "GUID:c99492d23076c654f9109782b93308ab"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -8,14 +8,13 @@ public class LinearLimiterFloat : ScriptableFloat, ISerializationCallbackReceive
     public float BaseMaxValue = 0;
     [System.NonSerialized] public float AdditiveScale;
     [System.NonSerialized] public float MultiplicativeScale;
-
     [System.NonSerialized] public float Limiter;
 
     public void OnAfterDeserialize() {
         AdditiveScale = 0;
         MultiplicativeScale = 1;
         Recompute();
-        Value = Limiter;
+        Value = 0;
     }
 
     public void OnBeforeSerialize() {

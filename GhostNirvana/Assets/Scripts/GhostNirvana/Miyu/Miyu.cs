@@ -27,6 +27,11 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
     }
     #endregion
 
+    #region Progression
+    [HorizontalLine(color:EColor.Blue)]
+    [BoxGroup("Progression"), SerializeField, Expandable] LinearLimiterFloat xp;
+    #endregion
+
     #region Movement
     [HorizontalLine(color:EColor.Blue)]
     [BoxGroup("Movement"), SerializeField, Expandable] LinearFloat movementSpeed;
@@ -48,6 +53,7 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     #endregion
 
+
     #region Doll Interface Implementation
     IDoll<Input> MiyuAsDoll => this;
 
@@ -64,6 +70,8 @@ public partial class Miyu : PoolableEntity, IDoll<Miyu.Input> {
         Controller = GetComponent<CharacterController>();
         StateMachine = GetComponent<MiyuStateMachine>();
         Instance = this;
+
+        health.Value = health.Limiter;
     }
 
     void Update() {
