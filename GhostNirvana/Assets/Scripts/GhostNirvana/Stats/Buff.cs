@@ -17,15 +17,18 @@ namespace GhostNirvana {
         };
         [SerializeField, ReorderableList] List<LinearBuff<LinearFloat>> linearFloatBuffs;
         [SerializeField, ReorderableList] List<LinearBuff<LinearLimiterFloat>> linearLimiterFloatBuffs;
+        [field:SerializeField, ResizableTextArea] public string description {get; private set; }
 
         public void Apply() {
             foreach (LinearBuff<LinearFloat> buff in linearFloatBuffs) {
                 buff.Stat.AdditiveScale += buff.AdditiveAmount;
                 buff.Stat.MultiplicativeScale *= buff.MultiplicativeAmount;
+                buff.Stat.Recompute();
             }
             foreach (LinearBuff<LinearLimiterFloat> buff in linearLimiterFloatBuffs) {
                 buff.Stat.AdditiveScale += buff.AdditiveAmount;
                 buff.Stat.MultiplicativeScale *= buff.MultiplicativeAmount;
+                buff.Stat.Recompute();
             }
         }
     }

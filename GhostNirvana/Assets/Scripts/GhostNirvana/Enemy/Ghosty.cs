@@ -26,6 +26,8 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
         Death
     }
 
+    [SerializeField] ExperienceGem droppedExperienceGem;
+
     #region Components
     public CharacterController Controller {
         get;
@@ -97,6 +99,8 @@ public partial class Ghosty : PoolableEntity, IDoll<Ghosty.Input>, IHurtable, IH
     }
 
     protected override IEnumerator IDispose() {
+        // spawn experience gem
+        ObjectPoolManager.Instance?.Borrow(gameObject.scene, droppedExperienceGem, transform.position);
         // actually dispose the thing
         yield return base.IDispose();
     }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89eea5d63c2e3d4e9075c3cfecadbe1, type: 3}
   m_Name: Miyu.attackSpeed
   m_EditorClassIdentifier: 
-  BaseValue: 1
+  BaseValue: 30

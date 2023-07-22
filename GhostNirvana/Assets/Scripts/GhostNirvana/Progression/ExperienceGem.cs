@@ -11,6 +11,7 @@ namespace GhostNirvana {
 public class ExperienceGem : PoolableEntity {
     new Collider collider;
 
+    [SerializeField] float xpYieldPerPickup;
     [SerializeField] float collectionDuration;
     [SerializeField] Ease absorptionEase;
     [SerializeField] LinearLimiterFloat miyuXP;
@@ -22,10 +23,8 @@ public class ExperienceGem : PoolableEntity {
 
     void OnTriggerEnter(Collider other) {
         Miyu miyu = other.GetComponentInParent<Miyu>();
-        Debug.Log("Triggered");
         bool isPlayer = miyu;
         if (!isPlayer) return;
-
         collider.enabled = false;
         StartCoroutine(CollectGem(miyu.transform));
     }
@@ -48,7 +47,7 @@ public class ExperienceGem : PoolableEntity {
             t += deltaTime;
             lastTime = Time.time;
         }
-        miyuXP.Value++;
+        miyuXP.Value += xpYieldPerPickup;
         this.Dispose();
     }
 }

@@ -504,7 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variable: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
   hpWidthScale: 50
-  maxWidth: 1000
+  maxWidth: 2000
 --- !u!1 &5389538306386149455
 GameObject:
   m_ObjectHideFlags: 0

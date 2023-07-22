@@ -1,4 +1,5 @@
 using UnityEngine;
+using NaughtyAttributes;
 
 namespace GhostNirvana {
 
@@ -6,8 +7,10 @@ namespace GhostNirvana {
                  menuName = "~/Stats/LinearFloat", order = 1)]
 public class LinearFloat : ScriptableFloat, ISerializationCallbackReceiver {
     public float BaseValue = 0;
-    [System.NonSerialized] public float AdditiveScale;
-    [System.NonSerialized] public float MultiplicativeScale;
+    [ReadOnly]
+    public float AdditiveScale;
+    [ReadOnly]
+    public float MultiplicativeScale;
 
     public void OnAfterDeserialize() {
         AdditiveScale = 0;

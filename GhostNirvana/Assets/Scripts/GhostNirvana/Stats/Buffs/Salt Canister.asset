@@ -16,4 +16,5 @@ MonoBehaviour:
   linearLimiterFloatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
     <AdditiveAmount>k__BackingField: 2
-    <MultiplicativeAmount>k__BackingField: 0
+    <MultiplicativeAmount>k__BackingField: 1
+  <description>k__BackingField: More salt to the wound.

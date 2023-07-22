@@ -15,5 +15,6 @@ MonoBehaviour:
   linearFloatBuffs: []
   linearLimiterFloatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
-    <AdditiveAmount>k__BackingField: 20
-    <MultiplicativeAmount>k__BackingField: 0
+    <AdditiveAmount>k__BackingField: 2
+    <MultiplicativeAmount>k__BackingField: 1
+  <description>k__BackingField: Its color is fading.
