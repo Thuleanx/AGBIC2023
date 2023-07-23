@@ -15,6 +15,16 @@ public interface IHitResponder {
     public Entity Owner { get; }
     public bool ValidateHit(Hit hit);
     public void RespondToHit(Hit hit);
+
+    public static void ConnectChildrenHitboxes<T>(T responder) where T : MonoBehaviour, IHitResponder {
+        foreach (IHitbox hurtbox in responder.GetComponentsInChildren<IHitbox>())
+            hurtbox.HitResponder = responder;
+    }
+
+    public static void DisconnectChildrenHitboxes<T>(T responder) where T : MonoBehaviour, IHitResponder {
+        foreach (IHitbox hurtbox in responder.GetComponentsInChildren<IHitbox>())
+            hurtbox.HitResponder = responder;
+    }
 }
 
 public interface IHurtbox {
@@ -29,6 +39,16 @@ public interface IHurtResponder {
 
     public bool ValidateHit(Hit hit);
     public void RespondToHit(Hit hit);
+
+    public static void ConnectChildrenHurtboxes<T>(T responder) where T : MonoBehaviour, IHurtResponder {
+        foreach (IHurtbox hurtbox in responder.GetComponentsInChildren<IHurtbox>())
+            hurtbox.HurtResponder = responder;
+    }
+
+    public static void DisconnectChildrenHurtboxes<T>(T responder) where T : MonoBehaviour, IHurtResponder {
+        foreach (IHurtbox hurtbox in responder.GetComponentsInChildren<IHurtbox>())
+            hurtbox.HurtResponder = responder;
+    }
 }
 
 public interface IHurtable {

@@ -622,10 +622,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 585319038123581639, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 585319038123581642, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_Camera
       value: 
@@ -684,15 +680,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 585319038123581643, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 585319038123581643, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 585319038123581643, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 585319038123581643, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -713,26 +709,6 @@ PrefabInstance:
     - target: {fileID: 585319038123581643, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3744843915645541144, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5642084467023147414, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.465
-      objectReference: {fileID: 0}
-    - target: {fileID: 5642084467023147414, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6455964420102519180, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6455964420102519180, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
@@ -1037,10 +1013,6 @@ PrefabInstance:
     - target: {fileID: 7501924698092218976, guid: 2330c2cab1202864db9051bad55423d9, type: 3}
       propertyPath: m_Name
       value: SpawnDirector
-      objectReference: {fileID: 0}
-    - target: {fileID: 7501924698092218978, guid: 2330c2cab1202864db9051bad55423d9, type: 3}
-      propertyPath: spawnFrequencyOverTime.m_Curve.Array.data[1].value
-      value: 15.048458
       objectReference: {fileID: 0}
     - target: {fileID: 7501924698092218979, guid: 2330c2cab1202864db9051bad55423d9, type: 3}
       propertyPath: m_RootOrder

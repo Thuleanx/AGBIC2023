@@ -20,7 +20,6 @@ public class Projectile : PoolableEntity, IHitResponder {
     void Awake() {
         rigidbody = GetComponent<Rigidbody>();
         hitbox = GetComponentInChildren<Hitbox>();
-
         hitbox.HitResponder = this;
     }
 

@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Optimization;
 using NaughtyAttributes;
-using Control;
+using CombatSystem;
 using Danmaku;
+using Base;
+using Utils;
 
 namespace GhostNirvana {
 
-public partial class Miyu : PossessableAgent<Miyu.Input> {
+public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtResponder, IHitResponder {
     public static Miyu Instance;
 
     public enum States {
@@ -37,12 +37,19 @@ public partial class Miyu : PossessableAgent<Miyu.Input> {
     [HorizontalLine(color:EColor.Blue)]
     [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview]
     Projectile projectilePrefab;
+    [field:SerializeField, BoxGroup("Combat")] public Transform BulletSource {get; private set; }
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat health;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat attackSpeed;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletSpeed;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
+    [BoxGroup("Combat"), SerializeField] float iframeSeconds;
     #endregion
+
+    Timer iframeHappening;
+
+    public Entity Owner => this;
+    public bool IsDead => health.Value == 0;
 
     protected override void Awake() {
 		base.Awake();
@@ -52,9 +59,17 @@ public partial class Miyu : PossessableAgent<Miyu.Input> {
         health.Value = health.Limiter;
     }
 
-    protected void Update() {
-        PerformUpdate(StateMachine.RunUpdate);
+    protected void OnEnable() {
+        IHitResponder.ConnectChildrenHitboxes(this);
+        IHurtResponder.ConnectChildrenHurtboxes(this);
     }
+
+    protected void OnDisable() {
+        IHitResponder.DisconnectChildrenHitboxes(this);
+        IHurtResponder.DisconnectChildrenHurtboxes(this);
+    }
+
+    protected void Update() => PerformUpdate(StateMachine.RunUpdate);
 
     public void TurnToFace(Vector3 dir, float turnSpeed) {
         dir.y = 0;
@@ -66,10 +81,24 @@ public partial class Miyu : PossessableAgent<Miyu.Input> {
 
     public void ShootProjectile(Vector3 targetDirection) {
         Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
-                projectilePrefab, transform.position, transform.rotation);
+                projectilePrefab, BulletSource.position, BulletSource.rotation);
 
         bullet.Initialize(targetDirection * bulletSpeed.Value);
     }
+
+    void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit) {
+        bool killingHit = health.Value > 0 && health.Value <= damageAmount;
+        health.Value -= damageAmount;
+        health.CheckAndCorrectLimit();
+
+        iframeHappening = iframeSeconds;
+        if (killingHit) OnDeath();
+    }
+
+    void OnDeath() => Dispose();
+
+    public bool ValidateHit(Hit hit) => !IsDead && !iframeHappening;
+    public void RespondToHit(Hit hit) { }
 }
 
 }

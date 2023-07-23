@@ -50,7 +50,7 @@ public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
         if (Physics.Raycast(ray, out RaycastHit hit)) 
             return hit.point;
 
-        Plane plane = new Plane(Vector3.up, miyu ? miyu.transform.position : transform.position);
+        Plane plane = new Plane(Vector3.up, miyu ? miyu.BulletSource.position : transform.position);
         if (plane.Raycast(ray, out float dist)) {
             Vector3 pos = ray.GetPoint(dist);
             return pos;

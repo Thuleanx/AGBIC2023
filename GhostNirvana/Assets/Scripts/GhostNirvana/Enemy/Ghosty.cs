@@ -12,9 +12,10 @@ using Base;
 namespace GhostNirvana {
 
 [RequireComponent(typeof(CharacterController))]
-public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtResponder {
+public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtResponder, IHitResponder {
 
     Entity IHurtResponder.Owner => this;
+    public Entity Owner => this;
 
     public enum States {
         Seek,
@@ -29,25 +30,37 @@ public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtRe
         get;
         private set;
     }
+
     #endregion
 
     public struct Input {
         public Vector3 desiredMovement;
     }
 
+    List<Hitbox> hitboxes = new List<Hitbox>();
+
     protected override void Awake() {
         base.Awake();
 		Status = GetComponent<Status>();
         Status.Owner = this;
+
+        hitboxes.AddRange(GetComponentsInChildren<Hitbox>());
     }
 
     protected void OnEnable() {
+        IHurtResponder.ConnectChildrenHurtboxes(this);
+        IHitResponder.ConnectChildrenHitboxes(this);
         Status.OnDeath.AddListener(OnDeath);
-        foreach (Hurtbox hurtbox in GetComponentsInChildren<Hurtbox>())
-            hurtbox.HurtResponder = this;
         if (HealthBarManager.Instance)
             HealthBarManager.Instance.AddStatus(Status);
         Status.HealToFull();
+    }
+
+    protected void OnDisable() {
+        IHurtResponder.DisconnectChildrenHurtboxes(this);
+        IHitResponder.ConnectChildrenHitboxes(this);
+        HealthBarManager.Instance.RemoveStatus(Status);
+        Status.OnDeath.RemoveListener(OnDeath);
     }
 
     protected void Start() {
@@ -55,32 +68,35 @@ public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtRe
             HealthBarManager.Instance.AddStatus(Status);
     }
 
-    protected void OnDisable() {
-        HealthBarManager.Instance.RemoveStatus(Status);
+    protected void Update() { 
+        PerformUpdate(NormalUpdate);
     }
 
-    protected void Update() {
-        PerformUpdate(AdjustVelocity);
-    }
-
-    void AdjustVelocity() {
+    void NormalUpdate() {
         Vector3 desiredVelocity = input.desiredMovement * Status.BaseStats.MovementSpeed;
 
         Velocity = Mathx.Damp(Vector3.Lerp, Velocity, desiredVelocity,
                               (Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
                               ? Status.BaseStats.DeccelerationAlpha : Status.BaseStats.AccelerationAlpha,
                               Time.deltaTime);
+
+        if (!Miyu.Instance) return;
+
+        // TODO: rid of magic number
+        float hitboxCheckingDistance = 2;
+        bool closeToPlayer = (Miyu.Instance.transform.position - transform.position).sqrMagnitude < hitboxCheckingDistance;
+        if (closeToPlayer) foreach (Hitbox hitbox in hitboxes)
+            hitbox.CheckForHits();
     }
 
     void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit)
         => Status.TakeDamage(damageAmount);
 
-    bool IHurtResponder.ValidateHit(Hit hit) => true;
 
     void IHurtResponder.RespondToHit(Hit hit) {
     }
+
     void OnDeath(Status status) {
-        Status.OnDeath.RemoveListener(OnDeath);
         // spawn experience gem
         ObjectPoolManager.Instance?.Borrow(gameObject.scene, droppedExperienceGem, transform.position);
         Dispose();
@@ -89,6 +105,14 @@ public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtRe
     protected override IEnumerator IDispose() {
         // actually dispose the thing
         yield return base.IDispose();
+    }
+
+    bool IHurtResponder.ValidateHit(Hit hit) => true;
+    public bool ValidateHit(Hit hit) => true;
+
+    public void RespondToHit(Hit hit) {
+        Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
+        (targetOwner as IHurtable)?.TakeDamage(Status.BaseStats.Damage, null, hit);
     }
 }
 

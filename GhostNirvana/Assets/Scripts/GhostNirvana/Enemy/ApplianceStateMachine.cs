@@ -44,6 +44,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
     public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.Status.HealToFull();
         agent.Status.OnDeath.AddListener(OnDeath);
+        HealthBarManager.Instance?.AddStatus(agent.Status);
     }
 
     public override Appliance.States? Update(
@@ -55,11 +56,18 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
                               (agent.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
                               ? agent.Status.BaseStats.DeccelerationAlpha : agent.Status.BaseStats.AccelerationAlpha, Time.deltaTime);
 
+        float hitboxCheckingDistance = 2;
+        bool closeToPlayer = (Miyu.Instance.transform.position - agent.transform.position).sqrMagnitude < hitboxCheckingDistance;
+        if (closeToPlayer) foreach (Hitbox hitbox in agent.hitboxes)
+            hitbox.CheckForHits();
+
         return null;
     }
 
     public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.Status.OnDeath.RemoveListener(OnDeath);
+        agent.Velocity = Vector3.zero;
+        HealthBarManager.Instance?.RemoveStatus(agent.Status);
     }
 
     void OnDeath(Status status) {

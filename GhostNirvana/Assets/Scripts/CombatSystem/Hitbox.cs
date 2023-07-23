@@ -22,7 +22,6 @@ public class Hitbox : MonoBehaviour, IHitbox {
     }
 
     public void CheckForHits() {
-
         void ValidateAndSendHit(IHurtbox hurtbox, Hit hitData) {
             // validate the hit
             // we dont validate for the hitbox, because it's assumed that

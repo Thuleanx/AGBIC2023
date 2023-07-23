@@ -15,6 +15,8 @@ public class UpgradeOptionDetails : MonoBehaviour {
             option.OnHoverEnter += OnHover;
             option.OnHoverExit += OnHoverExit;
         }
+        title.gameObject.SetActive(false);
+        description.gameObject.SetActive(false);
     }
 
     void OnDisable() {
