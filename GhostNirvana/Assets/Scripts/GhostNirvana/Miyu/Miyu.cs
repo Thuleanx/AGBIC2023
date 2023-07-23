@@ -8,7 +8,7 @@ using Utils;
 
 namespace GhostNirvana {
 
-public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtResponder, IHitResponder {
+public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtResponder {
     public static Miyu Instance;
 
     public enum States {
@@ -40,7 +40,9 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [field:SerializeField, BoxGroup("Combat")] public Transform BulletSource {get; private set; }
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat health;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat attackSpeed;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletDamage;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletSpeed;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletKnockback;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
@@ -60,12 +62,10 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     }
 
     protected void OnEnable() {
-        IHitResponder.ConnectChildrenHitboxes(this);
         IHurtResponder.ConnectChildrenHurtboxes(this);
     }
 
     protected void OnDisable() {
-        IHitResponder.DisconnectChildrenHitboxes(this);
         IHurtResponder.DisconnectChildrenHurtboxes(this);
     }
 
@@ -83,7 +83,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
                 projectilePrefab, BulletSource.position, BulletSource.rotation);
 
-        bullet.Initialize(targetDirection * bulletSpeed.Value);
+        bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, targetDirection * bulletSpeed.Value);
     }
 
     void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit) {
@@ -98,7 +98,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     void OnDeath() => Dispose();
 
     public bool ValidateHit(Hit hit) => !IsDead && !iframeHappening;
-    public void RespondToHit(Hit hit) { }
+    public void RespondToHurt(Hit hit) { }
 }
 
 }

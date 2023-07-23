@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackResistance: 8
   droppedExperienceGem: {fileID: 3182036718300943621, guid: 6d8756ef015ae97498871bffcf5f73d8, type: 3}
-  <Status>k__BackingField: {fileID: 0}
 --- !u!114 &6133858924970157906
 MonoBehaviour:
   m_ObjectHideFlags: 0

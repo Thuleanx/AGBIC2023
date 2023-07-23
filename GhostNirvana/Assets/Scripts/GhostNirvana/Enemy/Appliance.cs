@@ -9,9 +9,7 @@ using System.Collections.Generic;
 namespace GhostNirvana {
 
 [RequireComponent(typeof(Status))]
-public partial class Appliance : 
-    PossessableAgent<Appliance.Input>, IHurtable, IHurtResponder, IHitResponder {
-
+public partial class Appliance : Enemy<Appliance.Input> {
 
     public enum States {
         Idle,
@@ -23,29 +21,19 @@ public partial class Appliance :
     };
 
     #region Components
-    public Status Status { get; private set; }
     [field:SerializeField, Required]
     public Collider PossessionDetection {get; private set; }
 
     public ApplianceStateMachine StateMachine {
         get; private set;
     }
-
     #endregion
 
-    Entity IHurtResponder.Owner => this;
-    public Entity Owner => this;
-
-
     UnityEvent<Appliance, StateMachine<Appliance, Appliance.States>, Entity> OnPossessorDetected = new UnityEvent<Appliance, StateMachine<Appliance, States>, Entity>();
-    List<Hitbox> hitboxes = new List<Hitbox>();
 
     protected override void Awake() {
         base.Awake();
         StateMachine = GetComponent<ApplianceStateMachine>();
-        Status = GetComponent<Status>();
-        Status.Owner = this;
-        hitboxes.AddRange(GetComponentsInChildren<Hitbox>());
     }
 
     protected void OnEnable() {
@@ -56,15 +44,6 @@ public partial class Appliance :
     protected void OnDisable() {
         IHurtResponder.DisconnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
-    }
-
-    void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit)
-        => Status.TakeDamage(damageAmount);
-
-    public bool ValidateHit(Hit hit) => true;
-    public void RespondToHit(Hit hit) {
-        Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
-        (targetOwner as IHurtable)?.TakeDamage(Status.BaseStats.Damage, null, hit);
     }
 
     protected void Update() => PerformUpdate(StateMachine.RunUpdate);

@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d0b7077373db449b0c60d0fba90a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackResistance: 4
   xp: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
   movementSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
   accelerationAlpha: 24
@@ -234,7 +235,9 @@ MonoBehaviour:
   <BulletSource>k__BackingField: {fileID: 7650795872095624720}
   health: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
   attackSpeed: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
+  bulletDamage: {fileID: 11400000, guid: bec1f9cf1841c084cb6ac9e4e05f1777, type: 2}
   bulletSpeed: {fileID: 11400000, guid: 3b5f266d4e365e948a8ac919b51b450c, type: 2}
+  bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
   magazine: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
   reloadRate: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
   iframeSeconds: 1

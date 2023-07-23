@@ -5,6 +5,7 @@ using UnityEngine;
 using Base;
 using Optimization;
 using CombatSystem;
+using NaughtyAttributes;
 
 namespace Danmaku {
 
@@ -14,8 +15,9 @@ public class Projectile : PoolableEntity, IHitResponder {
     new Rigidbody rigidbody;
     Entity IHitResponder.Owner => owner;
 
-    [SerializeField] float damage;
-    [SerializeField] Hitbox hitbox;
+    [SerializeField, ReadOnly] float damage;
+    [SerializeField, ReadOnly] float knockback;
+    [SerializeField, ReadOnly] Hitbox hitbox;
 
     void Awake() {
         rigidbody = GetComponent<Rigidbody>();
@@ -23,8 +25,10 @@ public class Projectile : PoolableEntity, IHitResponder {
         hitbox.HitResponder = this;
     }
 
-    public void Initialize(Vector3 velocity, bool faceDirection = true) {
+    public void Initialize(float damage, float knockback, Vector3 velocity, bool faceDirection = true) {
         rigidbody.velocity = velocity;
+        this.damage = damage;
+        this.knockback = knockback;
     }
 
     bool IHitResponder.ValidateHit(Hit hit) {
@@ -34,6 +38,7 @@ public class Projectile : PoolableEntity, IHitResponder {
     void IHitResponder.RespondToHit(Hit hit) {
         Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
         (targetOwner as IHurtable)?.TakeDamage(damage, null, hit);
+        (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, rigidbody.velocity.normalized, hit);
 
 		if (this.gameObject.activeInHierarchy) 
 			this.Dispose();

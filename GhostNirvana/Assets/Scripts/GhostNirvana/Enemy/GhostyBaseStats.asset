@@ -17,3 +17,4 @@ MonoBehaviour:
   <MovementSpeed>k__BackingField: 3
   <AccelerationAlpha>k__BackingField: 24
   <DeccelerationAlpha>k__BackingField: 8
+  <Knockback>k__BackingField: 10

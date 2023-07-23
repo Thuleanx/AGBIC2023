@@ -58,8 +58,8 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 
         float hitboxCheckingDistance = 2;
         bool closeToPlayer = (Miyu.Instance.transform.position - agent.transform.position).sqrMagnitude < hitboxCheckingDistance;
-        if (closeToPlayer) foreach (Hitbox hitbox in agent.hitboxes)
-            hitbox.CheckForHits();
+        if (closeToPlayer)
+            agent.CheckForHits();
 
         return null;
     }

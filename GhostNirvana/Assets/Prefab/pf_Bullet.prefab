@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockback: 0
   hitbox: {fileID: 4699565797001841566}
 --- !u!114 &1097658304994715504
 MonoBehaviour:

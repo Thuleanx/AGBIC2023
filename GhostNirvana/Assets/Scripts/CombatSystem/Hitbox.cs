@@ -33,7 +33,7 @@ public class Hitbox : MonoBehaviour, IHitbox {
 
             if (!hitValid) return;
 
-            hurtbox.HurtResponder?.RespondToHit(hitData);
+            hurtbox.HurtResponder?.RespondToHurt(hitData);
             _hitResponder?.RespondToHit(hitData);
         }
 

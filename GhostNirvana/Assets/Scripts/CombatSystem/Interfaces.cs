@@ -38,7 +38,7 @@ public interface IHurtResponder {
     public Entity Owner { get; }
 
     public bool ValidateHit(Hit hit);
-    public void RespondToHit(Hit hit);
+    public void RespondToHurt(Hit hit);
 
     public static void ConnectChildrenHurtboxes<T>(T responder) where T : MonoBehaviour, IHurtResponder {
         foreach (IHurtbox hurtbox in responder.GetComponentsInChildren<IHurtbox>())
@@ -58,6 +58,12 @@ public interface IHurtable {
     protected void OnTakeDamage(float damageAmount,
                                 DamageType damageType,
                                 Hit hit);
+}
+
+public interface IKnockbackable {
+    public void ApplyKnockback(float amount, Vector3 dir, Hit hit) => OnKnockback(amount, dir, hit);
+
+    protected void OnKnockback(float amount, Vector3 dir, Hit hit);
 }
 
 }

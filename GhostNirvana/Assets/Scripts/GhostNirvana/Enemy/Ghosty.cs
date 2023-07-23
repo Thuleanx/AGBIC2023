@@ -12,10 +12,7 @@ using Base;
 namespace GhostNirvana {
 
 [RequireComponent(typeof(CharacterController))]
-public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtResponder, IHitResponder {
-
-    Entity IHurtResponder.Owner => this;
-    public Entity Owner => this;
+public partial class Ghosty : Enemy<Ghosty.Input> {
 
     public enum States {
         Seek,
@@ -24,27 +21,8 @@ public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtRe
 
     [SerializeField] ExperienceGem droppedExperienceGem;
 
-    #region Components
-    [field:SerializeField]
-    public Status Status {
-        get;
-        private set;
-    }
-
-    #endregion
-
     public struct Input {
         public Vector3 desiredMovement;
-    }
-
-    List<Hitbox> hitboxes = new List<Hitbox>();
-
-    protected override void Awake() {
-        base.Awake();
-		Status = GetComponent<Status>();
-        Status.Owner = this;
-
-        hitboxes.AddRange(GetComponentsInChildren<Hitbox>());
     }
 
     protected void OnEnable() {
@@ -68,9 +46,7 @@ public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtRe
             HealthBarManager.Instance.AddStatus(Status);
     }
 
-    protected void Update() { 
-        PerformUpdate(NormalUpdate);
-    }
+    protected void Update() => PerformUpdate(NormalUpdate);
 
     void NormalUpdate() {
         Vector3 desiredVelocity = input.desiredMovement * Status.BaseStats.MovementSpeed;
@@ -85,34 +61,13 @@ public partial class Ghosty : PossessableAgent<Ghosty.Input>, IHurtable, IHurtRe
         // TODO: rid of magic number
         float hitboxCheckingDistance = 2;
         bool closeToPlayer = (Miyu.Instance.transform.position - transform.position).sqrMagnitude < hitboxCheckingDistance;
-        if (closeToPlayer) foreach (Hitbox hitbox in hitboxes)
-            hitbox.CheckForHits();
-    }
-
-    void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit)
-        => Status.TakeDamage(damageAmount);
-
-
-    void IHurtResponder.RespondToHit(Hit hit) {
+        if (closeToPlayer) CheckForHits();
     }
 
     void OnDeath(Status status) {
         // spawn experience gem
         ObjectPoolManager.Instance?.Borrow(gameObject.scene, droppedExperienceGem, transform.position);
         Dispose();
-    }
-
-    protected override IEnumerator IDispose() {
-        // actually dispose the thing
-        yield return base.IDispose();
-    }
-
-    bool IHurtResponder.ValidateHit(Hit hit) => true;
-    public bool ValidateHit(Hit hit) => true;
-
-    public void RespondToHit(Hit hit) {
-        Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
-        (targetOwner as IHurtable)?.TakeDamage(Status.BaseStats.Damage, null, hit);
     }
 }
 
