@@ -414,6 +414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_UpgradeOptionDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2349517548598109092, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

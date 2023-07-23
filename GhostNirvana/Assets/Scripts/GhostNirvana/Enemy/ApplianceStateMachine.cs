@@ -49,7 +49,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
     public override Appliance.States? Update(
         StateMachine<Appliance, States> stateMachine, Appliance agent) {
 
-        Vector3 desiredVelocity = agent.input.desiredMovement;
+        Vector3 desiredVelocity = agent.input.desiredMovement * agent.Status.BaseStats.MovementSpeed;
 
         agent.Velocity = Mathx.Damp(Vector3.Lerp, agent.Velocity, desiredVelocity,
                               (agent.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
