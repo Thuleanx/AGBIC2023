@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 466321183581306829}
   - component: {fileID: 1256385227742529469}
   - component: {fileID: 232514344596765997}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 3751458875445000395}
   - component: {fileID: 3751458875445000392}
   - component: {fileID: 3751458875445000394}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: pf_Miyu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 3751458876781973360}
   - component: {fileID: 3751458876781973361}
   - component: {fileID: 3751458876781973363}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: CursorIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}

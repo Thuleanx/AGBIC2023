@@ -6,7 +6,7 @@ using NaughtyAttributes;
 namespace CombatSystem {
 
 [System.Serializable]
-public class Status {
+public class Status : MonoBehaviour {
     [field:SerializeField, Expandable, Required]
     public BaseStats BaseStats {
         get;
@@ -22,7 +22,7 @@ public class Status {
     [HideInInspector] public Entity Owner;
 
     public bool IsDead => Health <= 0;
-    public UnityEvent OnDeath;
+    public UnityEvent<Status> OnDeath;
 
     public void TakeDamage(float amount) {
         bool isKillingHit = !IsDead && amount >= Health;
@@ -30,7 +30,7 @@ public class Status {
         Health -= amount;
         if (Health <= 0) Health = 0;
 
-        if (isKillingHit) OnDeath?.Invoke();
+        if (isKillingHit) OnDeath?.Invoke(this);
     }
 
     public void HealToFull() => Health = BaseStats.MaxHealth;

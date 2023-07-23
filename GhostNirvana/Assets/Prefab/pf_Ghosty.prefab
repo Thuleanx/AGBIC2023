@@ -72,7 +72,8 @@ GameObject:
   - component: {fileID: 6133858924970157916}
   - component: {fileID: 6133858924970157919}
   - component: {fileID: 6133858924970157906}
-  m_Layer: 0
+  - component: {fileID: 7522441239902041237}
+  m_Layer: 28
   m_Name: pf_Ghosty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,13 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droppedExperienceGem: {fileID: 3182036718300943621, guid: 6d8756ef015ae97498871bffcf5f73d8, type: 3}
-  <Status>k__BackingField:
-    <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
-    <Health>k__BackingField: 10
-    Owner: {fileID: 0}
-    OnDeath:
-      m_PersistentCalls:
-        m_Calls: []
+  <Status>k__BackingField: {fileID: 0}
 --- !u!114 &6133858924970157906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cbc62bbef23c743a36145f336e6986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7522441239902041237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133858924970157918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+  <Health>k__BackingField: 0
+  Owner: {fileID: 0}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6133858925684955471
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +171,7 @@ GameObject:
   - component: {fileID: 6133858925684955459}
   - component: {fileID: 6133858925684955458}
   - component: {fileID: 6133858925684955469}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

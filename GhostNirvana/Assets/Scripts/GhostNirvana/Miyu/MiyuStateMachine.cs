@@ -19,6 +19,8 @@ public class MiyuStateMachine : StateMachine<Miyu, Miyu.States> {
         ConstructMachine(agent: Miyu, defaultState: Miyu.States.Grounded);
     }
 
+    void Start() => Init();
+
     public override void Construct() {
         AssignState<Miyu.MiyuGrounded>(Miyu.States.Grounded);
     }

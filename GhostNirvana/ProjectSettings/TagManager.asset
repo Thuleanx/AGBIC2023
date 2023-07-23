@@ -12,6 +12,7 @@ TagManager:
   - Water
   - UI
   - PlayerInteraction
+  - EnemyInteraction
   - 
   - 
   - 
@@ -30,10 +31,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Appliance
+  - Player
+  - Enemy
   - XP
   - Hurtbox
   - Hitbox
