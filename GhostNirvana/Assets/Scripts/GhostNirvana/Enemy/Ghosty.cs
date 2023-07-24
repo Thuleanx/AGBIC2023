@@ -1,13 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 using Optimization;
-using Control;
-using Danmaku;
 using CombatSystem;
 using Utils;
-using Base;
 
 namespace GhostNirvana {
 
@@ -25,7 +19,8 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         public Vector3 desiredMovement;
     }
 
-    protected void OnEnable() {
+    protected override void OnEnable() {
+        base.OnEnable();
         IHurtResponder.ConnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
         Status.OnDeath.AddListener(OnDeath);
@@ -34,7 +29,9 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         Status.HealToFull();
     }
 
-    protected void OnDisable() {
+
+    protected override void OnDisable() {
+        base.OnDisable();
         IHurtResponder.DisconnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
         HealthBarManager.Instance.RemoveStatus(Status);

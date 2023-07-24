@@ -1,7 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 
-namespace GhostNirvana {
+namespace ScriptableBehaviour {
 
 [CreateAssetMenu(fileName = "Data",
                  menuName = "~/Stats/LinearFloat", order = 1)]

@@ -61,9 +61,9 @@ public interface IHurtable {
 }
 
 public interface IKnockbackable {
-    public void ApplyKnockback(float amount, Vector3 dir, Hit hit) => OnKnockback(amount, dir, hit);
+    public void ApplyKnockback(float amount, Vector3 dir) => OnKnockback(amount, dir);
 
-    protected void OnKnockback(float amount, Vector3 dir, Hit hit);
+    protected void OnKnockback(float amount, Vector3 dir);
 }
 
 }

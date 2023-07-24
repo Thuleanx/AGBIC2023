@@ -243,6 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23017111e77e3e4dadc6a782ed53a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackResistance: 8
+  allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   <PossessionDetection>k__BackingField: {fileID: 1459352399930716331}
 --- !u!114 &1459352401194146335
 MonoBehaviour:

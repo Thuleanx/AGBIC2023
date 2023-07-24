@@ -2,15 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using CombatSystem;
 using Base;
+using NaughtyAttributes;
 
 namespace GhostNirvana {
 
-public abstract class Enemy<Input> 
+public abstract class Enemy<Input>
     : PossessableAgent<Input>, IHurtable, IHurtResponder, IHitResponder {
 
-    public Status Status { get; private set; }
-
     public Entity Owner => this;
+    public Status Status { get; private set; }
 
 #region Inherited members
     public void RespondToHurt(Hit hit) {
@@ -23,6 +23,7 @@ public abstract class Enemy<Input>
 #endregion
 
     List<Hitbox> hitboxes = new List<Hitbox>();
+    [SerializeField, Required] MovableAgentRuntimeSet allEnemies;
 
     protected override void Awake() {
         base.Awake();
@@ -30,6 +31,9 @@ public abstract class Enemy<Input>
         Status.Owner = this;
         hitboxes.AddRange(GetComponentsInChildren<Hitbox>());
     }
+
+    protected virtual void OnEnable() => allEnemies.Add(this);
+    protected virtual void OnDisable() => allEnemies.Remove(this);
 
     protected void CheckForHits() {
         foreach (Hitbox hitbox in hitboxes)
@@ -39,8 +43,9 @@ public abstract class Enemy<Input>
     public void RespondToHit(Hit hit) {
         Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
         (targetOwner as IHurtable)?.TakeDamage(Status.BaseStats.Damage, null, hit);
-        (targetOwner as IKnockbackable)?.ApplyKnockback(Status.BaseStats.Knockback, hit.Normal, hit);
+        (targetOwner as IKnockbackable)?.ApplyKnockback(Status.BaseStats.Knockback, hit.Normal);
     }
 }
+
 
 }

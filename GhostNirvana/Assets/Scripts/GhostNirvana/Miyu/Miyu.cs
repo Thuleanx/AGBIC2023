@@ -5,6 +5,7 @@ using CombatSystem;
 using Danmaku;
 using Base;
 using Utils;
+using ScriptableBehaviour;
 
 namespace GhostNirvana {
 
@@ -35,6 +36,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
     #region Combat
     [HorizontalLine(color:EColor.Blue)]
+    [BoxGroup("Combat"), SerializeField, Required]
+    MovableAgentRuntimeSet allEnemies;
     [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview]
     Projectile projectilePrefab;
     [field:SerializeField, BoxGroup("Combat")] public Transform BulletSource {get; private set; }
@@ -45,6 +48,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletKnockback;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
     #endregion
 
@@ -91,6 +95,17 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         health.Value -= damageAmount;
         health.CheckAndCorrectLimit();
 
+        void PushAllEnemiesAway() {
+            foreach (MovableAgent enemy in allEnemies) {
+                Vector3 knockbackDir = enemy.transform.position - transform.position;
+                knockbackDir.y = 0;
+                knockbackDir.Normalize();
+
+                (enemy as IKnockbackable).ApplyKnockback(pushbackStrengthOnDamage.Value, knockbackDir);
+            }
+        }
+        PushAllEnemiesAway();
+
         iframeHappening = iframeSeconds;
         if (killingHit) OnDeath();
     }
@@ -99,6 +114,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
     public bool ValidateHit(Hit hit) => !IsDead && !iframeHappening;
     public void RespondToHurt(Hit hit) { }
+
 }
 
 }

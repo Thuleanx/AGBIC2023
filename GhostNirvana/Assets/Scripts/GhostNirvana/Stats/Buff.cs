@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using ScriptableBehaviour;
 
 namespace GhostNirvana {
     [CreateAssetMenu(fileName = "Buff",

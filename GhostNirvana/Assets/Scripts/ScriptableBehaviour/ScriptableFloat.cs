@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GhostNirvana {
+namespace ScriptableBehaviour {
 
 public class ScriptableFloat : ScriptableObject {
     [field:System.NonSerialized]

@@ -231,6 +231,7 @@ MonoBehaviour:
   accelerationAlpha: 24
   deccelerationAlpha: 12
   turnSpeed: 24
+  allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   projectilePrefab: {fileID: 7531139996555314367, guid: 7bd32c0ea4fa9e84e9ad446556e782ec, type: 3}
   <BulletSource>k__BackingField: {fileID: 7650795872095624720}
   health: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
@@ -240,6 +241,7 @@ MonoBehaviour:
   bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
   magazine: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
   reloadRate: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
+  pushbackStrengthOnDamage: {fileID: 11400000, guid: f7fad2df61e2ab04fa643ef0d05fb579, type: 2}
   iframeSeconds: 1
 --- !u!114 &3751458875445000392
 MonoBehaviour:

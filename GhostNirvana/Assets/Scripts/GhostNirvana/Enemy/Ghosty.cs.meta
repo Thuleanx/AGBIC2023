@@ -3,7 +3,9 @@ guid: 02aefc52ae590d944a5c28607b32ebb6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
+  - droppedExperienceGem: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

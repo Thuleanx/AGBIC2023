@@ -36,12 +36,14 @@ public partial class Appliance : Enemy<Appliance.Input> {
         StateMachine = GetComponent<ApplianceStateMachine>();
     }
 
-    protected void OnEnable() {
+    protected override void OnEnable() {
+        base.OnEnable();
         IHurtResponder.ConnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
     }
 
-    protected void OnDisable() {
+    protected override void OnDisable() {
+        base.OnDisable();
         IHurtResponder.DisconnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
     }
