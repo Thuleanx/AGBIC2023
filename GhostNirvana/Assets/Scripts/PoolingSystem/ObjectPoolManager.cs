@@ -21,7 +21,7 @@ public partial class ObjectPoolManager : MonoBehaviour {
     }
 
 
-    public class Pool<T> where T : MonoBehaviour {
+    public class Pool<T> where T : Component {
         public T Prefab;
         public Queue<T> content;
         public int NumBubbles = 0;
@@ -81,7 +81,7 @@ public partial class ObjectPoolManager : MonoBehaviour {
     }
 
     public T Borrow<T>(Scene scene, T Prefab,
-        Vector3? position = null, Quaternion? rotation = null) where T : MonoBehaviour {
+        Vector3? position = null, Quaternion? rotation = null) where T : Component {
 
         if (!Prefab) return null;
 

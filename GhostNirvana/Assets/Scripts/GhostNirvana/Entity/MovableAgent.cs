@@ -27,8 +27,11 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
     protected virtual void PerformUpdate(Action Update) {
         Update();
 
-        if (knockbackStrength < 0.1) knockbackStrength = 0;
-        else knockbackStrength = Mathx.Damp(Mathf.Lerp, knockbackStrength, 0, knockbackResistance, Time.deltaTime);
+        if (knockbackStrength < 0.1) {
+            knockbackStrength = 0;
+            Knockback = Vector3.zero;
+        } else
+            knockbackStrength = Mathx.Damp(Mathf.Lerp, knockbackStrength, 0, knockbackResistance, Time.deltaTime);
 
         Controller.Move(TrueVelocity * Time.deltaTime);
     }
@@ -38,9 +41,10 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
     }
 
     void IKnockbackable.OnKnockback(float amount, Vector3 dir) {
-        if (Knockback.sqrMagnitude < amount * amount)
+        if (Knockback.sqrMagnitude * knockbackStrength * knockbackStrength < amount * amount) {
             Knockback = dir * amount;
-        knockbackStrength = 1;
+            knockbackStrength = 1;
+        }
     }
 }
 

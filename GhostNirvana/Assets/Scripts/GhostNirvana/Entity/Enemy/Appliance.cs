@@ -31,6 +31,8 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     UnityEvent<Appliance, StateMachine<Appliance, Appliance.States>, Entity> OnPossessorDetected = new UnityEvent<Appliance, StateMachine<Appliance, States>, Entity>();
 
+    [SerializeField] StatusRuntimeSet allEnemyStatus;
+
     protected override void Awake() {
         base.Awake();
         StateMachine = GetComponent<ApplianceStateMachine>();

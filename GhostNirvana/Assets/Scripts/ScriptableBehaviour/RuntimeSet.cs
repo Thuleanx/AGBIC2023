@@ -8,16 +8,30 @@ public class RuntimeSet<T> : ScriptableObject, ISerializationCallbackReceiver, I
     [System.NonSerialized]
     HashSet<T> collection = new HashSet<T>();
 
-    public void Add(T item) => collection.Add(item);
-    public void Remove(T item) => collection.Remove(item);
-
-    public void OnAfterDeserialize() => collection.Clear();
-    public void OnBeforeSerialize() => collection.Clear();
-
     public IEnumerator<T> GetEnumerator() => collection.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-    IEnumerator IEnumerable.GetEnumerator() {
-        return GetEnumerator();
+    public delegate void ItemHandler(T item);
+    public event ItemHandler OnAdd;
+    public event ItemHandler OnRemove;
+
+    public void Add(T item) {
+        OnAdd?.Invoke(item);
+        collection.Add(item);
+    }
+
+    public void Remove(T item) {
+        OnRemove?.Invoke(item);
+        collection.Remove(item);
+    }
+
+    public void OnAfterDeserialize() => Reset();
+    public void OnBeforeSerialize() => Reset();
+
+    void Reset() {
+        OnAdd = null;
+        OnRemove = null;
+        collection.Clear();
     }
 }
 

@@ -115,3 +115,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusTrackerPrefab: {fileID: 8023495903568318820, guid: 4f29b2b2eee55d6448ce72cf7ffa3203, type: 3}
   poolExpansionRate: 20
+  trackedStatusSet: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}

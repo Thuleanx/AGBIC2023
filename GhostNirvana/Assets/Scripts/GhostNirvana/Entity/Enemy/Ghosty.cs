@@ -1,19 +1,20 @@
 using UnityEngine;
 using Optimization;
 using CombatSystem;
+using NaughtyAttributes;
 using Utils;
 
 namespace GhostNirvana {
 
 [RequireComponent(typeof(CharacterController))]
 public partial class Ghosty : Enemy<Ghosty.Input> {
-
     public enum States {
         Seek,
         Death
     }
 
-    [SerializeField] ExperienceGem droppedExperienceGem;
+    [SerializeField, ShowAssetPreview] Transform droppedExperienceGem;
+    [SerializeField] StatusRuntimeSet allEnemyStatus;
 
     public struct Input {
         public Vector3 desiredMovement;
@@ -24,8 +25,7 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         IHurtResponder.ConnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
         Status.OnDeath.AddListener(OnDeath);
-        if (HealthBarManager.Instance)
-            HealthBarManager.Instance.AddStatus(Status);
+        allEnemyStatus.Add(Status);
         Status.HealToFull();
     }
 
@@ -34,13 +34,8 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         base.OnDisable();
         IHurtResponder.DisconnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
-        HealthBarManager.Instance.RemoveStatus(Status);
+        allEnemyStatus.Remove(Status);
         Status.OnDeath.RemoveListener(OnDeath);
-    }
-
-    protected void Start() {
-        if (!HealthBarManager.Instance.IsTrackingStatus(Status))
-            HealthBarManager.Instance.AddStatus(Status);
     }
 
     protected void Update() => PerformUpdate(NormalUpdate);

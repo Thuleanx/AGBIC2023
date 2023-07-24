@@ -44,7 +44,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
     public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.Status.HealToFull();
         agent.Status.OnDeath.AddListener(OnDeath);
-        HealthBarManager.Instance?.AddStatus(agent.Status);
+        agent.allEnemyStatus.Add(agent.Status);
     }
 
     public override Appliance.States? Update(
@@ -67,7 +67,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
     public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.Status.OnDeath.RemoveListener(OnDeath);
         agent.Velocity = Vector3.zero;
-        HealthBarManager.Instance?.RemoveStatus(agent.Status);
+        agent.allEnemyStatus.Remove(agent.Status);
     }
 
     void OnDeath(Status status) {

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CombatSystem;
@@ -6,19 +5,26 @@ using CombatSystem;
 namespace GhostNirvana {
 
 public class HealthBarManager : MonoBehaviour {
-    public static HealthBarManager Instance;
-
     [SerializeField] StatusTracker statusTrackerPrefab;
     [SerializeField] int poolExpansionRate = 20;
+    [SerializeField] StatusRuntimeSet trackedStatusSet;
 
     Dictionary<Status, StatusTracker> statusTrackerMap = new Dictionary<Status, StatusTracker>();
     Queue<StatusTracker> statusTrackerPool = new Queue<StatusTracker>();
 
-    void Awake() => Instance = this;
+    protected void OnEnable() {
+        trackedStatusSet.OnAdd += AddStatus;
+        trackedStatusSet.OnRemove += RemoveStatus;
+    }
+
+    protected void OnDisable() {
+        trackedStatusSet.OnAdd -= AddStatus;
+        trackedStatusSet.OnRemove -= RemoveStatus;
+    }
 
     public bool IsTrackingStatus(Status status) => statusTrackerMap.ContainsKey(status);
 
-    public void AddStatus(Status status) {
+    void AddStatus(Status status) {
         if (IsTrackingStatus(status)) return; // avoid double adding
         if (statusTrackerPool.Count == 0) ExpandPool(poolExpansionRate);
 
@@ -29,7 +35,7 @@ public class HealthBarManager : MonoBehaviour {
         statusTrackerMap[status] = tracker;
     }
 
-    public void RemoveStatus(Status status) {
+    void RemoveStatus(Status status) {
         if (!IsTrackingStatus(status)) return; //nothing to remove
 
         StatusTracker tracker = statusTrackerMap[status];
