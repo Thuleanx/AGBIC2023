@@ -3,6 +3,7 @@ using AI;
 using CombatSystem;
 using UnityEngine;
 using Utils;
+using System.Collections;
 
 namespace GhostNirvana {
 public class ApplianceStateMachine : StateMachine<Appliance, Appliance.States> {
@@ -18,6 +19,7 @@ public class ApplianceStateMachine : StateMachine<Appliance, Appliance.States> {
     public override void Construct() {
         AssignState<Appliance.ApplianceIdle>(Appliance.States.Idle);
         AssignState<Appliance.AppliancePossessed>(Appliance.States.Possessed);
+        AssignState<Appliance.ApplianceCollecting>(Appliance.States.Collecting);
     }
 }
 
@@ -27,11 +29,13 @@ public class ApplianceIdle : State<Appliance, Appliance.States> {
     public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.OnPossessorDetected.AddListener(OnPossessionDetected);
         agent.PossessionDetection.enabled = true;
+        agent.FreezePosition = true;
     }
 
     public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.OnPossessorDetected.RemoveListener(OnPossessionDetected);
         agent.PossessionDetection.enabled = false;
+        agent.FreezePosition = false;
     }
 
     void OnPossessionDetected(Appliance agent, StateMachine<Appliance, States> stateMachine, Entity possessor) {
@@ -76,6 +80,18 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
             // We directly retrieve and transition the state. This is not ideal
             agent.StateMachine.SetState(States.Idle);
         }
+    }
+}
+
+public class ApplianceCollecting : State<Appliance, Appliance.States> {
+    public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
+        agent.FreezePosition = true;
+    }
+
+    public override IEnumerator Coroutine(StateMachine<Appliance, States> stateMachine, Appliance agent) {
+        yield return null;
+        agent.FreezePosition = false;
+        agent.Dispose();
     }
 }
 

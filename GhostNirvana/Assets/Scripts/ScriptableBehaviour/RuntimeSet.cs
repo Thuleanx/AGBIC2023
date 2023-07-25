@@ -16,13 +16,15 @@ public class RuntimeSet<T> : ScriptableObject, ISerializationCallbackReceiver, I
     public event ItemHandler OnRemove;
 
     public void Add(T item) {
-        OnAdd?.Invoke(item);
-        collection.Add(item);
+        if (collection.Add(item)) {
+            OnAdd?.Invoke(item);
+        }
     }
 
     public void Remove(T item) {
-        OnRemove?.Invoke(item);
-        collection.Remove(item);
+        if (collection.Remove(item)) {
+            OnRemove?.Invoke(item);
+        }
     }
 
     public void OnAfterDeserialize() => Reset();

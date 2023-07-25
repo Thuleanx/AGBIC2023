@@ -191,8 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackResistance: 8
+  FreezePosition: 0
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
-  droppedExperienceGem: {fileID: 3182036718300943621, guid: 6d8756ef015ae97498871bffcf5f73d8, type: 3}
+  droppedExperienceGem: {fileID: 725140305560010594, guid: 6d8756ef015ae97498871bffcf5f73d8, type: 3}
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
 --- !u!114 &6133858924970157906
 MonoBehaviour:

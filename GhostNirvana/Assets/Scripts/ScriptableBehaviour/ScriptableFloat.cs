@@ -7,4 +7,9 @@ public class ScriptableFloat : ScriptableObject {
     public float Value;
 }
 
+public class Scriptable<T> : ScriptableObject {
+    [field:System.NonSerialized]
+    public T Value;
+}
+
 }

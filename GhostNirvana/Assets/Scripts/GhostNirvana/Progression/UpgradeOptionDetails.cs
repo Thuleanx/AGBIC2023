@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
 
-namespace GhostNirvana {
+namespace GhostNirvana.Upgrade {
 
 public class UpgradeOptionDetails : MonoBehaviour {
     [SerializeField, Required] RectTransform upgradeOptionsParent;

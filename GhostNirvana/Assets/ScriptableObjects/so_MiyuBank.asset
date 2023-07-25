@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89eea5d63c2e3d4e9075c3cfecadbe1, type: 3}
-  m_Name: Miyu.reloadRate
+  m_Script: {fileID: 11500000, guid: 9446b2c5213a94e428a97678f1058878, type: 3}
+  m_Name: so_MiyuBank
   m_EditorClassIdentifier: 
-  BaseValue: 1

@@ -3,7 +3,7 @@ using TMPro;
 using System;
 using ScriptableBehaviour;
 
-namespace GhostNirvana {
+namespace GhostNirvana.UI {
 
 [RequireComponent(typeof(TMP_Text))]
 public class LimitedResourceTextDisplay : MonoBehaviour {

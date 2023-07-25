@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using CombatSystem;
 using NaughtyAttributes;
-using System.Collections.Generic;
 
 namespace GhostNirvana {
 
@@ -13,12 +12,15 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     public enum States {
         Idle,
-        Possessed
+        Possessed,
+        Collecting
     }
 
     public struct Input {
         public Vector3 desiredMovement;
     };
+
+	[SerializeField] MovableAgentRuntimeSet allAppliances;
 
     #region Components
     [field:SerializeField, Required]
@@ -32,6 +34,9 @@ public partial class Appliance : Enemy<Appliance.Input> {
     UnityEvent<Appliance, StateMachine<Appliance, Appliance.States>, Entity> OnPossessorDetected = new UnityEvent<Appliance, StateMachine<Appliance, States>, Entity>();
 
     [SerializeField] StatusRuntimeSet allEnemyStatus;
+    [field:SerializeField] public int Price {get; private set; }
+
+    public bool IsPossessed => StateMachine.State == States.Possessed;
 
     protected override void Awake() {
         base.Awake();
@@ -40,12 +45,15 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     protected override void OnEnable() {
         base.OnEnable();
+		allAppliances.Add(this);
         IHurtResponder.ConnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
+        FreezePosition = true;
     }
 
     protected override void OnDisable() {
         base.OnDisable();
+		allAppliances.Remove(this);
         IHurtResponder.DisconnectChildrenHurtboxes(this);
         IHitResponder.ConnectChildrenHitboxes(this);
     }
@@ -56,6 +64,8 @@ public partial class Appliance : Enemy<Appliance.Input> {
         Entity entity = other.GetComponentInParent<Entity>();
         OnPossessorDetected?.Invoke(this, StateMachine, entity);
     }
+
+    public void ApplianceCollectorOnly_Collect() => StateMachine.SetState(States.Collecting);
 }
 
 }

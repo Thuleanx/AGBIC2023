@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using CombatSystem;
 
-namespace GhostNirvana {
+namespace GhostNirvana.UI {
 
 public class StatusTracker : MonoBehaviour {
     Status _trackingStatus = null;

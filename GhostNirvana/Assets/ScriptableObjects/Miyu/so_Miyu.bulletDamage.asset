@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f89eea5d63c2e3d4e9075c3cfecadbe1, type: 3}
-  m_Name: Miyu.bulletKnockback
+  m_Name: so_Miyu.bulletDamage
   m_EditorClassIdentifier: 
-  BaseValue: 2
+  BaseValue: 1
   AdditiveScale: 0
   MultiplicativeScale: 1

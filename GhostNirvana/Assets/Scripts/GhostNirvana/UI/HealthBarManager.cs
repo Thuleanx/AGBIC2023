@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CombatSystem;
 
-namespace GhostNirvana {
+namespace GhostNirvana.UI {
 
 public class HealthBarManager : MonoBehaviour {
     [SerializeField] StatusTracker statusTrackerPrefab;

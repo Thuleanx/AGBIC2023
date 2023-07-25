@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ScriptableBehaviour;
 
-namespace GhostNirvana {
+namespace GhostNirvana.UI {
 
 [RequireComponent(typeof(RectTransform))]
 [RequireComponent(typeof(Slider))]

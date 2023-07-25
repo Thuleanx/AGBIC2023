@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89eea5d63c2e3d4e9075c3cfecadbe1, type: 3}
-  m_Name: Miyu.bulletSpeed
+  m_Script: {fileID: 11500000, guid: 811866521e645184c88531d50a8206c0, type: 3}
+  m_Name: so_Miyu.health
   m_EditorClassIdentifier: 
-  BaseValue: 20
+  BaseMaxValue: 15

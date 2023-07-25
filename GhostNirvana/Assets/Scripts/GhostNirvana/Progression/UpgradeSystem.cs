@@ -1,13 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 
-namespace GhostNirvana {
+namespace GhostNirvana.Upgrade {
 
 public class UpgradeSystem : MonoBehaviour {
     [SerializeField] LinearLimiterFloat experience;
+    [SerializeField] LinearFloat applianceCollectionAmount;
+    [SerializeField] Bank bank;
     [SerializeField, Required] RectTransform levelUpOptionPanel;
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
@@ -15,7 +16,11 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField, ReorderableList]
     List<Buff> buffOptions = new List<Buff>();
 
+    ApplianceCollector collector;
+
     void Awake() {
+        collector = GetComponentInChildren<ApplianceCollector>();
+
         upgradeOptions.AddRange(GetComponentsInChildren<UpgradeOption>());
         levelUpOptionPanel.gameObject.SetActive(false);
     }
@@ -37,6 +42,8 @@ public class UpgradeSystem : MonoBehaviour {
         experience.Value -= experience.Limiter;
         experience.MultiplicativeScale *= 1.2f;
         experience.Recompute();
+
+        collector.Collect((int) applianceCollectionAmount.Value);
 
         Time.timeScale = 0;
     }

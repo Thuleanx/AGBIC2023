@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_Ghosty
       objectReference: {fileID: 0}
+    - target: {fileID: 6133858924970157919, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      propertyPath: droppedExperienceGem
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
 --- !u!1 &1892887992
@@ -708,6 +712,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 585319038123581643, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642084467023147414, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642084467023147414, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455964420102519180, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455964420102519180, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
