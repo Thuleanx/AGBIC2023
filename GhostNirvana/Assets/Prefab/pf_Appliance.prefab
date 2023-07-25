@@ -246,10 +246,10 @@ MonoBehaviour:
   knockbackResistance: 8
   FreezePosition: 0
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
+  allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
   <PossessionDetection>k__BackingField: {fileID: 1459352399930716331}
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
-  allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
-  <Price>k__BackingField: 0
+  <Price>k__BackingField: 200
 --- !u!114 &1459352401194146335
 MonoBehaviour:
   m_ObjectHideFlags: 0
