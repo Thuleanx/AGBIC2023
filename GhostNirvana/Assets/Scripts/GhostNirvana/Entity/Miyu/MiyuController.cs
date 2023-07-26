@@ -47,8 +47,8 @@ public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
     Vector3 MouseScreenToWorld(Vector2 mousePosScreenSpace) {
         Camera cam = Camera.main;
         Ray ray = Camera.main.ScreenPointToRay(mousePosSS);
-        if (Physics.Raycast(ray, out RaycastHit hit)) 
-            return hit.point;
+        /* if (Physics.Raycast(ray, out RaycastHit hit)) */ 
+        /*     return hit.point; */
 
         Plane plane = new Plane(Vector3.up, miyu ? miyu.BulletSource.position : transform.position);
         if (plane.Raycast(ray, out float dist)) {
