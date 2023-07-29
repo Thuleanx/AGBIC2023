@@ -1447,7 +1447,7 @@
     "m_Group": {
         "m_Id": "afa5592ac6654ef5a5d62ece393639b6"
     },
-    "m_Name": "GetMainLight",
+    "m_Name": "SSG_GetMainLight",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -4111,7 +4111,7 @@
     "m_Group": {
         "m_Id": "b3a8adc67e9f4258b349254de19fc9cb"
     },
-    "m_Name": "GetMainLight",
+    "m_Name": "SSG_GetMainLight",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {

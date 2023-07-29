@@ -61,7 +61,7 @@ Material:
     m_Floats:
     - _DepthThreshold: 1.5
     - _NormalThreshold: 0.4
-    - _OutlineScale: 1
+    - _OutlineScale: 1.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RobertCrossMultiplier: 100

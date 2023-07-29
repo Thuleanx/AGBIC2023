@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: e13a0d5f10350dc47be0ffcf2ab323d6
+guid: acea91aa2dd93564e98c12ea64516d90
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: salt_gun_mat
+    second: {fileID: 2100000, guid: ac95c505eca5aa8418de83c869821ed6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

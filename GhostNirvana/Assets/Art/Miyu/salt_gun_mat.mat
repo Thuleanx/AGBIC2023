@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MiyuMat
+  m_Name: salt_gun_mat
   m_Shader: {fileID: -6465566751694194690, guid: aaec17b689ab3a54fb373b8fa5c82674, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_F3DCCE25:
-        m_Texture: {fileID: 2800000, guid: dc74d63786887b84189aa5552b7b6298, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7c154e3048c8a204e9190714c6115e81, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_C324C8F5_Texture_1:
