@@ -19,6 +19,7 @@ namespace GhostNirvana {
         [SerializeField, ReorderableList] List<LinearBuff<LinearFloat>> linearFloatBuffs;
         [SerializeField, ReorderableList] List<LinearBuff<LinearLimiterFloat>> linearLimiterFloatBuffs;
         [field:SerializeField, ResizableTextArea] public string description {get; private set; }
+        [field:SerializeField] public float cost {get; private set; }
 
         public void Apply() {
             foreach (LinearBuff<LinearFloat> buff in linearFloatBuffs) {

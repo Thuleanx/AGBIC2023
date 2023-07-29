@@ -5,7 +5,8 @@ namespace GhostNirvana.Upgrade {
 
 [RequireComponent(typeof(Button))]
 public class UpgradeOption : MonoBehaviour {
-    [SerializeField] public Buff Buff {get; private set; }
+    public Buff Buff {get; private set; }
+    [field:SerializeField] public Bank PlayerBank {get; private set; }
     UpgradeSystem upgradeSystem;
 
     public delegate void HoverHandler(UpgradeOption option);
@@ -29,6 +30,7 @@ public class UpgradeOption : MonoBehaviour {
     public void Initialize(Buff buff) {
         this.Buff = buff;
         // do some other stuff here
+        button.interactable = CanPurchase;
     }
 
     void OnSelect() {
@@ -36,6 +38,7 @@ public class UpgradeOption : MonoBehaviour {
         upgradeSystem?.EndLevelUpSequence();
     }
 
+    public bool CanPurchase => PlayerBank && Buff && PlayerBank.Value >= Buff.cost;
     public void EventTriggerOnly_OnHoverEnter() => OnHoverEnter?.Invoke(this);
     public void EventTriggerOnly_OnHoverExit() => OnHoverExit?.Invoke(this);
 }
