@@ -49,6 +49,14 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
             knockbackStrength = 1;
         }
     }
+
+    public void TurnToFace(Vector3 dir, float turnSpeed) {
+        dir.y = 0;
+        if (dir != Vector3.zero) {
+            Quaternion desiredRotation = Quaternion.LookRotation(dir, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, Time.deltaTime * turnSpeed);
+        }
+    }
 }
 
 

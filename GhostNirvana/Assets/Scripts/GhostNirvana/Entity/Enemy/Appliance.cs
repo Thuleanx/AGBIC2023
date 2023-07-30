@@ -35,6 +35,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     [SerializeField] StatusRuntimeSet allEnemyStatus;
     [field:SerializeField] public int Price {get; private set; }
+    [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
 
     public bool IsPossessed => StateMachine.State == States.Possessed;
 

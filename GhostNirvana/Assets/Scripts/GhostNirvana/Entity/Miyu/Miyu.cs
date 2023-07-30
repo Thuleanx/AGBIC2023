@@ -78,14 +78,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     protected void Update() => PerformUpdate(StateMachine.RunUpdate);
 
 
-    public void TurnToFace(Vector3 dir, float turnSpeed) {
-        dir.y = 0;
-        if (dir != Vector3.zero) {
-            Quaternion desiredRotation = Quaternion.LookRotation(dir, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, Time.deltaTime * turnSpeed);
-        }
-    }
-
     public void ShootProjectile(Vector3 targetDirection) {
         Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
                 projectilePrefab, BulletSource.position, BulletSource.rotation);

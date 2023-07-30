@@ -15,6 +15,7 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
 
     [SerializeField, ShowAssetPreview] Transform droppedExperienceGem;
     [SerializeField] StatusRuntimeSet allEnemyStatus;
+    [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
 
     public struct Input {
         public Vector3 desiredMovement;
@@ -54,6 +55,10 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         float hitboxCheckingDistance = 2;
         bool closeToPlayer = (Miyu.Instance.transform.position - transform.position).sqrMagnitude < hitboxCheckingDistance;
         if (closeToPlayer) CheckForHits();
+
+        bool isNotStationary = Velocity != Vector3.zero;
+        if (isNotStationary)
+            TurnToFace(Velocity, turnSpeed);
     }
 
     void OnDeath(Status status) {

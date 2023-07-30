@@ -65,6 +65,10 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         if (closeToPlayer)
             agent.CheckForHits();
 
+        bool isNotStationary = agent.Velocity != Vector3.zero;
+        if (isNotStationary)
+            agent.TurnToFace(agent.Velocity, agent.turnSpeed);
+
         return null;
     }
 
