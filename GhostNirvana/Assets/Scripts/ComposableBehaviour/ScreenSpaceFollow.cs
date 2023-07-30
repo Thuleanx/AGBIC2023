@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using Utils;
 
 namespace ComposableBehaviour {
 
@@ -25,13 +26,11 @@ public class ScreenSpaceFollow : MonoBehaviour {
     void LateUpdate() {
         if (!Target) return;
 
-        Vector2 ViewportPosition=Camera.main.WorldToViewportPoint(Target.transform.position + offset);
-        Vector2 WorldObject_ScreenPosition=new Vector2(
-            ((ViewportPosition.x*canvasRectTransform.sizeDelta.x)-(canvasRectTransform.sizeDelta.x*0.5f)),
-            ((ViewportPosition.y*canvasRectTransform.sizeDelta.y)-(canvasRectTransform.sizeDelta.y*0.5f)));
-
-        // Set
-        rectTransform.anchoredPosition = WorldObject_ScreenPosition;
+        rectTransform.anchoredPosition = Calc.AnchorPositionFromWorld(
+            camera: camera,
+            canvasRectTransform: canvasRectTransform,
+            worldPoint: Target.transform.position + offset
+        );
     }
 }
 

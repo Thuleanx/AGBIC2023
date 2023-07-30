@@ -161,7 +161,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackResistance: 8
   FreezePosition: 0
+  _OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
+  allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
   allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
   <PossessionDetection>k__BackingField: {fileID: 1459352399930716331}
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}

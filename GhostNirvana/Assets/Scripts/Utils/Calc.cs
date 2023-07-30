@@ -39,6 +39,15 @@ namespace Utils {
 			Gizmos.matrix = oldMatrix;
 			Gizmos.color = oldColor;
 		}
-			
+
+        public static Vector2 AnchorPositionFromWorld(
+            Camera camera, RectTransform canvasRectTransform, Vector3 worldPoint) {
+
+            Vector2 ViewportPosition=camera.WorldToViewportPoint(worldPoint);
+            Vector2 WorldObject_ScreenPosition=new Vector2(
+                ((ViewportPosition.x*canvasRectTransform.sizeDelta.x)-(canvasRectTransform.sizeDelta.x*0.5f)),
+                ((ViewportPosition.y*canvasRectTransform.sizeDelta.y)-(canvasRectTransform.sizeDelta.y*0.5f)));
+            return WorldObject_ScreenPosition;
+        }
 	}
 }

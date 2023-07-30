@@ -1,5 +1,6 @@
 using Base;
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -52,8 +53,11 @@ public interface IHurtResponder {
 }
 
 public interface IHurtable {
-    public void TakeDamage(float damageAmount, DamageType damageType, Hit hit)
-        => OnTakeDamage(damageAmount, damageType, hit);
+    public UnityEvent<IHurtable, float, DamageType> OnDamage {get;}
+    public void TakeDamage(float damageAmount, DamageType damageType, Hit hit) {
+        OnTakeDamage(damageAmount, damageType, hit);
+        OnDamage?.Invoke(this, damageAmount, damageType);
+    }
 
     protected void OnTakeDamage(float damageAmount,
                                 DamageType damageType,

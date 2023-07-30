@@ -3,7 +3,27 @@ guid: 52de0c147bdd8c049b4fbb7081151c1e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emissive_mat
+    second: {fileID: 2100000, guid: a8dfcaec884471a43b1b80f143dfbb64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flat_blue_mat
+    second: {fileID: 2100000, guid: 311cddf2a67ec37468cab0e543bd30f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flat_bluedark_mat
+    second: {fileID: 2100000, guid: 3c3a1079c1094a4468dab7d22d577448, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flat_bluemid_mat
+    second: {fileID: 2100000, guid: 01cb0caf52b61054eac0b84acfefac28, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

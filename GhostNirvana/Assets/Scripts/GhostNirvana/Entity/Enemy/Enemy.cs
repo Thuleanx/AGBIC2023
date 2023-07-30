@@ -3,6 +3,7 @@ using UnityEngine;
 using CombatSystem;
 using Base;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 namespace GhostNirvana {
 
@@ -12,7 +13,10 @@ public abstract class Enemy<Input>
     public Entity Owner => this;
     public Status Status { get; private set; }
 
-#region Inherited members
+    [SerializeField] UnityEvent<IHurtable, float, DamageType> _OnDamage;
+    public UnityEvent<IHurtable, float, DamageType> OnDamage => _OnDamage;
+
+    #region Inherited members
     public void RespondToHurt(Hit hit) {
     }
 
@@ -24,6 +28,7 @@ public abstract class Enemy<Input>
 
     List<Hitbox> hitboxes = new List<Hitbox>();
     [SerializeField, Required] MovableAgentRuntimeSet allEnemies;
+    [SerializeField] HurtableRuntimeSet allHurtables;
 
     protected override void Awake() {
         base.Awake();
@@ -32,8 +37,14 @@ public abstract class Enemy<Input>
         hitboxes.AddRange(GetComponentsInChildren<Hitbox>());
     }
 
-    protected virtual void OnEnable() => allEnemies.Add(this);
-    protected virtual void OnDisable() => allEnemies.Remove(this);
+    protected virtual void OnEnable() {
+        allEnemies.Add(this);
+        allHurtables.Add(this);
+    }
+    protected virtual void OnDisable() {
+        allEnemies.Remove(this);
+        allHurtables.Remove(this);
+    }
 
     protected void CheckForHits() {
         foreach (Hitbox hitbox in hitboxes)

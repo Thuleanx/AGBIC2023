@@ -6,6 +6,7 @@ using Danmaku;
 using Base;
 using Utils;
 using ScriptableBehaviour;
+using UnityEngine.Events;
 
 namespace GhostNirvana {
 
@@ -51,6 +52,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
+    [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, float, DamageType> _OnDamage;
     #endregion
 
     Timer iframeHappening;
@@ -58,6 +60,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     public Entity Owner => this;
     public bool IsDead => health.Value == 0;
     public bool HasBullet => magazine ? magazine.Value > 0 : false;
+    public UnityEvent<IHurtable, float, DamageType> OnDamage => _OnDamage;
 
     protected override void Awake() {
 		base.Awake();

@@ -146,6 +146,9 @@ MonoBehaviour:
   reloadRate: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
   pushbackStrengthOnDamage: {fileID: 11400000, guid: f7fad2df61e2ab04fa643ef0d05fb579, type: 2}
   iframeSeconds: 1
+  _OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3751458875445000392
 MonoBehaviour:
   m_ObjectHideFlags: 0
