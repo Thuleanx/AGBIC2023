@@ -17,6 +17,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         Dash,
     }
 
+
     #region Components
     public MiyuStateMachine StateMachine { get; private set; }
     #endregion
@@ -56,6 +57,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
     public Entity Owner => this;
     public bool IsDead => health.Value == 0;
+    public bool HasBullet => magazine ? magazine.Value > 0 : false;
 
     protected override void Awake() {
 		base.Awake();
@@ -74,6 +76,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     }
 
     protected void Update() => PerformUpdate(StateMachine.RunUpdate);
+
 
     public void TurnToFace(Vector3 dir, float turnSpeed) {
         dir.y = 0;

@@ -59,9 +59,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthThreshold: 1.5
+    - _DepthThreshold: 4
     - _NormalThreshold: 0.4
-    - _OutlineScale: 1.5
+    - _OutlineScale: 3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RobertCrossMultiplier: 100
