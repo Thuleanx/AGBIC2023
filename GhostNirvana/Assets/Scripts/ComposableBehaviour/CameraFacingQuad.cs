@@ -16,7 +16,7 @@ public class CameraFacingQuad : MonoBehaviour
         if (camera.orthographic) {
             transform.forward = camera.transform.forward;
         } else {
-            transform.LookAt(camera.transform.position, camera.transform.up);
+            transform.LookAt(transform.position - camera.transform.forward, camera.transform.up);
         }
     }
 }

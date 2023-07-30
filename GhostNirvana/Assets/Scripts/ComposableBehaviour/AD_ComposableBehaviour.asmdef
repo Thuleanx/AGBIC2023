@@ -2,7 +2,8 @@
     "name": "ComposableBehaviour",
     "rootNamespace": "",
     "references": [
-        "GUID:8b79ac0eb3dd8d546bb28751cd579110"
+        "GUID:8b79ac0eb3dd8d546bb28751cd579110",
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

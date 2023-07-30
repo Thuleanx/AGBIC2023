@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using CombatSystem;
+using ComposableBehaviour;
 
 namespace GhostNirvana.UI {
 
@@ -11,17 +12,17 @@ public class StatusTracker : MonoBehaviour {
         get => _trackingStatus; 
         set {
             _trackingStatus = value;
+            if (screenSpaceFollow && _trackingStatus)
+                screenSpaceFollow.Target = _trackingStatus.Owner.transform;
         }
     }
-
-    [SerializeField] float hoverDistance = 2;
+    [SerializeField] ScreenSpaceFollow screenSpaceFollow;
     [SerializeField] Slider healthSlider;
 
     void LateUpdate() {
-        if (_trackingStatus != null) {
-            healthSlider.value = Mathf.Clamp01((float) _trackingStatus.Health / _trackingStatus.BaseStats.MaxHealth);
-            transform.position = _trackingStatus.Owner.transform.position + Vector3.up * hoverDistance;
-        }
+        if (!_trackingStatus) return;
+
+        healthSlider.value = Mathf.Clamp01((float) _trackingStatus.Health / _trackingStatus.BaseStats.MaxHealth);
     }
 }
 
