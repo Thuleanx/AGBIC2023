@@ -56,7 +56,6 @@ public class DamageNumberManager : MonoBehaviour {
     }
 
     void OnDamageTaken(IHurtable hurtable, float damage, DamageType damageType) {
-        Debug.Log("HI");
         if (!(hurtable is MonoBehaviour)) return;
         if (damageNumberPool.Count == 0) Expand(poolExpansionRate);
 

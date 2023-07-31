@@ -28,8 +28,9 @@ public class Hitbox : MonoBehaviour, IHitbox {
             // the hitbox can validate the hit itself before this point
             bool hitValid =
                 hurtbox.ValidateHit(hitData) &&
+                hurtbox.HurtResponder != null &&
                 hurtbox.HurtResponder.ValidateHit(hitData) &&
-                _hitResponder.ValidateHit(hitData);
+                (_hitResponder == null || _hitResponder.ValidateHit(hitData));
 
             if (!hitValid) return;
 

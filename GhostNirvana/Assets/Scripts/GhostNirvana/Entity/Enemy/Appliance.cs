@@ -47,8 +47,6 @@ public partial class Appliance : Enemy<Appliance.Input> {
     protected override void OnEnable() {
         base.OnEnable();
 		allAppliances.Add(this);
-        IHurtResponder.ConnectChildrenHurtboxes(this);
-        IHitResponder.ConnectChildrenHitboxes(this);
         FreezePosition = true;
     }
 
