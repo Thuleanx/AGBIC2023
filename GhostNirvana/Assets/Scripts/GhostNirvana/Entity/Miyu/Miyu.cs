@@ -53,6 +53,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat shield;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat shieldRegenerationRate;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
     [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, float, DamageType> _OnDamage;
     #endregion
@@ -81,7 +83,13 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         IHurtResponder.DisconnectChildrenHurtboxes(this);
     }
 
-    protected void Update() => PerformUpdate(StateMachine.RunUpdate);
+    protected void Update() {
+        PerformUpdate(StateMachine.RunUpdate);
+
+        float deltaTimeMinutes = Time.deltaTime / 60.0f;
+        shield.Value += shieldRegenerationRate.Value * deltaTimeMinutes;
+        shield.CheckAndCorrectLimit();
+    }
 
 
     public void ShootProjectile(Vector3 targetDirection) {
@@ -92,9 +100,20 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     }
 
     void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit) {
-        bool killingHit = health.Value > 0 && health.Value <= damageAmount;
-        health.Value -= damageAmount;
-        health.CheckAndCorrectLimit();
+        if (IsDead) return;
+
+        Debug.Log(shield.Value);
+        if (shield.Value >= 1) {
+            shield.Value -= 1;
+            shield.CheckAndCorrectLimit();
+        } else {
+            bool killingHit = health.Value > 0 && health.Value <= damageAmount;
+            health.Value -= damageAmount;
+            health.CheckAndCorrectLimit();
+
+            if (killingHit) OnDeath();
+        }
+
 
         void PushAllEnemiesAway() {
             foreach (MovableAgent enemy in allEnemies) {
@@ -108,7 +127,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         PushAllEnemiesAway();
 
         iframeHappening = iframeSeconds;
-        if (killingHit) OnDeath();
     }
 
     void OnDeath() {

@@ -145,6 +145,8 @@ MonoBehaviour:
   magazine: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
   reloadRate: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
   pushbackStrengthOnDamage: {fileID: 11400000, guid: f7fad2df61e2ab04fa643ef0d05fb579, type: 2}
+  shield: {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
+  shieldRegenerationRate: {fileID: 11400000, guid: 93c2ead6074c5114c8e789cc5146e879, type: 2}
   iframeSeconds: 1
   _OnDamage:
     m_PersistentCalls:

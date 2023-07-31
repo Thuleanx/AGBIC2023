@@ -344,10 +344,15 @@ MonoBehaviour:
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
   levelUpOptionPanel: {fileID: 7081903185391919320}
   buffOptions:
+  - {fileID: 11400000, guid: 55caa3d28019dc440ada6e9772b9f3af, type: 2}
   - {fileID: 11400000, guid: a7acc0a1a55cb274fa0904f5c61da5a8, type: 2}
   - {fileID: 11400000, guid: 4e360a41bae619647b1832bb9d829f05, type: 2}
+  - {fileID: 11400000, guid: 44d39ac41c7973e42ba41e900b292814, type: 2}
+  - {fileID: 11400000, guid: 7ce057b4b1e4eef448d6735c8cb31070, type: 2}
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
+  - {fileID: 11400000, guid: 4ef0635f9410543409e2fa6e81bdd918, type: 2}
   - {fileID: 11400000, guid: 840ccf443b36a71449c0a141e851a785, type: 2}
+  - {fileID: 11400000, guid: e2e453861c546774992002e6a1dd6950, type: 2}
   - {fileID: 11400000, guid: 82324e84283a4a44cbaf90be61ecd87f, type: 2}
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
 --- !u!1001 &2381328518189803347
