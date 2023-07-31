@@ -18,13 +18,14 @@ public interface IHitResponder {
     public void RespondToHit(Hit hit);
 
     public static void ConnectChildrenHitboxes<T>(T responder) where T : MonoBehaviour, IHitResponder {
-        foreach (IHitbox hurtbox in responder.GetComponentsInChildren<IHitbox>())
-            hurtbox.HitResponder = responder;
+        foreach (IHitbox hitbox in responder.GetComponentsInChildren<IHitbox>())
+            hitbox.HitResponder = responder;
     }
 
     public static void DisconnectChildrenHitboxes<T>(T responder) where T : MonoBehaviour, IHitResponder {
-        foreach (IHitbox hurtbox in responder.GetComponentsInChildren<IHitbox>())
-            hurtbox.HitResponder = responder;
+        foreach (IHitbox hitbox in responder.GetComponentsInChildren<IHitbox>())
+            if (hitbox.HitResponder == responder)
+                hitbox.HitResponder = null;
     }
 }
 
@@ -48,7 +49,8 @@ public interface IHurtResponder {
 
     public static void DisconnectChildrenHurtboxes<T>(T responder) where T : MonoBehaviour, IHurtResponder {
         foreach (IHurtbox hurtbox in responder.GetComponentsInChildren<IHurtbox>())
-            hurtbox.HurtResponder = responder;
+            if (hurtbox.HurtResponder == responder)
+                hurtbox.HurtResponder = null;
     }
 }
 

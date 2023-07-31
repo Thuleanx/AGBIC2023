@@ -79,7 +79,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         agent.Velocity = Vector3.zero;
         agent.allEnemyStatus.Remove(agent.Status);
         IHurtResponder.DisconnectChildrenHurtboxes(agent);
-        IHitResponder.ConnectChildrenHitboxes(agent);
+        IHitResponder.DisconnectChildrenHitboxes(agent);
     }
 
     void OnDeath(Status status) {

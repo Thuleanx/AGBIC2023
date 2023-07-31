@@ -54,7 +54,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
         base.OnDisable();
 		allAppliances.Remove(this);
         IHurtResponder.DisconnectChildrenHurtboxes(this);
-        IHitResponder.ConnectChildrenHitboxes(this);
+        IHitResponder.DisconnectChildrenHitboxes(this);
     }
 
     protected void Update() => PerformUpdate(StateMachine.RunUpdate);
