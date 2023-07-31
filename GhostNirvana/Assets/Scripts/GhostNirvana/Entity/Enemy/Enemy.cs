@@ -37,7 +37,8 @@ public abstract class Enemy<Input>
         hitboxes.AddRange(GetComponentsInChildren<Hitbox>());
     }
 
-    protected virtual void OnEnable() {
+    protected override void OnEnable() {
+		base.OnEnable();
         allEnemies.Add(this);
         allHurtables.Add(this);
     }

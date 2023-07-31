@@ -23,6 +23,7 @@ public class MiyuStateMachine : StateMachine<Miyu, Miyu.States> {
 
     public override void Construct() {
         AssignState<Miyu.MiyuGrounded>(Miyu.States.Grounded);
+        AssignState<Miyu.MiyuDead>(Miyu.States.Dead);
     }
 }
 
@@ -77,6 +78,13 @@ public class MiyuGrounded : State<Miyu, Miyu.States> {
         return null;
     }
 }
+
+public class MiyuDead : State<Miyu, Miyu.States> {
+    public override void Begin(StateMachine<Miyu, States> stateMachine, Miyu agent) {
+        agent.Velocity = Vector3.zero;
+    }
+}
+
 
 }
 

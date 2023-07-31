@@ -25,9 +25,11 @@ public class MiyuAnimator : MonoBehaviour {
     protected void Update() {
         switch (currentState) {
             case AnimationState.Normal:
+                if (Miyu.IsDead) currentState = AnimationState.Dead;
                 if (!Miyu.HasBullet) currentState = AnimationState.Reload;
                 break;
             case AnimationState.Reload:
+                if (Miyu.IsDead) currentState = AnimationState.Dead;
                 if (Miyu.HasBullet) currentState = AnimationState.Normal;
                 break;
             case AnimationState.Dead:

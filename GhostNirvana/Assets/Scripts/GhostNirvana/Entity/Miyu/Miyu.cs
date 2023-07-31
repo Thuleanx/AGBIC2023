@@ -7,6 +7,7 @@ using Base;
 using Utils;
 using ScriptableBehaviour;
 using UnityEngine.Events;
+using System.Collections;
 
 namespace GhostNirvana {
 
@@ -16,6 +17,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     public enum States {
         Grounded,
         Dash,
+        Dead
     }
 
 
@@ -70,7 +72,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         health.Value = health.Limiter;
     }
 
-    protected void OnEnable() {
+    protected override void OnEnable() {
+		base.OnEnable();
         IHurtResponder.ConnectChildrenHurtboxes(this);
     }
 
@@ -108,11 +111,17 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         if (killingHit) OnDeath();
     }
 
-    void OnDeath() => Dispose();
+    void OnDeath() {
+        StateMachine.SetState(States.Dead);
+    }
 
     public bool ValidateHit(Hit hit) => !IsDead && !iframeHappening;
     public void RespondToHurt(Hit hit) { }
 
+    protected override IEnumerator IDispose() {
+        // never actually disposes of the player
+        while (true) yield return null;
+    }
 }
 
 }
