@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1e592358451bc4a81a491f8351b683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviation: {x: 0.9, y: 1.1111112}
+  deviation: {x: 0.8, y: 1.25}
 --- !u!4 &4118818246502942364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}

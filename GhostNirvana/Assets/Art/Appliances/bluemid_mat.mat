@@ -64,7 +64,7 @@ Material:
     - Color_607650DC: {r: 0, g: 1, b: 0.81982064, a: 0}
     - Color_7FC30CF5: {r: 0, g: 0, b: 0, a: 0}
     - Color_F22D68E6: {r: 0.4669811, g: 0.89412755, b: 1, a: 1}
-    - _Color: {r: 0.16153437, g: 0.6226415, b: 0.6179312, a: 0}
+    - _Color: {r: 0.16580634, g: 0.509434, b: 0.509434, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4163736341281173171
 MonoBehaviour:
