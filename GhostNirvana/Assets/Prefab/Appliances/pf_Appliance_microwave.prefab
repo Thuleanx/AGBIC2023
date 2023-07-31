@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_Appliance_microwave
       objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: <Anim>k__BackingField
+      value: 
+      objectReference: {fileID: 6914615833498341152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
 --- !u!4 &1115968810202850639 stripped
@@ -147,3 +151,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc6aaa30cc3a7849bd9845e490c036c, type: 3}
+--- !u!1 &1728668877532834400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4fc6aaa30cc3a7849bd9845e490c036c, type: 3}
+  m_PrefabInstance: {fileID: 1962477616306001713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6914615833498341152
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728668877532834400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5ada3fb42d5490047ba96f53a8e0607a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -85,6 +85,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 499a0d7b5111a7243a8f45079b929b71, type: 3}
+--- !u!1 &5065681669460719114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 499a0d7b5111a7243a8f45079b929b71, type: 3}
+  m_PrefabInstance: {fileID: 5372094457269504859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6281279888481865189
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5065681669460719114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: e73d46bc33e68b941823439839fefcd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8278212239668654237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,8 +163,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459352401194146331, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_Name
-      value: pf_Appliance (1)
+      value: pf_Appliance_pressureCooker
       objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: <Anim>k__BackingField
+      value: 
+      objectReference: {fileID: 6281279888481865189}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
 --- !u!4 &7395675208083303045 stripped

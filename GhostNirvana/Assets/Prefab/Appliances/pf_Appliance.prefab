@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 1459352401194146335}
   - component: {fileID: 7463702613677836344}
   - component: {fileID: 6716275758769079150}
+  - component: {fileID: 7709066039620215551}
   m_Layer: 26
   m_Name: pf_Appliance
   m_TagString: Untagged
@@ -213,6 +214,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d96077c03e4554384ac311301a01a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7709066039620215551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459352401194146331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294fe9c1f5a9b4347a12ff23722e92df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Anim>k__BackingField: {fileID: 0}
 --- !u!1 &5820378184573814531
 GameObject:
   m_ObjectHideFlags: 0

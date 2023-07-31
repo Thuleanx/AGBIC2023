@@ -58,8 +58,6 @@ public class DamageNumber : Entity {
         canvasGroup.alpha = 1;
         text.transform.localScale = Vector3.zero;
 
-        gameObject.SetActive(true);
-
         animSequence = DOTween.Sequence();
 
         float appearDuration = Mathx.RandomRange(appearDurationRange.x, appearDurationRange.y);

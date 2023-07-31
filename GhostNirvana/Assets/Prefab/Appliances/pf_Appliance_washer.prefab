@@ -85,6 +85,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3ac2370fa7a2ec4bb1284440a3088df, type: 3}
+--- !u!1 &455350233423073589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3ac2370fa7a2ec4bb1284440a3088df, type: 3}
+  m_PrefabInstance: {fileID: 761340669181553764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5544434596052971593
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455350233423073589}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 9f09c6b56dddf7f4e8650af5109bccc4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7314164528837655156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_Appliance_washer
       objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: <Anim>k__BackingField
+      value: 
+      objectReference: {fileID: 5544434596052971593}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
 --- !u!4 &8196983042958106732 stripped

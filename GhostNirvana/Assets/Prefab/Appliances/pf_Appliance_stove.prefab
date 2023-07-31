@@ -73,6 +73,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7804d41a3dfd30343b1c253c70af317a, type: 3}
+--- !u!1 &4898130423655545713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7804d41a3dfd30343b1c253c70af317a, type: 3}
+  m_PrefabInstance: {fileID: 5708539554723038752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5008954005413617721
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898130423655545713}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f3d8c93526b11e54a9ccefd4fb2b2de7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5708539555044743141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,8 +151,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459352401194146331, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_Name
-      value: pf_Appliance
+      value: pf_Appliance_stove
       objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: <Anim>k__BackingField
+      value: 
+      objectReference: {fileID: 5008954005413617721}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
 --- !u!4 &6591131562320793085 stripped
