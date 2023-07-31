@@ -142,7 +142,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Anim>k__BackingField: {fileID: 0}
+  emissiveMaterial: {fileID: 2100000, guid: a8dfcaec884471a43b1b80f143dfbb64, type: 2}
 --- !u!1 &5820378184573814531
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +272,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
+  m_Radius: 0.6
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3296169731598850210
 MonoBehaviour:

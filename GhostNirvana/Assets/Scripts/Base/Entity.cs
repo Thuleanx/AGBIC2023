@@ -13,6 +13,7 @@ public abstract class Entity : MonoBehaviour {
 
     public Coroutine Dispose() {
         if (disposing) return null;
+		disposing = true;
         return StartCoroutine(IDispose());
     }
 
