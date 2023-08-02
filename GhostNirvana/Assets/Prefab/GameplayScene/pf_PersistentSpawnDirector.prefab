@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7501924698092218979}
-  - component: {fileID: 7501924698092218978}
+  - component: {fileID: 495403030364050797}
   m_Layer: 0
   m_Name: pf_PersistentSpawnDirector
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7501924698092218978
+--- !u!114 &495403030364050797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,58 +41,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 7501924698092218976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9115d4c5f6f0140a0eb3558e294362, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b6db9d9a8e1d554b9c685629ccc1c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnIntervalsPerEnemy:
-  - <name>k__BackingField: Basic Ghosty
-    <enemy>k__BackingField: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
-    <baseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
-    <spawnWeightOverTime>k__BackingField:
+  timeElapsed: {fileID: 11400000, guid: e1e23ffdc95c2d7439c0cad5656bb246, type: 2}
+  allWaves:
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+      weight: 1
+    spawnFrequency:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0.998253
+        inSlope: 115.560234
+        outSlope: 115.560234
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
+        outWeight: 0.024972253
+      - serializedVersion: 3
+        time: 1
+        value: 39.95651
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 0
       m_PostInfinity: 2
-      m_RotationOrder: 4
-  spawnFrequencyOverTime:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 15.048458
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+      m_RotationOrder: 0
+    duration: 1

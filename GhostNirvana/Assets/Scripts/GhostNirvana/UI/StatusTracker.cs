@@ -22,7 +22,7 @@ public class StatusTracker : MonoBehaviour {
     void LateUpdate() {
         if (!_trackingStatus) return;
 
-        healthSlider.value = Mathf.Clamp01((float) _trackingStatus.Health / _trackingStatus.BaseStats.MaxHealth);
+        healthSlider.value = Mathf.Clamp01((float) _trackingStatus.Health / _trackingStatus.BaseStatsHolder.Stats.MaxHealth);
     }
 }
 

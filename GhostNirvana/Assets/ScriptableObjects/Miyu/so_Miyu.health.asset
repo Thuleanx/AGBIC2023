@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811866521e645184c88531d50a8206c0, type: 3}
   m_Name: so_Miyu.health
   m_EditorClassIdentifier: 
-  BaseMaxValue: 15
+  BaseMaxValue: 5
+  AdditiveScale: 0
+  MultiplicativeScale: 1
+  Limiter: 5

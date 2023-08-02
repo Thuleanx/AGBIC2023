@@ -35,7 +35,7 @@ public class UpgradeOption : MonoBehaviour {
 
     void OnSelect() {
         Buff?.Apply();
-        upgradeSystem?.EndLevelUpSequence();
+        upgradeSystem?.EndLevelUpSequence(this.Buff);
     }
 
     public bool CanPurchase => PlayerBank && Buff && PlayerBank.Value >= Buff.cost;

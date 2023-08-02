@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 6133858924970157919}
   - component: {fileID: 6133858924970157906}
   - component: {fileID: 7522441239902041237}
+  - component: {fileID: 8832635510226632379}
   m_Layer: 28
   m_Name: pf_Ghosty
   m_TagString: Untagged
@@ -224,12 +225,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BaseStats>k__BackingField: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+  <BaseStatsHolder>k__BackingField: {fileID: 8832635510226632379}
   <Health>k__BackingField: 0
   Owner: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8832635510226632379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133858924970157918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca342b911653ec44a0d235b1fe5395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
 --- !u!1001 &4513242490702782839
 PrefabInstance:
   m_ObjectHideFlags: 0

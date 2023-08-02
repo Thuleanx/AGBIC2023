@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7463702613677836344}
   - component: {fileID: 6716275758769079150}
   - component: {fileID: 7709066039620215551}
+  - component: {fileID: 7683682885463619796}
   m_Layer: 26
   m_Name: pf_Appliance
   m_TagString: Untagged
@@ -196,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482425626d8df1148bc0596965774dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BaseStats>k__BackingField: {fileID: 11400000, guid: 22cca6200150d7349ac6ddf67a21174c, type: 2}
+  <BaseStatsHolder>k__BackingField: {fileID: 7683682885463619796}
   <Health>k__BackingField: 0
   Owner: {fileID: 0}
   OnDeath:
@@ -228,6 +229,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Anim>k__BackingField: {fileID: 0}
   emissiveMaterial: {fileID: 2100000, guid: a8dfcaec884471a43b1b80f143dfbb64, type: 2}
+--- !u!114 &7683682885463619796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459352401194146331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca342b911653ec44a0d235b1fe5395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats: {fileID: 11400000, guid: 22cca6200150d7349ac6ddf67a21174c, type: 2}
 --- !u!1 &5820378184573814531
 GameObject:
   m_ObjectHideFlags: 0

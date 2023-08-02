@@ -102,7 +102,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit) {
         if (IsDead) return;
 
-        Debug.Log(shield.Value);
         if (shield.Value >= 1) {
             shield.Value -= 1;
             shield.CheckAndCorrectLimit();

@@ -241,7 +241,7 @@ Canvas:
   m_GameObject: {fileID: 7735727451876084728}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -355,6 +355,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e2e453861c546774992002e6a1dd6950, type: 2}
   - {fileID: 11400000, guid: 82324e84283a4a44cbaf90be61ecd87f, type: 2}
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
+  - {fileID: 11400000, guid: d6d293c1a2e32ce429b6ad44078668a2, type: 2}
+  - {fileID: 11400000, guid: 550abe1ab123a0b4bba20486315c33eb, type: 2}
 --- !u!1001 &2381328518189803347
 PrefabInstance:
   m_ObjectHideFlags: 0

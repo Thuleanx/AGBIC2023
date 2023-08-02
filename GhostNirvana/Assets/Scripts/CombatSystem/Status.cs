@@ -6,12 +6,15 @@ using NaughtyAttributes;
 namespace CombatSystem {
 
 [System.Serializable]
+[RequireComponent(typeof(BaseStatsMonoBehaviour))]
 public class Status : MonoBehaviour {
-    [field:SerializeField, Expandable, Required]
-    public BaseStats BaseStats {
+    [field:SerializeField, Required]
+    public BaseStatsMonoBehaviour BaseStatsHolder {
         get;
         protected set;
     }
+
+    public BaseStats BaseStats => BaseStatsHolder.Stats ?? null;
 
     [field:SerializeField, ReadOnly]
     public float Health {
@@ -24,6 +27,10 @@ public class Status : MonoBehaviour {
     public bool IsDead => Health <= 0;
     public UnityEvent<Status> OnDeath;
 
+    protected void Awake() {
+        BaseStatsHolder = GetComponent<BaseStatsMonoBehaviour>();
+    }
+
     public void TakeDamage(float amount) {
         bool isKillingHit = !IsDead && amount >= Health;
 
@@ -33,7 +40,7 @@ public class Status : MonoBehaviour {
         if (isKillingHit) OnDeath?.Invoke(this);
     }
 
-    public void HealToFull() => Health = BaseStats.MaxHealth;
+    public void HealToFull() => Health = BaseStatsHolder.Stats.MaxHealth;
 }
 
 }

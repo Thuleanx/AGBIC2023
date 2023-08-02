@@ -34,6 +34,8 @@ namespace GhostNirvana {
         [field:SerializeField] public float cost {get; private set; }
         [field:SerializeField] public int purchaseLimit;
 
+        [ReorderableList] public List<Buff> Prerequisites = new List<Buff>();
+
         public void Apply() {
             foreach (LinearBuff<LinearFloat> buff in linearFloatBuffs) {
                 buff.Stat.AdditiveScale += buff.AdditiveAmount;

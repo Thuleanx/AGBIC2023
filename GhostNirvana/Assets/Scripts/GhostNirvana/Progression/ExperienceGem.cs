@@ -22,6 +22,11 @@ public class ExperienceGem : PoolableEntity {
         collider = GetComponent<Collider>();
     }
 
+	protected override void OnEnable() {
+		base.OnEnable();
+		collider.enabled = true;
+	}
+
     void OnTriggerEnter(Collider other) {
         Miyu miyu = other.GetComponentInParent<Miyu>();
         bool isPlayer = miyu;

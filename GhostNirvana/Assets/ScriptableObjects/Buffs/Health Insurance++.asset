@@ -24,3 +24,5 @@ MonoBehaviour:
   <description>k__BackingField: regen in 30, grant 1 shield
   <cost>k__BackingField: 0
   purchaseLimit: 1
+  Prerequisites:
+  - {fileID: 11400000, guid: d6d293c1a2e32ce429b6ad44078668a2, type: 2}
