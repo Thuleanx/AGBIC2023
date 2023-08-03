@@ -50,28 +50,62 @@ MonoBehaviour:
     - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
       baseStats: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
       weight: 1
-    spawnFrequency:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.998253
-        inSlope: 115.560234
-        outSlope: 115.560234
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.024972253
-      - serializedVersion: 3
-        time: 1
-        value: 39.95651
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 0
-      m_PostInfinity: 2
-      m_RotationOrder: 0
+    spawnFrequencyFixed: 100
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 12e07f781df817146a190ae2054b77df, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 150
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 9ab140c86b1025d4facc45ccba494839, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 200
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 6fcb9c340eeef464e87315402163b090, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 300
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 9657c49adb8b9c143817025bab40c45d, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 150
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 657ec74bd14cbf643ae8190bcde14781, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 100
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 5536e3fac9906d94d96276225d7dde7b, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 500
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 6180ccf1b539d594fabc3bd9eb4558ec, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 400
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 3b834d6a5a9b3cd4cb6a7c0d0d17ca85, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 250
+    duration: 1
+  - spawnableMobs:
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: a5fec906611ee8f4499e22eafb2671cb, type: 2}
+      weight: 3
+    - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+      baseStats: {fileID: 11400000, guid: 3b834d6a5a9b3cd4cb6a7c0d0d17ca85, type: 2}
+      weight: 1
+    spawnFrequencyFixed: 1000
     duration: 1

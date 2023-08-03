@@ -17,7 +17,6 @@ namespace GhostNirvana.UI {
             int secondsInMinutes = 60;
             int numMinutes = (int) (timeElapsed.Value);
             int numSeconds = (int) (timeElapsed.Value * secondsInMinutes) % secondsInMinutes;
-            Debug.Log(timeElapsed.Value);
             textMeshProObj.text = String.Format("{0,2:D2}:{1,2:D2}", numMinutes, numSeconds);
         }
     }

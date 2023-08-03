@@ -86,6 +86,7 @@ public class UpgradeSystem : MonoBehaviour {
                         (buffOptions[i], buffOptions[excludeIndex]) = (buffOptions[excludeIndex], buffOptions[i]);
                     break;
                 }
+                value -= weight;
             }
 
             if (!buffChosen) {

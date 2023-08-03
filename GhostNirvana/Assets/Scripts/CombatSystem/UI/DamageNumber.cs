@@ -48,7 +48,7 @@ public class DamageNumber : Entity {
 
     public void Initialize(float damage, Vector3 worldPosition) {
         text.color = color;
-        text.text = String.Format("{0:F2}", damage);
+        text.text = String.Format("{0}", (int) damage);
 
         Vector2 anchorPosition = Calc.AnchorPositionFromWorld(
             camera, canvasRectTransform, worldPosition + worldSpaceOffset) + UnityEngine.Random.insideUnitCircle * randomizedPositionRadius;

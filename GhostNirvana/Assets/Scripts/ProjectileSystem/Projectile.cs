@@ -36,6 +36,8 @@ public class Projectile : PoolableEntity, IHitResponder {
     }
 
     void IHitResponder.RespondToHit(Hit hit) {
+        if (!this.gameObject.activeInHierarchy) return;
+
         Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
         (targetOwner as IHurtable)?.TakeDamage(damage, null, hit);
         (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, rigidbody.velocity.normalized);

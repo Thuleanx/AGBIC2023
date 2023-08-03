@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linearFloatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: bec1f9cf1841c084cb6ac9e4e05f1777, type: 2}
-    <AdditiveAmount>k__BackingField: 0.4
-    <MultiplicativeAmount>k__BackingField: 1
+    <AdditiveAmount>k__BackingField: 1
+    <MultiplicativeAmount>k__BackingField: 1.05
   linearLimiterFloatBuffs: []
   replenishBuffs: []
   <description>k__BackingField: Adds damage to thing
   <cost>k__BackingField: 0
   purchaseLimit: 0
+  Prerequisites: []
