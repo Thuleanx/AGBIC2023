@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 using Optimization;
 using CombatSystem;
 using NaughtyAttributes;
@@ -10,15 +12,32 @@ namespace GhostNirvana {
 public partial class Ghosty : Enemy<Ghosty.Input> {
     public enum States {
         Seek,
+        Possessing,
+        Possessed,
         Death
     }
 
     [SerializeField, ShowAssetPreview] Transform droppedExperienceGem;
     [SerializeField] StatusRuntimeSet allEnemyStatus;
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
+    [BoxGroup("Combat"), SerializeField] float possessionCooldownSeconds = 4.0f;
+
+    UnityEvent<Ghosty, Appliance> OnPossession = new UnityEvent<Ghosty, Appliance>();
+    UnityEvent<Ghosty> OnPossessionFinish = new UnityEvent<Ghosty>();
+
+    Timer possessionCooldownActive;
+
+    public GhostyStateMachine StateMachine {get; private set; }
+    public bool IsPossessing => StateMachine ? StateMachine.State == States.Possessing : false;
+    public bool CanPossess => !IsPossessing && !possessionCooldownActive;
 
     public struct Input {
         public Vector3 desiredMovement;
+    }
+
+    protected override void Awake() {
+        base.Awake();
+        StateMachine = GetComponent<GhostyStateMachine>();
     }
 
     protected override void OnEnable() {
@@ -28,6 +47,9 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         Status.OnDeath.AddListener(OnDeath);
         allEnemyStatus.Add(Status);
         Status.HealToFull();
+
+        possessionCooldownActive = 0.0f;
+        Debug.Log((bool) possessionCooldownActive);
     }
 
 
@@ -39,32 +61,29 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         Status.OnDeath.RemoveListener(OnDeath);
     }
 
-    protected void Update() => PerformUpdate(NormalUpdate);
+    protected void Update() => PerformUpdate(StateMachine.RunUpdate);
 
-    void NormalUpdate() {
-        Vector3 desiredVelocity = input.desiredMovement * Status.BaseStats.MovementSpeed;
-
-        Velocity = Mathx.Damp(Vector3.Lerp, Velocity, desiredVelocity,
-                              (Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
-                              ? Status.BaseStats.DeccelerationAlpha : Status.BaseStats.AccelerationAlpha,
-                              Time.deltaTime);
-
-        if (!Miyu.Instance) return;
-
-        // TODO: rid of magic number
-        float hitboxCheckingDistance = 2;
-        bool closeToPlayer = (Miyu.Instance.transform.position - transform.position).sqrMagnitude < hitboxCheckingDistance;
-        if (closeToPlayer) CheckForHits();
-
-        bool isNotStationary = Velocity != Vector3.zero;
-        if (isNotStationary)
-            TurnToFace(Velocity, turnSpeed);
+    public void ApplianceOnly_Possess(Appliance appliance) {
+        if (IsPossessing) return;
+        OnPossession?.Invoke(this, appliance);
     }
 
     void OnDeath(Status status) {
         // spawn experience gem
         ObjectPoolManager.Instance?.Borrow(gameObject.scene, droppedExperienceGem, transform.position);
-        Dispose();
+
+        if (IsPossessing) {
+            // need to release the appliance
+            Appliance appliance = StateMachine.Blackboard["possessingAppliance"] as Appliance;
+            appliance.OnPossessionInterupt?.Invoke(appliance);
+        }
+
+        StateMachine.SetState(States.Death);
+    }
+
+    public void AnimationOnly_PossessionFinish() {
+        if (!IsPossessing) return;
+        OnPossessionFinish?.Invoke(this);
     }
 }
 

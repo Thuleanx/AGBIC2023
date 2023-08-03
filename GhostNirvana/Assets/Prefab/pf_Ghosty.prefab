@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 6133858924970157906}
   - component: {fileID: 7522441239902041237}
   - component: {fileID: 8832635510226632379}
+  - component: {fileID: 6001126809949737980}
+  - component: {fileID: 1222414426556935372}
   m_Layer: 28
   m_Name: pf_Ghosty
   m_TagString: Untagged
@@ -244,6 +246,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stats: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+--- !u!114 &6001126809949737980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133858924970157918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7b9237ca7c6de49a9bee6a91e84026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Anim>k__BackingField: {fileID: 6911786080889551361}
+--- !u!114 &1222414426556935372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133858924970157918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d6b2abd0ba5d047b63f467edb391ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4513242490702782839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,9 +338,45 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 42050390075908025, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -2.0873177
+      objectReference: {fileID: 0}
+    - target: {fileID: 42050390075908025, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -3.136103
+      objectReference: {fileID: 0}
+    - target: {fileID: 42050390075908025, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -9.30653
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
       propertyPath: m_Name
       value: ghosty
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292349122348236636, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 70.68706
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292349122348236636, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 110.66247
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292349122348236636, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 75.46161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087744821956118167, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -70.06391
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087744821956118167, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 51.44136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087744821956118167, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 96.461555
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
@@ -342,6 +405,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1601649163285887158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630794051420478502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ede48e9dc9e9941ba3928fca1443c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6133858924970157919}
+        m_TargetAssemblyTypeName: GhostNirvana.Ghosty, AD_GhostNirvana.Entity.Enemy
+        m_MethodName: AnimationOnly_PossessionFinish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7335885970382494071
 MonoBehaviour:
   m_ObjectHideFlags: 0

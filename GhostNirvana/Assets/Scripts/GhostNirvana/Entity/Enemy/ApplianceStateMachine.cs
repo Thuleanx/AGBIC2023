@@ -18,6 +18,7 @@ public class ApplianceStateMachine : StateMachine<Appliance, Appliance.States> {
 
     public override void Construct() {
         AssignState<Appliance.ApplianceIdle>(Appliance.States.Idle);
+        AssignState<Appliance.ApplianceBeforePossessed>(Appliance.States.BeforePossessed);
         AssignState<Appliance.AppliancePossessed>(Appliance.States.Possessed);
         AssignState<Appliance.ApplianceCollecting>(Appliance.States.Collecting);
     }
@@ -38,9 +39,9 @@ public class ApplianceIdle : State<Appliance, Appliance.States> {
         agent.FreezePosition = false;
     }
 
-    void OnPossessionDetected(Appliance agent, StateMachine<Appliance, States> stateMachine, Entity possessor) {
-        possessor.Dispose();
-        stateMachine.SetState(States.Possessed);
+    void OnPossessionDetected(Appliance agent, StateMachine<Appliance, States> stateMachine, Ghosty possessor) {
+        possessor.ApplianceOnly_Possess(agent);
+        stateMachine.SetState(States.BeforePossessed);
     }
 }
 
@@ -89,6 +90,24 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
             agent.StateMachine.SetState(States.Idle);
         }
     }
+}
+
+public class ApplianceBeforePossessed : State<Appliance, Appliance.States> {
+    public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
+        agent.OnPossessionInterupt.AddListener(OnPossessionInterupted);
+        agent.OnPossessionComplete.AddListener(OnPossessionCompleted);
+    }
+
+    public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
+        agent.OnPossessionInterupt.RemoveListener(OnPossessionInterupted);
+        agent.OnPossessionComplete.RemoveListener(OnPossessionCompleted);
+    }
+
+    void OnPossessionInterupted(Appliance appliance) 
+        => appliance.StateMachine.SetState(States.Idle);
+
+    void OnPossessionCompleted(Appliance appliance)
+        => appliance.StateMachine.SetState(States.Possessed);
 }
 
 public class ApplianceCollecting : State<Appliance, Appliance.States> {

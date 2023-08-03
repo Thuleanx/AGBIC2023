@@ -12,6 +12,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     public enum States {
         Idle,
+        BeforePossessed,
         Possessed,
         Collecting
     }
@@ -31,13 +32,19 @@ public partial class Appliance : Enemy<Appliance.Input> {
     }
     #endregion
 
-    UnityEvent<Appliance, StateMachine<Appliance, Appliance.States>, Entity> OnPossessorDetected = new UnityEvent<Appliance, StateMachine<Appliance, States>, Entity>();
+    UnityEvent<Appliance, StateMachine<Appliance, Appliance.States>, Ghosty>
+    OnPossessorDetected = new UnityEvent<Appliance, StateMachine<Appliance, States>, Ghosty>();
+
+    [HideInInspector] public UnityEvent<Appliance> OnPossessionInterupt = new UnityEvent<Appliance>();
+    [HideInInspector] public UnityEvent<Appliance> OnPossessionComplete = new UnityEvent<Appliance>();
 
     [SerializeField] StatusRuntimeSet allEnemyStatus;
     [field:SerializeField] public int Price {get; private set; }
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
 
     public bool IsPossessed => StateMachine.State == States.Possessed;
+    public bool IsBeingPossessed => StateMachine.State == States.BeforePossessed;
+    public bool CanPossess => !IsPossessed && !IsBeingPossessed;
 
     protected override void Awake() {
         base.Awake();
@@ -60,8 +67,10 @@ public partial class Appliance : Enemy<Appliance.Input> {
     protected void Update() => PerformUpdate(StateMachine.RunUpdate);
 
     public void EventOnly_OnPossessionDetection(Collider other) {
-        Entity entity = other.GetComponentInParent<Entity>();
-        OnPossessorDetected?.Invoke(this, StateMachine, entity);
+        if (IsPossessed) return;
+        Ghosty possessor = other.GetComponentInParent<Ghosty>();
+        if (!possessor.CanPossess) return;
+        OnPossessorDetected?.Invoke(this, StateMachine, possessor);
     }
 
     public void ApplianceCollectorOnly_Collect() => StateMachine.SetState(States.Collecting);
