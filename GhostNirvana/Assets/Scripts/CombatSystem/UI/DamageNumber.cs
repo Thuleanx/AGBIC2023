@@ -79,8 +79,8 @@ public class DamageNumber : Entity {
     }
 
     protected override IEnumerator IDispose() {
-        yield return null;
         gameObject.SetActive(false); // we don't destroy because the manager is managing this pool
+        yield return null;
     }
 }
 

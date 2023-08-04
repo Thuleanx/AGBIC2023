@@ -18,7 +18,7 @@ public class Arena : MonoBehaviour {
         float middleArea = arenaHalfSize.x * (2 * arenaExtents.z);
         float sideArea = 2 * arenaExtents.x * (arenaHalfSize.z + arenaExtents.z);
 
-        bool sampleInsideMiddle = Mathx.RandomRange(0,1) *  (middleArea + sideArea) < middleArea;
+        bool sampleInsideMiddle = Mathx.RandomRange(0.0f,1.0f) * (middleArea + sideArea) < middleArea;
 
         Vector3 point = Vector3.zero;
         if (sampleInsideMiddle) {
