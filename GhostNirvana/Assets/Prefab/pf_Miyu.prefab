@@ -457,9 +457,12 @@ MonoBehaviour:
   aimingTarget: {fileID: 4981990102133842411}
   aimConstraint: {fileID: 4857738474537506043}
   param_LocomotionAnimationSpeed: LocomotionAnimationSpeed
+  param_ReloadAnimationSpeed: ReloadAnimationSpeed
   param_Speed: Speed
   param_State: State
   playerSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
+  reloadSpeed: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
+  reloadAnimation: {fileID: 0}
 --- !u!1 &5818867099502331307
 GameObject:
   m_ObjectHideFlags: 0

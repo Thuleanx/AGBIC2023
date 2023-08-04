@@ -15,10 +15,14 @@ public class MiyuAnimator : MonoBehaviour {
     [SerializeField] MultiAimConstraint aimConstraint;
 
     [SerializeField, AnimatorParam("Anim")] string param_LocomotionAnimationSpeed;
+    [SerializeField, AnimatorParam("Anim")] string param_ReloadAnimationSpeed;
     [SerializeField, AnimatorParam("Anim")] string param_Speed;
     [SerializeField, AnimatorParam("Anim")] string param_State;
 
     [SerializeField] LinearFloat playerSpeed;
+    [SerializeField] LinearFloat reloadSpeed;
+
+    [SerializeField] float reloadAnimationDuration;
 
     Miyu Miyu;
 
@@ -55,6 +59,9 @@ public class MiyuAnimator : MonoBehaviour {
         if (Miyu.Velocity.magnitude < 0)    Anim?.SetFloat(param_LocomotionAnimationSpeed, 1);
         else                                Anim?.SetFloat(param_LocomotionAnimationSpeed, Mathf.Max(Miyu.Velocity.magnitude / playerSpeed.BaseValue, 1));
 
+        float relativeReloadSpeed = reloadSpeed.Value / reloadAnimationDuration;
+
+        Anim?.SetFloat(param_ReloadAnimationSpeed, relativeReloadSpeed);
         Anim?.SetFloat(param_Speed, Miyu.Velocity.magnitude);
         Anim?.SetInteger(param_State, (int) currentState);
 
