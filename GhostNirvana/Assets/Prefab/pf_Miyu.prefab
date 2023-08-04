@@ -456,6 +456,10 @@ MonoBehaviour:
   <Anim>k__BackingField: {fileID: 6942892619789863108}
   aimingTarget: {fileID: 4981990102133842411}
   aimConstraint: {fileID: 4857738474537506043}
+  param_LocomotionAnimationSpeed: LocomotionAnimationSpeed
+  param_Speed: Speed
+  param_State: State
+  playerSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
 --- !u!1 &5818867099502331307
 GameObject:
   m_ObjectHideFlags: 0

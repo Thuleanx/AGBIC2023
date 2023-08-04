@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using NaughtyAttributes;
+using ScriptableBehaviour;
 
 namespace GhostNirvana {
 
@@ -11,6 +13,12 @@ public class MiyuAnimator : MonoBehaviour {
     public Animator Anim { get; private set; }
     [SerializeField] Transform aimingTarget;
     [SerializeField] MultiAimConstraint aimConstraint;
+
+    [SerializeField, AnimatorParam("Anim")] string param_LocomotionAnimationSpeed;
+    [SerializeField, AnimatorParam("Anim")] string param_Speed;
+    [SerializeField, AnimatorParam("Anim")] string param_State;
+
+    [SerializeField] LinearFloat playerSpeed;
 
     Miyu Miyu;
 
@@ -44,10 +52,13 @@ public class MiyuAnimator : MonoBehaviour {
     protected void LateUpdate() {
         if (!Miyu) return; // this is impossible unless project configured wrong
 
-        Anim?.SetFloat("Speed", Miyu.Velocity.magnitude);
-        Anim?.SetInteger("State", (int) currentState);
+        if (Miyu.Velocity.magnitude < 0)    Anim?.SetFloat(param_LocomotionAnimationSpeed, 1);
+        else                                Anim?.SetFloat(param_LocomotionAnimationSpeed, Mathf.Max(Miyu.Velocity.magnitude / playerSpeed.BaseValue, 1));
 
-        if (aimingTarget) aimingTarget.transform.position = Miyu.input.targetPositionWS;
+        Anim?.SetFloat(param_Speed, Miyu.Velocity.magnitude);
+        Anim?.SetInteger(param_State, (int) currentState);
+
+        if (aimingTarget && Time.timeScale > 0) aimingTarget.transform.position = Miyu.input.targetPositionWS;
     }
 }
 
