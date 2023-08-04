@@ -32,12 +32,9 @@ public class Status : MonoBehaviour {
     }
 
     public void TakeDamage(float amount) {
-        bool isKillingHit = !IsDead && amount >= Health;
-
+		if (IsDead) return;
         Health -= amount;
-        if (Health <= 0) Health = 0;
-
-        if (isKillingHit) OnDeath?.Invoke(this);
+        if (Health <= 0) OnDeath?.Invoke(this);
     }
 
     public void HealToFull() => Health = BaseStatsHolder.Stats.MaxHealth;

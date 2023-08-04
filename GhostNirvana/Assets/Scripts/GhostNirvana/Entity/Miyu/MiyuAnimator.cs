@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 namespace GhostNirvana {
 
@@ -8,6 +9,9 @@ namespace GhostNirvana {
 public class MiyuAnimator : MonoBehaviour {
     [field: SerializeField]
     public Animator Anim { get; private set; }
+    [SerializeField] Transform aimingTarget;
+    [SerializeField] MultiAimConstraint aimConstraint;
+
     Miyu Miyu;
 
     enum AnimationState {
@@ -42,6 +46,8 @@ public class MiyuAnimator : MonoBehaviour {
 
         Anim?.SetFloat("Speed", Miyu.Velocity.magnitude);
         Anim?.SetInteger("State", (int) currentState);
+
+        if (aimingTarget) aimingTarget.transform.position = Miyu.input.targetPositionWS;
     }
 }
 
