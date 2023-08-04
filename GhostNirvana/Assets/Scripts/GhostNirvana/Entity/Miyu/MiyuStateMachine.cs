@@ -36,9 +36,6 @@ public class MiyuGrounded : State<Miyu, Miyu.States> {
         miyu.Velocity = Mathx.Damp(Vector3.Lerp, miyu.Velocity, desiredVelocity,
                                     (miyu.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude) ? miyu.deccelerationAlpha : miyu.accelerationAlpha, Time.deltaTime);
 
-        bool isNotStationary = miyu.Velocity != Vector3.zero;
-        if (isNotStationary)
-            miyu.TurnToFace(miyu.Velocity, miyu.turnSpeed);
 
         float lastAttackTime = (float) (stateMachine.Blackboard["lastAttackTime"] ?? 0.0f);
         float timeSinceLastAttack = (Time.time - lastAttackTime);

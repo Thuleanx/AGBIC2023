@@ -35,7 +35,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Movement"), SerializeField, Expandable] LinearFloat movementSpeed;
     [BoxGroup("Movement"), Range(0, 64), SerializeField] float accelerationAlpha = 24;
     [BoxGroup("Movement"), Range(0, 64), SerializeField] float deccelerationAlpha = 12;
-    [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 24;
+    [BoxGroup("Movement"), Range(0, 720), SerializeField] public float TurnSpeed = 24;
     #endregion
 
     #region Combat

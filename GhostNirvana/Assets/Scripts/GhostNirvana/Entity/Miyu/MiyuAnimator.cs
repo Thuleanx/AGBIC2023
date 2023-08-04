@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using NaughtyAttributes;
 using ScriptableBehaviour;
+using Utils;
 
 namespace GhostNirvana {
 
@@ -11,7 +12,6 @@ namespace GhostNirvana {
 public class MiyuAnimator : MonoBehaviour {
     [field: SerializeField]
     public Animator Anim { get; private set; }
-    [SerializeField] Transform aimingTarget;
     [SerializeField] MultiAimConstraint aimConstraint;
 
     [SerializeField, AnimatorParam("Anim")] string param_LocomotionAnimationSpeed;
@@ -56,16 +56,34 @@ public class MiyuAnimator : MonoBehaviour {
     protected void LateUpdate() {
         if (!Miyu) return; // this is impossible unless project configured wrong
 
+
         if (Miyu.Velocity.magnitude < 0)    Anim?.SetFloat(param_LocomotionAnimationSpeed, 1);
         else                                Anim?.SetFloat(param_LocomotionAnimationSpeed, Mathf.Max(Miyu.Velocity.magnitude / playerSpeed.BaseValue, 1));
 
         float relativeReloadSpeed = reloadSpeed.Value / reloadAnimationDuration;
 
         Anim?.SetFloat(param_ReloadAnimationSpeed, relativeReloadSpeed);
-        Anim?.SetFloat(param_Speed, Miyu.Velocity.magnitude);
         Anim?.SetInteger(param_State, (int) currentState);
 
-        if (aimingTarget && Time.timeScale > 0) aimingTarget.transform.position = Miyu.input.targetPositionWS;
+        Vector3 aimPos = Miyu.input.targetPositionWS;
+        Vector3 relativeAimPos = aimPos - Miyu.transform.position;
+        relativeAimPos.y = 0;
+
+        bool aimOppositeOfVelocity = Vector3.Dot(Miyu.Velocity, relativeAimPos) < 0;
+        float speedParam = Miyu.Velocity.magnitude;
+        Vector3 directionToFace = Miyu.Velocity;
+
+        if (aimOppositeOfVelocity) {
+            directionToFace *= -1;
+            speedParam *= -1;
+        }
+
+        Anim?.SetFloat(param_Speed, speedParam);
+
+        bool isNotStationary = Miyu.Velocity != Vector3.zero;
+        if (isNotStationary) {
+            Miyu.TurnToFace(directionToFace, Miyu.TurnSpeed);
+        }
     }
 }
 
