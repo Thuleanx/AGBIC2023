@@ -46,14 +46,12 @@ public class MiyuGrounded : State<Miyu, Miyu.States> {
         if (canAttack) {
             stateMachine.Blackboard["lastAttackTime"] = Time.time;
 
-            Vector3 targetDirection = miyu.input.targetPositionWS - miyu.transform.position;
-            targetDirection.y = 0;
-            if (targetDirection.sqrMagnitude == 0) 
-                targetDirection = miyu.transform.forward;
 
-            targetDirection.Normalize();
+            Vector3 targetPos = miyu.input.targetPositionWS;
+            if (targetPos == miyu.transform.position)
+                targetPos = miyu.transform.position + miyu.transform.forward;
 
-            miyu.ShootProjectile(targetDirection);
+            miyu.ShootProjectile(miyu.input.targetPositionWS);
             miyu.magazine.Value--;
 
         } else if (outOfBullets){

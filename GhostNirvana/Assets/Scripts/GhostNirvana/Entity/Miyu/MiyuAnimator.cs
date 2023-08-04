@@ -69,9 +69,14 @@ public class MiyuAnimator : MonoBehaviour {
         Vector3 relativeAimPos = aimPos - Miyu.transform.position;
         relativeAimPos.y = 0;
 
-        bool aimOppositeOfVelocity = Vector3.Dot(Miyu.Velocity, relativeAimPos) < 0;
         float speedParam = Miyu.Velocity.magnitude;
         Vector3 directionToFace = Miyu.Velocity;
+        if (directionToFace.sqrMagnitude == 0) {
+            directionToFace = relativeAimPos;
+            directionToFace.Normalize();
+        }
+
+        bool aimOppositeOfVelocity = Vector3.Dot(directionToFace, relativeAimPos) < 0;
 
         if (aimOppositeOfVelocity) {
             directionToFace *= -1;
@@ -79,11 +84,7 @@ public class MiyuAnimator : MonoBehaviour {
         }
 
         Anim?.SetFloat(param_Speed, speedParam);
-
-        bool isNotStationary = Miyu.Velocity != Vector3.zero;
-        if (isNotStationary) {
-            Miyu.TurnToFace(directionToFace, Miyu.TurnSpeed);
-        }
+        Miyu.TurnToFace(directionToFace, Miyu.TurnSpeed);
     }
 }
 

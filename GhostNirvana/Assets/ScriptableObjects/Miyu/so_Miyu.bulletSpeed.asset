@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: so_Miyu.bulletSpeed
   m_EditorClassIdentifier: 
   BaseValue: 20
+  AdditiveScale: 0
+  MultiplicativeScale: 1

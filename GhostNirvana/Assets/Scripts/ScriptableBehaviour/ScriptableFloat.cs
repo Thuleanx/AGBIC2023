@@ -4,9 +4,7 @@ namespace ScriptableBehaviour {
 
 [CreateAssetMenu(fileName = "Data",
                  menuName = "~/ScriptableFloat", order = 1)]
-public class ScriptableFloat : ScriptableObject {
-    [field:System.NonSerialized]
-    public float Value;
+public class ScriptableFloat : Scriptable<float> {
 }
 
 public class Scriptable<T> : ScriptableObject {

@@ -12,9 +12,10 @@ public class MiyuAimTarget : MonoBehaviour {
     [SerializeField] Miyu Miyu;
 
     protected void Update() {
-        Vector3 aimPos = Miyu.input.targetPositionWS;
-
-        transform.position = aimPos;
+        if (Miyu && Time.timeScale > 0) {
+            Vector3 aimPos = Miyu.input.targetPositionWS;
+            transform.position = aimPos;
+        }
     }
 }
 

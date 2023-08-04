@@ -92,9 +92,15 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     }
 
 
-    public void ShootProjectile(Vector3 targetDirection) {
+    public void ShootProjectile(Vector3 targetPosition) {
         Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
                 projectilePrefab, BulletSource.position, BulletSource.rotation);
+
+        Vector3 targetDirection = targetPosition - BulletSource.position;
+        targetDirection.y = 0;
+        targetDirection.Normalize();
+
+        if (targetDirection.sqrMagnitude == 0) targetDirection = BulletSource.forward;
 
         bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, targetDirection * bulletSpeed.Value);
     }
