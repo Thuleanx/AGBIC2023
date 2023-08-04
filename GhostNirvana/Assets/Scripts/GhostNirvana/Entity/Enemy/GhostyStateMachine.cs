@@ -78,9 +78,12 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
         // try to be static, and face the appliance
         Appliance appliance = stateMachine.Blackboard["possessingAppliance"] as Appliance;
 
-        agent.transform.position = Mathx.Damp(Vector3.Lerp,
-            agent.transform.position, appliance.transform.position,
-            agent.Status.BaseStats.AccelerationAlpha, Time.deltaTime);
+        float closeDistance = 0.001f;
+        if (Vector3.Distance(agent.transform.position, appliance.transform.position) > closeDistance) {
+            Vector3 towardsAppliance = (appliance.transform.position - agent.transform.position) * 10;
+            towardsAppliance = Vector3.ClampMagnitude(towardsAppliance, agent.Status.BaseStats.MovementSpeed * 10);
+            agent.Velocity = towardsAppliance;
+        }
 
         Vector3 directionToAppliance = appliance.transform.position - agent.transform.position;
         agent.TurnToFace(directionToAppliance, agent.turnSpeed);

@@ -49,7 +49,6 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         Status.HealToFull();
 
         possessionCooldownActive = 0.0f;
-        Debug.Log((bool) possessionCooldownActive);
     }
 
 

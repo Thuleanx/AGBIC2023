@@ -203,6 +203,7 @@ MonoBehaviour:
   droppedExperienceGem: {fileID: 725140305560010594, guid: 6d8756ef015ae97498871bffcf5f73d8, type: 3}
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
   turnSpeed: 360
+  possessionCooldownSeconds: 4
 --- !u!114 &6133858924970157906
 MonoBehaviour:
   m_ObjectHideFlags: 0
