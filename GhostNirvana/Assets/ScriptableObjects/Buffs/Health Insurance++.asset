@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Health Insurance++
   m_EditorClassIdentifier: 
-  linearFloatBuffs:
+  floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 93c2ead6074c5114c8e789cc5146e879, type: 2}
     <AdditiveAmount>k__BackingField: 0.6666667
     <MultiplicativeAmount>k__BackingField: 1
-  linearLimiterFloatBuffs: []
-  replenishBuffs:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
-    <All>k__BackingField: 0
-    <Amount>k__BackingField: 1
+  intBuffs: []
+  replenishFloat: []
+  replenishInt: []
   <description>k__BackingField: regen in 30, grant 1 shield
   <cost>k__BackingField: 0
   purchaseLimit: 1

@@ -8,7 +8,7 @@ namespace GhostNirvana.Upgrade {
 
 public class UpgradeSystem : MonoBehaviour {
     [SerializeField] LinearLimiterFloat experience;
-    [SerializeField] LinearFloat applianceCollectionAmount;
+    [SerializeField] LinearInt applianceCollectionAmount;
     [SerializeField] Bank bank;
     [SerializeField, Required] RectTransform levelUpOptionPanel;
     bool levelUpSequenceRunning;
@@ -49,7 +49,9 @@ public class UpgradeSystem : MonoBehaviour {
 
         experience.Value -= experience.Limiter;
         experience.MultiplicativeScale *= 1.2f;
+        Debug.Log(experience.Value);
         experience.Recompute();
+        Debug.Log(experience.Value);
 
         collector.Collect((int) applianceCollectionAmount.Value);
 
@@ -120,6 +122,8 @@ public class UpgradeSystem : MonoBehaviour {
     public void EndLevelUpSequence(Buff chosenBuff) {
         buffsTaken.TryGetValue(chosenBuff, out int numberOfTimesBuffTaken);
         buffsTaken[chosenBuff] = numberOfTimesBuffTaken + 1;
+
+        Debug.Log("HI");
 
         levelUpSequenceRunning = false;
         levelUpOptionPanel.gameObject.SetActive(false);

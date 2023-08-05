@@ -12,16 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Company Tshirt
   m_EditorClassIdentifier: 
-  linearFloatBuffs: []
-  linearLimiterFloatBuffs:
+  floatBuffs: []
+  intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
     <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1
-  replenishBuffs:
+  replenishFloat: []
+  replenishInt:
   - <Stat>k__BackingField: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
     <All>k__BackingField: 0
     <Amount>k__BackingField: 1
-  <description>k__BackingField: Its color is fading.
+  <description>k__BackingField: 'Its color is fading.
+
+    Increase max health by
+    <color="green">+1</color>.'
   <cost>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

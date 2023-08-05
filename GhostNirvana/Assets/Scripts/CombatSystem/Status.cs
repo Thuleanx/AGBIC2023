@@ -17,7 +17,7 @@ public class Status : MonoBehaviour {
     public BaseStats BaseStats => BaseStatsHolder.Stats ?? null;
 
     [field:SerializeField, ReadOnly]
-    public float Health {
+    public int Health {
         get;
         protected set;
     }
@@ -31,7 +31,11 @@ public class Status : MonoBehaviour {
         BaseStatsHolder = GetComponent<BaseStatsMonoBehaviour>();
     }
 
-    public void TakeDamage(float amount) {
+    protected void OnEnable() {
+        HealToFull();
+    }
+
+    public void TakeDamage(int amount) {
 		if (IsDead) return;
         Health -= amount;
         if (Health <= 0) OnDeath?.Invoke(this);

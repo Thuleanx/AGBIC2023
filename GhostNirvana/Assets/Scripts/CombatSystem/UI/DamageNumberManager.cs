@@ -55,13 +55,13 @@ public class DamageNumberManager : MonoBehaviour {
         damageNumberPrefab.gameObject.SetActive(prefabIsActive);
     }
 
-    void OnDamageTaken(IHurtable hurtable, float damage, DamageType damageType) {
+    void OnDamageTaken(IHurtable hurtable, int damage, DamageType damageType) {
         if (!(hurtable is MonoBehaviour)) return;
         if (damageNumberPool.Count == 0) Expand(poolExpansionRate);
 
         DamageNumber damageNumber = damageNumberPool.Dequeue();
         damageNumber.gameObject.SetActive(true);
-        damageNumber.Initialize(damage, (hurtable as MonoBehaviour).transform.position);
+        damageNumber.Initialize((int) damage, (hurtable as MonoBehaviour).transform.position);
     }
 
     public void Collect(DamageNumber number) => damageNumberPool.Enqueue(number);

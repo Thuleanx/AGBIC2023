@@ -13,8 +13,8 @@ public abstract class Enemy<Input>
     public Entity Owner => this;
     public Status Status { get; private set; }
 
-    [SerializeField] UnityEvent<IHurtable, float, DamageType> _OnDamage;
-    public UnityEvent<IHurtable, float, DamageType> OnDamage => _OnDamage;
+    [SerializeField] UnityEvent<IHurtable, int, DamageType> _OnDamage;
+    public UnityEvent<IHurtable, int, DamageType> OnDamage => _OnDamage;
 
     #region Inherited members
     public void RespondToHurt(Hit hit) {
@@ -22,7 +22,7 @@ public abstract class Enemy<Input>
 
     public bool ValidateHit(Hit hit) => true;
 
-    void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit)
+    void IHurtable.OnTakeDamage(int damageAmount, DamageType damageType, Hit hit)
         => Status.TakeDamage(damageAmount);
 #endregion
 

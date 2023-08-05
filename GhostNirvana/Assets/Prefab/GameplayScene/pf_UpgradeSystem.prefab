@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
-  applianceCollectionAmount: {fileID: 11400000, guid: 06cddcd13bd305b49807d6598792f28c, type: 2}
+  applianceCollectionAmount: {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
   levelUpOptionPanel: {fileID: 7081903185391919320}
   buffOptions:
@@ -352,7 +352,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
   - {fileID: 11400000, guid: 4ef0635f9410543409e2fa6e81bdd918, type: 2}
   - {fileID: 11400000, guid: 840ccf443b36a71449c0a141e851a785, type: 2}
-  - {fileID: 11400000, guid: e2e453861c546774992002e6a1dd6950, type: 2}
   - {fileID: 11400000, guid: 82324e84283a4a44cbaf90be61ecd87f, type: 2}
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
   - {fileID: 11400000, guid: d6d293c1a2e32ce429b6ad44078668a2, type: 2}

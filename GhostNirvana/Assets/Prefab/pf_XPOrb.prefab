@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df00460541c3c3f41911e970b4f62eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xpYieldPerPickup: 10
+  xpYieldPerPickup: 1
   collectionDuration: 2
   absorptionEase: 17
   miyuXP: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}

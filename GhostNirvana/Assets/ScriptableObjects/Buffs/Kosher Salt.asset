@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Kosher Salt
   m_EditorClassIdentifier: 
-  linearFloatBuffs:
+  floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
     <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1
-  linearLimiterFloatBuffs: []
-  replenishBuffs: []
-  <description>k__BackingField: Big salt
+  intBuffs: []
+  replenishFloat: []
+  replenishInt: []
+  <description>k__BackingField: 'Big salt.
+
+    <color="green">+1</color> bullet
+    knockback.'
   <cost>k__BackingField: 0
   purchaseLimit: 0
+  Prerequisites: []

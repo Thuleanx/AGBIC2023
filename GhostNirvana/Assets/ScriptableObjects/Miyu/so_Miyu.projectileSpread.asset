@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334488dd319501a4da50403ca9d230db, type: 3}
-  m_Name: so_Miyu.magazine
+  m_Script: {fileID: 11500000, guid: f89eea5d63c2e3d4e9075c3cfecadbe1, type: 3}
+  m_Name: so_Miyu.projectileSpread
   m_EditorClassIdentifier: 
-  BaseValue: 5
+  BaseValue: 30
   AdditiveScale: 0
   MultiplicativeScale: 1
-  Limiter: 5

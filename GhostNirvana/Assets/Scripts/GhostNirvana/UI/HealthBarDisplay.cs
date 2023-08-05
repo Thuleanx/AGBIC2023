@@ -10,7 +10,7 @@ namespace GhostNirvana.UI {
 public class HealthBarDisplay : MonoBehaviour {
     List<HealthKnob> healthKnotches = new List<HealthKnob>();
     [SerializeField] GameObject healthPrefab;
-    [SerializeField] LinearLimiterFloat health;
+    [SerializeField] LinearLimiterInt health;
 
     void Start() {
 

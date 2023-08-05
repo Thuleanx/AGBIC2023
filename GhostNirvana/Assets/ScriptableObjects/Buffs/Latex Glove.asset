@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Latex Glove
   m_EditorClassIdentifier: 
-  linearFloatBuffs:
+  floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
-    <AdditiveAmount>k__BackingField: 0
-    <MultiplicativeAmount>k__BackingField: 1.1
-  linearLimiterFloatBuffs: []
-  <description>k__BackingField: Good tool for the task
+    <AdditiveAmount>k__BackingField: 0.1
+    <MultiplicativeAmount>k__BackingField: 1
+  intBuffs: []
+  replenishFloat: []
+  replenishInt: []
+  <description>k__BackingField: 'Good tool for the task.
+
+    <color="green">+20%</color>
+    increased reload rate.'
+  <cost>k__BackingField: 0
+  purchaseLimit: 0
+  Prerequisites: []

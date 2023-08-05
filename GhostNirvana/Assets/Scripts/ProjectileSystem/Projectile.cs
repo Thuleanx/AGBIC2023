@@ -15,7 +15,7 @@ public class Projectile : PoolableEntity, IHitResponder {
     new Rigidbody rigidbody;
     Entity IHitResponder.Owner => owner;
 
-    [SerializeField, ReadOnly] float damage;
+    [SerializeField, ReadOnly] int damage;
     [SerializeField, ReadOnly] float knockback;
     [SerializeField, ReadOnly] Hitbox hitbox;
 
@@ -25,7 +25,7 @@ public class Projectile : PoolableEntity, IHitResponder {
         hitbox.HitResponder = this;
     }
 
-    public void Initialize(float damage, float knockback, Vector3 velocity, bool faceDirection = true) {
+    public void Initialize(int damage, float knockback, Vector3 velocity, bool faceDirection = true) {
         rigidbody.velocity = velocity;
         this.damage = damage;
         this.knockback = knockback;

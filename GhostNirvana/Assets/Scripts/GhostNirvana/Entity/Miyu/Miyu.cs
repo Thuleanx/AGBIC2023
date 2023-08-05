@@ -45,18 +45,20 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview]
     Projectile projectilePrefab;
     [field:SerializeField, BoxGroup("Combat")] public Transform BulletSource {get; private set; }
-    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat health;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterInt health;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat attackSpeed;
-    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletDamage;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearInt bulletDamage;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletSpeed;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat bulletKnockback;
-    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat magazine;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearInt projectileCount;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat projectileSpread;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterInt magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat shield;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat shieldRegenerationRate;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
-    [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, float, DamageType> _OnDamage;
+    [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, int, DamageType> _OnDamage;
     #endregion
 
     Timer iframeHappening;
@@ -64,7 +66,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     public Entity Owner => this;
     public bool IsDead => health.Value == 0;
     public bool HasBullet => magazine ? magazine.Value > 0 : false;
-    public UnityEvent<IHurtable, float, DamageType> OnDamage => _OnDamage;
+    public UnityEvent<IHurtable, int, DamageType> OnDamage => _OnDamage;
 
     protected override void Awake() {
 		base.Awake();
@@ -91,7 +93,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         shield.CheckAndCorrectLimit();
     }
 
-
     public void ShootProjectile(Vector3 targetPosition) {
         Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
                 projectilePrefab, BulletSource.position, BulletSource.rotation);
@@ -105,7 +106,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, targetDirection * bulletSpeed.Value);
     }
 
-    void IHurtable.OnTakeDamage(float damageAmount, DamageType damageType, Hit hit) {
+    void IHurtable.OnTakeDamage(int damageAmount, DamageType damageType, Hit hit) {
         if (IsDead) return;
 
         if (shield.Value >= 1) {
@@ -118,7 +119,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
             if (killingHit) OnDeath();
         }
-
 
         void PushAllEnemiesAway() {
             foreach (MovableAgent enemy in allEnemies) {

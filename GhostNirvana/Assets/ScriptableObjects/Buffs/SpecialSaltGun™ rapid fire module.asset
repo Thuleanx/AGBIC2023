@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: "SpecialSaltGun\u2122 rapid fire module"
   m_EditorClassIdentifier: 
-  linearFloatBuffs:
+  floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
-    <AdditiveAmount>k__BackingField: 0.5
-    <MultiplicativeAmount>k__BackingField: 1
-  linearLimiterFloatBuffs: []
-  <description>k__BackingField: Good on you for supporting the company.
+    <AdditiveAmount>k__BackingField: 0.3
+    <MultiplicativeAmount>k__BackingField: 1.1
+  intBuffs: []
+  replenishFloat: []
+  replenishInt: []
+  <description>k__BackingField: 'Good on you for supporting the company.
+
+    <color="green"/>15%</color>
+    increased attack speed.
+
+    <color="green"/>5%</color> more attack speed.'
+  <cost>k__BackingField: 0
+  purchaseLimit: 0
+  Prerequisites: []

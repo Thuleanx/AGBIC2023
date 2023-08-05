@@ -10,7 +10,7 @@ public class LimitedResourceTextDisplay : MonoBehaviour {
     TMP_Text textObject;
 
     [SerializeField, Tooltip("For String.Format. {0} is the value of monitoredValue, {1} is its limiter.")] string format;
-    [SerializeField] LinearLimiterFloat monitoredValue;
+    [SerializeField] LinearLimiterInt monitoredValue;
 
     void Awake() {
         textObject = GetComponent<TMP_Text>();

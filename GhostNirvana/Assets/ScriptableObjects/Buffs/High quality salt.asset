@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: High quality salt
   m_EditorClassIdentifier: 
-  linearFloatBuffs:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: 3b5f266d4e365e948a8ac919b51b450c, type: 2}
-    <AdditiveAmount>k__BackingField: 2
-    <MultiplicativeAmount>k__BackingField: 1.1
-  linearLimiterFloatBuffs: []
-  <description>k__BackingField: Yummy.
+  floatBuffs: []
+  intBuffs:
+  - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
+    <AdditiveAmount>k__BackingField: 1
+    <MultiplicativeAmount>k__BackingField: 1.15
+  replenishFloat: []
+  replenishInt: []
+  <description>k__BackingField: '<color="green">+1</color> increased bullet damage.
+
+    <color="green">+15%</color>
+    more bullet damage.'
+  <cost>k__BackingField: 0
+  purchaseLimit: 0
+  Prerequisites: []

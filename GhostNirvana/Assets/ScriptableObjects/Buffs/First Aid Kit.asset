@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: First Aid Kit
   m_EditorClassIdentifier: 
-  linearFloatBuffs: []
-  linearLimiterFloatBuffs: []
-  replenishBuffs:
+  floatBuffs: []
+  intBuffs: []
+  replenishFloat: []
+  replenishInt:
   - <Stat>k__BackingField: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
     <All>k__BackingField: 0
     <Amount>k__BackingField: 2
-  <description>k__BackingField: 
+  <description>k__BackingField: Heal by <color="green">+2</color>.
   <cost>k__BackingField: 0
   purchaseLimit: 0
+  Prerequisites: []
