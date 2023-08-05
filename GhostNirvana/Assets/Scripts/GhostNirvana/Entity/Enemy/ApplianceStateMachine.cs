@@ -59,9 +59,13 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 
         Vector3 desiredVelocity = agent.input.desiredMovement * agent.Status.BaseStats.MovementSpeed;
 
-        agent.Velocity = Mathx.Damp(Vector3.Lerp, agent.Velocity, desiredVelocity,
-                              (agent.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
-                              ? agent.Status.BaseStats.DeccelerationAlpha : agent.Status.BaseStats.AccelerationAlpha, Time.deltaTime);
+        agent.Velocity = Mathx.AccelerateTowards(
+            currentVelocity: agent.Velocity,
+            desiredVelocity,
+            acceleration: agent.Status.BaseStats.Acceleration,
+            maxSpeed: agent.Status.BaseStats.MovementSpeed,
+            Time.deltaTime
+        );
 
         float hitboxCheckingDistance = 2;
         bool closeToPlayer = (Miyu.Instance.transform.position - agent.transform.position).sqrMagnitude < hitboxCheckingDistance;

@@ -77,5 +77,11 @@ namespace Utils {
 				cur = target;
 			return cur;
 		}
+
+        public static Vector3 AccelerateTowards(Vector3 currentVelocity, Vector3 desiredVelocity, float acceleration, float maxSpeed, float deltaTime) {
+            Vector3 steering = desiredVelocity - currentVelocity;
+            steering = Vector3.ClampMagnitude(steering, acceleration * deltaTime);
+            return Vector3.ClampMagnitude(steering + currentVelocity, maxSpeed);
+        }
 	}
 }

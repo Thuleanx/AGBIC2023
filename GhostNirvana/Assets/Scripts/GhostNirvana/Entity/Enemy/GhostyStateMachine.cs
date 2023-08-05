@@ -36,16 +36,19 @@ public class GhostySeek : State<Ghosty, Ghosty.States> {
     public override States? Update(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
         Vector3 desiredVelocity = agent.input.desiredMovement * agent.Status.BaseStats.MovementSpeed;
 
-        agent.Velocity = Mathx.Damp(Vector3.Lerp, agent.Velocity, desiredVelocity,
-                              (agent.Velocity.sqrMagnitude > desiredVelocity.sqrMagnitude)
-                              ? agent.Status.BaseStats.DeccelerationAlpha : agent.Status.BaseStats.AccelerationAlpha,
-                              Time.deltaTime);
+        agent.Velocity = Mathx.AccelerateTowards(
+            currentVelocity: agent.Velocity,
+            desiredVelocity,
+            acceleration: agent.Status.BaseStats.Acceleration,
+            maxSpeed: agent.Status.BaseStats.MovementSpeed,
+            Time.deltaTime
+        );
 
         if (!Miyu.Instance || !Miyu.Instance.gameObject) return null;
 
         // TODO: rid of magic number
         float hitboxCheckingDistance = 2;
-        bool closeToPlayer = (Miyu.Instance.transform.position - agent.transform.position).sqrMagnitude < hitboxCheckingDistance;
+        bool closeToPlayer = (Miyu.Instance.transform.position - agent.transform.position).sqrMagnitude < hitboxCheckingDistance * hitboxCheckingDistance;
         if (closeToPlayer) agent.CheckForHits();
 
         bool isNotStationary = agent.Velocity != Vector3.zero;

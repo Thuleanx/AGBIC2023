@@ -12,9 +12,7 @@ public class BaseStats : ScriptableObject {
     [field:SerializeField]
     public float MovementSpeed {get; protected set; }
     [field:SerializeField]
-    public float AccelerationAlpha {get; protected set; }
-    [field:SerializeField]
-    public float DeccelerationAlpha {get; protected set; }
+    public float Acceleration {get; protected set; }
     [field:SerializeField]
     public float Knockback {get; protected set; }
 }

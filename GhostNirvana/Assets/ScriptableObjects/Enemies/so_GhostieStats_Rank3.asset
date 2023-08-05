@@ -15,6 +15,5 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 80
   <Damage>k__BackingField: 1
   <MovementSpeed>k__BackingField: 1
-  <AccelerationAlpha>k__BackingField: 24
-  <DeccelerationAlpha>k__BackingField: 8
+  <Acceleration>k__BackingField: 3
   <Knockback>k__BackingField: 10

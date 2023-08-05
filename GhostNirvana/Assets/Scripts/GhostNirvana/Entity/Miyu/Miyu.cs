@@ -103,7 +103,17 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
         if (targetDirection.sqrMagnitude == 0) targetDirection = BulletSource.forward;
 
-        bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, targetDirection * bulletSpeed.Value);
+        float low = -projectileSpread.Value / 2;
+        float high = projectileSpread.Value / 2;
+
+        for (int i = 0; i < projectileCount.Value; i++) {
+            float rotDegrees = 0;
+            if (projectileCount.Value > 1) rotDegrees = Mathf.Lerp(low, high, (float) i / (projectileCount.Value - 1));
+
+            Vector3 projectileDirection = Quaternion.Euler(0, rotDegrees, 0) * targetDirection;
+
+            bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, projectileDirection * bulletSpeed.Value);
+        }
     }
 
     void IHurtable.OnTakeDamage(int damageAmount, DamageType damageType, Hit hit) {
