@@ -10,11 +10,17 @@ namespace GhostNirvana {
 
 public class MiyuAimTarget : MonoBehaviour {
     [SerializeField] Miyu Miyu;
+    [SerializeField] float dampFactor = 16f;
 
     protected void Update() {
         if (Miyu && Time.timeScale > 0) {
             Vector3 aimPos = Miyu.input.targetPositionWS;
-            transform.position = aimPos;
+            transform.position = Mathx.Damp(
+                Vector3.Lerp,
+                transform.position,
+                aimPos,
+                dampFactor,
+                Time.deltaTime);
         }
     }
 }

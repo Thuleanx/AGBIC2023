@@ -71,7 +71,7 @@ public class MiyuAnimator : MonoBehaviour {
 
         float speedParam = Miyu.Velocity.magnitude;
         Vector3 directionToFace = Miyu.Velocity;
-        if (directionToFace.sqrMagnitude == 0) {
+        if (directionToFace.sqrMagnitude < 0.01f) {
             directionToFace = relativeAimPos;
             directionToFace.Normalize();
         }

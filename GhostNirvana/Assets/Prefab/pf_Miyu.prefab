@@ -264,7 +264,7 @@ MonoBehaviour:
   movementSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
   accelerationAlpha: 24
   deccelerationAlpha: 12
-  TurnSpeed: 720
+  TurnSpeed: 360
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   projectilePrefab: {fileID: 7531139996555314367, guid: 7bd32c0ea4fa9e84e9ad446556e782ec, type: 3}
   <BulletSource>k__BackingField: {fileID: 7795210605010872444}
