@@ -14,8 +14,6 @@ public class ApplianceStateMachine : StateMachine<Appliance, Appliance.States> {
         ConstructMachine(agent: Appliance, defaultState: Appliance.States.Idle);
     }
 
-    void Start() => Init();
-
     public override void Construct() {
         AssignState<Appliance.ApplianceIdle>(Appliance.States.Idle);
         AssignState<Appliance.ApplianceBeforePossessed>(Appliance.States.BeforePossessed);
@@ -25,6 +23,10 @@ public class ApplianceStateMachine : StateMachine<Appliance, Appliance.States> {
 }
 
 public partial class Appliance {
+
+const string BK_GhostPossessing = "ghostPossessing";
+const string BK_GhostHP = "ghostHP";
+const string BK_AppliancePossessionOrganicallyExited = "appliancePossessionOrganicallyExited";
 
 public class ApplianceIdle : State<Appliance, Appliance.States> {
     public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
@@ -42,6 +44,47 @@ public class ApplianceIdle : State<Appliance, Appliance.States> {
     void OnPossessionDetected(Appliance agent, StateMachine<Appliance, States> stateMachine, Ghosty possessor) {
         possessor.ApplianceOnly_Possess(agent);
         stateMachine.SetState(States.BeforePossessed);
+
+        stateMachine.Blackboard[BK_GhostPossessing] = possessor;
+    }
+}
+
+public class ApplianceBeforePossessed : State<Appliance, Appliance.States> {
+    public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
+        agent.OnPossessionInterupt.AddListener(OnPossessionInterupted);
+        agent.OnPossessionComplete.AddListener(OnPossessionCompleted);
+        stateMachine.Blackboard[BK_AppliancePossessionOrganicallyExited] = false;
+    }
+
+    public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
+        agent.OnPossessionInterupt.RemoveListener(OnPossessionInterupted);
+        agent.OnPossessionComplete.RemoveListener(OnPossessionCompleted);
+
+        bool organicallyExited = (bool) stateMachine.Blackboard[BK_AppliancePossessionOrganicallyExited];
+        stateMachine.Blackboard.Remove(BK_AppliancePossessionOrganicallyExited);
+
+        if (organicallyExited) return;
+
+        Ghosty ghost = stateMachine.Blackboard[BK_GhostPossessing] as Ghosty;
+        ghost.OnPossessionInterupt?.Invoke(ghost);
+
+        stateMachine.Blackboard.Remove(BK_GhostPossessing);
+    }
+
+    void OnPossessionInterupted(Appliance appliance) {
+        appliance.StateMachine.SetState(States.Idle);
+        appliance.StateMachine.Blackboard.Remove(BK_GhostPossessing);
+        appliance.StateMachine.Blackboard[BK_AppliancePossessionOrganicallyExited] = true;
+    }
+
+    void OnPossessionCompleted(Appliance appliance) {
+        appliance.StateMachine.Blackboard[BK_AppliancePossessionOrganicallyExited] = true;
+
+        Ghosty ghost = appliance.StateMachine.Blackboard[BK_GhostPossessing] as Ghosty;
+        appliance.StateMachine.Blackboard[BK_GhostHP] = ghost.Status.Health;
+        ghost.gameObject.SetActive(false);
+
+        appliance.StateMachine.SetState(States.Possessed);
     }
 }
 
@@ -88,30 +131,22 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
     }
 
     void OnDeath(Status status) {
-        if (status.Owner is Appliance) {
-            Appliance agent = (status.Owner as Appliance);
-            // We directly retrieve and transition the state. This is not ideal
-            agent.StateMachine.SetState(States.Idle);
-        }
+        if (!(status.Owner is Appliance)) return;
+
+        Appliance appliance = (status.Owner as Appliance);
+        Ghosty ghost = appliance.StateMachine.Blackboard[BK_GhostPossessing] as Ghosty;
+        ghost.gameObject.SetActive(true);
+
+        int ghostHealthBeforePossession = (int) appliance.StateMachine.Blackboard[BK_GhostHP];
+
+        ghost.Status.SetHealth(ghostHealthBeforePossession);
+
+        appliance.StateMachine.Blackboard.Remove(BK_GhostPossessing);
+        appliance.StateMachine.Blackboard.Remove(BK_GhostHP);
+
+        // We directly retrieve and transition the state. This is not ideal
+        appliance.StateMachine.SetState(States.Idle);
     }
-}
-
-public class ApplianceBeforePossessed : State<Appliance, Appliance.States> {
-    public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
-        agent.OnPossessionInterupt.AddListener(OnPossessionInterupted);
-        agent.OnPossessionComplete.AddListener(OnPossessionCompleted);
-    }
-
-    public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
-        agent.OnPossessionInterupt.RemoveListener(OnPossessionInterupted);
-        agent.OnPossessionComplete.RemoveListener(OnPossessionCompleted);
-    }
-
-    void OnPossessionInterupted(Appliance appliance) 
-        => appliance.StateMachine.SetState(States.Idle);
-
-    void OnPossessionCompleted(Appliance appliance)
-        => appliance.StateMachine.SetState(States.Possessed);
 }
 
 public class ApplianceCollecting : State<Appliance, Appliance.States> {

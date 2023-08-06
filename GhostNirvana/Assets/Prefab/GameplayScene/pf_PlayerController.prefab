@@ -105,6 +105,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c4c29c94-cdd3-4e8e-afeb-fa246b0bc4b6
     m_ActionName: Gameplay/MousePos[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 351630899352519614}
+        m_TargetAssemblyTypeName: GhostNirvana.MiyuController, AD_GhostNirvana.Entity.Miyu
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7378222d-fa04-4853-bbe1-e2c6822527f9
+    m_ActionName: Gameplay/Shoot[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

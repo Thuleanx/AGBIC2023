@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using Control;
+using Utils;
 
 namespace GhostNirvana {
 
 public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
+    const float inputBufferTime = 0.2f;
 
     public IDoll<Miyu.Input> _possessed;
     IDoll<Miyu.Input> IPossessor<Miyu.Input>.Possessed {
@@ -16,7 +18,8 @@ public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
     public Miyu.Input GetCommand() {
         return new Miyu.Input {
             desiredMovement = MovementToWorldDir(movement),
-            targetPositionWS = MouseScreenToWorld(mousePosSS)
+            targetPositionWS = MouseScreenToWorld(mousePosSS),
+            shoot = isShooting || shootReleasedRecently
         };
     }
 
@@ -26,9 +29,19 @@ public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
 
     [SerializeField, ReadOnly] Vector2 movement;
     [SerializeField, ReadOnly] Vector2 mousePosSS;
+    bool isShooting;
+    Timer shootReleasedRecently;
 
     public void OnMovement(InputAction.CallbackContext ctx) => movement = ctx.ReadValue<Vector2>();
     public void OnMousePos(InputAction.CallbackContext ctx) => mousePosSS = ctx.ReadValue<Vector2>();
+    public void OnShoot(InputAction.CallbackContext ctx) {
+        if (ctx.started) {
+            isShooting = true;
+        } else if (ctx.canceled) {
+            isShooting = false;
+            shootReleasedRecently = inputBufferTime;
+        }
+    }
 
     void Awake() {
         MiyuPossessor.Possess(miyu);

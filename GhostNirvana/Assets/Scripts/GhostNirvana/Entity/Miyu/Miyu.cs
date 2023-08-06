@@ -94,8 +94,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     }
 
     public void ShootProjectile(Vector3 targetPosition) {
-        Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
-                projectilePrefab, BulletSource.position, BulletSource.rotation);
 
         Vector3 targetDirection = targetPosition - BulletSource.position;
         targetDirection.y = 0;
@@ -108,7 +106,13 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
         for (int i = 0; i < projectileCount.Value; i++) {
             float rotDegrees = 0;
-            if (projectileCount.Value > 1) rotDegrees = Mathf.Lerp(low, high, (float) i / (projectileCount.Value - 1));
+            if (projectileCount.Value > 1) {
+                float t =  ((float) i) / (projectileCount.Value - 1);
+                rotDegrees = Mathf.Lerp(low, high, t);
+            }
+
+            Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
+                projectilePrefab, BulletSource.position, BulletSource.rotation);
 
             Vector3 projectileDirection = Quaternion.Euler(0, rotDegrees, 0) * targetDirection;
 

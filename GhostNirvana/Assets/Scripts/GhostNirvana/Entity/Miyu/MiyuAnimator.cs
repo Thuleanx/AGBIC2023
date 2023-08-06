@@ -56,7 +56,6 @@ public class MiyuAnimator : MonoBehaviour {
     protected void LateUpdate() {
         if (!Miyu) return; // this is impossible unless project configured wrong
 
-
         if (Miyu.Velocity.magnitude < 0)    Anim?.SetFloat(param_LocomotionAnimationSpeed, 1);
         else                                Anim?.SetFloat(param_LocomotionAnimationSpeed, Mathf.Max(Miyu.Velocity.magnitude / playerSpeed.BaseValue, 1));
 
@@ -64,6 +63,11 @@ public class MiyuAnimator : MonoBehaviour {
 
         Anim?.SetFloat(param_ReloadAnimationSpeed, relativeReloadSpeed);
         Anim?.SetInteger(param_State, (int) currentState);
+
+        if (Miyu.IsDead) {
+            aimConstraint.weight = 0;
+            return;
+        }
 
         Vector3 aimPos = Miyu.input.targetPositionWS;
         Vector3 relativeAimPos = aimPos - Miyu.transform.position;

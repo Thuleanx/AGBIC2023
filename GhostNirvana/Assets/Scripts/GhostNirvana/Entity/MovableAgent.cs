@@ -24,6 +24,12 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
         Controller = GetComponent<CharacterController>();
     }
 
+    protected override void OnEnable() {
+        base.OnEnable();
+        knockbackStrength = 0;
+        Knockback = Vector3.zero;
+    }
+
     protected virtual void PerformUpdate(Action Update) {
         Update();
 

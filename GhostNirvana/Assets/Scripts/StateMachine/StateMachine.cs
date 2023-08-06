@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Base;
+using NaughtyAttributes;
 
 namespace AI {
 
@@ -12,10 +13,14 @@ public abstract class StateMachine<Agent, StateID> : MonoBehaviour
 
     Agent agent;
     Coroutine currentCoroutine;
+    StateID defaultState;
 
     Dictionary<StateID, State<Agent, StateID>> States;
     public Hashtable Blackboard { get; private set; }
 
+    bool startExecuted = false;
+
+    [SerializeField, ReadOnly]
     StateID _currentState;
     public StateID State {
         get => _currentState;
@@ -36,6 +41,7 @@ public abstract class StateMachine<Agent, StateID> : MonoBehaviour
         Blackboard = new Hashtable();
         States = new Dictionary<StateID, State<Agent, StateID>>();
         this.agent = agent;
+        this.defaultState = defaultState;
         _currentState = defaultState;
 
         Construct();
@@ -51,7 +57,17 @@ public abstract class StateMachine<Agent, StateID> : MonoBehaviour
 
     public abstract void Construct();
 
+    protected virtual void OnEnable() {
+        if (startExecuted) Init();
+    }
+
+    protected virtual void Start() {
+        Init();
+        startExecuted = true;
+    }
+
     public void Init() {
+        _currentState = defaultState;
         States[_currentState].Begin(this, agent);
         IEnumerator enumerator = States[_currentState]?.Coroutine(this, agent);
         if (enumerator != null) currentCoroutine = StartCoroutine(enumerator);

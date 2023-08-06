@@ -11,6 +11,7 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField] LinearInt applianceCollectionAmount;
     [SerializeField] Bank bank;
     [SerializeField, Required] RectTransform levelUpOptionPanel;
+    [SerializeField] Buff levelUpBuff;
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
 
@@ -49,9 +50,7 @@ public class UpgradeSystem : MonoBehaviour {
 
         experience.Value -= experience.Limiter;
         experience.MultiplicativeScale *= 1.2f;
-        Debug.Log(experience.Value);
         experience.Recompute();
-        Debug.Log(experience.Value);
 
         collector.Collect((int) applianceCollectionAmount.Value);
 
@@ -123,8 +122,7 @@ public class UpgradeSystem : MonoBehaviour {
         buffsTaken.TryGetValue(chosenBuff, out int numberOfTimesBuffTaken);
         buffsTaken[chosenBuff] = numberOfTimesBuffTaken + 1;
 
-        Debug.Log("HI");
-
+        levelUpBuff?.Apply();
         levelUpSequenceRunning = false;
         levelUpOptionPanel.gameObject.SetActive(false);
         Time.timeScale = 1;

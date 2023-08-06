@@ -19,8 +19,6 @@ public class MiyuStateMachine : StateMachine<Miyu, Miyu.States> {
         ConstructMachine(agent: Miyu, defaultState: Miyu.States.Grounded);
     }
 
-    void Start() => Init();
-
     public override void Construct() {
         AssignState<Miyu.MiyuGrounded>(Miyu.States.Grounded);
         AssignState<Miyu.MiyuDead>(Miyu.States.Dead);
@@ -41,11 +39,10 @@ public class MiyuGrounded : State<Miyu, Miyu.States> {
         float timeSinceLastAttack = (Time.time - lastAttackTime);
 
         bool outOfBullets = miyu.magazine.Value <= 0;
-        bool canAttack = !outOfBullets && timeSinceLastAttack * miyu.attackSpeed.Value > 1;
+        bool canAttack = !outOfBullets && timeSinceLastAttack * miyu.attackSpeed.Value > 1 && miyu.input.shoot;
 
         if (canAttack) {
             stateMachine.Blackboard["lastAttackTime"] = Time.time;
-
 
             Vector3 targetPos = miyu.input.targetPositionWS;
             if (targetPos == miyu.transform.position)

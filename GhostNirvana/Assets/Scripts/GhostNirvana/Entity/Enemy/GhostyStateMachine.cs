@@ -12,8 +12,6 @@ public class GhostyStateMachine : StateMachine<Ghosty, Ghosty.States> {
         ConstructMachine(agent: Ghosty, defaultState: Ghosty.States.Seek);
     }
 
-    void Start() => Init();
-
     public override void Construct() {
         AssignState<Ghosty.GhostySeek>(Ghosty.States.Seek);
         AssignState<Ghosty.GhostyPossessing>(Ghosty.States.Possessing);
@@ -68,6 +66,8 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
     public override void Begin(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
         agent.OnDamage.AddListener(OnDamageTaken);
         agent.OnPossessionFinish.AddListener(OnPossessionFinish);
+        agent.OnPossessionInterupt.AddListener(OnPossessionInterupted);
+
         agent.Velocity = Vector3.zero;
         agent.possessionCooldownActive = agent.possessionCooldownSeconds;
     }
@@ -75,6 +75,7 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
     public override void End(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
         agent.OnDamage.RemoveListener(OnDamageTaken);
         agent.OnPossessionFinish.RemoveListener(OnPossessionFinish);
+        agent.OnPossessionInterupt.RemoveListener(OnPossessionInterupted);
     }
 
     public override States? Update(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
@@ -100,10 +101,7 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
         Ghosty ghosty = hurtable as Ghosty;
         GhostyStateMachine stateMachine = ghosty.StateMachine;
 
-        Appliance appliance = stateMachine.Blackboard["possessingAppliance"] as Appliance;
-
-        appliance.OnPossessionInterupt?.Invoke(appliance);
-        stateMachine.SetState(States.Seek);
+        ghosty.OnPossessionInterupt?.Invoke(ghosty);
     }
 
     void OnPossessionFinish(Ghosty ghosty) {
@@ -113,11 +111,21 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
         appliance.OnPossessionComplete?.Invoke(appliance);
         ghosty.StateMachine.SetState(States.Possessed);
     }
+
+    void OnPossessionInterupted(Ghosty ghosty) {
+        GhostyStateMachine stateMachine = ghosty.StateMachine;
+
+        Appliance appliance = stateMachine.Blackboard["possessingAppliance"] as Appliance;
+        appliance.OnPossessionInterupt?.Invoke(appliance);
+
+        stateMachine.SetState(States.Seek);
+    }
 }
 
 public class GhostyPossessed : State<Ghosty, Ghosty.States> {
-    public override void Begin(StateMachine<Ghosty, States> stateMachine, Ghosty agent)
-        => agent.Dispose();
+    public override void Begin(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
+        // nothing happens in this state
+    }
 }
 
 public class GhostyDeath : State<Ghosty, Ghosty.States> {

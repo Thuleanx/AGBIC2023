@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackResistance: 8
+  knockbackResistance: 16
   FreezePosition: 0
   _OnDamage:
     m_PersistentCalls:
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d6b2abd0ba5d047b63f467edb391ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!1001 &4513242490702782839
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
-    <AdditiveAmount>k__BackingField: 0.1
+    <AdditiveAmount>k__BackingField: 0.2
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs: []
   replenishFloat: []
@@ -22,7 +22,9 @@ MonoBehaviour:
   <description>k__BackingField: 'Good tool for the task.
 
     <color="green">+20%</color>
-    increased reload rate.'
+    increased reload rate.
+
+    <color="green">+10%</color> more reload rate.'
   <cost>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

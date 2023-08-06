@@ -42,6 +42,7 @@ public class Status : MonoBehaviour {
     }
 
     public void HealToFull() => Health = BaseStatsHolder.Stats.MaxHealth;
+    public void SetHealth(int health) => Health = Mathf.Clamp(health, 0, BaseStats.MaxHealth);
 }
 
 }

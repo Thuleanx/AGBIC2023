@@ -343,6 +343,7 @@ MonoBehaviour:
   applianceCollectionAmount: {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
   levelUpOptionPanel: {fileID: 7081903185391919320}
+  levelUpBuff: {fileID: 11400000, guid: a5ab72bbf4813294fb045baecd912c04, type: 2}
   buffOptions:
   - {fileID: 11400000, guid: 55caa3d28019dc440ada6e9772b9f3af, type: 2}
   - {fileID: 11400000, guid: a7acc0a1a55cb274fa0904f5c61da5a8, type: 2}
@@ -356,6 +357,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
   - {fileID: 11400000, guid: d6d293c1a2e32ce429b6ad44078668a2, type: 2}
   - {fileID: 11400000, guid: 550abe1ab123a0b4bba20486315c33eb, type: 2}
+  - {fileID: 11400000, guid: 3fa87cfbd5eb43c4a9d49ab29ee64013, type: 2}
 --- !u!1001 &2381328518189803347
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputActions",
+    "name": "ia_playerInputAction",
     "maps": [
         {
             "name": "Gameplay",
@@ -19,6 +19,15 @@
                     "type": "Value",
                     "id": "c4c29c94-cdd3-4e8e-afeb-fa246b0bc4b6",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "7378222d-fa04-4853-bbe1-e2c6822527f9",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -88,6 +97,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MousePos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac74616d-8143-4b8b-9be2-54bbefaf99b3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

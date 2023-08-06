@@ -70,7 +70,6 @@ public class DamageNumber : Entity {
         animSequence.Join(text.rectTransform.DOAnchorPosY(0, disappearDuration).SetEase(disappearMovementEase));
 
         animSequence.OnComplete(() => Dispose());
-        animSequence.OnKill(() => Dispose());
     }
 
     void OnDisable() {

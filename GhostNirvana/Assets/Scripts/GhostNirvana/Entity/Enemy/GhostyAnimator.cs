@@ -15,7 +15,7 @@ public class GhostyAnimator : MonoBehaviour {
         Possessing = 1
     }
 
-    AnimationState currentState = AnimationState.Normal;
+    [SerializeField] AnimationState currentState = AnimationState.Normal;
 
     void Awake() {
         Ghosty = GetComponent<Ghosty>();

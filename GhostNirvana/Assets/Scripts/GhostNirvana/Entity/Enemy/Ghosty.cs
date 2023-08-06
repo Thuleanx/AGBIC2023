@@ -10,6 +10,7 @@ namespace GhostNirvana {
 
 [RequireComponent(typeof(CharacterController))]
 public partial class Ghosty : Enemy<Ghosty.Input> {
+    [System.Serializable]
     public enum States {
         Seek,
         Possessing,
@@ -24,6 +25,7 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
 
     UnityEvent<Ghosty, Appliance> OnPossession = new UnityEvent<Ghosty, Appliance>();
     UnityEvent<Ghosty> OnPossessionFinish = new UnityEvent<Ghosty>();
+    public UnityEvent<Ghosty> OnPossessionInterupt = new UnityEvent<Ghosty>();
 
     Timer possessionCooldownActive;
 
@@ -71,11 +73,7 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
         // spawn experience gem
         ObjectPoolManager.Instance?.Borrow(gameObject.scene, droppedExperienceGem, transform.position);
 
-        if (IsPossessing) {
-            // need to release the appliance
-            Appliance appliance = StateMachine.Blackboard["possessingAppliance"] as Appliance;
-            appliance.OnPossessionInterupt?.Invoke(appliance);
-        }
+        if (IsPossessing) OnPossessionInterupt?.Invoke(this);
 
         StateMachine.SetState(States.Death);
     }
