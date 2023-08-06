@@ -58,7 +58,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat shield;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat shieldRegenerationRate;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
-    [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, int, DamageType> _OnDamage;
+    [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, int, DamageType, Hit> _OnDamage;
     #endregion
 
     Timer iframeHappening;
@@ -66,7 +66,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     public Entity Owner => this;
     public bool IsDead => health.Value == 0;
     public bool HasBullet => magazine ? magazine.Value > 0 : false;
-    public UnityEvent<IHurtable, int, DamageType> OnDamage => _OnDamage;
+    public UnityEvent<IHurtable, int, DamageType, Hit> OnDamage => _OnDamage;
 
     protected override void Awake() {
 		base.Awake();

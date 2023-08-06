@@ -8,6 +8,8 @@ namespace CombatSystem {
 public class Hitbox : MonoBehaviour, IHitbox {
     [SerializeField] Collider _collider;
     [SerializeField] LayerMask _hurtboxMask;
+    Rigidbody _rigidbody;
+    [SerializeField] bool hitNormalIsVelocityDirection;
 
     float _thickness = 0.025f;
     IHitResponder _hitResponder;
@@ -19,6 +21,7 @@ public class Hitbox : MonoBehaviour, IHitbox {
 
     void Awake() {
         _collider = GetComponent<Collider>();
+        _rigidbody = GetComponentInParent<Rigidbody>();
     }
 
     public void CheckForHits() {
@@ -61,12 +64,13 @@ public class Hitbox : MonoBehaviour, IHitbox {
                 if (hurtbox == null || !hurtbox.Active)
                     continue;
 
+                Vector3 normal = hit.normal;
+                bool canOverrideNormal = hitNormalIsVelocityDirection && _rigidbody && _rigidbody.velocity.sqrMagnitude > 0;
+                if (canOverrideNormal) normal = -_rigidbody.velocity.normalized;
+
                 Hit hitData = new Hit(
                     hit.point == Vector3.zero ? center : hit.point,
-                    hit.normal,
-                    Time.time,
-                    this,
-                    hurtbox
+                    normal, Time.time, this, hurtbox
                 );
 
                 ValidateAndSendHit(hurtbox, hitData);
@@ -83,14 +87,14 @@ public class Hitbox : MonoBehaviour, IHitbox {
                 if (hurtbox == null || !hurtbox.Active)
                     continue;
 
-                Vector3 directionToHitbox = (transform.position - collider.transform.position).normalized;
+                Vector3 normal = -(transform.position - collider.transform.position).normalized;
+
+                bool canOverrideNormal = hitNormalIsVelocityDirection && _rigidbody && _rigidbody.velocity.sqrMagnitude > 0;
+                if (canOverrideNormal) normal = -_rigidbody.velocity.normalized;
 
                 Hit hitData = new Hit(
-                    collider.transform.position + directionToHitbox * sphereCollider.radius,
-                    -directionToHitbox,
-                    Time.time,
-                    this,
-                    hurtbox
+                    collider.transform.position - normal * sphereCollider.radius,
+                    normal, Time.time, this, hurtbox
                 );
 
                 ValidateAndSendHit(hurtbox, hitData);

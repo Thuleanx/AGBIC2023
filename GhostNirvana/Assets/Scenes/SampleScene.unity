@@ -526,6 +526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 809519257674323520, guid: f0ec1b3cb046b184a8640e78fe12f24b, type: 3}
+      propertyPath: knockbackOnEjection
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 809519257674323525, guid: f0ec1b3cb046b184a8640e78fe12f24b, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_boxFan

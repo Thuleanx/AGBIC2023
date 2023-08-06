@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aefc52ae590d944a5c28607b32ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackResistance: 16
+  knockbackResistance: 8
   FreezePosition: 0
   _OnDamage:
     m_PersistentCalls:
@@ -204,6 +204,9 @@ MonoBehaviour:
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
   turnSpeed: 360
   possessionCooldownSeconds: 4
+  OnPossessionInterupt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6133858924970157906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Anim>k__BackingField: {fileID: 6911786080889551361}
+  currentState: 0
 --- !u!114 &1222414426556935372
 MonoBehaviour:
   m_ObjectHideFlags: 0

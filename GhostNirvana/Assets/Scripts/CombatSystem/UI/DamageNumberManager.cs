@@ -55,7 +55,7 @@ public class DamageNumberManager : MonoBehaviour {
         damageNumberPrefab.gameObject.SetActive(prefabIsActive);
     }
 
-    void OnDamageTaken(IHurtable hurtable, int damage, DamageType damageType) {
+    void OnDamageTaken(IHurtable hurtable, int damage, DamageType damageType, Hit hit) {
         if (!(hurtable is MonoBehaviour)) return;
         if (damageNumberPool.Count == 0) Expand(poolExpansionRate);
 

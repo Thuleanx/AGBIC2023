@@ -179,7 +179,7 @@ MonoBehaviour:
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
   <Price>k__BackingField: 200
   turnSpeed: 360
-  knockbackOnEjection: 8
+  knockbackOnEjection: 200
   cooldownAfterPossession: 10
 --- !u!114 &1459352401194146335
 MonoBehaviour:

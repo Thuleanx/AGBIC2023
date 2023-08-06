@@ -95,7 +95,7 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
         return null;
     }
 
-    void OnDamageTaken(IHurtable hurtable, int damage, DamageType damageType) {
+    void OnDamageTaken(IHurtable hurtable, int damage, DamageType damageType, Hit hit) {
         if (!(hurtable is Ghosty)) return;
 
         Ghosty ghosty = hurtable as Ghosty;
