@@ -135,17 +135,32 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 
         Appliance appliance = (status.Owner as Appliance);
         Ghosty ghost = appliance.StateMachine.Blackboard[BK_GhostPossessing] as Ghosty;
-        ghost.gameObject.SetActive(true);
 
-        int ghostHealthBeforePossession = (int) appliance.StateMachine.Blackboard[BK_GhostHP];
+        PushGhostOutOfAppliance(ghost, appliance);
 
-        ghost.Status.SetHealth(ghostHealthBeforePossession);
-
+        appliance.possessionCooldown = appliance.cooldownAfterPossession;
         appliance.StateMachine.Blackboard.Remove(BK_GhostPossessing);
         appliance.StateMachine.Blackboard.Remove(BK_GhostHP);
 
         // We directly retrieve and transition the state. This is not ideal
         appliance.StateMachine.SetState(States.Idle);
+    }
+
+    void PushGhostOutOfAppliance(Ghosty ghost, Appliance appliance) {
+        ghost.GetComponentInChildren<Animator>().transform.localScale = Vector3.one;
+        ghost.transform.position = appliance.transform.position;
+
+        ghost.gameObject.SetActive(true);
+
+        Vector2 randomDirection = Random.insideUnitCircle.normalized;
+        Vector3 ghostKnockbackDir = new Vector3(
+            randomDirection.x, 0, randomDirection.y);
+
+        (ghost as IKnockbackable).ApplyKnockback(
+            appliance.knockbackOnEjection, ghostKnockbackDir);
+
+        int ghostHealthBeforePossession = (int) appliance.StateMachine.Blackboard[BK_GhostHP];
+        ghost.Status.SetHealth(ghostHealthBeforePossession);
     }
 }
 

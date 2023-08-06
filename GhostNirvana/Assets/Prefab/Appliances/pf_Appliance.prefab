@@ -170,9 +170,17 @@ MonoBehaviour:
   allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
   allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
   <PossessionDetection>k__BackingField: {fileID: 1459352399930716331}
+  OnPossessionInterupt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPossessionComplete:
+    m_PersistentCalls:
+      m_Calls: []
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
   <Price>k__BackingField: 200
   turnSpeed: 360
+  knockbackOnEjection: 8
+  cooldownAfterPossession: 10
 --- !u!114 &1459352401194146335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f819220d2137845488e27964292a2042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!114 &7463702613677836344
 MonoBehaviour:
   m_ObjectHideFlags: 0
