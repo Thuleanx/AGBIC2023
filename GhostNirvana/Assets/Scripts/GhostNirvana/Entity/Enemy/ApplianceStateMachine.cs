@@ -147,7 +147,6 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
     }
 
     void PushGhostOutOfAppliance(Ghosty ghost, Appliance appliance) {
-        ghost.GetComponentInChildren<Animator>().transform.localScale = Vector3.one;
         ghost.transform.position = appliance.transform.position;
 
         ghost.gameObject.SetActive(true);
