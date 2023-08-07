@@ -20,7 +20,7 @@ public abstract class Enemy<Input>
     public Status Status { get; private set; }
 
     [SerializeField] UnityEvent<IHurtable, int, DamageType, Hit> _OnDamage;
-    public UnityEvent<IHurtable, int, DamageType, Hit> OnDamage => _OnDamage;
+    public UnityEvent<IHurtable, int, DamageType, Hit> OnBeforeDamage => _OnDamage;
 
     #region Inherited members
     public void RespondToHurt(Hit hit) {

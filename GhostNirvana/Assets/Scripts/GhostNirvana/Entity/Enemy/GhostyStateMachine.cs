@@ -64,7 +64,7 @@ public class GhostySeek : State<Ghosty, Ghosty.States> {
 
 public class GhostyPossessing : State<Ghosty, Ghosty.States> {
     public override void Begin(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
-        agent.OnDamage.AddListener(OnDamageTaken);
+        agent.OnBeforeDamage.AddListener(OnDamageTaken);
         agent.OnPossessionFinish.AddListener(OnPossessionFinish);
         agent.OnPossessionInterupt.AddListener(OnPossessionInterupted);
 
@@ -73,7 +73,7 @@ public class GhostyPossessing : State<Ghosty, Ghosty.States> {
     }
 
     public override void End(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
-        agent.OnDamage.RemoveListener(OnDamageTaken);
+        agent.OnBeforeDamage.RemoveListener(OnDamageTaken);
         agent.OnPossessionFinish.RemoveListener(OnPossessionFinish);
         agent.OnPossessionInterupt.RemoveListener(OnPossessionInterupted);
     }

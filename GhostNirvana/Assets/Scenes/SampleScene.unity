@@ -355,6 +355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_Appliance_pressureCooker
       objectReference: {fileID: 0}
+    - target: {fileID: 7395675208083303046, guid: dfed66cd3a1df1d41ab70110fced956c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfed66cd3a1df1d41ab70110fced956c, type: 3}
 --- !u!1001 &319695944
@@ -411,6 +415,10 @@ PrefabInstance:
     - target: {fileID: 6591131562320793086, guid: c1ccb8e01bb642a43ad1eed3ebafa076, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_stove
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591131562320793086, guid: c1ccb8e01bb642a43ad1eed3ebafa076, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ccb8e01bb642a43ad1eed3ebafa076, type: 3}
@@ -586,6 +594,10 @@ PrefabInstance:
     - target: {fileID: 809519257674323525, guid: f0ec1b3cb046b184a8640e78fe12f24b, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_boxFan
+      objectReference: {fileID: 0}
+    - target: {fileID: 809519257674323525, guid: f0ec1b3cb046b184a8640e78fe12f24b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 809519257674323526, guid: f0ec1b3cb046b184a8640e78fe12f24b, type: 3}
       propertyPath: m_RootOrder
@@ -802,6 +814,10 @@ PrefabInstance:
     - target: {fileID: 8196983042958106735, guid: bc703fc430cd78841bd79415888584fa, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_washer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196983042958106735, guid: bc703fc430cd78841bd79415888584fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc703fc430cd78841bd79415888584fa, type: 3}
@@ -1025,6 +1041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_Appliance_fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 8062346825095839464, guid: eaceb1630b505b44ebc70d0d36ea6cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8062346825095839467, guid: eaceb1630b505b44ebc70d0d36ea6cd1, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1081,6 +1101,10 @@ PrefabInstance:
     - target: {fileID: 9147481411018787964, guid: 12193e957a21e0b43ba990a3a5e2b3c3, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_tv
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147481411018787964, guid: 12193e957a21e0b43ba990a3a5e2b3c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9147481411018787967, guid: 12193e957a21e0b43ba990a3a5e2b3c3, type: 3}
       propertyPath: m_RootOrder
@@ -1183,6 +1207,10 @@ PrefabInstance:
     - target: {fileID: 1115968810202850636, guid: eed53d6f9059ce54f9531f1811bbe118, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115968810202850636, guid: eed53d6f9059ce54f9531f1811bbe118, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115968810202850639, guid: eed53d6f9059ce54f9531f1811bbe118, type: 3}
       propertyPath: m_RootOrder

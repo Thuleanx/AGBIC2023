@@ -50,19 +50,19 @@ MonoBehaviour:
     - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
       baseStats: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
       weight: 1
-    spawnFrequencyFixed: 100
+    spawnFrequencyFixed: 40
     duration: 1
   - spawnableMobs:
     - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
       baseStats: {fileID: 11400000, guid: 12e07f781df817146a190ae2054b77df, type: 2}
       weight: 1
-    spawnFrequencyFixed: 150
+    spawnFrequencyFixed: 80
     duration: 1
   - spawnableMobs:
     - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
       baseStats: {fileID: 11400000, guid: 9ab140c86b1025d4facc45ccba494839, type: 2}
       weight: 1
-    spawnFrequencyFixed: 200
+    spawnFrequencyFixed: 100
     duration: 1
   - spawnableMobs:
     - enemy: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}

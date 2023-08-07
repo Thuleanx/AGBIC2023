@@ -94,7 +94,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         agent.Status.HealToFull();
         agent.Status.OnDeath.AddListener(OnDeath);
         agent.allEnemyStatus.Add(agent.Status);
-        agent.OnDamage.AddListener(OnTakeDamage);
+        agent.OnBeforeDamage.AddListener(OnTakeDamage);
         IHurtResponder.ConnectChildrenHurtboxes(agent);
         IHitResponder.ConnectChildrenHitboxes(agent);
     }
@@ -126,7 +126,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 
     public override void End(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.Status.OnDeath.RemoveListener(OnDeath);
-        agent.OnDamage.RemoveListener(OnTakeDamage);
+        agent.OnBeforeDamage.RemoveListener(OnTakeDamage);
         agent.Velocity = Vector3.zero;
         agent.allEnemyStatus.Remove(agent.Status);
         IHurtResponder.DisconnectChildrenHurtboxes(agent);

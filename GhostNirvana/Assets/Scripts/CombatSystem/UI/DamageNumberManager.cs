@@ -31,16 +31,18 @@ public class DamageNumberManager : MonoBehaviour {
     }
 
     void OnDisable() {
-        hurtables.OnAdd -= OnHurtableAdd;
-        hurtables.OnRemove -= OnHurtableRemove;
         foreach (IHurtable hurtable in hurtables)
             OnHurtableRemove(hurtable);
+        hurtables.OnAdd -= OnHurtableAdd;
+        hurtables.OnRemove -= OnHurtableRemove;
     }
 
     void OnHurtableAdd(IHurtable ihurtable) {
-        ihurtable.OnDamage.AddListener(OnDamageTaken);
+        ihurtable.OnBeforeDamage.AddListener(OnDamageTaken);
     }
-    void OnHurtableRemove(IHurtable ihurtable) => ihurtable.OnDamage.RemoveListener(OnDamageTaken);
+    void OnHurtableRemove(IHurtable ihurtable) {
+        ihurtable.OnBeforeDamage.RemoveListener(OnDamageTaken);
+    }
 
     void Expand(int amount) {
         bool prefabIsActive = damageNumberPrefab.gameObject.activeSelf;

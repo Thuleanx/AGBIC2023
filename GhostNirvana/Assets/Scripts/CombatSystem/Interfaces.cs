@@ -55,10 +55,10 @@ public interface IHurtResponder {
 }
 
 public interface IHurtable {
-    public UnityEvent<IHurtable, int, DamageType, Hit> OnDamage {get;}
+    public UnityEvent<IHurtable, int, DamageType, Hit> OnBeforeDamage {get;}
     public void TakeDamage(int damageAmount, DamageType damageType, Hit hit) {
+        OnBeforeDamage?.Invoke(this, damageAmount, damageType, hit);
         OnTakeDamage(damageAmount, damageType, hit);
-        OnDamage?.Invoke(this, damageAmount, damageType, hit);
     }
 
     protected void OnTakeDamage(int damageAmount,
