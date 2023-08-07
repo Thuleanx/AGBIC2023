@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Base;
+using NaughtyAttributes;
 
 namespace ComposableBehaviour {
 
 public class LifeDuration : MonoBehaviour {
     [SerializeField] float durationSeconds;
 
-    float timeEnabled;
-    bool disposalRequested;
+    [SerializeField, ReadOnly] float timeEnabled;
+    [SerializeField, ReadOnly] bool disposalRequested;
 
     void OnEnable() {
         timeEnabled = Time.time;

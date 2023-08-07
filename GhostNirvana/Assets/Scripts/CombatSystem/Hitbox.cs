@@ -25,6 +25,8 @@ public class Hitbox : MonoBehaviour, IHitbox {
     }
 
     public void CheckForHits() {
+        if (!_collider.enabled) return;
+
         void ValidateAndSendHit(IHurtbox hurtbox, Hit hitData) {
             // validate the hit
             // we dont validate for the hitbox, because it's assumed that

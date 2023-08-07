@@ -10,7 +10,13 @@ namespace GhostNirvana {
 public abstract class Enemy<Input>
     : PossessableAgent<Input>, IHurtable, IHurtResponder, IHitResponder {
 
-    public Entity Owner => this;
+    public Entity Owner {
+		get => this; 
+		set {
+			Debug.LogError("Can't set owner of an enemy.");
+		}
+	}
+
     public Status Status { get; private set; }
 
     [SerializeField] UnityEvent<IHurtable, int, DamageType, Hit> _OnDamage;

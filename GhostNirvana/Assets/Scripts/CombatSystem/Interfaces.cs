@@ -13,7 +13,7 @@ public interface IHitbox {
 }
 
 public interface IHitResponder {
-    public Entity Owner { get; }
+    public Entity Owner { get; set; }
     public bool ValidateHit(Hit hit);
     public void RespondToHit(Hit hit);
 

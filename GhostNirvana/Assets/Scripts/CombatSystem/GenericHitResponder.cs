@@ -7,30 +7,30 @@ using Optimization;
 using CombatSystem;
 using NaughtyAttributes;
 
-namespace Danmaku {
+namespace CombatSystem {
 
-public class Projectile : PoolableEntity, IHitResponder {
+public class GenericHitResponder : PoolableEntity, IHitResponder {
     Entity owner;
 
-    new Rigidbody rigidbody;
-    Entity IHitResponder.Owner {get => owner; set => owner = value; }
+    Entity IHitResponder.Owner { get => owner; set => owner = value; }
 
-    [SerializeField, ReadOnly] int damage;
-    [SerializeField, ReadOnly] float knockback;
+    [SerializeField] int damage;
+    [SerializeField] float knockback;
     [SerializeField, ReadOnly] Hitbox hitbox;
 
     void Awake() {
-        rigidbody = GetComponent<Rigidbody>();
         hitbox = GetComponentInChildren<Hitbox>();
         hitbox.HitResponder = this;
     }
 
-    public void Initialize(int damage, float knockback, Vector3 velocity, bool faceDirection = true) {
-        rigidbody.velocity = velocity;
-        this.damage = damage;
-        this.knockback = knockback;
+    protected override void OnEnable() {
+        base.OnEnable();
+        IHitResponder.ConnectChildrenHitboxes(this);
     }
 
+    protected void OnDisable() {
+        IHitResponder.DisconnectChildrenHitboxes(this);
+    }
 
     bool IHitResponder.ValidateHit(Hit hit) {
         return true;
@@ -41,10 +41,7 @@ public class Projectile : PoolableEntity, IHitResponder {
 
         Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
         (targetOwner as IHurtable)?.TakeDamage(damage, null, hit);
-        (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, rigidbody.velocity.normalized);
-
-		if (this.gameObject.activeInHierarchy) 
-			this.Dispose();
+        (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, hit.Normal);
     }
 
     void Update() {

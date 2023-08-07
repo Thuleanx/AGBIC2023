@@ -62,6 +62,7 @@ MonoBehaviour:
   _hurtboxMask:
     serializedVersion: 2
     m_Bits: 33554432
+  hitNormalIsVelocityDirection: 0
 --- !u!1 &6133858924880198477
 GameObject:
   m_ObjectHideFlags: 0

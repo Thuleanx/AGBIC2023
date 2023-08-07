@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using CombatSystem;
 using NaughtyAttributes;
+using Optimization;
 using Utils;
 
 namespace GhostNirvana {
@@ -44,6 +45,9 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     [SerializeField] float knockbackOnEjection = 100;
     [SerializeField] float cooldownAfterPossession = 10;
+    [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview] GameObject AOEAttackPrefab;
+    [BoxGroup("Combat"), SerializeField] Transform leftAttackAnchor;
+    [BoxGroup("Combat"), SerializeField] Transform rightAttackAnchor;
 
     Timer possessionCooldown;
 
@@ -69,6 +73,16 @@ public partial class Appliance : Enemy<Appliance.Input> {
     }
 
     protected void Update() => PerformUpdate(StateMachine.RunUpdate);
+
+    public void AOEAttack(bool isLeftAttack) {
+        Transform attackAnchor = (isLeftAttack ? leftAttackAnchor : rightAttackAnchor);
+
+        Transform aoeAttack = ObjectPoolManager.Instance.Borrow(gameObject.scene,
+            AOEAttackPrefab.transform, attackAnchor.position, attackAnchor.rotation);
+
+        IHitResponder hitResponder = aoeAttack.GetComponent<IHitResponder>();
+        hitResponder.Owner = this;
+    }
 
     public void EventOnly_OnPossessionDetection(Collider other) {
         bool cannotBePossessed = (IsPossessed || IsBeingPossessed || possessionCooldown);

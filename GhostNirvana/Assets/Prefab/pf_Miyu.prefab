@@ -170,8 +170,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3659113076626342091}
+  - component: {fileID: 6525350094033666854}
   - component: {fileID: 3212594170704616796}
+  - component: {fileID: 3845742017365679326}
   m_Layer: 6
   m_Name: CollectionRange
   m_TagString: Untagged
@@ -179,7 +180,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3659113076626342091
+--- !u!4 &6525350094033666854
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,8 +206,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3845742017365679326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322140680700594663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0607fe8eb59f314c8d23b4f3b1d090b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFloat: {fileID: 11400000, guid: 02316fc2cef2fb24bbe1be149a73d159, type: 2}
 --- !u!1 &3751458875445000397
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +254,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9045905862741757295}
-  - {fileID: 3659113076626342091}
+  - {fileID: 6525350094033666854}
   - {fileID: 6533844784957555418}
   - {fileID: 1075732956}
   m_Father: {fileID: 0}
@@ -296,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f662da6347c58eb4ba199c46843f4b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!143 &3751458875445000394
 CharacterController:
   m_ObjectHideFlags: 0
