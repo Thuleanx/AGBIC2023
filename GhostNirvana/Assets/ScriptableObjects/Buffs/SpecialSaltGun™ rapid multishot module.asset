@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
-    <AdditiveAmount>k__BackingField: -0.2
+    <AdditiveAmount>k__BackingField: 0
+    <MultiplicativeAmount>k__BackingField: 0.8
+  - <Stat>k__BackingField: {fileID: 11400000, guid: 0e3f67fd098869e4b928a17f4719a06e, type: 2}
+    <AdditiveAmount>k__BackingField: 10
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
@@ -27,7 +30,7 @@ MonoBehaviour:
     <color="green"/>+1</color>
     projectile.
 
-    <color="green"/>-20%</color> decreased attack speed.'
+    <color="red"/>-20%</color> less attack speed.'
   <cost>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

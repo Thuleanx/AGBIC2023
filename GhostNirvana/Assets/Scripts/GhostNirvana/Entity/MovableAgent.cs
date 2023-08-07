@@ -17,8 +17,10 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
     public Vector3 Velocity { get; protected set; }
     public Vector3 Knockback { get; protected set; }
 
-    [BoxGroup("Movement"), SerializeField] float knockbackResistance = 8;
+    [BoxGroup("Movement"), SerializeField, HideIf("knockbackImmune")] float knockbackResistance = 8;
+    [BoxGroup("Movement"), SerializeField] bool knockbackImmune = false;
     float knockbackStrength = 0;
+
 
     protected virtual void Awake() {
         Controller = GetComponent<CharacterController>();
@@ -50,7 +52,9 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
     }
 
     void IKnockbackable.OnKnockback(float amount, Vector3 dir) {
-        if (Knockback.sqrMagnitude * knockbackStrength * knockbackStrength < amount * amount) {
+        if (knockbackImmune) return;
+        bool knockbackStrongerThanCurrent = Knockback.sqrMagnitude * knockbackStrength * knockbackStrength < amount * amount;
+        if (knockbackStrongerThanCurrent) {
             Knockback = dir * amount;
             knockbackStrength = 1;
         }

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: LevelUp
+  m_Name: so_LevelUpBuff
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
     <AdditiveAmount>k__BackingField: 0.1
     <MultiplicativeAmount>k__BackingField: 1
   - <Stat>k__BackingField: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
-    <AdditiveAmount>k__BackingField: 1
-    <MultiplicativeAmount>k__BackingField: 1.05
+    <AdditiveAmount>k__BackingField: 0.05
+    <MultiplicativeAmount>k__BackingField: 1
+  - <Stat>k__BackingField: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
+    <AdditiveAmount>k__BackingField: 3
+    <MultiplicativeAmount>k__BackingField: 1.2
   intBuffs:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
-    <AdditiveAmount>k__BackingField: 1
-    <MultiplicativeAmount>k__BackingField: 1.05
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
-    <AdditiveAmount>k__BackingField: 1
-    <MultiplicativeAmount>k__BackingField: 1.05
+    <AdditiveAmount>k__BackingField: 0.5
+    <MultiplicativeAmount>k__BackingField: 1.02
   replenishFloat: []
   replenishInt: []
   <description>k__BackingField: 

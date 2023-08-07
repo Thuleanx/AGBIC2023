@@ -6,15 +6,15 @@ namespace CombatSystem {
         menuName = "~/CombatSystem/BaseStats", order = 1)]
 public class BaseStats : ScriptableObject {
     [field:SerializeField]
-    public int MaxHealth { get; protected set; }
+    public int MaxHealth { get; set; }
     [field:SerializeField]
-    public int Damage { get; protected set; }
+    public int Damage { get; set; }
     [field:SerializeField]
-    public float MovementSpeed {get; protected set; }
+    public float MovementSpeed {get; set; }
     [field:SerializeField]
-    public float Acceleration {get; protected set; }
+    public float Acceleration {get; set; }
     [field:SerializeField]
-    public float Knockback {get; protected set; }
+    public float Knockback {get; set; }
 }
 
 }

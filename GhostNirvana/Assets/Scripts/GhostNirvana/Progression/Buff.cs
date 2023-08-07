@@ -12,7 +12,7 @@ namespace GhostNirvana {
             [field:SerializeField, Expandable]
             public T Stat { get; private set; }
             [field:SerializeField]
-            public ST AdditiveAmount {get; private set; }
+            public float AdditiveAmount {get; private set; }
             [field:SerializeField]
             public float MultiplicativeAmount {get; private set; }
         };

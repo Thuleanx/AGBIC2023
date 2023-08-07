@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackResistance: 8
+  knockbackImmune: 1
   FreezePosition: 0
   _OnDamage:
     m_PersistentCalls:

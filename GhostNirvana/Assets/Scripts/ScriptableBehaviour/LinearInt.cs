@@ -8,11 +8,11 @@ namespace ScriptableBehaviour {
 public class LinearInt : ScriptableInt, ISerializationCallbackReceiver, ILinearlyScalable<int> {
     public int BaseValue = 0;
     [ReadOnly]
-    public int AdditiveScale;
+    public float AdditiveScale;
     [ReadOnly]
     public float MultiplicativeScale;
 
-    int ILinearlyScalable<int>.AdditiveScale { get => AdditiveScale; set => AdditiveScale = value; }
+    float ILinearlyScalable<int>.AdditiveScale { get => AdditiveScale; set => AdditiveScale = value; }
     float ILinearlyScalable<int>.MultiplicativeScale { get => MultiplicativeScale; set => MultiplicativeScale = value; }
 
     public virtual void OnAfterDeserialize() {

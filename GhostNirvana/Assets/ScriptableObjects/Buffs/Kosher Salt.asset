@@ -16,13 +16,18 @@ MonoBehaviour:
   - <Stat>k__BackingField: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
     <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1
-  intBuffs: []
+  intBuffs:
+  - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
+    <AdditiveAmount>k__BackingField: 1
+    <MultiplicativeAmount>k__BackingField: 1
   replenishFloat: []
   replenishInt: []
   <description>k__BackingField: 'Big salt.
 
     <color="green">+1</color> bullet
-    knockback.'
+    knockback.
+
+    <color="green">+1</color> bullet damage.'
   <cost>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

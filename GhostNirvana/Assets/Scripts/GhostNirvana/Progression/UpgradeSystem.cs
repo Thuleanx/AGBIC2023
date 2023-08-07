@@ -49,8 +49,6 @@ public class UpgradeSystem : MonoBehaviour {
         }
 
         experience.Value -= experience.Limiter;
-        experience.MultiplicativeScale *= 1.2f;
-        experience.Recompute();
 
         collector.Collect((int) applianceCollectionAmount.Value);
 
@@ -91,6 +89,7 @@ public class UpgradeSystem : MonoBehaviour {
             }
 
             if (!buffChosen) {
+                Debug.Log("THIS IS ALMOST IMPOSSIBLE");
                 yield return buffOptions[lastIndex];
                 if (lastIndex != excludeIndex)
                     (buffOptions[lastIndex], buffOptions[excludeIndex]) = (buffOptions[excludeIndex], buffOptions[lastIndex]);

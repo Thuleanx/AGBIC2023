@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89eea5d63c2e3d4e9075c3cfecadbe1, type: 3}
   m_Name: so_Miyu.collectionRange
   m_EditorClassIdentifier: 
-  BaseValue: 2
+  BaseValue: 3
   AdditiveScale: 0
   MultiplicativeScale: 1

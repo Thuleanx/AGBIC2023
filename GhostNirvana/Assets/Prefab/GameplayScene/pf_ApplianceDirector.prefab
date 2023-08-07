@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3099187640775192087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3099187640775192086}
+  - component: {fileID: 3099187640775192089}
+  m_Layer: 0
+  m_Name: pf_ApplianceDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3099187640775192086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099187640775192087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3099187640775192089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099187640775192087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f3b71e98412944f83b0d39fd097d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeElapsed: {fileID: 11400000, guid: e1e23ffdc95c2d7439c0cad5656bb246, type: 2}
+  waveDirector: {fileID: 0}
+  appliances:
+  - {fileID: 809519257674323520, guid: f0ec1b3cb046b184a8640e78fe12f24b, type: 3}
+  - {fileID: 8062346825095839469, guid: eaceb1630b505b44ebc70d0d36ea6cd1, type: 3}
+  - {fileID: 1115968810202850633, guid: eed53d6f9059ce54f9531f1811bbe118, type: 3}
+  - {fileID: 7395675208083303043, guid: dfed66cd3a1df1d41ab70110fced956c, type: 3}
+  - {fileID: 6591131562320793083, guid: c1ccb8e01bb642a43ad1eed3ebafa076, type: 3}
+  - {fileID: 9147481411018787961, guid: 12193e957a21e0b43ba990a3a5e2b3c3, type: 3}
+  - {fileID: 8196983042958106730, guid: bc703fc430cd78841bd79415888584fa, type: 3}
+  applianceSpawnRate:
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  - 40
+  - 50
+  - 65
+  - 80
+  - 100
+  applianceBaseStats: {fileID: 11400000, guid: 22cca6200150d7349ac6ddf67a21174c, type: 2}
+  healthScaling: 2
+  movementScaling: 0.5
+  accelerationScaling: 0.5

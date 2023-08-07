@@ -46,7 +46,7 @@ public class WaveDirector : Director {
             => spawnFrequencyFixed;
     }
 
-    [SerializeField] List<Wave> allWaves;
+    [SerializeField] public List<Wave> allWaves;
     int currentWave;
     float cumulativeWaveTime;
     float enemyNeedsToSpawn = 0;

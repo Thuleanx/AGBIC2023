@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811866521e645184c88531d50a8206c0, type: 3}
   m_Name: so_Miyu.xp
   m_EditorClassIdentifier: 
-  BaseValue: 1
+  BaseValue: 3
   AdditiveScale: 0
   MultiplicativeScale: 1
-  Limiter: 1
+  Limiter: 3
