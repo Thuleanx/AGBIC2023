@@ -12,6 +12,7 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField] Bank bank;
     [SerializeField, Required] RectTransform levelUpOptionPanel;
     [SerializeField] Buff levelUpBuff;
+    [SerializeField] UpgradeOptionDetails upgradeDetails;
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
 
@@ -50,7 +51,10 @@ public class UpgradeSystem : MonoBehaviour {
 
         experience.Value -= experience.Limiter;
 
-        collector.Collect((int) applianceCollectionAmount.Value);
+        int amountCollected;
+        int moneyEarned;
+        (amountCollected, moneyEarned) = collector.Collect((int) applianceCollectionAmount.Value);
+        upgradeDetails.SetPaymentDescription(amountCollected, moneyEarned);
 
         Time.timeScale = 0;
     }
@@ -89,7 +93,6 @@ public class UpgradeSystem : MonoBehaviour {
             }
 
             if (!buffChosen) {
-                Debug.Log("THIS IS ALMOST IMPOSSIBLE");
                 yield return buffOptions[lastIndex];
                 if (lastIndex != excludeIndex)
                     (buffOptions[lastIndex], buffOptions[excludeIndex]) = (buffOptions[excludeIndex], buffOptions[lastIndex]);
@@ -111,7 +114,7 @@ public class UpgradeSystem : MonoBehaviour {
 
         if (!hasAllPrereqs) return 0;
 
-        bool canAffordBuff = bank.Value >= buff.cost;
+        bool canAffordBuff = bank.Value >= buff.Cost;
         if (chooseOnlyAffordable && !canAffordBuff) return 0;
 
         return 1;

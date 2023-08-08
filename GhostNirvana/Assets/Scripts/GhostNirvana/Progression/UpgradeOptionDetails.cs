@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
@@ -9,6 +10,8 @@ public class UpgradeOptionDetails : MonoBehaviour {
 
     [SerializeField] TMP_Text title;
     [SerializeField] TMP_Text description;
+    [SerializeField] TMP_Text payDescription;
+    [ResizableTextArea, SerializeField] string payDescriptionFormatting;
 
     void OnEnable() {
         foreach (UpgradeOption option in upgradeOptionsParent.GetComponentsInChildren<UpgradeOption>()) {
@@ -17,6 +20,7 @@ public class UpgradeOptionDetails : MonoBehaviour {
         }
         title.gameObject.SetActive(false);
         description.gameObject.SetActive(false);
+        payDescription.gameObject.SetActive(true);
     }
 
     void OnDisable() {
@@ -29,6 +33,7 @@ public class UpgradeOptionDetails : MonoBehaviour {
     void OnHover(UpgradeOption option) {
         title.gameObject.SetActive(true);
         description.gameObject.SetActive(true);
+        payDescription.gameObject.SetActive(false);
 
         title.text = option.Buff.name;
         description.text = option.Buff.description;
@@ -38,6 +43,14 @@ public class UpgradeOptionDetails : MonoBehaviour {
         // Here we assume it's impossible to hover two options at once
         title.gameObject.SetActive(false);
         description.gameObject.SetActive(false);
+        payDescription.gameObject.SetActive(true);
+    }
+
+    public void SetPaymentDescription(int collectionCount, float paymentAmount) {
+        payDescription.text = String.Format(
+            payDescriptionFormatting,
+            collectionCount, ((float) paymentAmount) / 100
+        );
     }
 }
 

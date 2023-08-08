@@ -38,7 +38,7 @@ public class UpgradeOption : MonoBehaviour {
         upgradeSystem?.EndLevelUpSequence(this.Buff);
     }
 
-    public bool CanPurchase => PlayerBank && Buff && PlayerBank.Value >= Buff.cost;
+    public bool CanPurchase => PlayerBank && Buff && PlayerBank.Value >= Buff.Cost;
     public void EventTriggerOnly_OnHoverEnter() => OnHoverEnter?.Invoke(this);
     public void EventTriggerOnly_OnHoverExit() => OnHoverExit?.Invoke(this);
 }

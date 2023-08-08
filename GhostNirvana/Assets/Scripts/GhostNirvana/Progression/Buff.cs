@@ -32,7 +32,8 @@ namespace GhostNirvana {
         [SerializeField, ReorderableList] List<Regain<LinearLimiterInt, int>> replenishInt;
 
         [field:SerializeField, ResizableTextArea] public string description {get; private set; }
-        [field:SerializeField] public float cost {get; private set; }
+        [field:SerializeField] public float Cost {get; private set; }
+        [field:SerializeField] public float Weight {get; private set; }
         [field:SerializeField] public int purchaseLimit;
 
         [ReorderableList] public List<Buff> Prerequisites = new List<Buff>();
@@ -58,6 +59,10 @@ namespace GhostNirvana {
                 replenish.Stat.Value += replenish.Amount;
                 replenish.Stat.CheckAndCorrectLimit();
             }
+        }
+
+        public float ComputeWeight(int value, bool hasPrerequisites) {
+            return 0;
         }
     }
 }
