@@ -32,7 +32,7 @@ namespace GhostNirvana {
         [SerializeField, ReorderableList] List<Regain<LinearLimiterInt, int>> replenishInt;
 
         [field:SerializeField, ResizableTextArea] public string description {get; private set; }
-        [field:SerializeField] public float Cost {get; private set; }
+        [field:SerializeField] public int Cost {get; private set; }
         [field:SerializeField] public float Weight {get; private set; }
         [field:SerializeField] public int purchaseLimit;
 

@@ -13,6 +13,7 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField, Required] RectTransform levelUpOptionPanel;
     [SerializeField] Buff levelUpBuff;
     [SerializeField] UpgradeOptionDetails upgradeDetails;
+    [SerializeField] UpgradeMoneyDisplay upgradeMoneyDetails;
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
 
@@ -54,7 +55,7 @@ public class UpgradeSystem : MonoBehaviour {
         int amountCollected;
         int moneyEarned;
         (amountCollected, moneyEarned) = collector.Collect((int) applianceCollectionAmount.Value);
-        upgradeDetails.SetPaymentDescription(amountCollected, moneyEarned);
+        upgradeMoneyDetails.SetPaymentDescription(amountCollected, moneyEarned);
 
         Time.timeScale = 0;
     }
