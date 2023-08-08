@@ -55,10 +55,12 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterInt magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
+    [BoxGroup("Combat"), SerializeField] float pushbackStrengthOnDeath;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat shield;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat shieldRegenerationRate;
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
     [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, int, DamageType, Hit> _OnDamage;
+    [BoxGroup("Combat")] public UnityEvent OnDeathEvent;
     #endregion
 
     Timer iframeHappening;
@@ -134,22 +136,25 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
             if (killingHit) OnDeath();
         }
 
-        void PushAllEnemiesAway() {
-            foreach (MovableAgent enemy in allEnemies) {
-                Vector3 knockbackDir = enemy.transform.position - transform.position;
-                knockbackDir.y = 0;
-                knockbackDir.Normalize();
-
-                (enemy as IKnockbackable).ApplyKnockback(pushbackStrengthOnDamage.Value, knockbackDir);
-            }
-        }
-        PushAllEnemiesAway();
+        PushAllEnemiesAway(pushbackStrengthOnDamage.Value);
 
         iframeHappening = iframeSeconds;
     }
 
+    void PushAllEnemiesAway(float strength) {
+        foreach (MovableAgent enemy in allEnemies) {
+            Vector3 knockbackDir = enemy.transform.position - transform.position;
+            knockbackDir.y = 0;
+            knockbackDir.Normalize();
+
+            (enemy as IKnockbackable).ApplyKnockback(strength, knockbackDir);
+        }
+    }
+
     void OnDeath() {
         StateMachine.SetState(States.Dead);
+        PushAllEnemiesAway(pushbackStrengthOnDeath);
+        OnDeathEvent?.Invoke();
     }
 
     public bool ValidateHit(Hit hit) => !IsDead && !iframeHappening;
