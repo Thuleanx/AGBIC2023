@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using NaughtyAttributes;
 using DG.Tweening;
@@ -14,16 +15,20 @@ public class Reaper : MonoBehaviour {
     [SerializeField] float deathTimeSlowDuration;
     [SerializeField] float deathTimeSlowDelaySeconds;
 
+    [SerializeField] UnityEvent OnDeathStart;
+
+
     void Start() {
         miyu.OnDeathEvent.AddListener(OnMiyuDeath);
     }
 
     void OnMiyuDeath() {
-        Debug.Log("HI");
         StartCoroutine(IOnMiyuDeath());
     }
 
     IEnumerator IOnMiyuDeath() {
+        OnDeathStart?.Invoke();
+
         yield return new WaitForSeconds(deathTimeSlowDelaySeconds);
 
         float t = 0;
@@ -37,8 +42,10 @@ public class Reaper : MonoBehaviour {
 
             Time.timeScale = easedT;
 
-            lastTime = deltaTime;
+            t += deltaTime;
+            lastTime = Time.unscaledTime;
         }
+
         Time.timeScale = 0;
     }
 }
