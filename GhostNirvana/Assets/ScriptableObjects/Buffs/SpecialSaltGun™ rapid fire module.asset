@@ -19,12 +19,14 @@ MonoBehaviour:
   intBuffs: []
   replenishFloat: []
   replenishInt: []
+  discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: 'Good on you for supporting the company.
 
     <color="green"/>15%</color>
     increased attack speed.
 
     <color="green"/>5%</color> more attack speed.'
-  <cost>k__BackingField: 0
+  <BaseCost>k__BackingField: 0
+  <Weight>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

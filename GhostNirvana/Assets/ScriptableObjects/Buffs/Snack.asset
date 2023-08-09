@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Snack
   m_EditorClassIdentifier: 
-  linearFloatBuffs: []
-  linearLimiterFloatBuffs: []
-  replenishBuffs: []
+  floatBuffs: []
+  intBuffs: []
+  replenishFloat: []
+  replenishInt: []
+  discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: Makes you happy.
-  <cost>k__BackingField: 0
+  <BaseCost>k__BackingField: 0
+  <Weight>k__BackingField: 0
   purchaseLimit: 0
+  Prerequisites: []

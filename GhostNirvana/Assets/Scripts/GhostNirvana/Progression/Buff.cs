@@ -30,11 +30,13 @@ namespace GhostNirvana {
         [SerializeField, ReorderableList] List<LinearBuff<LinearInt, int>> intBuffs;
         [SerializeField, ReorderableList] List<Regain<LinearLimiterFloat, float>> replenishFloat;
         [SerializeField, ReorderableList] List<Regain<LinearLimiterInt, int>> replenishInt;
+        [field:SerializeField] ScriptableFloat discount;
 
         [field:SerializeField, ResizableTextArea] public string description {get; private set; }
-        [field:SerializeField] public int Cost {get; private set; }
+        [field:SerializeField] public int BaseCost {get; private set; }
         [field:SerializeField] public float Weight {get; private set; }
         [field:SerializeField] public int purchaseLimit;
+        public int Cost => Mathf.CeilToInt(BaseCost * discount.Value);
 
         [ReorderableList] public List<Buff> Prerequisites = new List<Buff>();
 

@@ -426,18 +426,21 @@ MonoBehaviour:
   upgradeDetails: {fileID: 7942366038758956882}
   upgradeMoneyDetails: {fileID: 3858736938721835820}
   buffOptions:
+  - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
   - {fileID: 11400000, guid: 55caa3d28019dc440ada6e9772b9f3af, type: 2}
   - {fileID: 11400000, guid: a7acc0a1a55cb274fa0904f5c61da5a8, type: 2}
   - {fileID: 11400000, guid: 4e360a41bae619647b1832bb9d829f05, type: 2}
+  - {fileID: 11400000, guid: 901323763b682ba41af8674f72dbb15f, type: 2}
   - {fileID: 11400000, guid: 44d39ac41c7973e42ba41e900b292814, type: 2}
+  - {fileID: 11400000, guid: 550abe1ab123a0b4bba20486315c33eb, type: 2}
+  - {fileID: 11400000, guid: d6d293c1a2e32ce429b6ad44078668a2, type: 2}
   - {fileID: 11400000, guid: 7ce057b4b1e4eef448d6735c8cb31070, type: 2}
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
-  - {fileID: 11400000, guid: 4ef0635f9410543409e2fa6e81bdd918, type: 2}
   - {fileID: 11400000, guid: 840ccf443b36a71449c0a141e851a785, type: 2}
+  - {fileID: 11400000, guid: 4ef0635f9410543409e2fa6e81bdd918, type: 2}
   - {fileID: 11400000, guid: 82324e84283a4a44cbaf90be61ecd87f, type: 2}
+  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
-  - {fileID: 11400000, guid: d6d293c1a2e32ce429b6ad44078668a2, type: 2}
-  - {fileID: 11400000, guid: 550abe1ab123a0b4bba20486315c33eb, type: 2}
   - {fileID: 11400000, guid: 3fa87cfbd5eb43c4a9d49ab29ee64013, type: 2}
 --- !u!1001 &2381328518189803347
 PrefabInstance:

@@ -19,8 +19,10 @@ MonoBehaviour:
   intBuffs: []
   replenishFloat: []
   replenishInt: []
+  discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: "Something to start your day. \nIncrease movement
     speed by <color=\"green\">+20%</color>."
-  <cost>k__BackingField: 0
+  <BaseCost>k__BackingField: 0
+  <Weight>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

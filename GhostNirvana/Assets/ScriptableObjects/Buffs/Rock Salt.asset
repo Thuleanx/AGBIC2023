@@ -22,12 +22,14 @@ MonoBehaviour:
     <MultiplicativeAmount>k__BackingField: 1
   replenishFloat: []
   replenishInt: []
+  discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: 'Big salt.
 
     <color="green">+1</color> bullet
     knockback.
 
     <color="green">+1</color> bullet damage.'
-  <cost>k__BackingField: 0
+  <BaseCost>k__BackingField: 0
+  <Weight>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []

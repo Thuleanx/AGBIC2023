@@ -22,10 +22,12 @@ MonoBehaviour:
   - <Stat>k__BackingField: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
     <All>k__BackingField: 0
     <Amount>k__BackingField: 1
+  discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: 'Its color is fading.
 
     Increase max health by
     <color="green">+1</color>.'
-  <cost>k__BackingField: 0
+  <BaseCost>k__BackingField: 0
+  <Weight>k__BackingField: 0
   purchaseLimit: 0
   Prerequisites: []
