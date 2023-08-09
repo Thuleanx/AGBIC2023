@@ -7,6 +7,8 @@ using Utils;
 namespace GhostNirvana.Upgrade {
 
 public class UpgradeSystem : MonoBehaviour {
+    [SerializeField] ScriptableInt currentHealth; // use to check for death
+
     [SerializeField] LinearLimiterFloat experience;
     [SerializeField] LinearInt applianceCollectionAmount;
     [SerializeField] Bank bank;
@@ -32,7 +34,7 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     void Update() {
-        bool shouldLevelUp = !levelUpSequenceRunning && experience.Value >= experience.Limiter;
+        bool shouldLevelUp = !levelUpSequenceRunning && experience.Value >= experience.Limiter && currentHealth.Value > 0;
         if (shouldLevelUp) StartLevelUpSequence();
     }
 

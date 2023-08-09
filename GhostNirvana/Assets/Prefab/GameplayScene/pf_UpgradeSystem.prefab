@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aafa29c03bb9e046a335d40ac218090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
   experience: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
   applianceCollectionAmount: {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
