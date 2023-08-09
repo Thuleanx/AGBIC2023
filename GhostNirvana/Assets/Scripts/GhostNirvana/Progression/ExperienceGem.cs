@@ -36,10 +36,6 @@ public class ExperienceGem : PoolableEntity {
         StartCoroutine(CollectGem(miyu.transform));
     }
 
-    protected override IEnumerator IDispose() {
-        yield return base.IDispose();
-    }
-
     public IEnumerator CollectGem(Transform playerTransform) {
         float t = 0;
         float lastTime = Time.time;

@@ -1,7 +1,9 @@
 {
-    "name": "Pooling System",
+    "name": "Audio",
     "rootNamespace": "",
     "references": [
+        "GUID:1dbdbc8c30623144d96d60804a399e9f",
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
         "GUID:8b79ac0eb3dd8d546bb28751cd579110",
         "GUID:c99492d23076c654f9109782b93308ab"
     ],

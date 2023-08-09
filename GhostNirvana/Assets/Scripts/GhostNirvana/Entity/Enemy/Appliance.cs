@@ -1,3 +1,4 @@
+using Base;
 using AI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -77,7 +78,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
     public void AOEAttack(bool isLeftAttack) {
         Transform attackAnchor = (isLeftAttack ? leftAttackAnchor : rightAttackAnchor);
 
-        Transform aoeAttack = ObjectPoolManager.Instance.Borrow(gameObject.scene,
+        Transform aoeAttack = ObjectPoolManager.Instance.Borrow(App.GetActiveScene(),
             AOEAttackPrefab.transform, attackAnchor.position, attackAnchor.rotation);
 
         IHitResponder hitResponder = aoeAttack.GetComponent<IHitResponder>();

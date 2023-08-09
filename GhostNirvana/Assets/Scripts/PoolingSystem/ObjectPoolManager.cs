@@ -12,14 +12,14 @@ public partial class ObjectPoolManager : MonoBehaviour {
         public bool InQueue {get; private set; } = true;
         public UnityEvent<Bubble> DisposalEvent = new UnityEvent<Bubble>();
 
-        public void OnSpawn() => InQueue = true;
+        public void OnSpawn() => InQueue = false;
 
         public void RequestDisposal() {
+            if (InQueue) return;
             DisposalEvent?.Invoke(this);
             InQueue = true;
         }
     }
-
 
     public class Pool<T> where T : Component {
         public T Prefab;
@@ -49,9 +49,12 @@ public partial class ObjectPoolManager : MonoBehaviour {
         }
 
         public void Collect(Bubble bubble) {
+            Debug.Log("Collecting: " + bubble.gameObject);
             // give up collecting the bubble, someone illegally borrowed it
-            if (bubble.transform.parent != null)
+            if (bubble.transform.parent != null) {
+                Destroy(bubble.gameObject);
                 return;
+            }
             content.Enqueue(bubble.GetComponent<T>());
             bubble.gameObject.SetActive(false);
         }
@@ -72,12 +75,14 @@ public partial class ObjectPoolManager : MonoBehaviour {
 
         pools = new Hashtable();
         sceneToBubbleMapping = new Dictionary<Scene, HashSet<Bubble>>();
+    }
 
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    void Start() {
+        App.BeforeSceneUnload.AddListener(OnSceneUnloaded);
     }
 
     void OnDestroy() {
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        App.BeforeSceneUnload.RemoveListener(OnSceneUnloaded);
     }
 
     public T Borrow<T>(Scene scene, T Prefab,
@@ -115,14 +120,15 @@ public partial class ObjectPoolManager : MonoBehaviour {
         instantiatedObject.gameObject.SetActive(true);
 
         Bubble bubble = instantiatedObject.GetComponent<Bubble>();
-        if (!bubble) 
-            Debug.LogError("Bubble not found on pooled object. Maybe a script has destroyed it");
+        if (!bubble) Debug.LogError("Bubble not found on pooled object. Maybe a script has destroyed it");
         bubble.OnSpawn();
 
         if (!sceneToBubbleMapping.ContainsKey(scene))
             sceneToBubbleMapping[scene] = new HashSet<Bubble>();
 
         sceneToBubbleMapping[scene].Add( bubble );
+
+        Debug.Log("Borrowed " + instantiatedObject + " to scene: " + scene.name);
 
         return instantiatedObject;
     }

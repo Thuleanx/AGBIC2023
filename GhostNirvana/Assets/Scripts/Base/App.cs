@@ -34,7 +34,7 @@ namespace Base {
 		public static UnityEvent<Scene> BeforeSceneUnload;
 		#endregion
 
-		public string GetActiveScene() => SceneManager.GetActiveScene().name;
+		public static Scene GetActiveScene() => SceneManager.GetActiveScene();
 
 		public void RequestLoad(string sceneName, LoadSceneMode mode = LoadSceneMode.Single) {
 			if (mode == LoadSceneMode.Single) TriggerBeforeUnload();

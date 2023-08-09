@@ -1,3 +1,4 @@
+using Base;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -71,7 +72,7 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
 
     void OnDeath(Status status) {
         // spawn experience gem
-        ObjectPoolManager.Instance?.Borrow(gameObject.scene, droppedExperienceGem, transform.position);
+        ObjectPoolManager.Instance?.Borrow(App.GetActiveScene(), droppedExperienceGem, transform.position);
 
         if (IsPossessing) OnPossessionInterupt?.Invoke(this);
 
