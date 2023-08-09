@@ -187,6 +187,9 @@ MonoBehaviour:
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnShootEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3751458875445000392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +242,7 @@ MonoBehaviour:
   playerSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
   reloadSpeed: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
   reloadAnimationDuration: 0.736
+  shootAnimationDuration: 1
 --- !u!1 &4751501342995646954
 GameObject:
   m_ObjectHideFlags: 0

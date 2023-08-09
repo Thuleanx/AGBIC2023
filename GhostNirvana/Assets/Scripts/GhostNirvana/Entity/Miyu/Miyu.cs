@@ -61,6 +61,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField] float iframeSeconds;
     [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, int, DamageType, Hit> _OnDamage;
     [BoxGroup("Combat")] public UnityEvent OnDeathEvent;
+    [BoxGroup("Combat")] public UnityEvent OnShootEvent;
     #endregion
 
     Timer iframeHappening;
@@ -120,6 +121,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
             bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, projectileDirection * bulletSpeed.Value);
         }
+
+        OnShootEvent?.Invoke();
     }
 
     void IHurtable.OnTakeDamage(int damageAmount, DamageType damageType, Hit hit) {

@@ -23,13 +23,16 @@ public class MiyuAnimator : MonoBehaviour {
     [SerializeField] LinearFloat reloadSpeed;
 
     [SerializeField] float reloadAnimationDuration;
+    [SerializeField] float shootAnimationDuration;
 
     Miyu Miyu;
+    Timer shooting;
 
     enum AnimationState {
         Normal = 0,
         Reload = 1,
-        Dead = 2
+        Dead = 2,
+        Shoot = 3
     }
 
     AnimationState currentState;
@@ -38,19 +41,31 @@ public class MiyuAnimator : MonoBehaviour {
         Miyu = GetComponent<Miyu>();
     }
 
+    void OnEnable() => Miyu.OnShootEvent.AddListener(OnShoot);
+    void OnDisable() => Miyu.OnShootEvent.RemoveListener(OnShoot);
+
     protected void Update() {
+        if (Miyu.IsDead) currentState = AnimationState.Dead;
+
         switch (currentState) {
             case AnimationState.Normal:
-                if (Miyu.IsDead) currentState = AnimationState.Dead;
                 if (!Miyu.HasBullet) currentState = AnimationState.Reload;
+                else if (shooting) currentState = AnimationState.Shoot;
                 break;
             case AnimationState.Reload:
-                if (Miyu.IsDead) currentState = AnimationState.Dead;
                 if (Miyu.HasBullet) currentState = AnimationState.Normal;
+                break;
+            case AnimationState.Shoot:
+                if (!Miyu.HasBullet)    currentState = AnimationState.Reload;
+                else if (!shooting)     currentState = AnimationState.Normal;
                 break;
             case AnimationState.Dead:
                 break;
         }
+    }
+
+    void OnShoot() {
+        shooting = shootAnimationDuration;
     }
 
     protected void LateUpdate() {
