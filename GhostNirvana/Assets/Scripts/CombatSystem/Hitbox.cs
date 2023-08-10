@@ -24,6 +24,8 @@ public class Hitbox : MonoBehaviour, IHitbox {
         _rigidbody = GetComponentInParent<Rigidbody>();
     }
 
+    protected virtual bool ValidateHit(Hit hit) => true;
+
     public void CheckForHits() {
         if (!_collider.enabled) return;
 
@@ -32,6 +34,7 @@ public class Hitbox : MonoBehaviour, IHitbox {
             // we dont validate for the hitbox, because it's assumed that
             // the hitbox can validate the hit itself before this point
             bool hitValid =
+                ValidateHit(hitData) &&
                 hurtbox.ValidateHit(hitData) &&
                 hurtbox.HurtResponder != null &&
                 hurtbox.HurtResponder.ValidateHit(hitData) &&
@@ -89,7 +92,13 @@ public class Hitbox : MonoBehaviour, IHitbox {
                 if (hurtbox == null || !hurtbox.Active)
                     continue;
 
-                Vector3 normal = -(transform.position - collider.transform.position).normalized;
+                Vector3 normal = -(transform.position - collider.transform.position);
+                if (normal.sqrMagnitude < 0.05) {
+                    normal = Random.insideUnitCircle;
+                    normal.z = normal.y;
+                    normal.y = 0;
+                }
+                normal.Normalize();
 
                 bool canOverrideNormal = hitNormalIsVelocityDirection && _rigidbody && _rigidbody.velocity.sqrMagnitude > 0;
                 if (canOverrideNormal) normal = -_rigidbody.velocity.normalized;

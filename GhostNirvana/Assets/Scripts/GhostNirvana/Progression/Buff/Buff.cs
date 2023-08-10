@@ -40,7 +40,7 @@ namespace GhostNirvana {
 
         [ReorderableList] public List<Buff> Prerequisites = new List<Buff>();
 
-        public void Apply() {
+        public virtual void Apply() {
             foreach (LinearBuff<LinearFloat, float> buff in floatBuffs) {
                 ILinearlyScalable<float> stat = buff.Stat;
                 stat.AdditiveScale += buff.AdditiveAmount;

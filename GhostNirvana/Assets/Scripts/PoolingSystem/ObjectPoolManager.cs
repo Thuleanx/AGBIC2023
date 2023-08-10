@@ -49,7 +49,6 @@ public partial class ObjectPoolManager : MonoBehaviour {
         }
 
         public void Collect(Bubble bubble) {
-            Debug.Log("Collecting: " + bubble.gameObject);
             // give up collecting the bubble, someone illegally borrowed it
             if (bubble.transform.parent != null) {
                 Destroy(bubble.gameObject);
@@ -127,8 +126,6 @@ public partial class ObjectPoolManager : MonoBehaviour {
             sceneToBubbleMapping[scene] = new HashSet<Bubble>();
 
         sceneToBubbleMapping[scene].Add( bubble );
-
-        Debug.Log("Borrowed " + instantiatedObject + " to scene: " + scene.name);
 
         return instantiatedObject;
     }

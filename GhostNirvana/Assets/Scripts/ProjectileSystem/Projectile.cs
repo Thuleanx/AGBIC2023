@@ -40,8 +40,12 @@ public class Projectile : PoolableEntity, IHitResponder {
         if (!this.gameObject.activeInHierarchy) return;
 
         Entity targetOwner = hit.Hurtbox.HurtResponder.Owner;
-        (targetOwner as IHurtable)?.TakeDamage(damage, null, hit);
-        (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, rigidbody.velocity.normalized);
+        if (targetOwner) {
+            (targetOwner as IHurtable)?.TakeDamage(damage, null, hit);
+            (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, rigidbody.velocity.normalized);
+        }
+
+        (owner as IHitResponder)?.RespondToHit(hit);
 
 		if (this.gameObject.activeInHierarchy) 
 			this.Dispose();

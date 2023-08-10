@@ -1,12 +1,14 @@
 {
-    "name": "ComposableBehaviour",
+    "name": "GhostNirvana.CombatSystem",
     "rootNamespace": "",
     "references": [
         "GUID:8b79ac0eb3dd8d546bb28751cd579110",
-        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+        "GUID:e91c76b65a49df7488d9e1fc1f2811f0",
+        "GUID:c35b6df09aec5bb44bbe1f9cba72b426",
         "GUID:1dbdbc8c30623144d96d60804a399e9f",
-        "GUID:b208184d3919ebb4f954c963b0da9fc0",
-        "GUID:e91c76b65a49df7488d9e1fc1f2811f0"
+        "GUID:c095ec3c38991764aa5850a265b09d4b",
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+        "GUID:b208184d3919ebb4f954c963b0da9fc0"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

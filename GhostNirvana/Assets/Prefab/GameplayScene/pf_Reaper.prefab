@@ -547,6 +547,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
   - {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
   floatsToReset:
+  - {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
+  - {fileID: 11400000, guid: e0041954bb234a9418e8cd309eee802d, type: 2}
   - {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
   - {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
   - {fileID: 11400000, guid: 3b5f266d4e365e948a8ac919b51b450c, type: 2}

@@ -11,7 +11,7 @@ using System.Collections;
 
 namespace GhostNirvana {
 
-public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtResponder {
+public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtResponder, IHitResponder {
     public static Miyu Instance;
 
     public enum States {
@@ -62,6 +62,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField] UnityEvent<IHurtable, int, DamageType, Hit> _OnDamage;
     [BoxGroup("Combat")] public UnityEvent OnDeathEvent;
     [BoxGroup("Combat")] public UnityEvent OnShootEvent;
+    [BoxGroup("Combat")] public UnityEvent<Hit> OnHitEvent = new UnityEvent<Hit>();
     #endregion
 
     Timer iframeHappening;
@@ -70,6 +71,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     public bool IsDead => health.Value == 0;
     public bool HasBullet => magazine ? magazine.Value > 0 : false;
     public UnityEvent<IHurtable, int, DamageType, Hit> OnBeforeDamage => _OnDamage;
+
+    Entity IHitResponder.Owner { get => this; set {} }
 
     protected override void Awake() {
 		base.Awake();
@@ -120,6 +123,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
             Vector3 projectileDirection = Quaternion.Euler(0, rotDegrees, 0) * targetDirection;
 
             bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, projectileDirection * bulletSpeed.Value);
+            (bullet as IHitResponder).Owner = this;
         }
 
         OnShootEvent?.Invoke();
@@ -166,6 +170,11 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     protected override IEnumerator IDispose() {
         // never actually disposes of the player
         while (true) yield return null;
+    }
+
+    public void RespondToHit(Hit hit) {
+        // will be invoked by child
+        OnHitEvent?.Invoke(hit);
     }
 }
 

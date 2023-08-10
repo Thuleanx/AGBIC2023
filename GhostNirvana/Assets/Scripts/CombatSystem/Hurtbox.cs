@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CombatSystem {
@@ -14,7 +12,7 @@ namespace CombatSystem {
             set => _hurtResponder = value;
         }
 
-        public bool ValidateHit(Hit hit) {
+        public virtual bool ValidateHit(Hit hit) {
             return _hurtResponder != null;
         }
     }
