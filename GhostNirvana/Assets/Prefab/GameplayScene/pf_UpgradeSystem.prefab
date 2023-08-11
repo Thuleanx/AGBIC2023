@@ -165,8 +165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 8.23999, y: 98}
-  m_SizeDelta: {x: -1230.74, y: 120}
+  m_AnchoredPosition: {x: -12.5, y: 98}
+  m_SizeDelta: {x: -1175, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8290016700245776384
 MonoBehaviour:
@@ -437,7 +437,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ce057b4b1e4eef448d6735c8cb31070, type: 2}
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
   - {fileID: 11400000, guid: 840ccf443b36a71449c0a141e851a785, type: 2}
-  - {fileID: 11400000, guid: 891c9bf790241c6428320bf0f5516079, type: 2}
   - {fileID: 11400000, guid: 4ef0635f9410543409e2fa6e81bdd918, type: 2}
   - {fileID: 11400000, guid: 82324e84283a4a44cbaf90be61ecd87f, type: 2}
   - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
@@ -586,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1230.3999
+      value: -1175
       objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_SizeDelta.y
@@ -622,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.5
+      value: -12.5
       objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -776,13 +775,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7081903185391919320}
     m_Modifications:
+    - target: {fileID: 680296620265695589, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 240
+      objectReference: {fileID: 0}
     - target: {fileID: 734844431955325425, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: upgradeOptionsParent
       value: 
       objectReference: {fileID: 716065139954929669}
+    - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1175
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3696390855710520751, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Name
       value: pf_UpgradeMoneyDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136272856015764585, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 295
       objectReference: {fileID: 0}
     - target: {fileID: 7054984495851533559, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Pivot.x
