@@ -17,6 +17,7 @@ public class UpgradeOption : MonoBehaviour {
 
 #region Components
     Button button;
+    public Image Image;
 #endregion
 
     void Awake() {
@@ -31,6 +32,7 @@ public class UpgradeOption : MonoBehaviour {
         this.Buff = buff;
         // do some other stuff here
         button.interactable = CanPurchase;
+        Image.sprite = buff.icon;
     }
 
     void OnSelect() {

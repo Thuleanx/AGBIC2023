@@ -36,6 +36,7 @@ namespace GhostNirvana {
         [field:SerializeField] public int BaseCost {get; private set; }
         [field:SerializeField] public float Weight {get; private set; }
         [field:SerializeField] public int purchaseLimit;
+        [field:SerializeField] public Sprite icon {get; private set; }
         public int Cost => Mathf.CeilToInt(BaseCost * discount.Value);
 
         [ReorderableList] public List<Buff> Prerequisites = new List<Buff>();
