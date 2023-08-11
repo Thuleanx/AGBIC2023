@@ -16,6 +16,8 @@ public class ApplianceWaveDirector : Director {
     [SerializeField, Range(0, 3f)] float movementScaling = 1;
     [SerializeField, Range(0, 3f)] float accelerationScaling = 1;
 
+    [SerializeField] List<BoxCollider> spawnAreas;
+
     int currentWave;
     float cumulativeWaveTime;
     float enemyNeedsToSpawn = 0;
@@ -45,9 +47,31 @@ public class ApplianceWaveDirector : Director {
         if (enemyNeedsToSpawn > 0)
         while (enemyNeedsToSpawn --> 0) {
             var (prefab, baseStats) = wave.GetMob();
-            GameObject spawnedEnemy = SpawnEnemy(prefab, baseStats);
+            GameObject spawnedEnemy = SpawnEnemy(prefab, baseStats, GetRandomPosition());
             SpawnAppliance(spawnedEnemy);
         }
+    }
+
+    Vector3 GetRandomPosition() {
+        float totalArea = 0;
+        foreach (BoxCollider spawnArea in spawnAreas)
+            totalArea += spawnArea.size.x * spawnArea.size.z * spawnArea.transform.lossyScale.x * spawnArea.transform.lossyScale.z;
+        float randomPoint = Mathx.RandomRange(0, totalArea);
+        foreach (BoxCollider spawnArea in spawnAreas) {
+            float area = spawnArea.size.x * spawnArea.size.z * spawnArea.transform.lossyScale.x * spawnArea.transform.lossyScale.z;
+            totalArea -= area;
+            if (totalArea <= 0) {
+                Vector3 localPos = new Vector3(
+                    (0.5f - Mathx.RandomRange(0.0f,1.0f)) * spawnArea.size.x,
+                    0,
+                    (0.5f - Mathx.RandomRange(0.0f,1.0f)) * spawnArea.size.z);
+
+                Vector3 worldPos = spawnArea.transform.TransformPoint(localPos);
+                worldPos.y = 0;
+                return worldPos;
+            }
+        }
+        return Arena.Instance.GetRandomLocationInExtents();
     }
 
     void SpawnAppliance(GameObject enemy) {

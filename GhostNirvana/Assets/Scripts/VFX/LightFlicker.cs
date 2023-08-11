@@ -35,7 +35,8 @@ namespace VFX {
                 timeUntilSwitch = Mathx.RandomRange(isOn ? lightOnTime : lightOffTime);
             }
 
-            material.SetColor("_EmissionColor", isOn ? brightColor : dimColor);
+            if (isOn)   material.EnableKeyword("_EMISSION");
+            else        material.DisableKeyword("_EMISSION");
         }
     }
 }
