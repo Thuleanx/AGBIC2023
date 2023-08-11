@@ -1039,9 +1039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &336552154590758132 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7767193526184076510, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1061,9 +1060,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &656932496712546973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1838359686834152779, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1083,9 +1081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &1396914891464920411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 287131364416524941, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1105,9 +1102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &1432145697402228962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8971506729425547468, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1127,9 +1123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &1509735991644380309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 319023468488557379, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1149,9 +1144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!4 &1663085795947231293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1176,9 +1170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &2185205508429335141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1066691275077162419, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1198,9 +1191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &2221778602455803968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1030085282036381590, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1220,9 +1212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &2655356769288863210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3767109547181204028, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1242,9 +1233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &3199250109486887081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4829886561450741889, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1264,9 +1254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &3205906184897138059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4387460918529118813, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1286,9 +1275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &3711783178694766546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2529943165835472900, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1308,9 +1296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &3997074891208598123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2875188454752058813, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1330,9 +1317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &4133985730147752172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3008423085128697658, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1352,9 +1338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &4767251394962530809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3263311858355274193, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1374,9 +1359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &5097624493899441333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6206145816921848675, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1396,9 +1380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &5356409633038500329 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6542328293808299583, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1418,9 +1401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &5613907738247789314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6734664426395313364, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1440,9 +1422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &6315167730068990740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5133317778506675394, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1462,9 +1443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &6424258933457802224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3911020363887014874, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1484,9 +1464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &6814025758982100824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5624580965493803150, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1506,9 +1485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &7071887585179481431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -956264438048101759, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1528,9 +1506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &7087187121270184984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -953511988290681906, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1550,9 +1527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &7327199648905676085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -778630672881280285, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1572,9 +1548,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &7453461032254572769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -581301263223498953, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1594,9 +1569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &8243548419401370116 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2091858971023043118, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1616,9 +1590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &8365218615460327233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1978781422929006441, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1638,9 +1611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1 &8941229105576879804 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7821466925578910058, guid: bf9089b2c405449bda1f10f09e08a961, type: 3}
@@ -1660,9 +1632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimColor: {r: 0, g: 0, b: 0, a: 0}
   brightColor: {r: 0, g: 1.9278637, b: 3.390444, a: 1}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30
+  lightOnTime: {x: 0.044241264, y: 0.15170208}
+  lightOffTime: {x: 0.0678366, y: 0.12977436}
 --- !u!1001 &1733699906443089873
 PrefabInstance:
   m_ObjectHideFlags: 0
