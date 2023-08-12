@@ -24,6 +24,8 @@ public class Reaper : MonoBehaviour {
     [SerializeField] List<LinearInt> intsToReset;
     [SerializeField] List<LinearFloat> floatsToReset;
 
+    bool reincarnating;
+
     void Start() {
         miyu.OnDeathEvent.AddListener(OnMiyuDeath);
     }
@@ -60,10 +62,18 @@ public class Reaper : MonoBehaviour {
         deathUI.gameObject.SetActive(true);
     }
 
-    public void TriggerReincarnation() {
-        // reload current level
+    IEnumerator IReincarnation() {
+        yield return new WaitForSecondsRealtime(2);
         App.instance.RequestLoad(gameObject.scene.name);
         Time.timeScale = 1;
+    }
+
+
+    public void TriggerReincarnation() {
+        if (reincarnating) return;
+        reincarnating = true;
+        // reload current level
+        StartCoroutine(IReincarnation());
     }
 
     void ResetAllScriptableVariables() {
