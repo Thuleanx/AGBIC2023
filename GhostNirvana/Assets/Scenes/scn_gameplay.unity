@@ -1337,10 +1337,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1892887993}
     m_Modifications:
-    - target: {fileID: 430467485525990894, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 19.699982
-      objectReference: {fileID: 0}
     - target: {fileID: 6668880006468203000, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1397,22 +1393,6 @@ PrefabInstance:
       propertyPath: miyu
       value: 
       objectReference: {fileID: 1622784182}
-    - target: {fileID: 6668880006849380040, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6668880006849380040, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.642136
-      objectReference: {fileID: 0}
-    - target: {fileID: 6668880006849380040, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.142139
-      objectReference: {fileID: 0}
-    - target: {fileID: 6668880006849380040, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
     - target: {fileID: 6668880006849380043, guid: 5b6bea94178028e40911cb60aa3d1375, type: 3}
       propertyPath: m_Follow
       value: 

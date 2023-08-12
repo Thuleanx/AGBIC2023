@@ -643,11 +643,6 @@ PrefabInstance:
       propertyPath: upgradeOptionsParent
       value: 
       objectReference: {fileID: 716065139954929669}
-    - target: {fileID: 6152580598471882748, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
-      propertyPath: payDescriptionFormatting
-      value: "Good job! You've collected <color=\"green\">{0}</color> appliances.
-        \nYou've earned <color=\"yellow\">{1:C2}</color> dollars."
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
 --- !u!114 &7942366038758956882 stripped
@@ -775,29 +770,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7081903185391919320}
     m_Modifications:
-    - target: {fileID: 680296620265695589, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 240
-      objectReference: {fileID: 0}
     - target: {fileID: 734844431955325425, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: upgradeOptionsParent
       value: 
       objectReference: {fileID: 716065139954929669}
-    - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1175
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -12.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3696390855710520751, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Name
       value: pf_UpgradeMoneyDisplay
-      objectReference: {fileID: 0}
-    - target: {fileID: 5136272856015764585, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 295
       objectReference: {fileID: 0}
     - target: {fileID: 7054984495851533559, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Pivot.x

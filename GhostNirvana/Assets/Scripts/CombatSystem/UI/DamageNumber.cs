@@ -19,7 +19,7 @@ public class DamageNumber : Entity {
     RectTransform canvasRectTransform;
 
     [SerializeField] Vector3 worldSpaceOffset;
-    [SerializeField] Color color;
+    [SerializeField, ColorUsage(true, true)] Color color;
     [SerializeField] float verticalMovementDuringAnimation;
     [SerializeField] float randomizedPositionRadius;
     [SerializeField, MinMaxSlider(0, 1)] Vector2 appearDurationRange;

@@ -43,7 +43,7 @@ Material:
     - _VertexOffsetY: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FaceColor: {r: 2, g: 2, b: 2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -57,9 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: NanumPenScript-Regular
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 156753914
   material: {fileID: -3222400446343039853}
-  materialHashCode: 0
+  materialHashCode: 207051290
   m_Version: 1.1.0
   m_SourceFontFileGUID: 45b9000bef8df3542b2e040fd3581d95
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 45b9000bef8df3542b2e040fd3581d95, type: 3}
