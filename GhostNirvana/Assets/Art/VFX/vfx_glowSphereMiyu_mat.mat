@@ -25,7 +25,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -50,10 +50,13 @@ Material:
     - Vector1_2ec383a24afd49f78ab6d683d95d03a4: 0.5
     - Vector1_31badfa2f2494f13aff08b4daa9763c2: 0.5
     - Vector1_43257789a71e44a490928ec34b6b3066: 2
+    - _Flash: 0
+    - _Flashing: 0
     - _Mask: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0.023529412, g: 0.039215688, b: 0, a: 1}
     - Vector2_18dbb32e20f5447cad0bd48524f87547: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _FlashColor: {r: 4, g: 4, b: 4, a: 0}
   m_BuildTextureStacks: []

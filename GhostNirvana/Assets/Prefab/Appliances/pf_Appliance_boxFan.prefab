@@ -55,6 +55,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_Appliance_boxFan
       objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7157510232654929934}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Flash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VFX.FlashEffect, VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1578244143262473607, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -236,3 +264,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!1 &5271721108740376434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3002847251879682665, guid: cc663610b108e1b448cf3a806b427da4, type: 3}
+  m_PrefabInstance: {fileID: 2268499468574923493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7157510232654929934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271721108740376434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}

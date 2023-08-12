@@ -54,6 +54,12 @@ public class Projectile : PoolableEntity, IHitResponder {
     void Update() {
         hitbox.CheckForHits();
     }
+
+
+    void OnCollisionEnter(Collision collision) {
+		if (this.gameObject.activeInHierarchy) 
+			this.Dispose();
+    }
 }
 
 }

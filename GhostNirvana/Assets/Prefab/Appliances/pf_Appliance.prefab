@@ -180,7 +180,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
-  <Price>k__BackingField: 200
+  <Price>k__BackingField: 1499
   turnSpeed: 360
   knockbackOnEjection: 20
   cooldownAfterPossession: 10

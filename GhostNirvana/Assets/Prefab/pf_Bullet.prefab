@@ -77,7 +77,8 @@ GameObject:
   - component: {fileID: 7531139996555314360}
   - component: {fileID: 7531139996555314367}
   - component: {fileID: 1097658304994715504}
-  m_Layer: 0
+  - component: {fileID: 7535031399048211607}
+  m_Layer: 23
   m_Name: pf_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,3 +197,16 @@ MonoBehaviour:
   durationSeconds: 4
   timeEnabled: 0
   disposalRequested: 0
+--- !u!135 &7535031399048211607
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531139996555314357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999997
+  m_Center: {x: 0, y: 0, z: 0}

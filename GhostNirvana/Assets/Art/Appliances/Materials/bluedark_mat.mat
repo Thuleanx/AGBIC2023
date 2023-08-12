@@ -57,6 +57,7 @@ Material:
     - Vector1_C7FE673D: 1.13
     - Vector1_CC376C0: 0.52
     - Vector1_D4B81633: 0.45
+    - _Flash: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
@@ -65,6 +66,7 @@ Material:
     - Color_7FC30CF5: {r: 0, g: 0, b: 0, a: 0}
     - Color_F22D68E6: {r: 0.4669811, g: 0.89412755, b: 1, a: 1}
     - _Color: {r: 0.047837302, g: 0.3701738, b: 0.4056604, a: 0}
+    - _FlashColor: {r: 4, g: 4, b: 4, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4163736341281173171
 MonoBehaviour:

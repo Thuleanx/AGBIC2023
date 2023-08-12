@@ -22,7 +22,7 @@ MonoBehaviour:
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: Heals for <color="green">+1</color> health.
   <BaseCost>k__BackingField: 0
-  <Weight>k__BackingField: 0
+  <Weight>k__BackingField: 1
   purchaseLimit: 0
   <icon>k__BackingField: {fileID: 1886762910, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []

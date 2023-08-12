@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334488dd319501a4da50403ca9d230db, type: 3}
   m_Name: so_Miyu.magazine
   m_EditorClassIdentifier: 
-  BaseValue: 5
+  BaseValue: 12
   AdditiveScale: 0
   MultiplicativeScale: 1
-  Limiter: 5
+  Limiter: 12

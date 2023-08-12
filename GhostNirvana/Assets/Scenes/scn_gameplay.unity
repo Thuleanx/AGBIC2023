@@ -2550,6 +2550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrade System
       objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802652, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7735727452134802653, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
       propertyPath: m_RootOrder
       value: 4

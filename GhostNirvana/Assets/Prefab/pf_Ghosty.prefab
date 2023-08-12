@@ -198,7 +198,43 @@ MonoBehaviour:
   FreezePosition: 0
   _OnDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8264134509775427393}
+        m_TargetAssemblyTypeName: VFX.FlashEffect, VFX
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 53630878631094816}
+        m_TargetAssemblyTypeName: VFX.FlashEffect, VFX
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3914817499488307278}
+        m_TargetAssemblyTypeName: VFX.FlashEffect, VFX
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
   droppedExperienceGem: {fileID: 725140305560010594, guid: 6d8756ef015ae97498871bffcf5f73d8, type: 3}
@@ -387,6 +423,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+--- !u!1 &153003695221679081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4376889909228290718, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+  m_PrefabInstance: {fileID: 4513242490702782839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3914817499488307278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153003695221679081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}
 --- !u!1 &3630794051420478502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
@@ -457,3 +512,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
   m_PrefabInstance: {fileID: 4513242490702782839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6045507281492571943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1348908397777447344, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+  m_PrefabInstance: {fileID: 4513242490702782839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8264134509775427393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045507281492571943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}
+--- !u!1 &9217843109641332712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4705726536110425759, guid: 7ff2ad2a3c1bd594dbff9b3497aeee8a, type: 3}
+  m_PrefabInstance: {fileID: 4513242490702782839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &53630878631094816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217843109641332712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}
