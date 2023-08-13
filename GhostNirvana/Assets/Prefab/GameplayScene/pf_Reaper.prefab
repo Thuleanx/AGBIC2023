@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miyu: {fileID: 0}
-  deathTimeSlowEase: 7
+  deathTimeSlowEase: 9
   deathTimeSlowDuration: 1
   deathTimeSlowDelaySeconds: 1.7
   deathUI: {fileID: 6668880006468203000}
@@ -482,28 +482,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
-  intsToReset:
-  - {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
-  - {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
-  - {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
-  - {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
-  - {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
-  floatsToReset:
-  - {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
-  - {fileID: 11400000, guid: e0041954bb234a9418e8cd309eee802d, type: 2}
-  - {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
-  - {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
-  - {fileID: 11400000, guid: 3b5f266d4e365e948a8ac919b51b450c, type: 2}
-  - {fileID: 11400000, guid: 02316fc2cef2fb24bbe1be149a73d159, type: 2}
-  - {fileID: 11400000, guid: f7fad2df61e2ab04fa643ef0d05fb579, type: 2}
-  - {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
-  - {fileID: 11400000, guid: 0e3f67fd098869e4b928a17f4719a06e, type: 2}
-  - {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
-  - {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
-  - {fileID: 11400000, guid: 93c2ead6074c5114c8e789cc5146e879, type: 2}
-  - {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
-  - {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
+  respawnTime: 2
 --- !u!1 &6668880006849380041
 GameObject:
   m_ObjectHideFlags: 0

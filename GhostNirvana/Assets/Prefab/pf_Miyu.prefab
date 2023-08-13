@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3386853682570816215
 Transform:
   m_ObjectHideFlags: 0
@@ -93,6 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnSpeed: {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
   prefab: {fileID: 6567878376966889744, guid: 19ec3b6c4a15e9047b4a5f08e006cc60, type: 3}
+  damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
+  bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
+  bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
 --- !u!1 &2322140680700594663
 GameObject:
   m_ObjectHideFlags: 0

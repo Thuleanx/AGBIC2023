@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
+  m_Name: Bag of Salt+
+  m_EditorClassIdentifier: 
+  floatBuffs:
+  - <Stat>k__BackingField: {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
+    <AdditiveAmount>k__BackingField: 0.5
+    <MultiplicativeAmount>k__BackingField: 1
+  - <Stat>k__BackingField: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
+    <AdditiveAmount>k__BackingField: 0.1
+    <MultiplicativeAmount>k__BackingField: 1
+  intBuffs: []
+  replenishFloat: []
+  replenishInt: []
+  discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
+  <description>k__BackingField: 'Mighty 5 lbs of salt.
+
+    Increase rate of throwing
+    salt by <color="green">0.5</color> per second.
+
+    Increase damage of salt explosion
+    by <color="green">10%</color> of your bullet damage.'
+  <BaseCost>k__BackingField: 999
+  <Weight>k__BackingField: 20
+  purchaseLimit: 0
+  <icon>k__BackingField: {fileID: -1815212334, guid: f89ab24258db2624498f36a8ce398b86, type: 3}
+  Prerequisites:
+  - {fileID: 11400000, guid: fea9e10eb34de774da223342943f6d9c, type: 2}

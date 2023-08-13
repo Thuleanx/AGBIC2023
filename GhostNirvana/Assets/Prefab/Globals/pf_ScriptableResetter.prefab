@@ -48,11 +48,14 @@ MonoBehaviour:
   intsToReset:
   - {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
   - {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
+  - {fileID: 11400000, guid: 54710aef4c29c6342941cdda3e1f91fb, type: 2}
   - {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
   - {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
-  - {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
   - {fileID: 11400000, guid: eba27c2a8ffed6b48bafcac52829a49e, type: 2}
+  - {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
   floatsToReset:
+  - {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
+  - {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
   - {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
   - {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
   - {fileID: 11400000, guid: 3b5f266d4e365e948a8ac919b51b450c, type: 2}
