@@ -5,8 +5,6 @@ using System.Collections;
 using NaughtyAttributes;
 using DG.Tweening;
 using Utils;
-using ScriptableBehaviour;
-using System.Collections.Generic;
 
 namespace GhostNirvana {
 

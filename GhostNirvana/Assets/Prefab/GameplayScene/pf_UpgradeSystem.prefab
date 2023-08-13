@@ -779,6 +779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_UpgradeMoneyDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 5136272856015764585, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -624.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7054984495851533559, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
