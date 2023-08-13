@@ -300,6 +300,11 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!1 &362884237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7501924698092218976, guid: 2330c2cab1202864db9051bad55423d9, type: 3}
+  m_PrefabInstance: {fileID: 7501924698129955577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366420853 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 585319038123581639, guid: 25845698792d84e4788a08e4283ff91d, type: 3}
@@ -417,6 +422,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cade1d0ee1968462c900fb5f1f61c30c, type: 3}
   m_PrefabInstance: {fileID: 465497740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &505353745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3099187640775192087, guid: 10e3022efcfd0db43a67a85c9597f588, type: 3}
+  m_PrefabInstance: {fileID: 3099187641925771633}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &516031877
 GameObject:
@@ -675,6 +685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 939478799}
   - component: {fileID: 939478800}
+  - component: {fileID: 939478801}
   m_Layer: 0
   m_Name: Time Keeper
   m_TagString: Untagged
@@ -711,6 +722,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeElapsedMinutes: {fileID: 11400000, guid: e1e23ffdc95c2d7439c0cad5656bb246, type: 2}
   active: 0
+--- !u!114 &939478801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939478798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eff88b8c72e16d4b8cdcf6d81356cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 362884237}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 505353745}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  time: {fileID: 11400000, guid: e1e23ffdc95c2d7439c0cad5656bb246, type: 2}
+  timeToTrigger: 10
 --- !u!114 &939926136 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6728344083405296946, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
@@ -2762,7 +2814,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 495403030364050797, guid: 2330c2cab1202864db9051bad55423d9, type: 3}
   m_PrefabInstance: {fileID: 7501924698129955577}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 362884237}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6db9d9a8e1d554b9c685629ccc1c4a, type: 3}

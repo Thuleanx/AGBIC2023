@@ -48,6 +48,7 @@ public class WaveDirector : Director {
 
     [SerializeField] public List<Wave> allWaves;
     int currentWave;
+    int maxSpawnPerUpdate = 1;
     float cumulativeWaveTime;
     float enemyNeedsToSpawn = 0;
     float lastFrameTime = 0;
@@ -74,11 +75,13 @@ public class WaveDirector : Director {
         float deltaTime = (timeElapsed.Value - lastFrameTime) * secondsInMinute;
         enemyNeedsToSpawn += deltaTime * wave.GetSpawnFrequency(timeSinceLastWave) / secondsInMinute;
 
+        int spawnsAllowed = maxSpawnPerUpdate;
+
         if (enemyNeedsToSpawn >= 1)
         do {
             var (prefab, baseStats) = wave.GetMob();
             SpawnEnemy(prefab, baseStats);
-        } while (--enemyNeedsToSpawn >= 1);
+        } while (--enemyNeedsToSpawn >= 1 && --spawnsAllowed > 1);
 
         lastFrameTime = timeElapsed.Value;
     }

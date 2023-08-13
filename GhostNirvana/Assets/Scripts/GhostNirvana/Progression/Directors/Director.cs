@@ -21,6 +21,8 @@ public abstract class Director : MonoBehaviour {
         BaseStatsMonoBehaviour baseStatsHolder = spawnedEnemy.GetComponent<BaseStatsMonoBehaviour>();
         baseStatsHolder.Stats = baseStats;
 
+        spawnedEnemy.GetComponent<Status>().HealToFull();
+
         return spawnedEnemy.gameObject;
     }
 }
