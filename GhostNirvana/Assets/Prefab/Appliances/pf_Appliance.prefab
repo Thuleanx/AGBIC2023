@@ -188,6 +188,7 @@ MonoBehaviour:
   AOEAttackPrefab: {fileID: 6567878376966889744, guid: b7a9e5f639a30174fa5ca3273cbe09a3, type: 3}
   leftAttackAnchor: {fileID: 1578244143262473607}
   rightAttackAnchor: {fileID: 7970129724343175888}
+  possessionVFX: {fileID: 6567878376966889744, guid: 2dcba5acc46f8403bbbb37537e0eb597, type: 3}
   clawHand: {fileID: 7185106448197134116, guid: fcab771fcbf256945a6fc463b8cd2612, type: 3}
   collectionPivotTop: 1
   aboveScreenDistance: 40

@@ -50,6 +50,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
     [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview] GameObject AOEAttackPrefab;
     [BoxGroup("Combat"), SerializeField] Transform leftAttackAnchor;
     [BoxGroup("Combat"), SerializeField] Transform rightAttackAnchor;
+    [BoxGroup("Combat"), SerializeField] GameObject possessionVFX;
 
     [BoxGroup("Collection"), SerializeField, ShowAssetPreview] GameObject clawHand;
     [BoxGroup("Collection"), SerializeField] float collectionPivotTop;

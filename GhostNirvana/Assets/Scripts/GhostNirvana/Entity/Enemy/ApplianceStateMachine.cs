@@ -100,6 +100,12 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         IHurtResponder.ConnectChildrenHurtboxes(agent);
         IHitResponder.ConnectChildrenHitboxes(agent);
         agent.allEnemies.Add(agent);
+
+        if (agent.possessionVFX)
+            ObjectPoolManager.Instance?.Borrow(App.GetActiveScene(),
+                agent.possessionVFX.transform,
+                agent.transform.position
+            );
     }
 
     public override Appliance.States? Update(
