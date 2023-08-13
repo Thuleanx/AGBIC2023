@@ -13,6 +13,7 @@ public class TimeKeeper : MonoBehaviour {
     }
 
     [Button] public void Activate() => active = true;
+    [Button] public void TimeCheat() => timeElapsedMinutes.Value = 10f;
 
     protected void LateUpdate() {
         if (active) timeElapsedMinutes.Value += Time.deltaTime / 60.0f;

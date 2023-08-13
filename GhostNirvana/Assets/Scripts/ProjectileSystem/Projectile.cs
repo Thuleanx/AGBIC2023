@@ -47,7 +47,7 @@ public class Projectile : PoolableEntity, IHitResponder {
 
         (owner as IHitResponder)?.RespondToHit(hit);
 
-		if (this.gameObject.activeInHierarchy) 
+		if (this.gameObject.activeInHierarchy)
 			this.Dispose();
     }
 
@@ -57,6 +57,8 @@ public class Projectile : PoolableEntity, IHitResponder {
 
 
     void OnCollisionEnter(Collision collision) {
+        collision.collider.GetComponentInParent<RespondToBulletHit>()?.OnBulletHit?.Invoke();
+
 		if (this.gameObject.activeInHierarchy) 
 			this.Dispose();
     }

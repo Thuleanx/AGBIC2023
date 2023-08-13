@@ -105,6 +105,12 @@ public partial class Appliance : Enemy<Appliance.Input> {
     }
 
     public void ApplianceCollectorOnly_Collect() => StateMachine.SetState(States.Collecting);
+
+    public void DelayPossession(float time) {
+        bool shouldChangePossessionCooldown = !possessionCooldown || possessionCooldown.TimeLeft < time;
+        if (shouldChangePossessionCooldown)
+            possessionCooldown = time;
+    }
 }
 
 }
