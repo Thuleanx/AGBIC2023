@@ -50,7 +50,7 @@ public class UpgradeSystem : MonoBehaviour {
         int moneyEarned;
         (amountCollected, moneyEarned) = collector.Collect((int) applianceCollectionAmount.Value);
         moneyEarned += wage;
-        upgradeMoneyDetails.SetPaymentDescription(amountCollected, moneyEarned);
+        upgradeMoneyDetails.SetPaymentDescription(GetRank(), amountCollected, moneyEarned);
         bank.Deposit(wage);
 
         levelUpOptionPanel.gameObject.SetActive(true);

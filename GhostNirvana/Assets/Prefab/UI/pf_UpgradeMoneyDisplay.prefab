@@ -59,12 +59,29 @@ MonoBehaviour:
   payDescription: {fileID: 2874293319676184546}
   balanceMinusPriceDisplay: {fileID: 4328924057593396766}
   priceDisplay: {fileID: 6012199726002111805}
-  payDescriptionFormatting: 'Good job! You collected <color="green">{0}</color> pieces
-    of appliances.
-
-    You earned <color="yellow">{1:F2}</color>.'
-  balanceMinusPriceDisplayFormatting: '{0:F2}'
-  priceDisplayFormatting: -{0:F2}
+  payDescriptionFormatting: "Congrats, you\u2019ve been promoted to Associate Lvl
+    <color=#ea44dc>{0}</color>! \r\nWe\u2019ve sent the air claw to retrieve <color=\"green\">{1}</color>
+    appliances, and paid <color=\"green\">{2:C2}</color> to your account. Take a
+    look at our benefits store!\r\n\n{3}"
+  balanceMinusPriceDisplayFormatting: '{0:C2}'
+  priceDisplayFormatting: -{0:C2}
+  tipTexts:
+  - Our Special Salt Gun is auto-reloading, how convenient riiight?
+  - We can only air claw out one appliance at a time, but you can help us invest
+    in more claws!
+  - "We can\u2019t air claw appliances that are still possessed, that\u2019s a liability
+    we can\u2019t afford!"
+  - Did you know spraying an appliance with salt prevents it from being possessed
+    for a while?
+  - "Appliances are too heavy to get knocked back, so don\u2019t get too close! Haha!"
+  - "Have you tried our Soulty Co. snacks? They\u2019re yum yum delicious!"
+  - "We\u2019ve developed tons of modules for the Special Salt Gun that are definitely
+    worth trying!"
+  - "We\u2019re first and foremost a gourmet salt company, but our high quality salt
+    really shines in the face of ghosts!"
+  - "Our clients will be glad to get their stove back- that bread can\u2019t bake
+    itself!"
+  - "Our soul salt will make your soul so soul-ty, it\u2019ll sparkle!"
 --- !u!1 &4331831471933190361
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,8 +447,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -785,6 +785,30 @@ PrefabInstance:
       propertyPath: upgradeOptionsParent
       value: 
       objectReference: {fileID: 716065139954929669}
+    - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874293319676184546, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_margin.w
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874293319676184546, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_margin.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874293319676184546, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_margin.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874293319676184546, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_margin.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3696390855710520751, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Name
       value: pf_UpgradeMoneyDisplay

@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
+using System.Collections.Generic;
+using Utils;
 
 namespace GhostNirvana.Upgrade {
 
@@ -18,6 +20,8 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
     [ResizableTextArea, SerializeField] string payDescriptionFormatting;
     [ResizableTextArea, SerializeField] string balanceMinusPriceDisplayFormatting;
     [ResizableTextArea, SerializeField] string priceDisplayFormatting;
+
+    [SerializeField, ResizableTextArea, ReorderableList] List<string> tipTexts;
 
     void OnEnable() {
         foreach (UpgradeOption option in upgradeOptionsParent.GetComponentsInChildren<UpgradeOption>()) {
@@ -73,10 +77,14 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
         priceDisplay.color = textColorForLoss;
     }
 
-    public void SetPaymentDescription(int collectionCount, float paymentAmount) {
+    public void SetPaymentDescription(string rank, int collectionCount, float paymentAmount) {
+        string tip = "";
+        if (tipTexts.Count > 0)
+            tip = tipTexts[Mathx.RandomRange(0, tipTexts.Count)];
         payDescription.text = String.Format(
             payDescriptionFormatting,
-            collectionCount, paymentAmount / CENTS_IN_DOLLAR
+            rank, collectionCount, paymentAmount / CENTS_IN_DOLLAR,
+            tip
         );
     }
 }
