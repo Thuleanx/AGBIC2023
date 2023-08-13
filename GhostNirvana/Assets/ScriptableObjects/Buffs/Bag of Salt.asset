@@ -27,5 +27,5 @@ MonoBehaviour:
   <BaseCost>k__BackingField: 1999
   <Weight>k__BackingField: 1
   purchaseLimit: 1
-  <icon>k__BackingField: {fileID: -1815212334, guid: f89ab24258db2624498f36a8ce398b86, type: 3}
+  <icon>k__BackingField: {fileID: -88603265, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []
