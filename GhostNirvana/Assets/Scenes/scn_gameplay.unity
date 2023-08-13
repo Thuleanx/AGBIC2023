@@ -2490,9 +2490,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1892887993}
     m_Modifications:
+    - target: {fileID: 59975323811988711, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146716428977497800, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1510117823244610736, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -78.75003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572834323402129781, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4945835031860214305, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: upgradeSystem
@@ -3009,7 +3021,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 744117165037491928, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -280.55
+      value: -280.54993
       objectReference: {fileID: 0}
     - target: {fileID: 1665898743130506873, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
       propertyPath: m_AnchorMax.y

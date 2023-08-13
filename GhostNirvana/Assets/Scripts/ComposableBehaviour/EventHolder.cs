@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using NaughtyAttributes;
 
 namespace ComposableBehaviour {
 
@@ -8,7 +9,7 @@ public class EventHolder : MonoBehaviour {
     [SerializeField] bool triggerOnce;
     [SerializeField] UnityEvent OnTrigger;
     [SerializeField, Min(0)] float delaySeconds;
-    bool triggered;
+	[SerializeField, ReadOnly] bool triggered;
 
     void OnEnable() => triggered = false;
 
@@ -20,7 +21,7 @@ public class EventHolder : MonoBehaviour {
     }
 
     IEnumerator InvokeWithDelay() {
-        yield return new WaitForSeconds(delaySeconds);
+        yield return new WaitForSecondsRealtime(delaySeconds);
         OnTrigger?.Invoke();
     }
 }

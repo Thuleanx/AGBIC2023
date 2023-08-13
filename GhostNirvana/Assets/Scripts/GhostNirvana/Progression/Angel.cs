@@ -27,7 +27,6 @@ public class Angel : MonoBehaviour {
 
     [Header("StatsScreen")]
     [SerializeField] Canvas statsCanvas;
-    [SerializeField] UnityEvent onStatsStart;
 
     float impendingEnd;
     bool reincarnating;
@@ -53,8 +52,7 @@ public class Angel : MonoBehaviour {
         timeSlowDown.Play();
         yield return timeSlowDown.WaitForCompletion();
         Time.timeScale = 0;
-        onStatsStart?.Invoke();
-        statsCanvas.gameObject.SetActive(true);
+        interactionCanvas?.gameObject?.SetActive(true);
     }
 
     public void TriggerReincarnation() {
