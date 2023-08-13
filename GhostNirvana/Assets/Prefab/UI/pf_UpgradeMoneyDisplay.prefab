@@ -55,7 +55,7 @@ MonoBehaviour:
   upgradeOptionsParent: {fileID: 0}
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
   textColorForGains: {r: 0.2901961, g: 1.5921569, b: 0.5568628, a: 1}
-  textColorForLoss: {r: 2, g: 0, b: 0, a: 1}
+  textColorForLoss: {r: 2.9595144, g: 0.26523942, b: 0.90179896, a: 1}
   payDescription: {fileID: 2874293319676184546}
   balanceMinusPriceDisplay: {fileID: 4328924057593396766}
   priceDisplay: {fileID: 6012199726002111805}

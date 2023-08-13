@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldSpaceOffset: {x: 0, y: 1, z: 0}
-  color: {r: 4.584611, g: 0, b: 0, a: 1}
+  color: {r: 4.792714, g: 0.40148392, b: 1.4051937, a: 1}
   verticalMovementDuringAnimation: 80
   randomizedPositionRadius: 50
   appearDurationRange: {x: 0.19116008, y: 0.4226312}
@@ -166,8 +166,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
