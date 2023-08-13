@@ -21,12 +21,17 @@ public class MiyuAnimator : MonoBehaviour {
 
     [SerializeField] LinearFloat playerSpeed;
     [SerializeField] LinearFloat reloadSpeed;
+    [SerializeField] LinearFloat shield;
 
     [SerializeField] float reloadAnimationDuration;
     [SerializeField] float shootAnimationDuration;
+    [SerializeField] ParticleSystem shieldBreak;
+    [SerializeField] ParticleSystem shieldCharge;
+    [SerializeField] GameObject shieldOn;
 
     Miyu Miyu;
     Timer shooting;
+    float shieldLastFrame;
 
     enum AnimationState {
         Normal = 0,
@@ -71,6 +76,8 @@ public class MiyuAnimator : MonoBehaviour {
     protected void LateUpdate() {
         if (!Miyu) return; // this is impossible unless project configured wrong
 
+        HandleShieldState();
+
         if (Miyu.Velocity.magnitude < 0)    Anim?.SetFloat(param_LocomotionAnimationSpeed, 1);
         else                                Anim?.SetFloat(param_LocomotionAnimationSpeed, Mathf.Max(Miyu.Velocity.magnitude / playerSpeed.BaseValue, 1));
 
@@ -104,6 +111,25 @@ public class MiyuAnimator : MonoBehaviour {
 
         Anim?.SetFloat(param_Speed, speedParam);
         Miyu.TurnToFace(directionToFace, Miyu.TurnSpeed);
+    }
+
+    void HandleShieldState() {
+        if (shield.Value == 0) return;
+
+        if (shield.Value < 1) {
+            shieldOn.gameObject.SetActive(false);
+            if (shield.Value >= 0.95f && !shieldCharge.isPlaying)
+                shieldCharge.Play();
+        } else if (shield.Value >= 1) {
+            shieldOn.gameObject.SetActive(true);
+            if (shieldCharge.isPlaying) shieldCharge.Stop();
+        }
+
+        if (shieldLastFrame >= 1 && shield.Value < 1) {
+            shieldBreak.Stop();
+            shieldBreak.Play();
+        }
+        shieldLastFrame = shield.Value;
     }
 }
 

@@ -292,8 +292,12 @@ MonoBehaviour:
   param_State: State
   playerSpeed: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
   reloadSpeed: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
+  shield: {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
   reloadAnimationDuration: 0.736
   shootAnimationDuration: 1
+  shieldBreak: {fileID: 0}
+  shieldCharge: {fileID: 0}
+  shieldOn: {fileID: 0}
 --- !u!1 &4751501342995646954
 GameObject:
   m_ObjectHideFlags: 0

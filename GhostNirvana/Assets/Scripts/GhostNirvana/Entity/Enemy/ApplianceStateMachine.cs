@@ -195,7 +195,6 @@ public class ApplianceCollecting : State<Appliance, Appliance.States> {
 
         float targetY = clawPos.y - pivotPos.y + agent.transform.position.y;
         Vector3 finalTargetForAgent = (clawPos.y - pivotPos.y) * Vector3.up + agent.transform.position;
-        Debug.Log(targetY);
 
         sequence.AppendInterval(Mathx.RandomRange(0, agent.delayTime));
 
