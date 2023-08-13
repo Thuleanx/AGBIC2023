@@ -16,7 +16,7 @@ MonoBehaviour:
   renderPassEvent: 400
   outlinesLayerMask:
     serializedVersion: 2
-    m_Bits: 469762048
+    m_Bits: 486539264
   viewspaceNormalsTextureSettings:
     colorFormat: 0
     depthBufferBits: 16
