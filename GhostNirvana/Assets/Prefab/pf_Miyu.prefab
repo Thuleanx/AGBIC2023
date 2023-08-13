@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6090370458761049219
 Transform:
   m_ObjectHideFlags: 0
@@ -375,7 +375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6567878376966889744, guid: 19ec3b6c4a15e9047b4a5f08e006cc60, type: 3}
-  chanceToSpawnOnHit: {fileID: 11400000, guid: e0041954bb234a9418e8cd309eee802d, type: 2}
+  numberOfHitsToSpawn: {fileID: 11400000, guid: 54710aef4c29c6342941cdda3e1f91fb, type: 2}
+  damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
+  bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
+  bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
 --- !u!1 &5818867099502331307
 GameObject:
   m_ObjectHideFlags: 0

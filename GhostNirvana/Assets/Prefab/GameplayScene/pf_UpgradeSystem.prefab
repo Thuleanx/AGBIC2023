@@ -447,6 +447,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fa87cfbd5eb43c4a9d49ab29ee64013, type: 2}
   - {fileID: 11400000, guid: 895b034b1d05dba4fb134aa672435698, type: 2}
   - {fileID: 11400000, guid: 209dbf50b629c054cb2bdb0910cc2815, type: 2}
+  - {fileID: 11400000, guid: a9e4e4c4f1ec0494fa847edf3c5b0f1f, type: 2}
+  - {fileID: 11400000, guid: f9accf5134605da48a707b6b0fbbd46e, type: 2}
+  - {fileID: 11400000, guid: c8e7741a17dfe9f4793a18e540967485, type: 2}
   BuffsTakenInSequence: []
 --- !u!1001 &2381328518189803347
 PrefabInstance:

@@ -44,6 +44,11 @@ public class GenericHitResponder : PoolableEntity, IHitResponder {
         (targetOwner as IKnockbackable)?.ApplyKnockback(knockback, hit.Normal);
     }
 
+    public void Initialize(int damage, float knockback) {
+        this.damage = damage;
+        this.knockback = knockback;
+    }
+
     void Update() {
         hitbox.CheckForHits();
     }

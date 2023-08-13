@@ -9,8 +9,13 @@ namespace GhostNirvana {
 
 public class SpawnOnHit : MonoBehaviour {
     [SerializeField] GameObject prefab;
-    [SerializeField] ScriptableFloat chanceToSpawnOnHit;
+    [SerializeField] ScriptableInt numberOfHitsToSpawn;
+    [SerializeField] ScriptableFloat damageScaling;
+    [SerializeField] ScriptableInt bulletDamage;
+    [SerializeField] ScriptableFloat bulletKnockback;
     Miyu miyu;
+
+    int hitCount;
 
     void Awake() {
         miyu = GetComponentInParent<Miyu>();
@@ -25,20 +30,29 @@ public class SpawnOnHit : MonoBehaviour {
     }
 
     void OnHit(Hit hit) {
-        float spawnChance = chanceToSpawnOnHit ? chanceToSpawnOnHit.Value : 0;
-        if (spawnChance <= 0) return;
-        spawnChance = Mathf.Min(spawnChance, 1);
+        if (numberOfHitsToSpawn.Value == 0) return;
 
-        bool shouldSpawn = Mathx.RandomRange(0.0f, 1.0f) < spawnChance;
-        if (!shouldSpawn) return;
+        hitCount++;
+        if (hitCount < numberOfHitsToSpawn.Value) return;
+        hitCount = 0;
+
+        /* float spawnChance = chanceToSpawnOnHit ? chanceToSpawnOnHit.Value : 0; */
+        /* if (spawnChance <= 0) return; */
+        /* spawnChance = Mathf.Min(spawnChance, 1); */
+
+        /* bool shouldSpawn = Mathx.RandomRange(0.0f, 1.0f) < spawnChance; */
+        /* if (!shouldSpawn) return; */
 
         Vector3 spawnPosition = (hit.Hurtbox as MonoBehaviour)?.transform?.position ?? hit.Position;
         spawnPosition.y = 0;
 
-        ObjectPoolManager.Instance.Borrow(
+        GenericHitResponder hitResponder = ObjectPoolManager.Instance.Borrow(
             gameObject.scene, prefab.transform,
             spawnPosition, Quaternion.identity
-        );
+        ).GetComponent<GenericHitResponder>();
+
+        int damage = Mathf.CeilToInt(damageScaling.Value * bulletDamage.Value);
+        hitResponder.Initialize(damage, bulletKnockback.Value);
     }
 }
 
