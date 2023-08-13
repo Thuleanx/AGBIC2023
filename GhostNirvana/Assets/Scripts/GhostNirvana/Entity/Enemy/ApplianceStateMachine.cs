@@ -4,6 +4,8 @@ using CombatSystem;
 using UnityEngine;
 using Utils;
 using System.Collections;
+using Optimization;
+using DG.Tweening;
 
 namespace GhostNirvana {
 public class ApplianceStateMachine : StateMachine<Appliance, Appliance.States> {
@@ -179,7 +181,29 @@ public class ApplianceCollecting : State<Appliance, Appliance.States> {
     public override IEnumerator Coroutine(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         yield return null;
         agent.FreezePosition = false;
+
+        Vector3 pivotPos = agent.transform.position + agent.collectionPivotTop * Vector3.up * agent.transform.lossyScale.y;
+        Vector3 clawPos = agent.transform.position + agent.aboveScreenDistance * Vector3.up * agent.transform.lossyScale.y;
+
+        Transform claw = ObjectPoolManager.Instance.Borrow(
+            App.GetActiveScene(),
+            agent.clawHand.transform, clawPos
+        );
+
+        Sequence sequence = DOTween.Sequence();
+        sequence.SetUpdate(isIndependentUpdate: true);
+
+        float targetY = clawPos.y - pivotPos.y + agent.transform.position.y;
+
+        sequence.Append(claw.DOMove(pivotPos, agent.floatDownDuration).SetEase(agent.floatDownEase));
+        sequence.AppendInterval(agent.stayDuration);
+        sequence.Append(claw.DOMove(clawPos, agent.floatUpDuration).SetEase(agent.floatUpEase));
+        sequence.Join(agent.transform.DOMoveY(targetY, agent.floatUpDuration).SetEase(agent.floatUpEase));
+        sequence.Play();
+        yield return sequence.WaitForCompletion();
+
         agent.Dispose();
+        claw.GetComponent<Entity>()?.Dispose();
     }
 }
 

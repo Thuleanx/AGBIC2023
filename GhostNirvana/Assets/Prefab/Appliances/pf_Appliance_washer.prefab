@@ -245,6 +245,10 @@ PrefabInstance:
       value: pf_Appliance_washer
       objectReference: {fileID: 0}
     - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: collectionPivotTop
+      value: 1.323
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146334, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: _OnDamage.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}

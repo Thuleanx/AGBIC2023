@@ -187,6 +187,14 @@ MonoBehaviour:
   AOEAttackPrefab: {fileID: 6567878376966889744, guid: b7a9e5f639a30174fa5ca3273cbe09a3, type: 3}
   leftAttackAnchor: {fileID: 1578244143262473607}
   rightAttackAnchor: {fileID: 7970129724343175888}
+  clawHand: {fileID: 7185106448197134116, guid: fcab771fcbf256945a6fc463b8cd2612, type: 3}
+  collectionPivotTop: 1
+  aboveScreenDistance: 40
+  floatDownDuration: 1
+  floatDownEase: 21
+  floatUpDuration: 1
+  floatUpEase: 14
+  stayDuration: 0.5
 --- !u!114 &1459352401194146335
 MonoBehaviour:
   m_ObjectHideFlags: 0

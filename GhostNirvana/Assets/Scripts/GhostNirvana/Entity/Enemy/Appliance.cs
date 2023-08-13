@@ -6,6 +6,7 @@ using CombatSystem;
 using NaughtyAttributes;
 using Optimization;
 using Utils;
+using DG.Tweening;
 
 namespace GhostNirvana {
 
@@ -49,6 +50,15 @@ public partial class Appliance : Enemy<Appliance.Input> {
     [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview] GameObject AOEAttackPrefab;
     [BoxGroup("Combat"), SerializeField] Transform leftAttackAnchor;
     [BoxGroup("Combat"), SerializeField] Transform rightAttackAnchor;
+
+    [BoxGroup("Collection"), SerializeField, ShowAssetPreview] GameObject clawHand;
+    [BoxGroup("Collection"), SerializeField] float collectionPivotTop;
+    [BoxGroup("Collection"), SerializeField] float aboveScreenDistance;
+    [BoxGroup("Collection"), SerializeField] float floatDownDuration;
+    [BoxGroup("Collection"), SerializeField] Ease floatDownEase;
+    [BoxGroup("Collection"), SerializeField] float floatUpDuration;
+    [BoxGroup("Collection"), SerializeField] Ease floatUpEase;
+    [BoxGroup("Collection"), SerializeField] float stayDuration;
 
     Timer possessionCooldown;
 

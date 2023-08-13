@@ -3,7 +3,22 @@ guid: 7d6663e6642cf8344a7f1b9103df919c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flatBlue_M
+    second: {fileID: 2100000, guid: 4381cb55aa46e534dbdb333796c36a0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flatGray_M
+    second: {fileID: 2100000, guid: 03781cf132b50af47b9dff5a63a30109, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flatYellow_M
+    second: {fileID: 2100000, guid: fa0890e5e0208e74d8c293d552f62f60, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
