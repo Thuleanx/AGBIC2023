@@ -19,10 +19,7 @@ public class Reaper : MonoBehaviour {
     [SerializeField] Canvas deathUI;
 
     [SerializeField] UnityEvent OnDeathStart;
-
-    [SerializeField] Bank bank;
-    [SerializeField] List<LinearInt> intsToReset;
-    [SerializeField] List<LinearFloat> floatsToReset;
+    [SerializeField] float respawnTime = 2;
 
     bool reincarnating;
 
@@ -63,7 +60,7 @@ public class Reaper : MonoBehaviour {
     }
 
     IEnumerator IReincarnation() {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(respawnTime);
         App.instance.RequestLoad(gameObject.scene.name);
         Time.timeScale = 1;
     }
@@ -74,18 +71,6 @@ public class Reaper : MonoBehaviour {
         reincarnating = true;
         // reload current level
         StartCoroutine(IReincarnation());
-    }
-
-    void ResetAllScriptableVariables() {
-        bank.Withraw(bank.Balance);
-        foreach (LinearInt lint in intsToReset) {
-            lint.AdditiveScale = 0;
-            lint.MultiplicativeScale = 1;
-        }
-        foreach (LinearFloat lfloat in floatsToReset) {
-            lfloat.AdditiveScale = 0;
-            lfloat.MultiplicativeScale = 1;
-        }
     }
 }
 

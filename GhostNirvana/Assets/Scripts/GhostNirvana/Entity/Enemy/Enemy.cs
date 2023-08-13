@@ -33,7 +33,7 @@ public abstract class Enemy<Input>
 #endregion
 
     List<Hitbox> hitboxes = new List<Hitbox>();
-    [SerializeField, Required] MovableAgentRuntimeSet allEnemies;
+    [SerializeField, Required] protected MovableAgentRuntimeSet allEnemies;
     [SerializeField] HurtableRuntimeSet allHurtables;
 
     protected override void Awake() {

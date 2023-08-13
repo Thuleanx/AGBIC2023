@@ -74,6 +74,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
     protected override void OnEnable() {
         base.OnEnable();
 		allAppliances.Add(this);
+        allEnemies.Remove(this);
         FreezePosition = true;
     }
 

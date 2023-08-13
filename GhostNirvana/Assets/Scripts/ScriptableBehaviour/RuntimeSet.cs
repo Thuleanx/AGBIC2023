@@ -8,6 +8,8 @@ public class RuntimeSet<T> : ScriptableObject, ISerializationCallbackReceiver, I
     [System.NonSerialized]
     HashSet<T> collection = new HashSet<T>();
 
+    public int Count => collection.Count;
+
     public IEnumerator<T> GetEnumerator() => collection.GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
@@ -22,9 +24,8 @@ public class RuntimeSet<T> : ScriptableObject, ISerializationCallbackReceiver, I
     }
 
     public void Remove(T item) {
-        if (collection.Remove(item)) {
+        if (collection.Remove(item))
             OnRemove?.Invoke(item);
-        }
     }
 
     public void OnAfterDeserialize() => Reset();

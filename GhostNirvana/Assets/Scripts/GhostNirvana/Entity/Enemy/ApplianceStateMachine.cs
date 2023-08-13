@@ -99,6 +99,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         agent.OnBeforeDamage.AddListener(OnTakeDamage);
         IHurtResponder.ConnectChildrenHurtboxes(agent);
         IHitResponder.ConnectChildrenHitboxes(agent);
+        agent.allEnemies.Add(agent);
     }
 
     public override Appliance.States? Update(
@@ -133,6 +134,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         agent.allEnemyStatus.Remove(agent.Status);
         IHurtResponder.DisconnectChildrenHurtboxes(agent);
         IHitResponder.DisconnectChildrenHitboxes(agent);
+        agent.allEnemies.Remove(agent);
     }
 
     void OnTakeDamage(IHurtable hurtable, int damageAmount, DamageType damageType, Hit hit) {
