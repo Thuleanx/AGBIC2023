@@ -12,8 +12,8 @@ namespace VFX {
         [SerializeField, ColorUsage(true, true)] Color dimColor;
         [SerializeField, ColorUsage(true, true)] Color brightColor;
 
-        [SerializeField, MinMaxSlider(0.0f,1.0f)] Vector2 lightOnTime;
-        [SerializeField, MinMaxSlider(0.0f,1.0f)] Vector2 lightOffTime;
+        [SerializeField, MinMaxSlider(0.0f,1.0f)] public Vector2 lightOnTime;
+        [SerializeField, MinMaxSlider(0.0f,1.0f)] public Vector2 lightOffTime;
 
         bool isOn;
         float timeUntilSwitch;
@@ -30,7 +30,7 @@ namespace VFX {
         void LateUpdate() {
             timeUntilSwitch -= Time.deltaTime;
 
-            if (timeUntilSwitch <= 0) {
+            while (timeUntilSwitch <= 0) {
                 isOn ^= true;
                 timeUntilSwitch = Mathx.RandomRange(isOn ? lightOnTime : lightOffTime);
             }
