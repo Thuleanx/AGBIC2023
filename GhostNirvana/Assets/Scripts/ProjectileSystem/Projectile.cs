@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using Base;
 using Optimization;
 using CombatSystem;
 using NaughtyAttributes;
+using System.Collections;
 
 namespace Danmaku {
 
@@ -18,6 +17,7 @@ public class Projectile : PoolableEntity, IHitResponder {
     [SerializeField, ReadOnly] int damage;
     [SerializeField, ReadOnly] float knockback;
     [SerializeField, ReadOnly] Hitbox hitbox;
+    [SerializeField, ShowAssetPreview] GameObject onHitEffect;
 
     void Awake() {
         rigidbody = GetComponent<Rigidbody>();
@@ -30,7 +30,6 @@ public class Projectile : PoolableEntity, IHitResponder {
         this.damage = damage;
         this.knockback = knockback;
     }
-
 
     bool IHitResponder.ValidateHit(Hit hit) {
         return true;
@@ -47,20 +46,29 @@ public class Projectile : PoolableEntity, IHitResponder {
 
         (owner as IHitResponder)?.RespondToHit(hit);
 
-		if (this.gameObject.activeInHierarchy)
+		if (this.gameObject.activeInHierarchy) {
+            SpawnOnHitEffect();
 			this.Dispose();
+        }
     }
 
     void Update() {
         hitbox.CheckForHits();
     }
 
-
     void OnCollisionEnter(Collision collision) {
         collision.collider.GetComponentInParent<RespondToBulletHit>()?.OnBulletHit?.Invoke();
 
-		if (this.gameObject.activeInHierarchy) 
+		if (this.gameObject.activeInHierarchy) {
+            SpawnOnHitEffect();
 			this.Dispose();
+        }
+    }
+
+    void SpawnOnHitEffect() {
+        if (onHitEffect)
+            ObjectPoolManager.Instance?.Borrow(App.GetActiveScene(),
+                onHitEffect.transform, transform.position);
     }
 }
 
