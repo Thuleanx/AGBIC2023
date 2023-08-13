@@ -21,6 +21,7 @@ public class ApplianceWaveDirector : Director {
     int currentWave;
     float cumulativeWaveTime;
     float enemyNeedsToSpawn = 0;
+    float lastFrameTime = 0;
 
     protected void OnEnable() {
         currentWave = 0;
@@ -42,7 +43,8 @@ public class ApplianceWaveDirector : Director {
 
         float timeSinceLastWave = timeElapsed.Value - cumulativeWaveTime;
 		float secondsInMinute = 60;
-        enemyNeedsToSpawn += Time.deltaTime * applianceSpawnRate[currentWave] / secondsInMinute;
+        float deltaTime = (timeElapsed.Value - lastFrameTime) * secondsInMinute;
+        enemyNeedsToSpawn += deltaTime * applianceSpawnRate[currentWave] / secondsInMinute;
 
         if (enemyNeedsToSpawn > 0)
         while (enemyNeedsToSpawn --> 0) {
@@ -50,6 +52,8 @@ public class ApplianceWaveDirector : Director {
             GameObject spawnedEnemy = SpawnEnemy(prefab, baseStats, GetRandomPosition());
             SpawnAppliance(spawnedEnemy);
         }
+
+        lastFrameTime = timeElapsed.Value;
     }
 
     Vector3 GetRandomPosition() {

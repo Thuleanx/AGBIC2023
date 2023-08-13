@@ -44,6 +44,9 @@ public class MiyuController : MonoBehaviour, IPossessor<Miyu.Input> {
     }
 
     void Awake() {
+    }
+
+    public void PossessMiyu() {
         MiyuPossessor.Possess(miyu);
     }
 

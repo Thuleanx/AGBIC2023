@@ -16,6 +16,9 @@ public abstract class PossessableAgent<Input> : MovableAgent, IDoll<Input> {
         get => _possessor;
         set => _possessor = value;
     }
+
+    public bool IsPossessed => _possessor != null;
+
     public Input input {get; protected set;}
 
     protected override void PerformUpdate(Action Update) {

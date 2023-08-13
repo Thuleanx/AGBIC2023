@@ -50,6 +50,7 @@ public class WaveDirector : Director {
     int currentWave;
     float cumulativeWaveTime;
     float enemyNeedsToSpawn = 0;
+    float lastFrameTime = 0;
 
     protected void OnEnable() {
         currentWave = 0;
@@ -70,7 +71,10 @@ public class WaveDirector : Director {
 
         float timeSinceLastWave = timeElapsed.Value - cumulativeWaveTime;
 		float secondsInMinute = 60;
-        enemyNeedsToSpawn += Time.deltaTime * wave.GetSpawnFrequency(timeSinceLastWave) / secondsInMinute;
+        float deltaTime = (timeElapsed.Value - lastFrameTime) * secondsInMinute;
+        enemyNeedsToSpawn += deltaTime * wave.GetSpawnFrequency(timeSinceLastWave) / secondsInMinute;
+
+        Debug.Log(enemyNeedsToSpawn);
 
         if (enemyNeedsToSpawn >= 1)
         do {
@@ -78,6 +82,7 @@ public class WaveDirector : Director {
             SpawnEnemy(prefab, baseStats);
         } while (--enemyNeedsToSpawn >= 1);
 
+        lastFrameTime = timeElapsed.Value;
     }
 }
 
