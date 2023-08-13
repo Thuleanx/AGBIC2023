@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using System.Collections;
@@ -21,11 +22,18 @@ public class Angel : MonoBehaviour {
     [SerializeField] Ease slowDownEase;
     [SerializeField] float respawnTime;
 
+    [Header("Interaction")]
+    [SerializeField] Canvas interactionCanvas;
+
+    [Header("StatsScreen")]
+    [SerializeField] Canvas statsCanvas;
+    [SerializeField] UnityEvent onStatsStart;
+
     float impendingEnd;
     bool reincarnating;
 
     void Update() {
-        if (impendingEnd > timeToEndSeconds) return;
+        if (impendingEnd > timeToEndSeconds || Time.timeScale < 1) return;
 
         bool timeUp =
             time.Value > gameEndTime 
@@ -38,11 +46,15 @@ public class Angel : MonoBehaviour {
     }
 
     IEnumerator IOnMiyuWin() {
-        yield return null;
         Tween timeSlowDown = DOTween.To(
             setter: (value) => Time.timeScale = value,
             startValue: 1, endValue: 0, duration: timeSlowDownSeconds)
             .SetUpdate(isIndependentUpdate: true).SetEase(slowDownEase);
+        timeSlowDown.Play();
+        yield return timeSlowDown.WaitForCompletion();
+        Time.timeScale = 0;
+        onStatsStart?.Invoke();
+        statsCanvas.gameObject.SetActive(true);
     }
 
     public void TriggerReincarnation() {

@@ -3,6 +3,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using Utils;
+using System;
 
 namespace GhostNirvana.Upgrade {
 
@@ -24,8 +25,10 @@ public class UpgradeSystem : MonoBehaviour {
     List<Buff> buffOptions = new List<Buff>();
 
     Dictionary<Buff, int> buffsTaken = new Dictionary<Buff, int>();
+    public List<Buff> BuffsTakenInSequence = new List<Buff>();
 
     ApplianceCollector collector;
+    int level;
 
     void Awake() {
         collector = GetComponentInChildren<ApplianceCollector>();
@@ -40,6 +43,8 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     void StartLevelUpSequence() {
+        level++;
+
         int amountCollected;
         int moneyEarned;
         (amountCollected, moneyEarned) = collector.Collect((int) applianceCollectionAmount.Value);
@@ -56,7 +61,7 @@ public class UpgradeSystem : MonoBehaviour {
 
         foreach (UpgradeOption upgradeOption in upgradeOptions) {
             Buff buffChosen = randomBuffs.MoveNext() ?
-                randomBuffs.Current : buffOptions[Random.Range(0, buffOptions.Count)];
+                randomBuffs.Current : buffOptions[Mathx.RandomRange(0, buffOptions.Count)];
             upgradeOption.Initialize(buffChosen);
         }
 
@@ -132,9 +137,24 @@ public class UpgradeSystem : MonoBehaviour {
         buffsTaken[chosenBuff] = numberOfTimesBuffTaken + 1;
 
         levelUpBuff?.Apply();
+        bank.Withraw(chosenBuff.Cost);
         levelUpSequenceRunning = false;
         levelUpOptionPanel.gameObject.SetActive(false);
         Time.timeScale = 1;
+        BuffsTakenInSequence.Add(chosenBuff);
+    }
+
+    public string GetRank() {
+        int levelUnaccounted = level;
+        string suffix = "";
+        while (levelUnaccounted > 0) {
+            int digit = levelUnaccounted % 10;
+            suffix += digit;
+            levelUnaccounted -= digit;
+        }
+        if (suffix.Length == 0)
+            suffix = "0";
+        return "0." + suffix;
     }
 }
 

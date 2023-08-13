@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using NaughtyAttributes;
 
 namespace GhostNirvana {
     public class ApplianceCollector : MonoBehaviour {
         [SerializeField] Bank bank;
         [SerializeField] MovableAgentRuntimeSet appliances;
+        [field:SerializeField, ReadOnly] public int numCollected { get; private set; }
 
         public (int,int) Collect(int applianceCount) {
             List<Appliance> applianceToCollect = new List<Appliance>();
@@ -22,6 +24,7 @@ namespace GhostNirvana {
                 appliance.ApplianceCollectorOnly_Collect();
                 bank.Deposit(appliance.Price);
             }
+            numCollected += applianceCollected;
             return (applianceCollected, totalMoneyEarned);
         }
     }

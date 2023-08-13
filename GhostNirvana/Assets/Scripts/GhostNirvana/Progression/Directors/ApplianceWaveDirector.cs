@@ -44,7 +44,8 @@ public class ApplianceWaveDirector : Director {
         float timeSinceLastWave = timeElapsed.Value - cumulativeWaveTime;
 		float secondsInMinute = 60;
         float deltaTime = (timeElapsed.Value - lastFrameTime) * secondsInMinute;
-        enemyNeedsToSpawn += deltaTime * applianceSpawnRate[currentWave] / secondsInMinute;
+		float spawnRate = currentWave < applianceSpawnRate.Count ? applianceSpawnRate[currentWave] : 0;
+        enemyNeedsToSpawn += deltaTime * spawnRate  / secondsInMinute;
 
         if (enemyNeedsToSpawn > 0)
         while (enemyNeedsToSpawn --> 0) {

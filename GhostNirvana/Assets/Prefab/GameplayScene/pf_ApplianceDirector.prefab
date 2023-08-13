@@ -607,13 +607,13 @@ MonoBehaviour:
   - {fileID: 9147481411018787961, guid: 12193e957a21e0b43ba990a3a5e2b3c3, type: 3}
   - {fileID: 8196983042958106730, guid: bc703fc430cd78841bd79415888584fa, type: 3}
   applianceSpawnRate:
-  - 4
-  - 4
-  - 4
-  - 5
-  - 5
-  - 5
-  - 5
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
   - 6
   - 6
   - 6
