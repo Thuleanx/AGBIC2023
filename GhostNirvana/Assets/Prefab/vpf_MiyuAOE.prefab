@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 6567878376966889751}
   - component: {fileID: 6567878376966889750}
   m_Layer: 27
-  m_Name: pf_MiyuAOE
+  m_Name: vpf_MiyuAOE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

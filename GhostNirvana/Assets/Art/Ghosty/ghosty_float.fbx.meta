@@ -15,7 +15,7 @@ ModelImporter:
       name: flat_blue_mat
     second: {fileID: 2100000, guid: 8d70cf7ff938ce846aab97ca6d751076, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
