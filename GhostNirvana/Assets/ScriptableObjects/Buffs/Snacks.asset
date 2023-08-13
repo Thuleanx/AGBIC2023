@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatBuffs: []
   intBuffs: []
-  replenishFloat: []
-  replenishInt: []
+  replenishFloat:
+  - <Stat>k__BackingField: {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
+    <All>k__BackingField: 1
+    <Amount>k__BackingField: 0
+  replenishInt:
+  - <Stat>k__BackingField: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
+    <All>k__BackingField: 1
+    <Amount>k__BackingField: 0
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: Makes you happy.
   <BaseCost>k__BackingField: 0

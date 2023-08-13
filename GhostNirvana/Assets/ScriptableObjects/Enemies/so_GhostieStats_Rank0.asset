@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 13
   <Damage>k__BackingField: 1
-  <MovementSpeed>k__BackingField: 2.2
-  <Acceleration>k__BackingField: 2.2
+  <MovementSpeed>k__BackingField: 1.8
+  <Acceleration>k__BackingField: 1
   <Knockback>k__BackingField: 5

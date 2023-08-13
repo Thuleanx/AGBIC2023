@@ -16,13 +16,13 @@ MonoBehaviour:
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
     <AdditiveAmount>k__BackingField: 1
-    <MultiplicativeAmount>k__BackingField: 1.05
+    <MultiplicativeAmount>k__BackingField: 1.2
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: '<color="green">+1</color> increased bullet damage.
+  <description>k__BackingField: '<color="green">+2</color> increased bullet damage.
 
-    <color="green">+5%</color>
+    <color="green">+20%</color>
     more bullet damage.'
   <BaseCost>k__BackingField: 1999
   <Weight>k__BackingField: 1

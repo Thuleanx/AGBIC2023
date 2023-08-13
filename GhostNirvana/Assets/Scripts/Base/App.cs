@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-
 using PrettyPatterns;
+using DG.Tweening;
 
 namespace Base {
 	public class App : Singleton<App> {
@@ -27,6 +27,7 @@ namespace Base {
 				if (app == null) throw new ApplicationException();
 			}
 			UnityEngine.Object.DontDestroyOnLoad(app);
+            DOTween.SetTweensCapacity(50000, 125);
 		}
 
 		#region App Scene Management

@@ -15,14 +15,14 @@ MonoBehaviour:
   floatBuffs: []
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
-    <AdditiveAmount>k__BackingField: 2
+    <AdditiveAmount>k__BackingField: 6
     <MultiplicativeAmount>k__BackingField: 1
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: 'More salt to the wound.
 
-    <color="green">+2</color>
+    <color="green">+6</color>
     increased magazine size.'
   <BaseCost>k__BackingField: 499
   <Weight>k__BackingField: 1
