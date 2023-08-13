@@ -49,7 +49,8 @@ public class ApplianceWaveDirector : Director {
         if (enemyNeedsToSpawn > 0)
         while (enemyNeedsToSpawn --> 0) {
             var (prefab, baseStats) = wave.GetMob();
-            GameObject spawnedEnemy = SpawnEnemy(prefab, baseStats, GetRandomPosition());
+            Vector3 pos = GetRandomPosition();
+            GameObject spawnedEnemy = SpawnEnemy(prefab, baseStats, pos);
             SpawnAppliance(spawnedEnemy);
         }
 
@@ -58,19 +59,20 @@ public class ApplianceWaveDirector : Director {
 
     Vector3 GetRandomPosition() {
         float totalArea = 0;
-        foreach (BoxCollider spawnArea in spawnAreas)
-            totalArea += spawnArea.size.x * spawnArea.size.z * spawnArea.transform.lossyScale.x * spawnArea.transform.lossyScale.z;
+        foreach (BoxCollider spawnArea in spawnAreas) {
+            float areaOfThisBox = spawnArea.size.x * spawnArea.size.z * spawnArea.transform.lossyScale.x * spawnArea.transform.lossyScale.z;
+            totalArea += areaOfThisBox;
+        }
         float randomPoint = Mathx.RandomRange(0, totalArea);
         foreach (BoxCollider spawnArea in spawnAreas) {
             float area = spawnArea.size.x * spawnArea.size.z * spawnArea.transform.lossyScale.x * spawnArea.transform.lossyScale.z;
-            totalArea -= area;
-            if (totalArea <= 0) {
-                Vector3 localPos = new Vector3(
-                    (0.5f - Mathx.RandomRange(0.0f,1.0f)) * spawnArea.size.x,
-                    0,
-                    (0.5f - Mathx.RandomRange(0.0f,1.0f)) * spawnArea.size.z);
+            randomPoint -= area;
+            if (randomPoint <= 0) {
+                Vector3 localPos =
+                    ((0.5f - Mathx.RandomRange(0.0f,1.0f)) * spawnArea.size.x * spawnArea.transform.right * spawnArea.transform.lossyScale.x) +
+                    ((0.5f - Mathx.RandomRange(0.0f,1.0f)) * spawnArea.size.z * spawnArea.transform.forward * spawnArea.transform.lossyScale.z);
 
-                Vector3 worldPos = spawnArea.transform.TransformPoint(localPos);
+                Vector3 worldPos = localPos + spawnArea.transform.position;
                 worldPos.y = 0;
                 return worldPos;
             }

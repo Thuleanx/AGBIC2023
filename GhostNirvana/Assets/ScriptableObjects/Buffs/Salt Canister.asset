@@ -24,7 +24,7 @@ MonoBehaviour:
 
     <color="green">+2</color>
     increased magazine size.'
-  <BaseCost>k__BackingField: 0
+  <BaseCost>k__BackingField: 499
   <Weight>k__BackingField: 1
   purchaseLimit: 0
   <icon>k__BackingField: {fileID: 404618336, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}

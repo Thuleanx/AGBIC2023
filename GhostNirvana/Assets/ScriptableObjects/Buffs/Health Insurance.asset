@@ -27,7 +27,7 @@ MonoBehaviour:
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: lin shield buff, takes 1 hit, regenerates in 1 minute
-  <BaseCost>k__BackingField: 0
+  <BaseCost>k__BackingField: 2999
   <Weight>k__BackingField: 1
   purchaseLimit: 1
   <icon>k__BackingField: {fileID: -1436937399, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}

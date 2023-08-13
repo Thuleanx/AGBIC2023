@@ -16,6 +16,7 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField] Buff levelUpBuff;
     [SerializeField] UpgradeOptionDetails upgradeDetails;
     [SerializeField] UpgradeMoneyDisplay upgradeMoneyDetails;
+    [SerializeField] int wage;
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
 
@@ -39,6 +40,13 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     void StartLevelUpSequence() {
+        int amountCollected;
+        int moneyEarned;
+        (amountCollected, moneyEarned) = collector.Collect((int) applianceCollectionAmount.Value);
+        moneyEarned += wage;
+        upgradeMoneyDetails.SetPaymentDescription(amountCollected, moneyEarned);
+        bank.Deposit(wage);
+
         levelUpOptionPanel.gameObject.SetActive(true);
         levelUpSequenceRunning = true;
 
@@ -54,10 +62,6 @@ public class UpgradeSystem : MonoBehaviour {
 
         experience.Value -= experience.Limiter;
 
-        int amountCollected;
-        int moneyEarned;
-        (amountCollected, moneyEarned) = collector.Collect((int) applianceCollectionAmount.Value);
-        upgradeMoneyDetails.SetPaymentDescription(amountCollected, moneyEarned);
 
         Time.timeScale = 0;
     }

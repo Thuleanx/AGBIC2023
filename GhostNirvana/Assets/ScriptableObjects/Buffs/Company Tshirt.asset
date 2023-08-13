@@ -27,8 +27,8 @@ MonoBehaviour:
 
     Increase max health by
     <color="green">+1</color>.'
-  <BaseCost>k__BackingField: 0
+  <BaseCost>k__BackingField: 1599
   <Weight>k__BackingField: 1
-  purchaseLimit: 0
+  purchaseLimit: 2
   <icon>k__BackingField: {fileID: 2144370807, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []

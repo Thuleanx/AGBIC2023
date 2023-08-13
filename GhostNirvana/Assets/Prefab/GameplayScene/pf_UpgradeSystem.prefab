@@ -425,6 +425,7 @@ MonoBehaviour:
   levelUpBuff: {fileID: 11400000, guid: a5ab72bbf4813294fb045baecd912c04, type: 2}
   upgradeDetails: {fileID: 7942366038758956882}
   upgradeMoneyDetails: {fileID: 3858736938721835820}
+  wage: 1500
   buffOptions:
   - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
   - {fileID: 11400000, guid: 55caa3d28019dc440ada6e9772b9f3af, type: 2}

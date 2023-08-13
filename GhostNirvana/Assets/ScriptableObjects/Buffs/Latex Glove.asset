@@ -26,7 +26,7 @@ MonoBehaviour:
     increased reload rate.
 
     <color="green">+10%</color> more reload rate.'
-  <BaseCost>k__BackingField: 0
+  <BaseCost>k__BackingField: 999
   <Weight>k__BackingField: 1
   purchaseLimit: 0
   <icon>k__BackingField: {fileID: -1629694393, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}

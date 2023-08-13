@@ -74,8 +74,6 @@ public class WaveDirector : Director {
         float deltaTime = (timeElapsed.Value - lastFrameTime) * secondsInMinute;
         enemyNeedsToSpawn += deltaTime * wave.GetSpawnFrequency(timeSinceLastWave) / secondsInMinute;
 
-        Debug.Log(enemyNeedsToSpawn);
-
         if (enemyNeedsToSpawn >= 1)
         do {
             var (prefab, baseStats) = wave.GetMob();

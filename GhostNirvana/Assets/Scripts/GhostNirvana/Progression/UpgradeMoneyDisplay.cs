@@ -10,6 +10,8 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
     [SerializeField, Required] RectTransform upgradeOptionsParent;
     [SerializeField] Bank bank;
 
+    [SerializeField, ColorUsage(true, true)] Color textColorForGains;
+    [SerializeField, ColorUsage(true, true)] Color textColorForLoss;
     [SerializeField] TMP_Text payDescription;
     [SerializeField] TMP_Text balanceMinusPriceDisplay;
     [SerializeField] TMP_Text priceDisplay;
@@ -23,6 +25,11 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
             option.OnHoverExit += OnHoverExit;
         }
         payDescription.gameObject.SetActive(true);
+        balanceMinusPriceDisplay.text = String.Format(
+            balanceMinusPriceDisplayFormatting,
+            bank.Value / CENTS_IN_DOLLAR
+        );
+        priceDisplay.gameObject.SetActive(false);
     }
 
     void OnDisable() {
@@ -51,6 +58,7 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
             balanceMinusPriceDisplayFormatting,
             balanceMinusPrice / CENTS_IN_DOLLAR
         );
+        balanceMinusPriceDisplay.color = balanceMinusPrice >= 0 ? textColorForGains : textColorForLoss;
 
         bool shouldDisplayPrice = option;
 
@@ -62,6 +70,7 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
             priceDisplayFormatting,
             price / CENTS_IN_DOLLAR
         );
+        priceDisplay.color = textColorForLoss;
     }
 
     public void SetPaymentDescription(int collectionCount, float paymentAmount) {
