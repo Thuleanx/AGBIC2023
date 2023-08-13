@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ef27dfb5-0055-4fc1-8c87-81b0d3f1fb5a}">
+		<property name="assetPath">
+			<value>sword-knife-clash-08.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.7251020408163265</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9e5d85a6-7727-4ff2-999f-0273a05204ea}</destination>
+		</relationship>
+	</object>
+</objects>

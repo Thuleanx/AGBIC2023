@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{b22a0431-a7d1-4de8-9be9-20aeda8602fc}">
+		<property name="assetPath">
+			<value>180015__000600__stomp.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.345374149659865</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9e5d85a6-7727-4ff2-999f-0273a05204ea}</destination>
+		</relationship>
+	</object>
+</objects>

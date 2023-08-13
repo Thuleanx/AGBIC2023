@@ -64,7 +64,10 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat")] public UnityEvent OnDeathEvent;
     [BoxGroup("Combat")] public UnityEvent OnShootEvent;
     [BoxGroup("Combat")] public UnityEvent<Hit> OnHitEvent = new UnityEvent<Hit>();
+    [BoxGroup("Combat")] public UnityEvent OnLifeHit;
+    [BoxGroup("Combat")] public UnityEvent OnShieldHit;
     #endregion
+
 
     Timer iframeHappening;
 
@@ -135,10 +138,12 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         if (shield.Value >= 1) {
             shield.Value -= 1;
             shield.CheckAndCorrectLimit();
+            OnShieldHit?.Invoke();
         } else {
             bool killingHit = health.Value > 0 && health.Value <= damageAmount;
             health.Value -= damageAmount;
             health.CheckAndCorrectLimit();
+            OnLifeHit?.Invoke();
 
             if (killingHit) OnDeath();
         }
