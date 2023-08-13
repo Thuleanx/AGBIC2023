@@ -847,6 +847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer Display
       objectReference: {fileID: 0}
+    - target: {fileID: 2117673110402444925, guid: a361d4fb8488caf4a934cad9d0b1296b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4932284422639125917, guid: a361d4fb8488caf4a934cad9d0b1296b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

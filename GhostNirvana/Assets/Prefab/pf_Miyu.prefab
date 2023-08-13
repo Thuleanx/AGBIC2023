@@ -159,6 +159,68 @@ MonoBehaviour:
   damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
   bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
+--- !u!1 &2321983122947052039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175109049212024626}
+  - component: {fileID: 2362176075167906452}
+  m_Layer: 27
+  m_Name: Shield On
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1175109049212024626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321983122947052039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7381306243736055667}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2362176075167906452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321983122947052039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1235212734
+      Data2: 1183541123
+      Data3: -1497940295
+      Data4: 911682126
+    Path: event:/SFX/Miyu/Shield On
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2322140680700594663
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +470,21 @@ MonoBehaviour:
   shieldBreak: {fileID: 0}
   shieldCharge: {fileID: 0}
   shieldOn: {fileID: 0}
+  OnShieldActivation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2362176075167906452}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4209269886050907993
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +568,7 @@ Transform:
   - {fileID: 2520609581426244389}
   - {fileID: 8558315271214377967}
   - {fileID: 363269911724035818}
+  - {fileID: 1175109049212024626}
   m_Father: {fileID: 3751458875445000393}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

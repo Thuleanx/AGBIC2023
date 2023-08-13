@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Animations.Rigging;
 using NaughtyAttributes;
 using ScriptableBehaviour;
@@ -28,6 +29,7 @@ public class MiyuAnimator : MonoBehaviour {
     [SerializeField] ParticleSystem shieldBreak;
     [SerializeField] ParticleSystem shieldCharge;
     [SerializeField] GameObject shieldOn;
+    [SerializeField] UnityEvent OnShieldActivation;
 
     Miyu Miyu;
     Timer shooting;
@@ -121,6 +123,7 @@ public class MiyuAnimator : MonoBehaviour {
             if (shield.Value >= 0.95f && !shieldCharge.isPlaying)
                 shieldCharge.Play();
         } else if (shield.Value >= 1) {
+            if (!shieldOn.gameObject.activeSelf) OnShieldActivation?.Invoke();
             shieldOn.gameObject.SetActive(true);
             if (shieldCharge.isPlaying) shieldCharge.Stop();
         }
