@@ -178,12 +178,10 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 public class ApplianceCollecting : State<Appliance, Appliance.States> {
     public override void Begin(StateMachine<Appliance, States> stateMachine, Appliance agent) {
         agent.FreezePosition = true;
+        agent.GetComponent<CharacterController>().enabled = false;
     }
 
     public override IEnumerator Coroutine(StateMachine<Appliance, States> stateMachine, Appliance agent) {
-        yield return null;
-        agent.FreezePosition = false;
-
         Vector3 pivotPos = agent.transform.position + agent.collectionPivotTop * Vector3.up * agent.transform.lossyScale.y;
         Vector3 clawPos = agent.transform.position + agent.aboveScreenDistance * Vector3.up * agent.transform.lossyScale.y;
 
@@ -196,18 +194,21 @@ public class ApplianceCollecting : State<Appliance, Appliance.States> {
         sequence.SetUpdate(isIndependentUpdate: true);
 
         float targetY = clawPos.y - pivotPos.y + agent.transform.position.y;
+        Vector3 finalTargetForAgent = (clawPos.y - pivotPos.y) * Vector3.up + agent.transform.position;
+        Debug.Log(targetY);
 
         sequence.AppendInterval(Mathx.RandomRange(0, agent.delayTime));
 
         sequence.Append(claw.DOMove(pivotPos, agent.floatDownDuration).SetEase(agent.floatDownEase));
         sequence.AppendInterval(agent.stayDuration);
         sequence.Append(claw.DOMove(clawPos, agent.floatUpDuration).SetEase(agent.floatUpEase));
-        sequence.Join(agent.transform.DOMoveY(targetY, agent.floatUpDuration).SetEase(agent.floatUpEase));
+        sequence.Join(agent.transform.DOMove(finalTargetForAgent, agent.floatUpDuration).SetEase(agent.floatUpEase));
         sequence.Play();
         yield return sequence.WaitForCompletion();
 
         agent.Dispose();
         claw.GetComponent<Entity>()?.Dispose();
+        agent.GetComponent<CharacterController>().enabled = true;
     }
 }
 

@@ -41,7 +41,8 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
         } else
             knockbackStrength = Mathx.Damp(Mathf.Lerp, knockbackStrength, 0, knockbackResistance, Time.deltaTime);
 
-        Controller.Move(TrueVelocity * Time.deltaTime);
+		if (TrueVelocity.sqrMagnitude > 0.01f)
+        	Controller.Move(TrueVelocity * Time.deltaTime);
     }
 
 	[SerializeField, ReadOnly]
