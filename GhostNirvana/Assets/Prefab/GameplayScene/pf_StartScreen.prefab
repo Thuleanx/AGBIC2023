@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -20, y: 43.6}
   m_SizeDelta: {x: 715.6, y: 335.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7508185176197559811
@@ -69,8 +69,8 @@ MonoBehaviour:
   m_text: "Welcome to Soulty Co.! At your new part time job, you\u2019ll be tracking
     down missing appliances for our clients- there\u2019s been a lot of disappearances
     lately. Once you find one, we\u2019ll send in our air claw in to retrieve it,
-    and you\u2019ll be paid for your efforts! Anyway, you may find this Special Salt
-    Gun useful. Good luck out there!\r"
+    and you\u2019ll be paid for your efforts! \n\nAnyway, you may find this Special
+    Salt Gun useful. Good luck out there!\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91918321134aede48a8105e962975bc0, type: 2}
   m_sharedMaterial: {fileID: -8868117428425314349, guid: 91918321134aede48a8105e962975bc0, type: 2}
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
