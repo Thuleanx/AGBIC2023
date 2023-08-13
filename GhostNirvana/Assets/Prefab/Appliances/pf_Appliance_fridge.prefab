@@ -268,6 +268,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146329, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: m_Height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459352401194146329, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1459352401194146331, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_Name
       value: pf_Appliance_fridge
@@ -355,6 +363,14 @@ PrefabInstance:
     - target: {fileID: 1578244143262473607, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037739643187804284, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835041175610907830, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: m_Radius
+      value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: <Anim>k__BackingField
