@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
   appliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
+  <numCollected>k__BackingField: 0
 --- !u!1 &4549013923158923229
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
+  numAffordableOptionEveryLevel: 3
   experience: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
   applianceCollectionAmount: {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
   bank: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
@@ -443,6 +445,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
   - {fileID: 11400000, guid: 3fa87cfbd5eb43c4a9d49ab29ee64013, type: 2}
+  - {fileID: 11400000, guid: 895b034b1d05dba4fb134aa672435698, type: 2}
+  BuffsTakenInSequence: []
 --- !u!1001 &2381328518189803347
 PrefabInstance:
   m_ObjectHideFlags: 0

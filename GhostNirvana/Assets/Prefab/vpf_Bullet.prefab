@@ -9699,7 +9699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8409639066681726162}
   - component: {fileID: 8722718024998288041}
-  - component: {fileID: 4699565797001841566}
+  - component: {fileID: 3463414844608538415}
   m_Layer: 31
   m_Name: Hitbox
   m_TagString: Untagged
@@ -9735,7 +9735,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4699565797001841566
+--- !u!114 &3463414844608538415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9744,7 +9744,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6472624670688422201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9166d4c80d56044a9dc4d1926a965dd, type: 3}
+  m_Script: {fileID: 11500000, guid: ac87f7e49ffbea1488d449a0fa9f3ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 8722718024998288041}
@@ -9821,7 +9821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   knockback: 0
-  hitbox: {fileID: 4699565797001841566}
+  pierce: 0
+  hitbox: {fileID: 0}
   onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
 --- !u!114 &1097658304994715504
 MonoBehaviour:

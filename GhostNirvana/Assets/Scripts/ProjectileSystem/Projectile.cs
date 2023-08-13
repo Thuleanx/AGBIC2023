@@ -16,6 +16,7 @@ public class Projectile : PoolableEntity, IHitResponder {
 
     [SerializeField, ReadOnly] int damage;
     [SerializeField, ReadOnly] float knockback;
+    [SerializeField, ReadOnly] int pierce;
     [SerializeField, ReadOnly] Hitbox hitbox;
     [SerializeField, ShowAssetPreview] GameObject onHitEffect;
 
@@ -25,10 +26,11 @@ public class Projectile : PoolableEntity, IHitResponder {
         hitbox.HitResponder = this;
     }
 
-    public void Initialize(int damage, float knockback, Vector3 velocity, bool faceDirection = true) {
+    public void Initialize(int damage, float knockback, int pierce, Vector3 velocity, bool faceDirection = true) {
         rigidbody.velocity = velocity;
         this.damage = damage;
         this.knockback = knockback;
+        this.pierce = pierce;
     }
 
     bool IHitResponder.ValidateHit(Hit hit) {
@@ -46,7 +48,8 @@ public class Projectile : PoolableEntity, IHitResponder {
 
         (owner as IHitResponder)?.RespondToHit(hit);
 
-		if (this.gameObject.activeInHierarchy) {
+        // if pierce count hit
+		if (this.gameObject.activeInHierarchy && pierce--<=0) {
             SpawnOnHitEffect();
 			this.Dispose();
         }

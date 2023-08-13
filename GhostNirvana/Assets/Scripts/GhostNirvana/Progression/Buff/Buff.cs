@@ -63,9 +63,5 @@ namespace GhostNirvana {
                 replenish.Stat.CheckAndCorrectLimit();
             }
         }
-
-        public float ComputeWeight(int value, bool hasPrerequisites) {
-            return 0;
-        }
     }
 }

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SpecialSaltGun\u2122 rapid multishot module"
+  m_Name: "SpecialSaltGun\u2122 multishot module"
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
     <AdditiveAmount>k__BackingField: 0
     <MultiplicativeAmount>k__BackingField: 0.8
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0e3f67fd098869e4b928a17f4719a06e, type: 2}
-    <AdditiveAmount>k__BackingField: 10
+    <AdditiveAmount>k__BackingField: 15
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}

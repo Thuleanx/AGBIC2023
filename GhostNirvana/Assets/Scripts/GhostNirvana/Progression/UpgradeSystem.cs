@@ -10,6 +10,7 @@ namespace GhostNirvana.Upgrade {
 public class UpgradeSystem : MonoBehaviour {
     [SerializeField] ScriptableInt currentHealth; // use to check for death
 
+    [SerializeField] int numAffordableOptionEveryLevel = 3;
     [SerializeField] LinearLimiterFloat experience;
     [SerializeField] LinearInt applianceCollectionAmount;
     [SerializeField] Bank bank;
@@ -78,7 +79,7 @@ public class UpgradeSystem : MonoBehaviour {
 
             for (int i = excludeIndex; i < buffOptions.Count; i++) {
                 float weight = ComputeWeight(buffOptions[i],
-                    chooseOnlyAffordable: excludeIndex == 0);
+                    chooseOnlyAffordable: excludeIndex < numAffordableOptionEveryLevel);
                 totalWeight += weight;
                 numAvailable += weight > 0 ? 1 : 0;
             }
@@ -91,7 +92,7 @@ public class UpgradeSystem : MonoBehaviour {
             bool buffChosen = false;
             for (int i = excludeIndex; i < buffOptions.Count; i++) {
                 float weight = ComputeWeight(buffOptions[i],
-                    chooseOnlyAffordable: excludeIndex == 0);
+                    chooseOnlyAffordable: excludeIndex < numAffordableOptionEveryLevel);
                 if (weight == 0) continue;
                 lastIndex = i;
                 if (value <= weight) {
@@ -129,7 +130,7 @@ public class UpgradeSystem : MonoBehaviour {
         bool canAffordBuff = bank.Value >= buff.Cost;
         if (chooseOnlyAffordable && !canAffordBuff) return 0;
 
-        return 1;
+        return buff.Weight;
     }
 
     public void EndLevelUpSequence(Buff chosenBuff) {
