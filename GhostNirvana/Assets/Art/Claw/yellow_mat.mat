@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clawhand_mat
+  m_Name: yellow_mat
   m_Shader: {fileID: -6465566751694194690, guid: aaec17b689ab3a54fb373b8fa5c82674, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
