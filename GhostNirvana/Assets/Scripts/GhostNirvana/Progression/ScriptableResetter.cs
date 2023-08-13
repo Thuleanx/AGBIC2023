@@ -16,10 +16,12 @@ public class ScriptableResetter : MonoBehaviour {
         foreach (LinearInt lint in intsToReset) {
             lint.AdditiveScale = 0;
             lint.MultiplicativeScale = 1;
+            lint.Recompute();
         }
         foreach (LinearFloat lfloat in floatsToReset) {
             lfloat.AdditiveScale = 0;
             lfloat.MultiplicativeScale = 1;
+            lfloat.Recompute();
         }
     }
 }
