@@ -10,6 +10,7 @@ public class ApplianceAnimator : MonoBehaviour {
     [field: SerializeField]
     public Animator Anim { get; private set; }
     [SerializeField] Material emissiveMaterial;
+    [SerializeField] ParticleSystem possessionImmuneVFX;
 
     Appliance Appliance;
 
@@ -63,6 +64,12 @@ public class ApplianceAnimator : MonoBehaviour {
         if (!Appliance) return; // this is impossible unless project configured wrong
 
         Anim?.SetInteger("State", (int) currentState);
+
+        bool shouldShimmer = !Appliance.IsPossessed && !Appliance.IsBeingPossessed && Appliance.PossessionImmune;
+        if (possessionImmuneVFX.isPlaying ^ shouldShimmer) {
+            if (shouldShimmer) possessionImmuneVFX?.Play();
+            else possessionImmuneVFX?.Stop();
+        }
     }
 }
 

@@ -1,7 +1,9 @@
 using AI;
+using Base;
 using CombatSystem;
 using UnityEngine;
 using Utils;
+using Optimization;
 
 namespace GhostNirvana {
 public class GhostyStateMachine : StateMachine<Ghosty, Ghosty.States> {
@@ -129,8 +131,14 @@ public class GhostyPossessed : State<Ghosty, Ghosty.States> {
 }
 
 public class GhostyDeath : State<Ghosty, Ghosty.States> {
-    public override void Begin(StateMachine<Ghosty, States> stateMachine, Ghosty agent)
-        => agent.Dispose();
+    public override void Begin(StateMachine<Ghosty, States> stateMachine, Ghosty agent) {
+        if (agent.onDeathVFX)
+            ObjectPoolManager.Instance?.Borrow(App.GetActiveScene(),
+                agent.onDeathVFX.transform,
+                agent.transform.position
+            );
+		agent.Dispose();
+	}
 }
 
 }

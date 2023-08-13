@@ -62,10 +62,12 @@ public partial class Appliance : Enemy<Appliance.Input> {
     [BoxGroup("Collection"), SerializeField] float stayDuration;
     [BoxGroup("Collection"), SerializeField] float delayTime = 0.5f;
 
+
     Timer possessionCooldown;
 
     public bool IsPossessed => StateMachine.State == States.Possessed;
     public bool IsBeingPossessed => StateMachine.State == States.BeforePossessed;
+    public bool PossessionImmune => possessionCooldown;
 
     protected override void Awake() {
         base.Awake();

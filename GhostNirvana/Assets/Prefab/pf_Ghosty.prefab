@@ -241,6 +241,7 @@ MonoBehaviour:
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
   turnSpeed: 360
   possessionCooldownSeconds: 4
+  onDeathVFX: {fileID: 6567878376966889744, guid: bd265f782af47460395fb56f0aba4747, type: 3}
   OnPossessionInterupt:
     m_PersistentCalls:
       m_Calls: []

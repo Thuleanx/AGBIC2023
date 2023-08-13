@@ -23,6 +23,7 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
     [SerializeField] StatusRuntimeSet allEnemyStatus;
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
     [BoxGroup("Combat"), SerializeField] float possessionCooldownSeconds = 4.0f;
+	[SerializeField] GameObject onDeathVFX;
 
     UnityEvent<Ghosty, Appliance> OnPossession = new UnityEvent<Ghosty, Appliance>();
     UnityEvent<Ghosty> OnPossessionFinish = new UnityEvent<Ghosty>();
