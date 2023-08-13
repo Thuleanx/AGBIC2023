@@ -39,7 +39,7 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     void Update() {
-        bool shouldLevelUp = !levelUpSequenceRunning && experience.Value >= experience.Limiter && currentHealth.Value > 0;
+        bool shouldLevelUp = !levelUpSequenceRunning && experience.Value >= experience.Limiter && currentHealth.Value > 0 && !Miyu.Instance.IsDead;
         if (shouldLevelUp) StartLevelUpSequence();
     }
 
@@ -150,7 +150,7 @@ public class UpgradeSystem : MonoBehaviour {
         string suffix = "";
         int maxLoop = 9;
         while (levelUnaccounted > 0 && maxLoop-->0) {
-            int digit = Mathf.Max(levelUnaccounted, 9);
+            int digit = Mathf.Min(levelUnaccounted, 9);
             suffix += digit;
             levelUnaccounted -= digit;
         }

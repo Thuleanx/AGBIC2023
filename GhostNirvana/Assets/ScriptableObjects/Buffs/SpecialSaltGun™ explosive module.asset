@@ -25,7 +25,7 @@ MonoBehaviour:
     Every
     <color="green">8</color> hits, your bullet spawns a salt explosion.'
   <BaseCost>k__BackingField: 3499
-  <Weight>k__BackingField: 20
+  <Weight>k__BackingField: 1
   purchaseLimit: 1
   <icon>k__BackingField: {fileID: 1438453863, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []
