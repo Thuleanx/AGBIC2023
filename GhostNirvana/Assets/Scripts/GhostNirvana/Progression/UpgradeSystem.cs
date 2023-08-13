@@ -148,8 +148,9 @@ public class UpgradeSystem : MonoBehaviour {
     public string GetRank() {
         int levelUnaccounted = level;
         string suffix = "";
-        while (levelUnaccounted > 0) {
-            int digit = levelUnaccounted % 10;
+        int maxLoop = 9;
+        while (levelUnaccounted > 0 && maxLoop-->0) {
+            int digit = Mathf.Max(levelUnaccounted, 9);
             suffix += digit;
             levelUnaccounted -= digit;
         }
