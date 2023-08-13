@@ -195,6 +195,8 @@ public class ApplianceCollecting : State<Appliance, Appliance.States> {
 
         float targetY = clawPos.y - pivotPos.y + agent.transform.position.y;
 
+        sequence.AppendInterval(Mathx.RandomRange(0, agent.delayTime));
+
         sequence.Append(claw.DOMove(pivotPos, agent.floatDownDuration).SetEase(agent.floatDownEase));
         sequence.AppendInterval(agent.stayDuration);
         sequence.Append(claw.DOMove(clawPos, agent.floatUpDuration).SetEase(agent.floatUpEase));

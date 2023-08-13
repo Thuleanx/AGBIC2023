@@ -59,6 +59,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
     [BoxGroup("Collection"), SerializeField] float floatUpDuration;
     [BoxGroup("Collection"), SerializeField] Ease floatUpEase;
     [BoxGroup("Collection"), SerializeField] float stayDuration;
+    [BoxGroup("Collection"), SerializeField] float delayTime = 0.5f;
 
     Timer possessionCooldown;
 
