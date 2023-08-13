@@ -69,8 +69,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5474fd01b55bf734baf17a3e9627fdd3, type: 2}
-  m_sharedMaterial: {fileID: -3222400446343039853, guid: 5474fd01b55bf734baf17a3e9627fdd3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91918321134aede48a8105e962975bc0, type: 2}
+  m_sharedMaterial: {fileID: -8868117428425314349, guid: 91918321134aede48a8105e962975bc0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -669,14 +669,6 @@ PrefabInstance:
     - target: {fileID: 2491302662564451437, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568193599677509910, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.4000244
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568193599677509910, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 19.699982
       objectReference: {fileID: 0}
     - target: {fileID: 4283188488565338028, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
       propertyPath: m_Name

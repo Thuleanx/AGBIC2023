@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7508185176197559811}
   - component: {fileID: 2037767311777958905}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: ExpositionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
 
     Hello some exposition.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5474fd01b55bf734baf17a3e9627fdd3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91918321134aede48a8105e962975bc0, type: 2}
   m_sharedMaterial: {fileID: -3222400446343039853, guid: 5474fd01b55bf734baf17a3e9627fdd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6694782074663456632
