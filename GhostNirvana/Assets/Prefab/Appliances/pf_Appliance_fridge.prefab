@@ -89,6 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfafad02541c7c846baac9b1bc4ff7c7, type: 3}
+--- !u!23 &540126161696857341 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1134441342925425382, guid: dfafad02541c7c846baac9b1bc4ff7c7, type: 3}
+  m_PrefabInstance: {fileID: 8592672900236945895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &912176150932782600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8905865077489522671, guid: dfafad02541c7c846baac9b1bc4ff7c7, type: 3}
@@ -355,6 +360,18 @@ PrefabInstance:
       propertyPath: <Anim>k__BackingField
       value: 
       objectReference: {fileID: 5570581408614699959}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: meshRenderersWithEmission.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: meshRenderersWithEmission.Array.data[0].index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: meshRenderersWithEmission.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 540126161696857341}
     - target: {fileID: 7970129724343175888, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_RootOrder
       value: 5

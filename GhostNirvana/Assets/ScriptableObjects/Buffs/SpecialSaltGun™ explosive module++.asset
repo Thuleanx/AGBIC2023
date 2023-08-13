@@ -37,7 +37,7 @@ MonoBehaviour:
     Bullets deal <color="red">10%</color>
     less damage.'
   <BaseCost>k__BackingField: 4999
-  <Weight>k__BackingField: 1
+  <Weight>k__BackingField: 30
   purchaseLimit: 6
   <icon>k__BackingField: {fileID: 807224047, guid: f89ab24258db2624498f36a8ce398b86, type: 3}
   Prerequisites:

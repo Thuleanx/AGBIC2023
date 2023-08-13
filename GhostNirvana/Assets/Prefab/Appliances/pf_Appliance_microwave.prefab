@@ -119,6 +119,14 @@ PrefabInstance:
       propertyPath: <Anim>k__BackingField
       value: 
       objectReference: {fileID: 6914615833498341152}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: meshRenderersWithEmission.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709066039620215551, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
+      propertyPath: meshRenderersWithEmission.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 9113693703490323910}
     - target: {fileID: 7970129724343175888, guid: 30bc801ca04f46848bc26f55dda4a243, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -330,3 +338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.1
   flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}
+--- !u!23 &9113693703490323910 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7297598163413783287, guid: 4fc6aaa30cc3a7849bd9845e490c036c, type: 3}
+  m_PrefabInstance: {fileID: 1962477616306001713}
+  m_PrefabAsset: {fileID: 0}

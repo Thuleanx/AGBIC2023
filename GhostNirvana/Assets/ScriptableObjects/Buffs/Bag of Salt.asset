@@ -24,8 +24,8 @@ MonoBehaviour:
 
     Throw salt around you
     every <color="green">2</color> seconds.'
-  <BaseCost>k__BackingField: 999
-  <Weight>k__BackingField: 20
+  <BaseCost>k__BackingField: 1999
+  <Weight>k__BackingField: 1
   purchaseLimit: 1
   <icon>k__BackingField: {fileID: -1815212334, guid: f89ab24258db2624498f36a8ce398b86, type: 3}
   Prerequisites: []

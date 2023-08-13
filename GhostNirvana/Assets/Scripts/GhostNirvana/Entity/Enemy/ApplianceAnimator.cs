@@ -28,8 +28,7 @@ public class ApplianceAnimator : MonoBehaviour {
             for (int i = 0; i < renderer.sharedMaterials.Length; i++) {
                 Material mat = renderer.sharedMaterials[i];
                 bool hasEmissiveOn = mat == emissiveMaterial;
-                if (hasEmissiveOn)
-                    meshRenderersWithEmission.Add(new KeyValuePair<Renderer, int>(renderer, i));
+                if (hasEmissiveOn) meshRenderersWithEmission.Add(new KeyValuePair<Renderer, int>(renderer, i));
             }
         }
     }
@@ -41,16 +40,12 @@ public class ApplianceAnimator : MonoBehaviour {
     protected void Update() {
         switch (currentState) {
             case AnimationState.Normal:
-                if (Appliance.IsPossessed) {
-                    currentState = AnimationState.Possessed;
-                    ToggleEmission(on: true);
-                }
+                ToggleEmission(on: false);
+                if (Appliance.IsPossessed) currentState = AnimationState.Possessed;
                 break;
             case AnimationState.Possessed:
-                if (!Appliance.IsPossessed) {
-                    currentState = AnimationState.Normal;
-                    ToggleEmission(on: false);
-                }
+                ToggleEmission(on: true);
+                if (!Appliance.IsPossessed) currentState = AnimationState.Normal;
                 break;
         }
     }
