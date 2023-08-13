@@ -299,6 +299,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   delaySeconds: 0.1
+  triggered: 0
 --- !u!1 &2932580738881467582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1240,7 @@ GameObject:
   - component: {fileID: 6162096526345581630}
   - component: {fileID: 6162096526345581625}
   - component: {fileID: 6162096526345581624}
+  - component: {fileID: 2533113802352891255}
   m_Layer: 0
   m_Name: Stats Canvas
   m_TagString: Untagged
@@ -1331,6 +1333,36 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2533113802352891255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162096526345581626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1267164796
+      Data2: 1163285014
+      Data3: -1526881147
+      Data4: -507188545
+    Path: event:/Music/End
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &8140349070778148601
 GameObject:
   m_ObjectHideFlags: 0

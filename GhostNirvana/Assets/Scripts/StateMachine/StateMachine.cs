@@ -74,10 +74,10 @@ public abstract class StateMachine<Agent, StateID> : MonoBehaviour
     }
 
     public void RunUpdate() 
-        => State = States[State].Update(this, agent) ?? State;
+        => State = States[State]?.Update(this, agent) ?? State;
 
     public void RunFixUpdate()
-        => State = States[State].FixUpdate(this, agent) ?? State;
+        => State = States[State]?.FixUpdate(this, agent) ?? State;
 }
 
 }

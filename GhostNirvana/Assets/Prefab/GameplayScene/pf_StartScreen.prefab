@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 6728344083943938320}
   - component: {fileID: 6728344083943938323}
   - component: {fileID: 4197908537746741645}
+  - component: {fileID: 3271714119204779372}
   m_Layer: 0
   m_Name: TitleCanvas
   m_TagString: Untagged
@@ -520,6 +521,36 @@ MonoBehaviour:
         m_CallState: 2
   delaySeconds: 0.2
   triggered: 0
+--- !u!114 &3271714119204779372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728344083943938333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 557594710
+      Data2: 1208452680
+      Data3: 1591254694
+      Data4: -1277291187
+    Path: event:/Music/Start
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &6728344084196610099
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,6 +83,9 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         StateMachine = GetComponent<MiyuStateMachine>();
         Instance = this;
 
+    }
+
+    protected void Start() {
         health.Value = health.Limiter;
     }
 
