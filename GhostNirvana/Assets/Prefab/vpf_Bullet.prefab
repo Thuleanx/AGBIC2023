@@ -9822,6 +9822,7 @@ MonoBehaviour:
   damage: 1
   knockback: 0
   hitbox: {fileID: 4699565797001841566}
+  onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
 --- !u!114 &1097658304994715504
 MonoBehaviour:
   m_ObjectHideFlags: 0
