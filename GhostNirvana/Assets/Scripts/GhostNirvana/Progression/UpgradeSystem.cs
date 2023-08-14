@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using Utils;
@@ -24,6 +25,7 @@ public class UpgradeSystem : MonoBehaviour {
 
     [SerializeField, ReorderableList]
     List<Buff> buffOptions = new List<Buff>();
+    [SerializeField] UnityEvent OnLevelUp;
 
     Dictionary<Buff, int> buffsTaken = new Dictionary<Buff, int>();
     public List<Buff> BuffsTakenInSequence = new List<Buff>();
@@ -45,6 +47,8 @@ public class UpgradeSystem : MonoBehaviour {
 
     void StartLevelUpSequence() {
         level++;
+
+        OnLevelUp?.Invoke();
 
         int amountCollected;
         int moneyEarned;

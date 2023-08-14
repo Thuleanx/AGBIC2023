@@ -4,6 +4,7 @@ using CombatSystem;
 using ScriptableBehaviour;
 using Optimization;
 using Utils;
+using FMODUnity;
 
 namespace GhostNirvana {
 
@@ -13,6 +14,7 @@ public class SpawnOnHit : MonoBehaviour {
     [SerializeField] ScriptableFloat damageScaling;
     [SerializeField] ScriptableInt bulletDamage;
     [SerializeField] ScriptableFloat bulletKnockback;
+    [SerializeField] EventReference onSpawnSFX;
     Miyu miyu;
 
     int hitCount;
@@ -50,6 +52,8 @@ public class SpawnOnHit : MonoBehaviour {
             gameObject.scene, prefab.transform,
             spawnPosition, Quaternion.identity
         ).GetComponent<GenericHitResponder>();
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached(onSpawnSFX, hitResponder.gameObject);
 
         int damage = Mathf.CeilToInt(damageScaling.Value * bulletDamage.Value);
         hitResponder.Initialize(damage, bulletKnockback.Value);

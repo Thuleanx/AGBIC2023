@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Animations.Rigging;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using Utils;
+using Optimization;
 
 namespace GhostNirvana {
 
@@ -30,6 +29,7 @@ public class MiyuAnimator : MonoBehaviour {
     [SerializeField] ParticleSystem shieldCharge;
     [SerializeField] GameObject shieldOn;
     [SerializeField] UnityEvent OnShieldActivation;
+    [SerializeField] GameObject levelUpVFX;
 
     Miyu Miyu;
     Timer shooting;
@@ -133,6 +133,13 @@ public class MiyuAnimator : MonoBehaviour {
             shieldBreak.Play();
         }
         shieldLastFrame = shield.Value;
+    }
+
+    public void OnLevelUp() {
+        ObjectPoolManager.Instance.Borrow(
+            gameObject.scene,
+            levelUpVFX.transform, transform.position
+        );
     }
 }
 

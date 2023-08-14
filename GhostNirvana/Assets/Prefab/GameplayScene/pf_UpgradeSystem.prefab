@@ -452,6 +452,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8e7741a17dfe9f4793a18e540967485, type: 2}
   - {fileID: 11400000, guid: fea9e10eb34de774da223342943f6d9c, type: 2}
   - {fileID: 11400000, guid: 40f97ec41f0457c498961d2ceb27237c, type: 2}
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   BuffsTakenInSequence: []
 --- !u!1001 &2381328518189803347
 PrefabInstance:

@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 6668880006468203000}
   - component: {fileID: 6668880006468203001}
   - component: {fileID: 6668880006468204038}
+  - component: {fileID: 5257146514832547875}
   m_Layer: 0
   m_Name: Death Canvas
   m_TagString: Untagged
@@ -628,6 +629,36 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5257146514832547875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668880006468204036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -333159628
+      Data2: 1250108226
+      Data3: 809558452
+      Data4: 1804795134
+    Path: event:/SFX/UI/PhoneRing
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &6668880006670852259
 GameObject:
   m_ObjectHideFlags: 0

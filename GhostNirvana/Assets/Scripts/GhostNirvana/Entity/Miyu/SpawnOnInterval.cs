@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using ScriptableBehaviour;
 using Optimization;
 using CombatSystem;
+using FMODUnity;
 
 namespace GhostNirvana {
 
@@ -13,6 +14,7 @@ public class SpawnOnInterval : MonoBehaviour {
     [SerializeField] ScriptableFloat damageScaling;
     [SerializeField] ScriptableInt bulletDamage;
     [SerializeField] ScriptableFloat bulletKnockback;
+    [SerializeField] EventReference onSpawnSFX;
 
     float spawnProgress = 0;
 
@@ -35,6 +37,8 @@ public class SpawnOnInterval : MonoBehaviour {
             gameObject.scene, prefab.transform,
             transform.position, Quaternion.identity
         ).GetComponent<GenericHitResponder>();
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached(onSpawnSFX, hitResponder.gameObject);
 
         int damage = Mathf.CeilToInt(damageScaling.Value * bulletDamage.Value);
         hitResponder.Initialize(damage, bulletKnockback.Value);

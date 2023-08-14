@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 1334502445702376425}
   - component: {fileID: 8787888345535755140}
   - component: {fileID: 5055439668263635382}
+  - component: {fileID: 6253964135080784535}
   m_Layer: 0
   m_Name: End Call Canvas
   m_TagString: Untagged
@@ -300,6 +301,36 @@ MonoBehaviour:
         m_CallState: 2
   delaySeconds: 0.1
   triggered: 0
+--- !u!114 &6253964135080784535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723681572544423238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -333159628
+      Data2: 1250108226
+      Data3: 809558452
+      Data4: 1804795134
+    Path: event:/SFX/UI/PhoneRing
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2932580738881467582
 GameObject:
   m_ObjectHideFlags: 0

@@ -190,7 +190,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 20
+  m_CameraDistance: 30
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67230075}
   m_LocalRotation: {x: 0, y: 0.92387956, z: -0.38268343, w: 0}
-  m_LocalPosition: {x: 0, y: 14.642136, z: 14.142139}
+  m_LocalPosition: {x: 0, y: 21.713203, z: 21.21321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1330,6 +1330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3751458875445000393, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
   m_PrefabInstance: {fileID: 3751458877063495805}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1622784184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8116988359839104719, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+  m_PrefabInstance: {fileID: 3751458877063495805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597980151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93839b25499059a4ab2858d46bfe4b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639449216
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,6 +3263,46 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1484896794}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1622784184}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1622784184}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLevelUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnLevelUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GhostNirvana.MiyuAnimator, AD_GhostNirvana.Entity.Miyu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GhostNirvana.MiyuAnimator, AD_GhostNirvana.Entity.Miyu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7735727452134802650, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
+      propertyPath: OnLevelUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7735727452134802652, guid: 5e73c5178eac1994f8751242853fcc02, type: 3}
       propertyPath: m_Name
       value: Upgrade System

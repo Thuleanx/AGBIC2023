@@ -159,6 +159,13 @@ MonoBehaviour:
   damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
   bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
+  onSpawnSFX:
+    Guid:
+      Data1: 551018784
+      Data2: 1220634779
+      Data3: 1872304546
+      Data4: -1741814575
+    Path: event:/SFX/Miyu/Throw Salt
 --- !u!1 &2321983122947052039
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +492,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  levelUpVFX: {fileID: 6683181512599017343, guid: ddc3bbf25fe004774a6ce4cacf13b2a5, type: 3}
 --- !u!1 &4209269886050907993
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +722,13 @@ MonoBehaviour:
   damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
   bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
+  onSpawnSFX:
+    Guid:
+      Data1: -1895204950
+      Data2: 1082257083
+      Data3: -100807792
+      Data4: -695512919
+    Path: event:/SFX/Miyu/AOEExplosion
 --- !u!1 &5818867099502331307
 GameObject:
   m_ObjectHideFlags: 0
