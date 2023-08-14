@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using DG.Tweening;
 using Optimization;
@@ -17,6 +18,7 @@ public class ExperienceGem : PoolableEntity {
     [SerializeField] Ease absorptionEase;
     [SerializeField] LinearLimiterFloat miyuXP;
     [SerializeField] float collectionForceRange = .5f;
+    [SerializeField] UnityEvent onCollect;
     Tween collectionTween;
 
     void Awake() {
@@ -51,9 +53,8 @@ public class ExperienceGem : PoolableEntity {
             playerDisplacement.y = 0;
 
             float sqrDistanceToPlayer = Vector3.Dot(playerDisplacement, playerDisplacement);
-            if (sqrDistanceToPlayer < collectionForceRange * collectionForceRange) {
+            if (sqrDistanceToPlayer < collectionForceRange * collectionForceRange)
                 break;
-            }
 
             t += deltaTime;
             lastTime = Time.time;

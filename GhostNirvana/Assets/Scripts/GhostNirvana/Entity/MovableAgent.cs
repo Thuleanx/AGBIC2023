@@ -43,13 +43,21 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
 
 		if (TrueVelocity.sqrMagnitude > 0.01f)
         	Controller.Move(TrueVelocity * Time.deltaTime);
+        transform.position = new Vector3(
+            transform.position.x,
+            0, transform.position.z
+        );
     }
 
 	[SerializeField, ReadOnly]
     public bool FreezePosition = false;
 
     public Vector3 TrueVelocity {
-        get => FreezePosition ? Vector3.zero : Vector3.Lerp(Velocity, Knockback, knockbackStrength);
+        get {
+            Vector3 trueVelocity = FreezePosition ? Vector3.zero : Vector3.Lerp(Velocity, Knockback, knockbackStrength);
+            trueVelocity.y = 0;
+            return trueVelocity;
+        }
     }
 
     void IKnockbackable.OnKnockback(float amount, Vector3 dir) {
