@@ -55,11 +55,13 @@ namespace GhostNirvana {
                 stat.Recompute();
             }
             foreach (Regain<LinearLimiterFloat, float> replenish in replenishFloat) {
-                replenish.Stat.Value += replenish.Amount;
+                float amount = replenish.All ? replenish.Stat.Limiter : replenish.Amount;
+                replenish.Stat.Value += amount;
                 replenish.Stat.CheckAndCorrectLimit();
             }
             foreach (Regain<LinearLimiterInt, int> replenish in replenishInt) {
-                replenish.Stat.Value += replenish.Amount;
+                int amount = replenish.All ? replenish.Stat.Limiter : replenish.Amount;
+                replenish.Stat.Value += amount;
                 replenish.Stat.CheckAndCorrectLimit();
             }
         }
