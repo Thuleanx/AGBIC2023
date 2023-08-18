@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
-    <AdditiveAmount>k__BackingField: 0.4
-    <MultiplicativeAmount>k__BackingField: 1.15
+    <AdditiveAmount>k__BackingField: 0.9
+    <MultiplicativeAmount>k__BackingField: 1.2
   intBuffs: []
   replenishFloat: []
   replenishInt: []
@@ -25,7 +25,7 @@ MonoBehaviour:
     <color="green"/>15%</color>
     increased attack speed.
 
-    <color="green"/>15%</color> more attack speed.'
+    <color="green"/>20%</color> more attack speed.'
   <BaseCost>k__BackingField: 2199
   <Weight>k__BackingField: 1
   purchaseLimit: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
-    <AdditiveAmount>k__BackingField: 0.2
+    <AdditiveAmount>k__BackingField: 0.5
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs: []
   replenishFloat: []
@@ -23,7 +23,7 @@ MonoBehaviour:
   <description>k__BackingField: 'Good on you for supporting the company.
 
     Increase
-    damage of your salt explosion by <color="green">+20%</color> of your bullet damage.'
+    damage of your salt explosion by <color="green">+50%</color> of your bullet damage.'
   <BaseCost>k__BackingField: 2199
   <Weight>k__BackingField: 1
   purchaseLimit: 0

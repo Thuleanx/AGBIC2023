@@ -15,10 +15,10 @@ MonoBehaviour:
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
     <AdditiveAmount>k__BackingField: 0
-    <MultiplicativeAmount>k__BackingField: 1.15
+    <MultiplicativeAmount>k__BackingField: 1.2
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 54710aef4c29c6342941cdda3e1f91fb, type: 2}
-    <AdditiveAmount>k__BackingField: -1
+    <AdditiveAmount>k__BackingField: -2
     <MultiplicativeAmount>k__BackingField: 1
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
     <AdditiveAmount>k__BackingField: 0
@@ -29,16 +29,16 @@ MonoBehaviour:
   <description>k__BackingField: 'Good on you for supporting the company.
 
     Decrease
-    number of hits to trigger salt explosion by <color="green">1</color>.
+    number of hits to trigger salt explosion by <color="green">2</color>.
 
     Salt
-    explosion deals <color="green">15%</color> more damage.
+    explosion deals <color="green">20%</color> more damage.
 
     Bullets deal <color="red">10%</color>
     less damage.'
   <BaseCost>k__BackingField: 4999
   <Weight>k__BackingField: 1
-  purchaseLimit: 6
+  purchaseLimit: 3
   <icon>k__BackingField: {fileID: 1438453863, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites:
   - {fileID: 11400000, guid: a9e4e4c4f1ec0494fa847edf3c5b0f1f, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
-    <AdditiveAmount>k__BackingField: 1
+    <AdditiveAmount>k__BackingField: 3
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
     <color="green">+3</color> bullet
     knockback.
 
-    <color="green">+1</color> bullet damage.'
+    <color="green">+2</color> bullet damage.'
   <BaseCost>k__BackingField: 1599
   <Weight>k__BackingField: 1
   purchaseLimit: 0
