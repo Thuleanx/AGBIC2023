@@ -800,6 +800,13 @@ PrefabInstance:
       propertyPath: upgradeOptionsParent
       value: 
       objectReference: {fileID: 716065139954929669}
+    - target: {fileID: 734844431955325425, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: payDescriptionFormatting
+      value: "Congrats, you\u2019ve been promoted to Associate Lvl <color=#FF46F6>{0}</color>!
+        \r\nWe\u2019ve sent the air claw to retrieve <color=\"green\">{1}</color>
+        appliances, and paid <color=\"green\">{2:C2}</color> to your account. Take
+        a look at our benefits store!\r\n\n{3}"
+      objectReference: {fileID: 0}
     - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_SizeDelta.y
       value: 196
