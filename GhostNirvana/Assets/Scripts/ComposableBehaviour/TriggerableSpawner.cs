@@ -10,6 +10,7 @@ public class TriggerableSpawner : MonoBehaviour {
     [SerializeField] bool inheritRotation;
 
     public void Spawn() {
+        if (!spawnObject) return;
         ObjectPoolManager.Instance?.Borrow(
             App.GetActiveScene(),
             spawnObject.transform,

@@ -11,7 +11,7 @@ using DG.Tweening;
 namespace GhostNirvana {
 
 [RequireComponent(typeof(Status))]
-public partial class Appliance : Enemy<Appliance.Input> {
+public partial class Appliance : Enemy<StandardMovementInput> {
 
     public enum States {
         Idle,
@@ -19,10 +19,6 @@ public partial class Appliance : Enemy<Appliance.Input> {
         Possessed,
         Collecting
     }
-
-    public struct Input {
-        public Vector3 desiredMovement;
-    };
 
 	[SerializeField] MovableAgentRuntimeSet allAppliances;
 
@@ -65,7 +61,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
 
     Timer possessionCooldown;
 
-    public bool IsPossessed => StateMachine.State == States.Possessed;
+    public bool IsPossessedByGhost => StateMachine.State == States.Possessed;
     public bool IsBeingPossessed => StateMachine.State == States.BeforePossessed;
     public bool PossessionImmune => possessionCooldown;
 
@@ -101,7 +97,7 @@ public partial class Appliance : Enemy<Appliance.Input> {
     }
 
     public void EventOnly_OnPossessionDetection(Collider other) {
-        bool cannotBePossessed = (IsPossessed || IsBeingPossessed || possessionCooldown);
+        bool cannotBePossessed = (IsPossessedByGhost || IsBeingPossessed || possessionCooldown);
         if (cannotBePossessed) return;
         Ghosty possessor = other.GetComponentInParent<Ghosty>();
         if (!possessor.CanPossess) return;

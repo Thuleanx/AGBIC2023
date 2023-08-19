@@ -10,7 +10,7 @@ using Utils;
 namespace GhostNirvana {
 
 [RequireComponent(typeof(CharacterController))]
-public partial class Ghosty : Enemy<Ghosty.Input> {
+public partial class Ghosty : Enemy<StandardMovementInput> {
     [System.Serializable]
     public enum States {
         Seek,
@@ -34,10 +34,6 @@ public partial class Ghosty : Enemy<Ghosty.Input> {
     public GhostyStateMachine StateMachine {get; private set; }
     public bool IsPossessing => StateMachine ? StateMachine.State == States.Possessing : false;
     public bool CanPossess => !IsPossessing && !possessionCooldownActive;
-
-    public struct Input {
-        public Vector3 desiredMovement;
-    }
 
     protected override void Awake() {
         base.Awake();

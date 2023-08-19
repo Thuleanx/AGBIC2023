@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1013804293767015676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013804293767015679}
+  - component: {fileID: 1013804293767015678}
+  - component: {fileID: 7325894518190619365}
+  - component: {fileID: 4732239297258548877}
+  - component: {fileID: 2408813344641085289}
+  m_Layer: 0
+  m_Name: pf_RotatingMassOfAppliances
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1013804293767015679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013804293767015676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013804293767015678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013804293767015676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ce66bd939fbe44bb30f36e71cfe038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatorTemplates:
+  - {fileID: 6650286726457131539, guid: 7d6aef08232de414ea0125d7abd57241, type: 3}
+  - {fileID: 7492916248236384984, guid: 9d6c3f3b6c2d30f45b903bbcec8969ba, type: 3}
+  - {fileID: 2066236849829419509, guid: d3825594c0c272a4fac31f71bf76e2e1, type: 3}
+  - {fileID: 2066236849829419509, guid: 5707dfb3cf72cb04392dc87c67fcd745, type: 3}
+  - {fileID: 2066236849829419509, guid: 1e6dbc0c45993ce44af901c7384716b9, type: 3}
+  - {fileID: 2066236849829419509, guid: 96ea1caa68d8a46428d6dc02f7275081, type: 3}
+  - {fileID: 2066236849829419509, guid: 68835c7d7aeecc2429fb596a915205c0, type: 3}
+  rotatorsToSpawn: 20
+  rotatorsAtDeath: 5
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  centerOffset: {x: 0, y: 1, z: 0}
+--- !u!143 &7325894518190619365
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013804293767015676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4732239297258548877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013804293767015676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7614e4cf58093c241a876ea860728201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackResistance: 8
+  knockbackImmune: 1
+  FreezePosition: 0
+  acceleration: 1
+  movementSpeed: 1
+--- !u!114 &2408813344641085289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013804293767015676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cbc62bbef23c743a36145f336e6986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

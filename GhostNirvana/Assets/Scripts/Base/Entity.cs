@@ -11,6 +11,8 @@ public abstract class Entity : MonoBehaviour {
         disposing = false;
     }
 
+    public void EditorOnly_Dispose() => Dispose();
+
     public Coroutine Dispose() {
         if (disposing) return null;
 		disposing = true;

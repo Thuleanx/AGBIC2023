@@ -82,6 +82,9 @@ MonoBehaviour:
   absorptionEase: 25
   miyuXP: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
   collectionForceRange: 0.5
+  onCollect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &725140307097838080
 GameObject:
   m_ObjectHideFlags: 0

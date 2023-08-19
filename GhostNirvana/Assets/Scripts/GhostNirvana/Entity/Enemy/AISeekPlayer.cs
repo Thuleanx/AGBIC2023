@@ -5,27 +5,30 @@ using Control;
 
 namespace GhostNirvana {
 
-public class AISeekPlayer : MonoBehaviour, IPossessor<Ghosty.Input> {
+[RequireComponent(typeof(IDoll<StandardMovementInput>))]
+public class AISeekPlayer : MonoBehaviour, IPossessor<StandardMovementInput> {
 
-    IDoll<Ghosty.Input> _possessed;
-    IDoll<Ghosty.Input> IPossessor<Ghosty.Input>.Possessed {
+    IDoll<StandardMovementInput> _possessed;
+    IDoll<StandardMovementInput> IPossessor<StandardMovementInput>.Possessed {
         get => _possessed;
         set => _possessed = value;
     }
 
-    IPossessor<Ghosty.Input> Possessor => this;
+    IPossessor<StandardMovementInput> Possessor => this;
 
     void Awake() {
-        _possessed = GetComponent<IDoll<Ghosty.Input>>();
+        _possessed = GetComponent<IDoll<StandardMovementInput>>();
     }
 
     void Start() {
         Possessor.Possess(_possessed);
     }
 
-    public Ghosty.Input GetCommand() {
-        return new Ghosty.Input {
-            desiredMovement = (Miyu.Instance.transform.position - transform.position).normalized
+    public StandardMovementInput GetCommand() {
+        Vector3 desiredMovement = Vector3.zero;
+        if (Miyu.Instance) desiredMovement = (Miyu.Instance.transform.position - transform.position).normalized;
+        return new StandardMovementInput {
+            desiredMovement = desiredMovement
         };
     }
 }

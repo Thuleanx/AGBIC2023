@@ -42,11 +42,11 @@ public class ApplianceAnimator : MonoBehaviour {
         switch (currentState) {
             case AnimationState.Normal:
                 ToggleEmission(on: false);
-                if (Appliance.IsPossessed) currentState = AnimationState.Possessed;
+                if (Appliance.IsPossessedByGhost) currentState = AnimationState.Possessed;
                 break;
             case AnimationState.Possessed:
                 ToggleEmission(on: true);
-                if (!Appliance.IsPossessed) currentState = AnimationState.Normal;
+                if (!Appliance.IsPossessedByGhost) currentState = AnimationState.Normal;
                 break;
         }
     }
@@ -65,7 +65,7 @@ public class ApplianceAnimator : MonoBehaviour {
 
         Anim?.SetInteger("State", (int) currentState);
 
-        bool shouldShimmer = !Appliance.IsPossessed && !Appliance.IsBeingPossessed && Appliance.PossessionImmune;
+        bool shouldShimmer = !Appliance.IsPossessedByGhost && !Appliance.IsBeingPossessed && Appliance.PossessionImmune;
         if (possessionImmuneVFX.isPlaying ^ shouldShimmer) {
             if (shouldShimmer) possessionImmuneVFX?.Play();
             else possessionImmuneVFX?.Stop();

@@ -1,22 +1,12 @@
-using Base;
 using UnityEngine;
-using UnityEngine.Events;
-using CombatSystem;
-using NaughtyAttributes;
-using Optimization;
 using Utils;
-using DG.Tweening;
 
 namespace GhostNirvana {
 
-public partial class ApplianceMass : PossessableAgent<ApplianceMass.Input> {
-    public struct Input {
-        public Vector3 desiredMovement;
-    }
+public partial class ApplianceMass : PossessableAgent<StandardMovementInput> {
 
-    float acceleration;
-    float movementSpeed;
-    float maxSpeed;
+    [SerializeField] float acceleration;
+    [SerializeField] float movementSpeed;
 
     protected override void Awake() {
         base.Awake();
@@ -29,14 +19,13 @@ public partial class ApplianceMass : PossessableAgent<ApplianceMass.Input> {
     protected void Update() => PerformUpdate(InnerUpdate);
 
     void InnerUpdate() {
-
-        Vector3 desiredVelocity = input.desiredMovement;
+        Vector3 desiredVelocity = input.desiredMovement * movementSpeed;
 
         Velocity = Mathx.AccelerateTowards(
             currentVelocity: Velocity,
             desiredVelocity,
             acceleration,
-            maxSpeed,
+            movementSpeed,
             Time.deltaTime
         );
     }

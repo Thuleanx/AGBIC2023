@@ -103,10 +103,10 @@ GameObject:
   - component: {fileID: 1459352401194146334}
   - component: {fileID: 1459352401194146335}
   - component: {fileID: 7463702613677836344}
-  - component: {fileID: 6716275758769079150}
   - component: {fileID: 7709066039620215551}
   - component: {fileID: 7683682885463619796}
   - component: {fileID: 8091127898672678122}
+  - component: {fileID: 5829625473206816641}
   m_Layer: 26
   m_Name: pf_Appliance
   m_TagString: Untagged
@@ -243,18 +243,6 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6716275758769079150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459352401194146331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d96077c03e4554384ac311301a01a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7709066039620215551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +298,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5829625473206816641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459352401194146331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cbc62bbef23c743a36145f336e6986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1520711402776613178
 GameObject:
   m_ObjectHideFlags: 0

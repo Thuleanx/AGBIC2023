@@ -1,6 +1,5 @@
 using UnityEngine;
 using Utils;
-using NaughtyAttributes;
 
 namespace ComposableBehaviour {
 
@@ -12,12 +11,21 @@ public class Wander : MonoBehaviour {
     [SerializeField] Vector2 maxSpeedRandom;
     [SerializeField] float maxAcceleration;
     [SerializeField] float containmentMaxAcceleration;
+    [SerializeField, Range(0, 1.0f)] float containmentStrength;
     bool outsideContainmentLastFrame;
     float maxSpeed;
 
     Vector3 velocity;
-    Vector3 cachedWanderDesiredDirection;
-    Vector3 target;
+    Vector3 cachedWanderDesiredVelocity;
+    Vector3 cachedContainmentDesiredVelocity;
+    Vector3 originalPos;
+    Vector3 target => (AttachedTransform ?? transform.parent ?? transform).position + Offset;
+
+    Vector3 desiredDirection => Vector3.Lerp(cachedWanderDesiredVelocity, cachedContainmentDesiredVelocity, containmentStrength).normalized;
+    /* Vector3 target => Offset; */
+
+    public Transform AttachedTransform;
+    public Vector3 Offset;
 
     bool outsideOfContainment => (target - transform.position).sqrMagnitude > containmentRadius*containmentRadius;
 
@@ -27,15 +35,14 @@ public class Wander : MonoBehaviour {
 
     protected void Start() {
         velocity = Random.onUnitSphere * maxSpeed;
-        cachedWanderDesiredDirection = GenerateRandomWanterDirection();
-        target = (transform.parent ?? transform).position;
+        cachedWanderDesiredVelocity = GenerateRandomWanterDirection();
     }
 
     void Update() {
         UpdateWanderDesiredVelocity();
         
         {
-            Vector3 desiredVelocity = cachedWanderDesiredDirection * maxSpeed;
+            Vector3 desiredVelocity = desiredDirection * maxSpeed;
             Vector3 steering = desiredVelocity - velocity;
 
             Debug.DrawRay(transform.position, desiredVelocity.normalized * 2, Color.red);
@@ -51,14 +58,15 @@ public class Wander : MonoBehaviour {
         outsideContainmentLastFrame = outsideOfContainment;
     }
 
-    Vector3 UpdateWanderDesiredVelocity() {
+    void UpdateWanderDesiredVelocity() {
         Vector3 displacementToPivot = (target - transform.position);
         bool enterContainment = !outsideOfContainment && outsideContainmentLastFrame;
-        if (outsideOfContainment) {
-            cachedWanderDesiredDirection = GetContainmentDesiredVelocity();
-        } else if (enterContainment || Mathx.RandomRange(0.0f,1.0f) < Time.deltaTime * turnRatePerSecond)
-            cachedWanderDesiredDirection = GenerateRandomWanterDirection();
-        return cachedWanderDesiredDirection;
+
+        cachedContainmentDesiredVelocity = Vector3.zero;
+        if (outsideOfContainment)   cachedContainmentDesiredVelocity = GetContainmentDesiredVelocity();
+
+        if (enterContainment || Mathx.RandomRange(0.0f,1.0f) < Time.deltaTime * turnRatePerSecond)
+            cachedWanderDesiredVelocity = GenerateRandomWanterDirection();
     }
     
     Vector3 GetContainmentDesiredVelocity() {
@@ -76,7 +84,7 @@ public class Wander : MonoBehaviour {
         displacement = Quaternion.LookRotation(velocity, transform.up) * displacement;
 
         Vector3 wanderDirection = wanderCircleCenter + displacement;
-        return wanderDirection.normalized;
+        return wanderDirection;
     }
 }
 
