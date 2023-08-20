@@ -13,7 +13,7 @@ namespace GhostNirvana {
 
             foreach (Appliance appliance in appliances) {
                 if (applianceToCollect.Count >= applianceCount) break;
-                if (appliance.IsPossessed) continue;
+                if (appliance.IsPossessedByGhost) continue;
                 applianceToCollect.Add(appliance);
             }
             int applianceCollected = applianceToCollect.Count;
