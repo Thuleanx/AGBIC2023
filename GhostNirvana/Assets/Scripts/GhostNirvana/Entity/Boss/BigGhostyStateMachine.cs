@@ -1,9 +1,7 @@
-using System.Collections;
 using Base;
 using AI;
 using UnityEngine;
 using Utils;
-using CombatSystem;
 using Optimization;
 
 namespace GhostNirvana {
@@ -17,6 +15,10 @@ public class BigGhostyStateMachine : StateMachine<BigGhosty, BigGhosty.States> {
     }
 
     public override void Construct() {
+        AssignState<BigGhosty.BigGhostySeek>(BigGhosty.States.Seek);
+        AssignState<BigGhosty.BigGhostySummon>(BigGhosty.States.Summon);
+        AssignState<BigGhosty.BigGhostyWave>(BigGhosty.States.LaunchAttack);
+        AssignState<BigGhosty.BigGhostyDeath>(BigGhosty.States.Death);
     }
 }
 
@@ -24,6 +26,9 @@ public partial class BigGhosty {
 
 public class BigGhostySeek : State<BigGhosty, BigGhosty.States> {
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
+        if (stateMachine.CanEnter(States.Summon)) return States.Summon;
+        if (stateMachine.CanEnter(States.LaunchAttack)) return States.LaunchAttack;
+
         Vector3 desiredVelocity = agent.input.desiredMovement * agent.Status.BaseStats.MovementSpeed;
 
         agent.Velocity = Mathx.AccelerateTowards(
@@ -51,14 +56,21 @@ public class BigGhostySeek : State<BigGhosty, BigGhosty.States> {
 public class BigGhostySummon : State<BigGhosty, BigGhosty.States> {
     static string KEY_summonAnimFinish = "SummonAnimationFinished";
 
+    public override bool CanEnter(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent)
+        => agent.canSummon && !agent.summonCooldown;
+
     public override void Begin(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
         stateMachine.Blackboard[KEY_summonAnimFinish] = false;
         agent.onSummonComplete.AddListener(OnSummonAnimationFinish);
+        agent.onSummonChanneled.AddListener(OnSummonChanneled);
+        agent.Anim.SetTrigger("Summon");
     }
 
     public override void End(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
         stateMachine.Blackboard.Remove(KEY_summonAnimFinish);
         agent.onSummonComplete.RemoveListener(OnSummonAnimationFinish);
+        agent.onSummonChanneled.RemoveListener(OnSummonChanneled);
+        agent.summonCooldown = Mathx.RandomRange(agent.summonCooldownSeconds);
     }
 
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
@@ -72,35 +84,81 @@ public class BigGhostySummon : State<BigGhosty, BigGhosty.States> {
             maxSpeed: agent.Status.BaseStats.MovementSpeed,
             Time.deltaTime
         );
+        if (agent.input.desiredMovement.sqrMagnitude > 0)
+            agent.TurnToFace(agent.input.desiredMovement, agent.turnSpeedWhileSummoning);
         return null;
     }
 
     void PerformSummon(BigGhosty ghosty) {
-        foreach (Status applianceStatus in ghosty.allAppliances) {
-            Appliance appliance = applianceStatus.GetComponent<Appliance>();
+        foreach (MovableAgent applianceAgent in ghosty.allAppliances) {
+            Appliance appliance = applianceAgent as Appliance;
             if (!appliance) continue;
 
             float distance2BigGhost = (ghosty.transform.position - appliance.transform.position).sqrMagnitude;
 
             bool inSummonRange = distance2BigGhost <= ghosty.summonRange * ghosty.summonRange;
-            bool shouldSummon = inSummonRange && !appliance.IsPossessedByGhost;
+            bool shouldSummon = inSummonRange;
             if (!shouldSummon) continue;
 
             ghosty.SummonGhostyAt(position: appliance.transform.position);
         }
     }
 
-    void OnSummonAnimationFinish(BigGhosty ghosty) {
-        ghosty.StateMachine.Blackboard[KEY_summonAnimFinish] = true;
-        PerformSummon(ghosty);
-    }
+    void OnSummonAnimationFinish(BigGhosty ghosty) => ghosty.StateMachine.Blackboard[KEY_summonAnimFinish] = true;
+    void OnSummonChanneled(BigGhosty ghosty) => PerformSummon(ghosty);
 }
 
 public class BigGhostyWave : State<BigGhosty, BigGhosty.States> {
+    static string KEY_waveAttackFinish = "WaveAnimationFinish";
+
+    public override bool CanEnter(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent)
+        => !agent.attackCooldown;
+
+    public override void Begin(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
+        stateMachine.Blackboard[KEY_waveAttackFinish] = false;
+        agent.onAttackComplete.AddListener(OnAttackAnimationFinish);
+        agent.onAttackChanneled.AddListener(OnAttackChanneled);
+        agent.Anim.SetTrigger("Attack");
+    }
+
+    public override void End(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
+        agent.onAttackComplete.RemoveListener(OnAttackAnimationFinish);
+        agent.onAttackChanneled.RemoveListener(OnAttackChanneled);
+        agent.attackCooldown = Mathx.RandomRange(agent.attackCooldownSeconds);
+    }
+
+    public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
+        if ((bool) stateMachine.Blackboard[KEY_waveAttackFinish])
+            return BigGhosty.States.Seek;
+        // slow down
+        agent.Velocity = Mathx.AccelerateTowards(
+            currentVelocity: agent.Velocity,
+            desiredVelocity: Vector3.zero,
+            acceleration: agent.Status.BaseStats.Acceleration,
+            maxSpeed: agent.Status.BaseStats.MovementSpeed,
+            Time.deltaTime
+        );
+
+        if (agent.input.desiredMovement.sqrMagnitude > 0)
+            agent.TurnToFace(agent.input.desiredMovement, agent.turnSpeedWhileAttacking);
+
+        return null;
+    }
+
+    void PerformAttack(BigGhosty ghosty) {
+    }
+
+    void OnAttackAnimationFinish(BigGhosty ghosty) => ghosty.StateMachine.Blackboard[KEY_waveAttackFinish] = true;
+    void OnAttackChanneled(BigGhosty ghosty) => PerformAttack(ghosty);
 }
 
 public class BigGhostyDeath : State<BigGhosty, BigGhosty.States> {
     public override void Begin(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
+        if (agent.onDeathVFX)
+            ObjectPoolManager.Instance?.Borrow(App.GetActiveScene(),
+                agent.onDeathVFX.transform,
+                agent.transform.position
+            );
 		agent.Dispose();
 	}
 }

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2102448695563409135}
   - component: {fileID: 2330517910409364774}
   - component: {fileID: 3648319157150273288}
+  - component: {fileID: 2769612595526544776}
+  - component: {fileID: 5442367567885481124}
+  - component: {fileID: 9222131954135169391}
   m_Layer: 28
   m_Name: pf_BigGhosty
   m_TagString: Untagged
@@ -48,13 +51,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 3
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &2330517910409364774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +88,114 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca342b911653ec44a0d235b1fe5395f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stats: {fileID: 11400000, guid: b4b6dfa54318b12459be7e4f6a23c087, type: 2}
+  Stats: {fileID: 11400000, guid: 31968c93cda479e43b09a42f5e6369c7, type: 2}
+--- !u!114 &2769612595526544776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102448695563409133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9ce6e68ad8edd46b20973af8d0dd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackResistance: 64
+  knockbackImmune: 0
+  FreezePosition: 0
+  _OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2914065492766309608}
+        m_TargetAssemblyTypeName: VFX.FlashEffect, VFX
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8555056056277555234}
+        m_TargetAssemblyTypeName: VFX.FlashEffect, VFX
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6062750780941318429}
+        m_TargetAssemblyTypeName: VFX.FlashEffect, VFX
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
+  allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
+  ghosty: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+  allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
+  allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
+  turnSpeed: 155
+  onDeathVFX: {fileID: 0}
+  summonRange: 10
+  summonBaseStats: {fileID: 11400000, guid: 8c888460f5c8f424bba1545651819dad, type: 2}
+  turnSpeedWhileAttacking: 368
+  turnSpeedWhileSummoning: 352
+  summonCooldownSeconds: {x: 18.784529, y: 24.26335}
+  attackCooldownSeconds: {x: 11.325966, y: 17.311234}
+  OnPossessionInterupt:
+    m_PersistentCalls:
+      m_Calls: []
+  onSummonChanneled:
+    m_PersistentCalls:
+      m_Calls: []
+  onSummonComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttackChanneled:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttackComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5442367567885481124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102448695563409133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db30591ae84501848937203cd665c719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentState: 0
+--- !u!114 &9222131954135169391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102448695563409133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cbc62bbef23c743a36145f336e6986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2102448695728999166
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +399,159 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+--- !u!1 &683602220298144373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4705726536110425759, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+  m_PrefabInstance: {fileID: 5202429163548953834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8555056056277555234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683602220298144373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}
+--- !u!1 &2699075883428797114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1348908397777447344, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+  m_PrefabInstance: {fileID: 5202429163548953834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2914065492766309608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699075883428797114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}
+--- !u!1 &4968547993373045179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+  m_PrefabInstance: {fileID: 5202429163548953834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9179054488710182836
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4968547993373045179}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28b170458ce9c1d4c9d7f5fe44a5bb25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &487763311577790182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4968547993373045179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ede48e9dc9e9941ba3928fca1443c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2769612595526544776}
+        m_TargetAssemblyTypeName: GhostNirvana.BigGhosty, AD_GhostNirvana.Entity.Boss
+        m_MethodName: AnimationOnly_AttackAnimationChanneled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2769612595526544776}
+        m_TargetAssemblyTypeName: GhostNirvana.BigGhosty, AD_GhostNirvana.Entity.Boss
+        m_MethodName: AnimationOnly_AttackAnimationComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2769612595526544776}
+        m_TargetAssemblyTypeName: GhostNirvana.BigGhosty, AD_GhostNirvana.Entity.Boss
+        m_MethodName: AnimationOnly_SummonAnimationChanneled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2769612595526544776}
+        m_TargetAssemblyTypeName: GhostNirvana.BigGhosty, AD_GhostNirvana.Entity.Boss
+        m_MethodName: AnimationOnly_SummonAnimationComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &5744346546465057537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
   m_PrefabInstance: {fileID: 5202429163548953834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8399050493354872436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4376889909228290718, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+  m_PrefabInstance: {fileID: 5202429163548953834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6062750780941318429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399050493354872436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae242f101fc530d4b86073a44fe426b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  flashMaterial: {fileID: 2100000, guid: c36542110be37be42badd051cd3868de, type: 2}

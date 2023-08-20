@@ -100,7 +100,7 @@ public partial class Appliance : Enemy<StandardMovementInput> {
         bool cannotBePossessed = (IsPossessedByGhost || IsBeingPossessed || possessionCooldown);
         if (cannotBePossessed) return;
         Ghosty possessor = other.GetComponentInParent<Ghosty>();
-        if (!possessor.CanPossess) return;
+        if (!possessor || !possessor.CanPossess) return;
         OnPossessorDetected?.Invoke(this, StateMachine, possessor);
     }
 

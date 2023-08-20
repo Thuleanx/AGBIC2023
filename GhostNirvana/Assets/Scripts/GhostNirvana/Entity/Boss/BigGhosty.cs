@@ -21,19 +21,31 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
 
     [SerializeField, ShowAssetPreview] GameObject ghosty;
     [SerializeField] StatusRuntimeSet allEnemyStatus;
-    [SerializeField] StatusRuntimeSet allAppliances;
+    [SerializeField] MovableAgentRuntimeSet allAppliances;
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
-	[SerializeField] GameObject onDeathVFX;
 
-    [BoxGroup("Combat")] float summonRange;
-    [BoxGroup("Combat")] BaseStats summonBaseStats;
+	[SerializeField, BoxGroup("Combat")] GameObject onDeathVFX;
+    [SerializeField, BoxGroup("Combat")] float summonRange;
+    [SerializeField, BoxGroup("Combat")] BaseStats summonBaseStats;
+    [SerializeField, BoxGroup("Combat"), Range(0, 720)] float turnSpeedWhileAttacking = 100;
+    [SerializeField, BoxGroup("Combat"), Range(0, 720)] float turnSpeedWhileSummoning = 100;
+    [SerializeField, BoxGroup("Combat"), MinMaxSlider(0, 100)] Vector2 summonCooldownSeconds;
+    [SerializeField, BoxGroup("Combat"), MinMaxSlider(0, 100)] Vector2 attackCooldownSeconds;
 
     public UnityEvent<Ghosty> OnPossessionInterupt = new UnityEvent<Ghosty>();
     public BigGhostyStateMachine StateMachine {get; private set; }
+    public Animator Anim {get; private set; }
+
+    float canSummonUpdatesPerSecond = 4;
+    float lastCanSummonUpdate;
+    bool canSummon = false;
+
+    Timer summonCooldown, attackCooldown;
 
     protected override void Awake() {
         base.Awake();
         StateMachine = GetComponent<BigGhostyStateMachine>();
+        Anim = GetComponentInChildren<Animator>();
     }
 
     protected override void OnEnable() {
@@ -54,12 +66,24 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
         Status.OnDeath.RemoveListener(OnDeath);
     }
 
-    protected void Update() => PerformUpdate(StateMachine.RunUpdate);
-
-    UnityEvent<BigGhosty> onSummonComplete;
-    public void AnimationOnly_SummonAnimationComplete() {
-        onSummonComplete?.Invoke(this);
+    protected void Update() {
+        PerformUpdate(StateMachine.RunUpdate);
+        bool shouldUpdateCanSummon = (Time.time - lastCanSummonUpdate) * canSummonUpdatesPerSecond >= 1;
+        if (shouldUpdateCanSummon) {
+            canSummon = GetCanSummon();
+            lastCanSummonUpdate = Time.time;
+        }
     }
+
+    [SerializeField] UnityEvent<BigGhosty> onSummonChanneled;
+    [SerializeField] UnityEvent<BigGhosty> onSummonComplete;
+    public void AnimationOnly_SummonAnimationChanneled() => onSummonChanneled?.Invoke(this);
+    public void AnimationOnly_SummonAnimationComplete() => onSummonComplete?.Invoke(this);
+
+    [SerializeField] UnityEvent<BigGhosty> onAttackChanneled;
+    [SerializeField] UnityEvent<BigGhosty> onAttackComplete;
+    public void AnimationOnly_AttackAnimationChanneled() => onAttackChanneled?.Invoke(this);
+    public void AnimationOnly_AttackAnimationComplete() => onAttackComplete?.Invoke(this);
 
     void OnDeath(Status status) {
         StateMachine.SetState(States.Death);
@@ -76,6 +100,15 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
         baseStatsHolder.Stats = summonBaseStats;
 
         possessingGhost.GetComponent<Status>().HealToFull();
+    }
+
+    bool GetCanSummon() {
+        bool hasAgentInRange = false;
+        foreach (MovableAgent applianceAgent in allAppliances) {
+            Vector3 displacement = applianceAgent.transform.position - transform.position;
+            hasAgentInRange |= displacement.sqrMagnitude <= summonRange;
+        }
+        return hasAgentInRange;
     }
 }
 
