@@ -6,6 +6,7 @@ using Optimization;
 using CombatSystem;
 using NaughtyAttributes;
 using Utils;
+using Danmaku;
 
 namespace GhostNirvana {
 
@@ -19,12 +20,14 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
         Death
     }
 
-    [SerializeField, ShowAssetPreview] GameObject ghosty;
+    [SerializeField, ShowAssetPreview] GameObject ghostyGoon;
     [SerializeField] StatusRuntimeSet allEnemyStatus;
     [SerializeField] MovableAgentRuntimeSet allAppliances;
     [BoxGroup("Movement"), Range(0, 720), SerializeField] float turnSpeed = 100;
 
-	[SerializeField, BoxGroup("Combat")] GameObject onDeathVFX;
+	[SerializeField, BoxGroup("Combat"), ShowAssetPreview] GameObject onDeathVFX;
+    [SerializeField, BoxGroup("Combat"), ShowAssetPreview] GameObject attackProjectile;
+    [SerializeField, BoxGroup("Combat"), Range(0, 40f)] float waveSpeed;
     [SerializeField, BoxGroup("Combat")] float summonRange;
     [SerializeField, BoxGroup("Combat")] BaseStats summonBaseStats;
     [SerializeField, BoxGroup("Combat"), Range(0, 720)] float turnSpeedWhileAttacking = 100;
@@ -92,7 +95,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
     void SummonGhostyAt(Vector3 position) {
         PoolableEntity possessingGhost = ObjectPoolManager.Instance.Borrow(
             App.GetActiveScene(),
-            ghosty.GetComponent<PoolableEntity>(),
+            ghostyGoon.GetComponent<PoolableEntity>(),
             position
         );
 
@@ -109,6 +112,24 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
             hasAgentInRange |= displacement.sqrMagnitude <= summonRange;
         }
         return hasAgentInRange;
+    }
+
+    void AttackAt(Vector3 direction) {
+        Projectile projectile = attackProjectile.GetComponent<Projectile>();
+        Projectile projectileSpawned = ObjectPoolManager.Instance.Borrow(
+            App.GetActiveScene(),
+            projectile,
+            transform.position
+        );
+
+        Vector3 bulletVelocity = direction * waveSpeed;
+        projectileSpawned.Initialize(
+            damage: 1,
+            knockback: 8,
+            pierce: 1,
+            velocity: bulletVelocity,
+            faceDirection: true
+        );
     }
 }
 

@@ -146,6 +146,7 @@ public class BigGhostyWave : State<BigGhosty, BigGhosty.States> {
     }
 
     void PerformAttack(BigGhosty ghosty) {
+        ghosty.AttackAt(direction: ghosty.transform.rotation * Vector3.forward);
     }
 
     void OnAttackAnimationFinish(BigGhosty ghosty) => ghosty.StateMachine.Blackboard[KEY_waveAttackFinish] = true;

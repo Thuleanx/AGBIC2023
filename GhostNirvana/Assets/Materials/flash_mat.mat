@@ -50,5 +50,5 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Emission: {r: 0.6171589, g: 2.6701567, b: 2.552081, a: 0}
+    - _Emission: {r: 0, g: 2.463667, b: 3.564869, a: 0}
   m_BuildTextureStacks: []

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2102448695563409133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5.17}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2102448695728999153}
@@ -145,17 +145,19 @@ MonoBehaviour:
         m_CallState: 2
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
-  ghosty: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
+  ghostyGoon: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}
   allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
   turnSpeed: 155
   onDeathVFX: {fileID: 0}
+  attackProjectile: {fileID: 7531139996555314357, guid: 75bff26171c094c4bae87f6df492bfa8, type: 3}
+  waveSpeed: 5
   summonRange: 10
   summonBaseStats: {fileID: 11400000, guid: 8c888460f5c8f424bba1545651819dad, type: 2}
-  turnSpeedWhileAttacking: 368
+  turnSpeedWhileAttacking: 32
   turnSpeedWhileSummoning: 352
-  summonCooldownSeconds: {x: 18.784529, y: 24.26335}
-  attackCooldownSeconds: {x: 11.325966, y: 17.311234}
+  summonCooldownSeconds: {x: 5.4327803, y: 6.767955}
+  attackCooldownSeconds: {x: 0.27624273, y: 1.6574585}
   OnPossessionInterupt:
     m_PersistentCalls:
       m_Calls: []
