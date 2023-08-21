@@ -5,6 +5,7 @@ namespace GhostNirvana {
 
 public partial class ApplianceMass : PossessableAgent<StandardMovementInput> {
 
+    [SerializeField] MovableAgentRuntimeSet allEnemies;
     [SerializeField] float acceleration;
     [SerializeField] float movementSpeed;
 
@@ -14,6 +15,11 @@ public partial class ApplianceMass : PossessableAgent<StandardMovementInput> {
 
     protected override void OnEnable() {
         base.OnEnable();
+        allEnemies.Add(this);
+    }
+
+    protected void OnDisable() {
+        allEnemies.Remove(this);
     }
 
     protected void Update() => PerformUpdate(InnerUpdate);

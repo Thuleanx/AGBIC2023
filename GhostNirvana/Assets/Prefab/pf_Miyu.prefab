@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d234b39317734478847e56b6a2767e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miyu: {fileID: 0}
+  miyu: {fileID: 3751458875445000395}
   spawnSpeed: {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
-  prefab: {fileID: 6567878376966889744, guid: 19ec3b6c4a15e9047b4a5f08e006cc60, type: 3}
+  prefab: {fileID: 6567878376966889744, guid: d34da400e3e434ef18b4cd790e6e142d, type: 3}
   damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
   bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}

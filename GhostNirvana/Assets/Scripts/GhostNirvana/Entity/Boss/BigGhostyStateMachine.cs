@@ -70,7 +70,7 @@ public class BigGhostySummon : State<BigGhosty, BigGhosty.States> {
         stateMachine.Blackboard.Remove(KEY_summonAnimFinish);
         agent.onSummonComplete.RemoveListener(OnSummonAnimationFinish);
         agent.onSummonChanneled.RemoveListener(OnSummonChanneled);
-        agent.summonCooldown = Mathx.RandomRange(agent.summonCooldownSeconds);
+        agent.summonCooldown = Mathx.RandomRange(agent.currentSummonCooldown);
     }
 
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
@@ -124,7 +124,8 @@ public class BigGhostyWave : State<BigGhosty, BigGhosty.States> {
     public override void End(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
         agent.onAttackComplete.RemoveListener(OnAttackAnimationFinish);
         agent.onAttackChanneled.RemoveListener(OnAttackChanneled);
-        agent.attackCooldown = Mathx.RandomRange(agent.attackCooldownSeconds);
+
+        agent.attackCooldown = Mathx.RandomRange(agent.currentAttackCooldown);
     }
 
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {

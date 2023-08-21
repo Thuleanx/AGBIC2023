@@ -45,7 +45,11 @@ public class UpgradeSystem : MonoBehaviour {
         if (shouldLevelUp) StartLevelUpSequence();
     }
 
-    void StartLevelUpSequence() {
+    [Button] void DepositMoney() {
+        bank.Deposit(5000);
+    }
+
+    [Button] void StartLevelUpSequence() {
         level++;
 
         OnLevelUp?.Invoke();
@@ -70,8 +74,7 @@ public class UpgradeSystem : MonoBehaviour {
             upgradeOption.Initialize(buffChosen);
         }
 
-        experience.Value -= experience.Limiter;
-
+        experience.Value -= Mathf.Max(experience.Limiter, experience.Value);
 
         Time.timeScale = 0;
     }

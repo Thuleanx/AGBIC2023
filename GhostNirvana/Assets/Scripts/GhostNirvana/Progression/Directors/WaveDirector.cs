@@ -12,8 +12,7 @@ public class WaveDirector : Director {
         [System.Serializable]
         public class SpawnableMob {
             [ShowAssetPreview] public GameObject enemy;
-            [Expandable]
-            public BaseStats baseStats;
+            [Expandable] public BaseStats baseStats;
             public float weight;
         }
 

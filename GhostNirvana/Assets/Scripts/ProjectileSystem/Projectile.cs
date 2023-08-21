@@ -31,9 +31,7 @@ public class Projectile : PoolableEntity, IHitResponder {
         this.damage = damage;
         this.knockback = knockback;
         this.pierce = pierce;
-        if (faceDirection && velocity.sqrMagnitude > 0) {
-            transform.rotation = Quaternion.LookRotation(forward: velocity, upwards: Vector3.up);
-        }
+        if (faceDirection && velocity.sqrMagnitude > 0) transform.rotation = Quaternion.LookRotation(forward: velocity, upwards: Vector3.up);
     }
 
     bool IHitResponder.ValidateHit(Hit hit) {

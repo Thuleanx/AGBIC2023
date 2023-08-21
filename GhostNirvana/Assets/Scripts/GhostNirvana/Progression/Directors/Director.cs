@@ -8,7 +8,9 @@ namespace GhostNirvana {
 public abstract class Director : MonoBehaviour {
     [SerializeField] protected ScriptableFloat timeElapsed;
 
-    protected GameObject SpawnEnemy(GameObject enemy, BaseStats baseStats, Vector3? position = null) {
+#nullable enable
+    protected GameObject SpawnEnemy(GameObject enemy, BaseStats? baseStats, Vector3? position = null) {
+#nullable disable
         PoolableEntity poolableEnemy = enemy.GetComponent<PoolableEntity>();
         Vector3 spawnPoint = position ?? (Arena.Instance?.GetRandomLocationInExtents() ?? Vector3.zero);
 
@@ -18,10 +20,12 @@ public abstract class Director : MonoBehaviour {
             spawnPoint
         );
 
-        BaseStatsMonoBehaviour baseStatsHolder = spawnedEnemy.GetComponent<BaseStatsMonoBehaviour>();
-        baseStatsHolder.Stats = baseStats;
+        if (baseStats) {
+            BaseStatsMonoBehaviour baseStatsHolder = spawnedEnemy.GetComponent<BaseStatsMonoBehaviour>();
+            baseStatsHolder.Stats = baseStats;
+        }
 
-        spawnedEnemy.GetComponent<Status>().HealToFull();
+        spawnedEnemy.GetComponent<Status>()?.HealToFull();
 
         return spawnedEnemy.gameObject;
     }

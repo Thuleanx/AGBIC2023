@@ -156,8 +156,74 @@ MonoBehaviour:
   summonBaseStats: {fileID: 11400000, guid: 8c888460f5c8f424bba1545651819dad, type: 2}
   turnSpeedWhileAttacking: 32
   turnSpeedWhileSummoning: 352
-  summonCooldownSeconds: {x: 5.4327803, y: 6.767955}
-  attackCooldownSeconds: {x: 0.27624273, y: 1.6574585}
+  summonCooldownSeconds: {x: 10, y: 12}
+  attackCooldownSeconds: {x: 8, y: 9}
+  summonCooldownScalingByHealth:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.03528265
+      outSlope: -0.03528265
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.45
+      value: 1.0000004
+      inSlope: 0.024301007
+      outSlope: 0.024301007
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.073817305
+      outWeight: 0.060396817
+    - serializedVersion: 3
+      time: 1
+      value: 0.2
+      inSlope: -1.9106066
+      outSlope: -1.9106066
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.026352346
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackCooldownScalingByHealth:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.03528265
+      outSlope: -0.03528265
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.45
+      value: 1.0000004
+      inSlope: 0.024301007
+      outSlope: 0.024301007
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.073817305
+      outWeight: 0.060396817
+    - serializedVersion: 3
+      time: 1
+      value: 0.2
+      inSlope: -1.9106066
+      outSlope: -1.9106066
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.026352346
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   OnPossessionInterupt:
     m_PersistentCalls:
       m_Calls: []

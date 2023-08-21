@@ -107,6 +107,7 @@ MonoBehaviour:
   knockbackResistance: 8
   knockbackImmune: 1
   FreezePosition: 0
+  allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   acceleration: 1
   movementSpeed: 1
 --- !u!114 &2408813344641085289
