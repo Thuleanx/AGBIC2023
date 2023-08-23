@@ -1,12 +1,12 @@
 using Optimization;
 using Base;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using Utils;
 using ComposableBehaviour;
 using CombatSystem;
+using NaughtyAttributes;
 
 namespace GhostNirvana {
 
@@ -16,6 +16,7 @@ public class RotatingMass : PoolableEntity {
     [SerializeField] int rotatorsAtDeath;
     [SerializeField] UnityEvent onDeath;
     [SerializeField] Vector3 centerOffset;
+    [SerializeField, ShowAssetPreview] GameObject vfxOnDetach;
 
     List<PoolableEntity> rotators = new List<PoolableEntity>();
     int rotatorCount => rotators.Count;
@@ -55,6 +56,23 @@ public class RotatingMass : PoolableEntity {
     }
 
     void OnRotatorDeath(Status status) {
+        if (vfxOnDetach) {
+            Vector3 outDirection = status.transform.position - (centerOffset + transform.position);
+            Vector3 forward = Vector3.forward;
+            int maxTries = 10;
+            while (Vector3.Cross(forward, outDirection).sqrMagnitude == 0 && maxTries --> 0)
+                forward = Random.insideUnitSphere;
+
+            forward = Vector3.Cross(outDirection, forward);
+
+            ObjectPoolManager.Instance.Borrow(
+                App.GetActiveScene(),
+                vfxOnDetach.GetComponent<Entity>(),
+                status.transform.position,
+                Quaternion.LookRotation(forward: forward, upwards: outDirection)
+            );
+        }
+
         DetachStatus(status);
         rotators.Remove(status.GetComponent<PoolableEntity>());
         if (rotators.Count <= rotatorsAtDeath) OnDeath();

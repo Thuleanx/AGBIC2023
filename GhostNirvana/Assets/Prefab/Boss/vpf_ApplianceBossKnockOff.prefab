@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6567878376966889745}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!198 &2501477604496667910
 ParticleSystem:
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747225448998188863}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4963,7 +4963,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6567878376966889745}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &531155353059457982
 MonoBehaviour:
@@ -4980,11 +4980,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -228707380
-      Data2: 1081240687
-      Data3: 631183542
-      Data4: 146212733
-    Path: event:/SFX/Appliance/Electric Stomp
+      Data1: -1390166711
+      Data2: 1182613634
+      Data3: 1887448997
+      Data4: -143066393
+    Path: event:/SFX/Appliance/Hurt
   Event: 
   PlayEvent: 11
   StopEvent: 12
@@ -5026,7 +5026,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6567878376966889745}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &6563380634658913539
 ParticleSystem:
@@ -5036,14 +5036,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5841523816649024652}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9929,83 +9929,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &6567878375710189897
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6567878375710189902}
-  - component: {fileID: 6567878375710189903}
-  - component: {fileID: 6567878375710189900}
-  - component: {fileID: 6567878375710189901}
-  m_Layer: 31
-  m_Name: Hitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6567878375710189902
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567878375710189897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6567878376966889745}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6567878375710189903
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567878375710189897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6567878375710189900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567878375710189897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9166d4c80d56044a9dc4d1926a965dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: 6567878375710189903}
-  _hurtboxMask:
-    serializedVersion: 2
-    m_Bits: 33554432
-  hitNormalIsVelocityDirection: 0
---- !u!114 &6567878375710189901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567878375710189897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff3fcb52f1cd7942bb2ad15a9be6291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeDuration: {x: 0, y: 0.1}
 --- !u!1 &6567878376966889744
 GameObject:
   m_ObjectHideFlags: 0
@@ -10015,7 +9938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6567878376966889745}
-  - component: {fileID: 6567878376966889751}
+  - component: {fileID: 1339209352814767485}
   - component: {fileID: 6567878376966889750}
   m_Layer: 26
   m_Name: vpf_ApplianceBossKnockOff
@@ -10032,18 +9955,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6567878376966889744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.25, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6567878375710189902}
   - {fileID: 3305463039243336676}
   - {fileID: 5080876018681061868}
   - {fileID: 7697610948466543551}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6567878376966889751
+--- !u!114 &1339209352814767485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10052,12 +9974,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6567878376966889744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f220c20e4548f4486ec8f7abd2e9b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6409bf503b8cb3840a07c51ebede8963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  knockback: 10
-  hitbox: {fileID: 0}
 --- !u!114 &6567878376966889750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10070,6 +9989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25d7990f85ab4a4ab4e643ff97b960a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationSeconds: 0.35
+  durationSeconds: 1
   timeEnabled: 0
   disposalRequested: 0
