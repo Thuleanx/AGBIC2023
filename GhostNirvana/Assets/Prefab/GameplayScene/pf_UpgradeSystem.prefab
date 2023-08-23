@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716065139954929669}
   - component: {fileID: 8290016700245776384}
+  - component: {fileID: 6616391255475249746}
   m_Layer: 0
   m_Name: Upgrade Options
   m_TagString: Untagged
@@ -166,8 +167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -12.5, y: 98}
-  m_SizeDelta: {x: -1175, y: 120}
+  m_AnchoredPosition: {x: -12.5, y: 116}
+  m_SizeDelta: {x: 0, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8290016700245776384
 MonoBehaviour:
@@ -187,14 +188,28 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6616391255475249746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549013923158923229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
 --- !u!1 &6322729253205721636
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -77
+      value: -67
       objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

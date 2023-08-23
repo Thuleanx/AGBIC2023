@@ -20,6 +20,9 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
     [ResizableTextArea, SerializeField] string payDescriptionFormatting;
     [ResizableTextArea, SerializeField] string balanceMinusPriceDisplayFormatting;
     [ResizableTextArea, SerializeField] string priceDisplayFormatting;
+    [SerializeField] float exitBufferTime = 1;
+    bool shouldHoverExit;
+    float hoverExitTime;
 
     [SerializeField, ResizableTextArea, ReorderableList] List<string> tipTexts;
 
@@ -44,11 +47,17 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
     }
 
     void OnHover(UpgradeOption option) {
+        shouldHoverExit = false;
         payDescription.gameObject.SetActive(false);
         SetUpgradeOption(option);
     }
 
     void OnHoverExit(UpgradeOption option) {
+        hoverExitTime = exitBufferTime + Time.unscaledTime;
+        shouldHoverExit = true;
+    }
+
+    void DisplayStatusDescription() {
         // Here we assume it's impossible to hover two options at once
         payDescription.gameObject.SetActive(true);
         SetUpgradeOption(null);
@@ -86,6 +95,13 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
             rank, collectionCount, paymentAmount / CENTS_IN_DOLLAR,
             tip
         );
+    }
+
+    protected void LateUpdate() {
+        if (shouldHoverExit && Time.unscaledTime > hoverExitTime) {
+            DisplayStatusDescription();
+            shouldHoverExit = false;
+        }
     }
 }
 

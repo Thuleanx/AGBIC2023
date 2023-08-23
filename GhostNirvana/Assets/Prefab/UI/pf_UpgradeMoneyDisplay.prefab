@@ -65,6 +65,7 @@ MonoBehaviour:
     look at our benefits store!\r\n\n{3}"
   balanceMinusPriceDisplayFormatting: '{0:C2}'
   priceDisplayFormatting: -{0:C2}
+  exitBufferTime: 0.2
   tipTexts:
   - Our Special Salt Gun is auto-reloading, how convenient riiight?
   - We can only air claw out one appliance at a time, but you can help us invest

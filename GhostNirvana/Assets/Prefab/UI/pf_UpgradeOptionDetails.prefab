@@ -326,6 +326,7 @@ MonoBehaviour:
   title: {fileID: 6923600091675108171}
   description: {fileID: 5774295014477245946}
   price: {fileID: 3516202387376233168}
+  exitBufferTime: 0.2
 --- !u!1 &5918625693926602145
 GameObject:
   m_ObjectHideFlags: 0
