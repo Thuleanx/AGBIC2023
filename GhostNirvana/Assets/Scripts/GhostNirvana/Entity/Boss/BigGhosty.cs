@@ -120,6 +120,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
         baseStatsHolder.Stats = summonBaseStats;
 
         possessingGhost.GetComponent<Status>().HealToFull();
+        possessingGhost.GetComponentInChildren<Animator>()?.SetTrigger("Summon");
     }
 
     bool GetCanSummon() {

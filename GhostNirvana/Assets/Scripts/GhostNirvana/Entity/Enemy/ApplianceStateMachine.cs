@@ -170,7 +170,6 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 
     void PushGhostOutOfAppliance(Ghosty ghost, Appliance appliance, Hit hit) {
         ghost.transform.position = appliance.transform.position;
-
         ghost.gameObject.SetActive(true);
 
         (ghost as IKnockbackable).ApplyKnockback(
@@ -178,6 +177,8 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
 
         int ghostHealthBeforePossession = (int) appliance.StateMachine.Blackboard[BK_GhostHP];
         ghost.Status.SetHealth(ghostHealthBeforePossession);
+
+        ghost.GetComponent<GhostyAnimator>()?.OnKnockOutOfAppliance();
     }
 }
 

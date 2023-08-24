@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 namespace GhostNirvana {
 
@@ -16,6 +17,9 @@ public class GhostyAnimator : MonoBehaviour {
     }
 
     [SerializeField] AnimationState currentState = AnimationState.Normal;
+    [SerializeField] List<ParticleSystem> knockedOutSystems;
+    [SerializeField] float knockedOutVFXDuration;
+    Timer beingKnockedOutOfAppliance;
 
     void Awake() {
         Ghosty = GetComponent<Ghosty>();
@@ -23,6 +27,10 @@ public class GhostyAnimator : MonoBehaviour {
 
     void OnEnable() {
         currentState = AnimationState.Normal;
+    }
+
+    public void OnKnockOutOfAppliance() {
+        beingKnockedOutOfAppliance = knockedOutVFXDuration;
     }
 
     protected void Update() {
@@ -33,6 +41,12 @@ public class GhostyAnimator : MonoBehaviour {
     protected void LateUpdate() {
         if (!Ghosty) return; // this is impossible unless project configured wrong
         Anim?.SetInteger("State", (int) currentState);
+        foreach (ParticleSystem system in knockedOutSystems) {
+            if (system.isPlaying ^ beingKnockedOutOfAppliance) {
+                if (system.isPlaying)   system.Play();
+                else                    system.Stop();
+            }
+        }
     }
 }
 
