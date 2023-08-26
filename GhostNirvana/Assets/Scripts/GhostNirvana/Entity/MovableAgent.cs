@@ -43,10 +43,13 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
 
 		if (TrueVelocity.sqrMagnitude > 0.01f)
         	Controller.Move(TrueVelocity * Time.deltaTime);
-        transform.position = new Vector3(
-            transform.position.x,
-            0, transform.position.z
-        );
+
+        if (!FreezePosition) {
+            transform.position = new Vector3(
+                transform.position.x,
+                0, transform.position.z
+            );
+        }
     }
 
 	[SerializeField, ReadOnly]
