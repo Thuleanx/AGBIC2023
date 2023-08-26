@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{5e2aec5b-6e45-4fa5-960c-7ef36833273d}">
 		<property name="assetPath">
-			<value>Coin Dropped on Ceramic Dish.wav</value>
+			<value>SFX/Coin Dropped on Ceramic Dish.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

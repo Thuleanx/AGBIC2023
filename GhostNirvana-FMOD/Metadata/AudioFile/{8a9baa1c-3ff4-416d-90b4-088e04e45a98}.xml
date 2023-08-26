@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{8a9baa1c-3ff4-416d-90b4-088e04e45a98}">
 		<property name="assetPath">
-			<value>GUNMech_Empty Clip Burst B_01.wav</value>
+			<value>SFX/GUNMech_Empty Clip Burst B_01.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

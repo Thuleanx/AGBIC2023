@@ -59,7 +59,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{b8d084fe-ff21-4e88-be7b-5865a9783de3}">
 		<property name="maxVoices">
-			<value>10</value>
+			<value>4</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>120</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{7cf42e20-273b-4709-8f48-7beee96d983f}" />
@@ -89,6 +92,9 @@
 		<property name="volume">
 			<value>-8</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{881d7681-2455-4cbd-8213-33a83d29b76a}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{7d1ea974-911e-4d30-82b6-340c188f4471}</destination>
 		</relationship>
@@ -163,6 +169,9 @@
 		<property name="name">
 			<value>Audio 3</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{3a923858-2ea1-4d1a-b4f0-37b1a1653e5a}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{30313a22-e408-486c-8949-62b9227e35b2}</destination>
 		</relationship>
@@ -172,6 +181,14 @@
 		<relationship name="output">
 			<destination>{d8a4ee03-ea9d-41d8-88ac-bd9ded3cc638}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{881d7681-2455-4cbd-8213-33a83d29b76a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>4</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{7d1ea974-911e-4d30-82b6-340c188f4471}">
 		<relationship name="effects">
@@ -218,6 +235,14 @@
 		<relationship name="endPoint">
 			<destination>{bc801439-1cd8-46a1-9dd0-032d69b3147b}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{3a923858-2ea1-4d1a-b4f0-37b1a1653e5a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>4</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{30313a22-e408-486c-8949-62b9227e35b2}">
 		<relationship name="effects">

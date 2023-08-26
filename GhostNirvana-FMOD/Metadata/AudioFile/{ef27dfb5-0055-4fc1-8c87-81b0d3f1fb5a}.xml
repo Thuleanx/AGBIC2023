@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{ef27dfb5-0055-4fc1-8c87-81b0d3f1fb5a}">
 		<property name="assetPath">
-			<value>sword-knife-clash-08.wav</value>
+			<value>SFX/sword-knife-clash-08.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

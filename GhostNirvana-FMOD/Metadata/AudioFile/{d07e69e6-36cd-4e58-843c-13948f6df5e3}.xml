@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{d07e69e6-36cd-4e58-843c-13948f6df5e3}">
 		<property name="assetPath">
-			<value>SCIEnrg_Shield Activate Deactivate_02.wav</value>
+			<value>SFX/SCIEnrg_Shield Activate Deactivate_02.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

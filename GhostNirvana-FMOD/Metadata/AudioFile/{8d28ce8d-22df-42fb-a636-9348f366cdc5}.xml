@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{8d28ce8d-22df-42fb-a636-9348f366cdc5}">
 		<property name="assetPath">
-			<value>spray-bottle.wav</value>
+			<value>SFX/spray-bottle.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{371ad8e6-735b-4af7-b1ce-937bf111bc17}">
 		<property name="assetPath">
-			<value>HIT_SLAP_07.wav</value>
+			<value>SFX/HIT_SLAP_07.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

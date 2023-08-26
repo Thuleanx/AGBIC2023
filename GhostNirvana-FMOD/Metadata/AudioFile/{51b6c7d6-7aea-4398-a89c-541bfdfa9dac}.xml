@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{51b6c7d6-7aea-4398-a89c-541bfdfa9dac}">
 		<property name="assetPath">
-			<value>GUNMech_Arm Weapon Rattle_10.wav</value>
+			<value>SFX/GUNMech_Arm Weapon Rattle_10.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

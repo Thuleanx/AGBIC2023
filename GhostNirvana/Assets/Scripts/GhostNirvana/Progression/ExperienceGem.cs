@@ -18,7 +18,8 @@ public class ExperienceGem : PoolableEntity {
     [SerializeField] Ease absorptionEase;
     [SerializeField] LinearLimiterFloat miyuXP;
     [SerializeField] float collectionForceRange = .5f;
-    [SerializeField] UnityEvent onCollect;
+    [SerializeField] UnityEvent onCollectBegin;
+    [SerializeField] UnityEvent onCollectEnd;
     Tween collectionTween;
 
     void Awake() {
@@ -42,6 +43,7 @@ public class ExperienceGem : PoolableEntity {
         float t = 0;
         float lastTime = Time.time;
         Vector3 originalLocation = transform.position;
+		onCollectBegin?.Invoke();
         while (t < collectionDuration) {
             yield return null;
             float deltaTime = Time.time - lastTime;
@@ -60,6 +62,7 @@ public class ExperienceGem : PoolableEntity {
             lastTime = Time.time;
         }
 
+		onCollectEnd?.Invoke();
         miyuXP.Value += xpYieldPerPickup;
         this.Dispose();
     }

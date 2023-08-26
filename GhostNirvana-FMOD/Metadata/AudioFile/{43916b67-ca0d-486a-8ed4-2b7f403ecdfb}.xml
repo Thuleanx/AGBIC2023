@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{43916b67-ca0d-486a-8ed4-2b7f403ecdfb}">
 		<property name="assetPath">
-			<value>396331__nioczkus__1911-reload.aiff</value>
+			<value>SFX/396331__nioczkus__1911-reload.aiff</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

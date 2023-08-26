@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{bcd98647-fa66-4a8b-a87d-206e8cb749c0}">
 		<property name="assetPath">
-			<value>Magic-And-Spell-Sound-Effects-rpgpowerup.ogg</value>
+			<value>SFX/Magic-And-Spell-Sound-Effects-rpgpowerup.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

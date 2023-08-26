@@ -16,4 +16,4 @@ MonoBehaviour:
   <Damage>k__BackingField: 1
   <MovementSpeed>k__BackingField: 1.8
   <Acceleration>k__BackingField: 1.8
-  <Knockback>k__BackingField: 5
+  <Knockback>k__BackingField: 6

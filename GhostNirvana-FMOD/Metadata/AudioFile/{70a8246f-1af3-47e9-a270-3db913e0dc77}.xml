@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{70a8246f-1af3-47e9-a270-3db913e0dc77}">
 		<property name="assetPath">
-			<value>ghost_trip_loop.flac</value>
+			<value>Music/ghost_trip_loop.flac</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

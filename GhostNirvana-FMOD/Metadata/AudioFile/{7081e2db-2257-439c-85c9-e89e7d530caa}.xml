@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{7081e2db-2257-439c-85c9-e89e7d530caa}">
 		<property name="assetPath">
-			<value>Phonering-otherend.wav</value>
+			<value>SFX/Phonering-otherend.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

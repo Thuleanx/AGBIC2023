@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{f0ab0d00-d532-418a-9c5c-7a73ddc345a6}">
 		<property name="assetPath">
-			<value>UIBeep_Lock On_05.wav</value>
+			<value>SFX/UIBeep_Lock On_05.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

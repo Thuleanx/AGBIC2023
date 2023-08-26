@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{da77a610-64a1-4a72-b87f-6975a7d33b08}">
 		<property name="assetPath">
-			<value>86004__nextmaking__hitting-sandback.aiff</value>
+			<value>SFX/86004__nextmaking__hitting-sandback.aiff</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

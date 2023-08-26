@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{55411977-6610-4cf0-bb46-e27f80fc1144}">
 		<property name="assetPath">
-			<value>loop_bubbles_1.ogg</value>
+			<value>SFX/loop_bubbles_1.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

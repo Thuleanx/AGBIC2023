@@ -59,7 +59,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{cc9d50e5-3686-424f-9fa5-4b7a45a4a6fb}">
 		<property name="maxVoices">
-			<value>10</value>
+			<value>4</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>100</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{a45a3de2-4031-4a7c-ae0b-ea3586348d56}" />
@@ -86,6 +89,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{de588f3d-7755-45c1-a67a-18e17d71b218}">
+		<relationship name="modulators">
+			<destination>{8076fcee-62e9-45a0-88e3-9304334814e1}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{6662a33b-fa5e-456e-bc66-088afeda6179}</destination>
 		</relationship>
@@ -121,7 +127,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{f8d21e73-8993-4e82-869e-21773c179f73}">
 		<property name="volume">
-			<value>-5</value>
+			<value>-12.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -169,6 +175,14 @@
 		<relationship name="output">
 			<destination>{de588f3d-7755-45c1-a67a-18e17d71b218}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{8076fcee-62e9-45a0-88e3-9304334814e1}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>4</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{6662a33b-fa5e-456e-bc66-088afeda6179}">
 		<relationship name="effects">

@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 725140307097838083}
   - {fileID: 4468021735349949081}
+  - {fileID: 8243840256685233914}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,9 +83,24 @@ MonoBehaviour:
   absorptionEase: 25
   miyuXP: {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
   collectionForceRange: 0.5
-  onCollect:
+  onCollectBegin:
     m_PersistentCalls:
       m_Calls: []
+  onCollectEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6194784822779564528}
+        m_TargetAssemblyTypeName: Audio.EventInstanceEmitter, Audio
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &725140307097838080
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,3 +5015,54 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &3681124348857347157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8243840256685233914}
+  - component: {fileID: 6194784822779564528}
+  m_Layer: 29
+  m_Name: CollectSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8243840256685233914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681124348857347157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 725140305560010594}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6194784822779564528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681124348857347157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e1b1476d5e9ec43928a0787a92dc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference:
+    Guid:
+      Data1: 681807238
+      Data2: 1222162805
+      Data3: -577393255
+      Data4: -939403901
+    Path: event:/SFX/XP/Gain

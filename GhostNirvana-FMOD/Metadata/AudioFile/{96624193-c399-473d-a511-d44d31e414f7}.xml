@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{96624193-c399-473d-a511-d44d31e414f7}">
 		<property name="assetPath">
-			<value>ghostbreath.flac</value>
+			<value>SFX/ghostbreath.flac</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

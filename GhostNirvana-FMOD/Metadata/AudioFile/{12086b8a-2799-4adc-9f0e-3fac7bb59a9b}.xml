@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{12086b8a-2799-4adc-9f0e-3fac7bb59a9b}">
 		<property name="assetPath">
-			<value>qubodupElectricityDamage02.flac</value>
+			<value>SFX/qubodupElectricityDamage02.flac</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

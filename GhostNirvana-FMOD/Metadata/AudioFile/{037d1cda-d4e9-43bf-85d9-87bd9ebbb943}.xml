@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{037d1cda-d4e9-43bf-85d9-87bd9ebbb943}">
 		<property name="assetPath">
-			<value>GORESplt_Giblet Splatter_02.wav</value>
+			<value>SFX/GORESplt_Giblet Splatter_02.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

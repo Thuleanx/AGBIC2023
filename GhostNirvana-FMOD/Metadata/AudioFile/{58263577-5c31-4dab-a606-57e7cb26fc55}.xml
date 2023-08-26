@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{58263577-5c31-4dab-a606-57e7cb26fc55}">
 		<property name="assetPath">
-			<value>LASRGun_Particle Compressor Fire_01.wav</value>
+			<value>SFX/LASRGun_Particle Compressor Fire_01.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
