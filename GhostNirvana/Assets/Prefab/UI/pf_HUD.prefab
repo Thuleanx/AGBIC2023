@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 5642084467023147414}
   - component: {fileID: 6748893334659052259}
   - component: {fileID: 5575491519908997370}
+  - component: {fileID: 1094484987025957219}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -427,6 +428,25 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1094484987025957219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571553560004676374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2659f63f4dc596748bff61904fde7112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: {x: 0, y: 0}
+  animationDuration: {x: 0.3, y: 0.4}
+  animationEase: 24
+  target: {x: 1, y: 1, z: 1}
+  overrideStarting: 1
+  targetOnAwake: {x: 1.1, y: 1.1, z: 1.1}
+  startingAnimation: 0
 --- !u!1 &4045908873588854323
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +634,31 @@ MonoBehaviour:
   m_Value: 0.308
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1094484987025957219}
+        m_TargetAssemblyTypeName: UI.SingleTween`1[[UnityEngine.Vector3, UnityEngine
+        m_MethodName: ExecuteAsEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8056910016344288002}
+        m_TargetAssemblyTypeName: UI.SingleTween`1[[UnityEngine.Vector3, UnityEngine
+        m_MethodName: ExecuteAsEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1041640828978825132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,6 +702,7 @@ GameObject:
   - component: {fileID: 1336048257729149928}
   - component: {fileID: 6703522058155164060}
   - component: {fileID: 3154608896853244072}
+  - component: {fileID: 8056910016344288002}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -723,6 +768,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8056910016344288002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5389538306386149455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2659f63f4dc596748bff61904fde7112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: {x: 0, y: 0}
+  animationDuration: {x: 0.3, y: 0.4}
+  animationEase: 24
+  target: {x: 1, y: 1, z: 1}
+  overrideStarting: 1
+  targetOnAwake: {x: 1.1, y: 1.1, z: 1.1}
+  startingAnimation: 0
 --- !u!1 &7658876373936680252
 GameObject:
   m_ObjectHideFlags: 0
