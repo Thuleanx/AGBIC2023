@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace GhostNirvana.Upgrade {
 
@@ -7,6 +8,11 @@ namespace GhostNirvana.Upgrade {
 public class UpgradeOption : MonoBehaviour {
     public Buff Buff {get; private set; }
     [field:SerializeField] public Bank PlayerBank {get; private set; }
+
+    [Header("Animation")]
+    [SerializeField] float expandTime;
+    [SerializeField] float retractTime;
+    [SerializeField] float expandScale;
     UpgradeSystem upgradeSystem;
 
     public delegate void HoverHandler(UpgradeOption option);
@@ -14,6 +20,8 @@ public class UpgradeOption : MonoBehaviour {
 
     public event HoverHandler OnHoverEnter;
     public event HoverExitHandler OnHoverExit;
+
+    Tween currentTween;
 
 #region Components
     Button button;
@@ -41,8 +49,21 @@ public class UpgradeOption : MonoBehaviour {
     }
 
     public bool CanPurchase => PlayerBank && Buff && PlayerBank.Value >= Buff.Cost;
-    public void EventTriggerOnly_OnHoverEnter() => OnHoverEnter?.Invoke(this);
-    public void EventTriggerOnly_OnHoverExit() => OnHoverExit?.Invoke(this);
+    public void EventTriggerOnly_OnHoverEnter() {
+        OnHoverEnter?.Invoke(this);
+        currentTween?.Kill();
+        currentTween = transform.DOScale(expandScale * Vector3.one, duration: expandTime);
+        currentTween.SetUpdate(isIndependentUpdate: true);
+        currentTween.Play();
+    }
+
+    public void EventTriggerOnly_OnHoverExit() {
+        OnHoverExit?.Invoke(this);
+        currentTween?.Kill();
+        currentTween = transform.DOScale(Vector3.one, duration: retractTime);
+        currentTween.SetUpdate(isIndependentUpdate: true);
+        currentTween.Play();
+    }
 }
 
 }

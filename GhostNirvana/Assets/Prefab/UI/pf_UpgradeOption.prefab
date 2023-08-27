@@ -435,6 +435,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PlayerBank>k__BackingField: {fileID: 11400000, guid: 553c59b772066344ab221e6160728200, type: 2}
+  expandTime: 0.5
+  retractTime: 0.2
+  expandScale: 1.2
   Image: {fileID: 7642141707858390801}
 --- !u!114 &4317542815543026882
 MonoBehaviour:
