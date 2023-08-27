@@ -5,6 +5,7 @@ using System.Collections;
 using NaughtyAttributes;
 using DG.Tweening;
 using Utils;
+using UI;
 
 namespace GhostNirvana {
 
@@ -17,7 +18,7 @@ public class Reaper : MonoBehaviour {
     [SerializeField] Canvas deathUI;
 
     [SerializeField] UnityEvent OnDeathStart;
-    [SerializeField] float respawnTime = 2;
+    [SerializeField] Fader fader;
 
     bool reincarnating;
 
@@ -58,7 +59,16 @@ public class Reaper : MonoBehaviour {
     }
 
     IEnumerator IReincarnation() {
-        yield return new WaitForSecondsRealtime(respawnTime);
+        while (true) {
+            var (successful, yieldInstruction) = fader.FadeIn();
+            if (!successful) {
+                yield return null;
+                continue;
+            }
+            yield return yieldInstruction;
+            break;
+        }
+
         App.instance.RequestLoad(gameObject.scene.name);
         Time.timeScale = 1;
     }
