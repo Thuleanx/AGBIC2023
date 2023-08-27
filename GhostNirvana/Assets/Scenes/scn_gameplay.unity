@@ -2994,6 +2994,10 @@ PrefabInstance:
       propertyPath: miyu
       value: 
       objectReference: {fileID: 1622784182}
+    - target: {fileID: 6162096525635077335, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 1248485458}
     - target: {fileID: 6162096526345581630, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: m_Camera
       value: 

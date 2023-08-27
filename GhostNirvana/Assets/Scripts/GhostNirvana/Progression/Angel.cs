@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.Events;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using System.Collections;
 using DG.Tweening;
 using Base;
+using UI;
 
 namespace GhostNirvana {
 
@@ -20,7 +20,7 @@ public class Angel : MonoBehaviour {
     [Header("Animation")]
     [SerializeField] float timeSlowDownSeconds = 1;
     [SerializeField] Ease slowDownEase;
-    [SerializeField] float respawnTime;
+    [SerializeField] Fader fader;
 
     [Header("Interaction")]
     [SerializeField] Canvas interactionCanvas;
@@ -63,7 +63,16 @@ public class Angel : MonoBehaviour {
     }
 
     IEnumerator IReincarnation() {
-        yield return new WaitForSecondsRealtime(respawnTime);
+        while (true) {
+            var (successful, yieldInstruction) = fader.FadeIn();
+            if (!successful) {
+                yield return null;
+                continue;
+            }
+            yield return yieldInstruction;
+            break;
+        }
+
         App.instance.RequestLoad(gameObject.scene.name);
         Time.timeScale = 1;
     }
