@@ -37,6 +37,8 @@ public class Reaper : MonoBehaviour {
     IEnumerator IOnMiyuDeath() {
         OnDeathStart?.Invoke();
 
+        miyu.GetComponentInChildren<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+
         yield return new WaitForSeconds(deathTimeSlowDelaySeconds);
 
         float t = 0;

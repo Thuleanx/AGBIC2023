@@ -67,9 +67,8 @@ public interface IHurtable {
 }
 
 public interface IKnockbackable {
-    public void ApplyKnockback(float amount, Vector3 dir) => OnKnockback(amount, dir);
-
-    protected void OnKnockback(float amount, Vector3 dir);
+    public void ApplyKnockback(float amount, Vector3 dir, bool ignoreKnockbackImmunity = false) => OnKnockback(amount, dir, ignoreKnockbackImmunity);
+    protected void OnKnockback(float amount, Vector3 dir, bool ignoreKnockbackImmunity);
 }
 
 }

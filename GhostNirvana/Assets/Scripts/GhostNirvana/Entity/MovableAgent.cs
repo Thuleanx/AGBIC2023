@@ -63,8 +63,8 @@ public abstract class MovableAgent : PoolableEntity, IKnockbackable {
         }
     }
 
-    void IKnockbackable.OnKnockback(float amount, Vector3 dir) {
-        if (knockbackImmune) return;
+    void IKnockbackable.OnKnockback(float amount, Vector3 dir, bool ignoreKnockbackImmunity) {
+        if (knockbackImmune && !ignoreKnockbackImmunity) return;
         bool knockbackStrongerThanCurrent = Knockback.sqrMagnitude * knockbackStrength * knockbackStrength < amount * amount;
         if (knockbackStrongerThanCurrent) {
             Knockback = dir * amount;

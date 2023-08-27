@@ -8,6 +8,7 @@ using Utils;
 using ScriptableBehaviour;
 using UnityEngine.Events;
 using System.Collections;
+using DG.Tweening;
 
 namespace GhostNirvana {
 
@@ -56,6 +57,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterInt magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
+    [BoxGroup("Combat"), SerializeField, MinMaxSlider(0, 20)] Vector2 pushbackAttenuationDistance;
+    [BoxGroup("Combat"), SerializeField] Ease pushbackAttenuationEase;
     [BoxGroup("Combat"), SerializeField] float pushbackStrengthOnDeath;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterFloat shield;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat shieldRegenerationRate;
@@ -156,19 +159,27 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         iframeHappening = iframeSeconds;
     }
 
-    void PushAllEnemiesAway(float strength) {
+    void PushAllEnemiesAway(float strength, bool ignoreKnockbackImmunity = false) {
         foreach (MovableAgent enemy in allEnemies) {
             Vector3 knockbackDir = enemy.transform.position - transform.position;
             knockbackDir.y = 0;
-            knockbackDir.Normalize();
+            float distance = knockbackDir.magnitude;
 
-            (enemy as IKnockbackable).ApplyKnockback(strength, knockbackDir);
+            if (distance > 0.01) knockbackDir /= distance;
+            else knockbackDir = Vector3.zero;
+
+            float t = Mathf.InverseLerp(pushbackAttenuationDistance.x, pushbackAttenuationDistance.y, distance);
+            t = Mathf.Clamp01(t);
+
+            float attenuation = 1 - EaseEvaluator.Evaluate(pushbackAttenuationEase, t);
+
+            (enemy as IKnockbackable).ApplyKnockback(strength * attenuation, knockbackDir, ignoreKnockbackImmunity);
         }
     }
 
     void OnDeath() {
         StateMachine.SetState(States.Dead);
-        PushAllEnemiesAway(pushbackStrengthOnDeath);
+        PushAllEnemiesAway(pushbackStrengthOnDeath, ignoreKnockbackImmunity: true);
         OnDeathEvent?.Invoke();
     }
 

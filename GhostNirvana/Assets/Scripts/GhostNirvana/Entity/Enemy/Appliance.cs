@@ -58,7 +58,6 @@ public partial class Appliance : Enemy<StandardMovementInput> {
     [BoxGroup("Collection"), SerializeField] float stayDuration;
     [BoxGroup("Collection"), SerializeField] float delayTime = 0.5f;
 
-
     Timer possessionCooldown;
 
     public bool IsPossessedByGhost => StateMachine.State == States.Possessed;

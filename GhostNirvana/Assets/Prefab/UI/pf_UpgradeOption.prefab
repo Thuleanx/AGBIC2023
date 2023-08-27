@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 6136599035714307460}
   - component: {fileID: 4089389846217735920}
   - component: {fileID: 4317542815543026882}
+  - component: {fileID: 7238089875647393107}
   m_Layer: 0
   m_Name: pf_UpgradeOption
   m_TagString: Untagged
@@ -504,6 +505,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &7238089875647393107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031482088793729229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2659f63f4dc596748bff61904fde7112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: {x: 0.75, y: 0.9}
+  animationDuration: {x: 0.2, y: 0.4}
+  animationEase: 27
+  target: {x: 1, y: 1, z: 1}
+  overrideStarting: 1
+  targetOnAwake: {x: 0.25, y: 0.25, z: 0.25}
+  startingAnimation: 1
 --- !u!1 &5916587287560135817
 GameObject:
   m_ObjectHideFlags: 0

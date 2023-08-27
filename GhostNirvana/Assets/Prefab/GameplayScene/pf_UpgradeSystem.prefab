@@ -341,8 +341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2659f63f4dc596748bff61904fde7112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDelay: 0.7
-  animationDuration: 0.3
+  animationDelay: {x: 0.7, y: 0.7}
+  animationDuration: {x: 0.25, y: 0.25}
   animationEase: 27
   target: {x: 1, y: 1, z: 1}
   overrideStarting: 1
