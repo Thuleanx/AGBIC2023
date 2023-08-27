@@ -63,6 +63,9 @@ namespace UI {
             canvasGroup.blocksRaycasts = false;
         }
 
+        public void FadeInAsEvent() => FadeIn();
+        public void FadeOutAsEvent() => FadeOut();
+
         public (bool, YieldInstruction) FadeIn() {
             if (currentState != State.Transparent) return (false, null);
             currentState = State.FadingIn;

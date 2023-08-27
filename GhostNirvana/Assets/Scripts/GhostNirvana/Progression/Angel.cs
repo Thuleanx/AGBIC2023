@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using System.Collections;
@@ -21,6 +22,7 @@ public class Angel : MonoBehaviour {
     [SerializeField] float timeSlowDownSeconds = 1;
     [SerializeField] Ease slowDownEase;
     [SerializeField] Fader fader;
+    [SerializeField] UnityEvent OnWin;
 
     [Header("Interaction")]
     [SerializeField] Canvas interactionCanvas;
@@ -45,6 +47,7 @@ public class Angel : MonoBehaviour {
     }
 
     IEnumerator IOnMiyuWin() {
+        OnWin?.Invoke();
         Tween timeSlowDown = DOTween.To(
             setter: (value) => Time.timeScale = value,
             startValue: 1, endValue: 0, duration: timeSlowDownSeconds)

@@ -1166,9 +1166,12 @@ MonoBehaviour:
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
   timeToEndSeconds: 3
-  timeSlowDownSeconds: 1
+  timeSlowDownSeconds: 2
   slowDownEase: 14
-  respawnTime: 0.2
+  fader: {fileID: 0}
+  OnWin:
+    m_PersistentCalls:
+      m_Calls: []
   interactionCanvas: {fileID: 577114821615957260}
   statsCanvas: {fileID: 6162096526345581630}
 --- !u!1 &6162096525710583975
