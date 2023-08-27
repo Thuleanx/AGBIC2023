@@ -4,8 +4,12 @@ using NaughtyAttributes;
 
 namespace UI {
 	public class Fader : MonoBehaviour {
+        [SerializeField] float fadeOutDelay;
 		[SerializeField] float fadeOutDuration;
+        [SerializeField] Ease fadeOutEase = Ease.Linear;
+        [SerializeField] float fadeInDelay;
 		[SerializeField] float fadeInDuration;
+        [SerializeField] Ease fadeInEase = Ease.Linear;
 		[SerializeField] CanvasGroup canvasGroup;
 
         enum State {
@@ -15,16 +19,35 @@ namespace UI {
             Transparent
         };
 
-        [SerializeField] bool autoFadeIn;
+        enum AutoAnimation {
+            None,
+            FadeIn,
+            FadeOut
+        };
+
+        [SerializeField] AutoAnimation startingAnimation;
         [SerializeField, ReadOnly] State currentState;
 
+        float alphaAtAwake;
+
         void Awake() {
-            if (autoFadeIn) {
+            alphaAtAwake = canvasGroup.alpha;
+        }
+
+        void OnEnable() {
+            if (startingAnimation == AutoAnimation.FadeOut) {
                 currentState = State.Black;
-                canvasGroup.alpha = 1;
+                EnableCanvasGroup();
                 FadeOut();
-            } else {
+            } else if (startingAnimation == AutoAnimation.FadeIn) {
                 currentState = State.Transparent;
+                DisableCanvasGroup();
+                FadeIn();
+            } else {
+                currentState = alphaAtAwake == 0 ? State.Transparent : State.Black;
+                if (currentState == State.Transparent)
+                    DisableCanvasGroup();
+                else EnableCanvasGroup();
             }
         }
 
@@ -45,7 +68,9 @@ namespace UI {
             currentState = State.FadingIn;
             canvasGroup.alpha = 0;
             Tween fadingTween = canvasGroup.DOFade(1, fadeInDuration);
+            fadingTween.SetDelay(fadeInDelay);
             fadingTween.SetUpdate(isIndependentUpdate: true);
+            fadingTween.SetEase(fadeInEase);
             fadingTween.OnComplete(() => {
                 currentState = State.Black;
                 EnableCanvasGroup();
@@ -59,6 +84,8 @@ namespace UI {
             canvasGroup.alpha = 1;
             Tween fadingTween = canvasGroup.DOFade(0, fadeOutDuration);
             fadingTween.SetUpdate(isIndependentUpdate: true);
+            fadingTween.SetDelay(fadeOutDelay);
+            fadingTween.SetEase(fadeOutEase);
             fadingTween.OnComplete(() => {
                 currentState = State.Transparent;
                 DisableCanvasGroup();

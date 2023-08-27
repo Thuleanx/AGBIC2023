@@ -188,10 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3b2022a6cb5cb4d8148fb9d817a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutDuration: 1
+  fadeOutDuration: 2
   fadeInDuration: 1
   canvasGroup: {fileID: 6311697099695796989}
-  autoFadeIn: 1
+  startingAnimation: 2
+  currentState: 0
 --- !u!225 &6311697099695796989
 CanvasGroup:
   m_ObjectHideFlags: 0
