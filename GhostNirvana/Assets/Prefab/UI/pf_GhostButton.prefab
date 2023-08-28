@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 583583463161997937}
   - component: {fileID: 8907014355055154172}
   - component: {fileID: 4998427884232613861}
+  - component: {fileID: 5574088702652154716}
   m_Layer: 0
   m_Name: pf_GhostButton
   m_TagString: Untagged
@@ -380,6 +381,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5574088702652154716}
+          m_TargetAssemblyTypeName: UI.DualTween`1[[UnityEngine.Vector3, UnityEngine
+          m_MethodName: Event_GoToTarget
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -408,6 +421,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5574088702652154716}
+          m_TargetAssemblyTypeName: UI.DualTween`1[[UnityEngine.Vector3, UnityEngine
+          m_MethodName: Event_GoToOriginal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5574088702652154716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283188488565338028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a91eb5cd87cdf40ab3e5a255dad309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: {x: 0, y: 0}
+  animationDuration: {x: 0.2, y: 0.2}
+  animationEase: 6
+  target: {x: 0.8, y: 0.8, z: 0.8}
+  overrideStarting: 0
+  targetOnAwake: {x: 1, y: 1, z: 1}
+  startingAnimation: 0
+  currentState: 0
 --- !u!1 &4395196035094635279
 GameObject:
   m_ObjectHideFlags: 0

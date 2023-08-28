@@ -1040,9 +1040,9 @@ MonoBehaviour:
   animationDelay: {x: 0.7, y: 0.8}
   animationDuration: {x: 0.2, y: 0.4}
   animationEase: 27
-  target: {x: 1, y: 1, z: 1}
+  target: {x: 0.7, y: 0.7, z: 0.7}
   overrideStarting: 1
-  targetOnAwake: {x: 0.8, y: 0.8, z: 0.8}
+  targetOnAwake: {x: 0.5, y: 0.5, z: 0.5}
   startingAnimation: 1
 --- !u!224 &1652667525455673493 stripped
 RectTransform:

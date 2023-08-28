@@ -61,6 +61,11 @@ public abstract class StateMachine<Agent, StateID> : MonoBehaviour
         if (startExecuted) Init();
     }
 
+    protected virtual void OnDisable() {
+        // this means state machines can effectively dispose of their resources
+        States[_currentState]?.End(this, agent);
+    }
+
     protected virtual void Start() {
         Init();
         startExecuted = true;
