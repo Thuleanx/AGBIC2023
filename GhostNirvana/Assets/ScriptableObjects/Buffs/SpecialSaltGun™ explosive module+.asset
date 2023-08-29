@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SpecialSaltGun\u2122 explosive module+"
+  m_Name: "SpecialSaltGun\u2122 Explosive Module+"
   m_EditorClassIdentifier: 
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
@@ -20,10 +20,10 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Good on you for supporting the company.
+  <description>k__BackingField: 'Invest in our module to shoot bigger!!!
 
     Increase
-    damage of your salt explosion by <color="green">+35%</color> of your bullet damage.'
+    damage of salt explosion by <color="green">+35%</color> of bullet damage.'
   <BaseCost>k__BackingField: 2199
   <Weight>k__BackingField: 1
   purchaseLimit: 0

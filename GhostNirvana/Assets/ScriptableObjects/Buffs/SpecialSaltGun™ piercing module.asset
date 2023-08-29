@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SpecialSaltGun\u2122 piercing module"
+  m_Name: "SpecialSaltGun\u2122 Piercing Module"
   m_EditorClassIdentifier: 
   floatBuffs: []
   intBuffs:
@@ -23,7 +23,7 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Good on you for supporting the company.
+  <description>k__BackingField: 'Invest in our module to shoot through!
 
     <color="green"/>+1</color>
     piercing.

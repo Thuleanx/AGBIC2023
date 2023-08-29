@@ -20,8 +20,10 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: "Something to start your day. \nIncrease movement
-    speed by <color=\"green\">+20%</color>."
+  <description>k__BackingField: 'Nothing like a cup of coffee to give you a boost!
+
+    Increase
+    movement speed by <color="green">+20%</color>.'
   <BaseCost>k__BackingField: 725
   <Weight>k__BackingField: 1
   purchaseLimit: 0

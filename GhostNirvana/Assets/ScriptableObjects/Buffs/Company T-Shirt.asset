@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: Company Tshirt
+  m_Name: Company T-Shirt
   m_EditorClassIdentifier: 
   floatBuffs: []
   intBuffs:
@@ -23,10 +23,10 @@ MonoBehaviour:
     <All>k__BackingField: 0
     <Amount>k__BackingField: 1
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Its color is fading.
+  <description>k__BackingField: 'Show your Soulty spirit!
 
-    Increase max health by
-    <color="green">+1</color>.'
+    Increase max health
+    by <color="green">+1</color>.'
   <BaseCost>k__BackingField: 1599
   <Weight>k__BackingField: 1
   purchaseLimit: 2

@@ -20,8 +20,10 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Expand range for XP collection by <color="green">+30%</color>
-    more. '
+  <description>k__BackingField: 'Our special fridge magnet magnet!
+
+    Expand range
+    for XP collection by <color="green">+30%</color> more. '
   <BaseCost>k__BackingField: 1099
   <Weight>k__BackingField: 1
   purchaseLimit: 0

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: Snacks
+  m_Name: "SoultySnacks\u2122"
   m_EditorClassIdentifier: 
   floatBuffs: []
   intBuffs: []
@@ -23,7 +23,7 @@ MonoBehaviour:
     <All>k__BackingField: 1
     <Amount>k__BackingField: 0
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: Makes you happy.
+  <description>k__BackingField: Nothing special about them, but they make you happy!
   <BaseCost>k__BackingField: 0
   <Weight>k__BackingField: 1
   purchaseLimit: 0

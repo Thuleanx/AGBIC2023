@@ -20,10 +20,10 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Mighty 5 lbs of salt.
+  <description>k__BackingField: 'Even more salt- everywhere!
 
-    Throw salt around you
-    every <color="green">2</color> seconds.'
+    Throw salt all
+    around every <color="green">2</color> seconds.'
   <BaseCost>k__BackingField: 1999
   <Weight>k__BackingField: 1
   purchaseLimit: 1

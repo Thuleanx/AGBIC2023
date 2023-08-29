@@ -20,9 +20,9 @@ MonoBehaviour:
     <All>k__BackingField: 1
     <Amount>k__BackingField: 0
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Handy in emergency situations.
+  <description>k__BackingField: 'For rubbing salt OUT of the wound!
 
-    Heals you to
+    Heal to
     full.'
   <BaseCost>k__BackingField: 2499
   <Weight>k__BackingField: 1

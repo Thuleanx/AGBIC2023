@@ -20,8 +20,8 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: Replenish your shield. Shield replenishes every 30
-    seconds.
+  <description>k__BackingField: "We\u2019ll take a hit for you- often!\nRegenerate
+    shield. Shield regenerates in 30 seconds."
   <BaseCost>k__BackingField: 1999
   <Weight>k__BackingField: 1
   purchaseLimit: 1

@@ -23,10 +23,10 @@ MonoBehaviour:
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Big salt.
+  <description>k__BackingField: 'Chunky salt to keep them away!
 
-    <color="green">+3</color> bullet
-    knockback.
+    <color="green">+3</color>
+    bullet knockback.
 
     <color="green">+2</color> bullet damage.'
   <BaseCost>k__BackingField: 1599

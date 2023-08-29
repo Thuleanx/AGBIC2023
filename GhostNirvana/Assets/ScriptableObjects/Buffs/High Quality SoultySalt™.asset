@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: Air Lift Service
+  m_Name: "High Quality SoultySalt\u2122"
   m_EditorClassIdentifier: 
   floatBuffs: []
   intBuffs:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: 699adab568d00444282bf33df075b1d3, type: 2}
-    <AdditiveAmount>k__BackingField: 1
-    <MultiplicativeAmount>k__BackingField: 1
+  - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
+    <AdditiveAmount>k__BackingField: 3
+    <MultiplicativeAmount>k__BackingField: 1.2
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: Air lift will collect <color="green">+1</color> additional
-    appliance.
-  <BaseCost>k__BackingField: 1599
+  <description>k__BackingField: 'Our finest soulfully salty Soulty Salt!
+
+    <color="green">+3</color>
+    increased bullet damage.
+
+    <color="green">+20%</color> more bullet damage.'
+  <BaseCost>k__BackingField: 1999
   <Weight>k__BackingField: 1
   purchaseLimit: 0
-  <icon>k__BackingField: {fileID: -1672538944, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
+  <icon>k__BackingField: {fileID: 1024706263, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []
