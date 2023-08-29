@@ -26,6 +26,7 @@ namespace GhostNirvana {
             [field:SerializeField, HideIf("All")]
             public ST Amount {get; private set; }
         }
+        [field:SerializeField] public int id {get; private set; }
         [SerializeField, ReorderableList] List<LinearBuff<LinearFloat, float>> floatBuffs;
         [SerializeField, ReorderableList] List<LinearBuff<LinearInt, int>> intBuffs;
         [SerializeField, ReorderableList] List<Regain<LinearLimiterFloat, float>> replenishFloat;

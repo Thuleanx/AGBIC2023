@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using NaughtyAttributes;
 using TMPro;
 using System;
+using System.Collections.Generic;
 using ScriptableBehaviour;
 
 namespace GhostNirvana {
@@ -23,6 +24,19 @@ public class AchievementTracker : MonoBehaviour {
     Upgrade.UpgradeSystem upgradeSystem;
     [SerializeField]
     ApplianceCollector applianceCollector;
+
+    public int ApplianceCollected => applianceCollector.numCollected;
+    public int Time => Mathf.RoundToInt(time.Value * 60);
+    public int MoneyEarned => grossIncome;
+    public int MoneyTakeHome => profit;
+    public List<int> BuffsTaken {
+        get {
+            List<int> buffs = new List<int>();
+            foreach (Buff buff in upgradeSystem.BuffsTakenInSequence)
+                buffs.Add(buff.id);
+            return buffs;
+        }
+    }
 
     void OnEnable() {
         enemiesKilled = 0;

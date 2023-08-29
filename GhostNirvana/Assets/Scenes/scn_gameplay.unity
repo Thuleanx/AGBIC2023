@@ -2952,18 +2952,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 146716428977497800, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 577114821615957260, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1484896794}
-    - target: {fileID: 1510117823244610736, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -78.75003
-      objectReference: {fileID: 0}
     - target: {fileID: 2572834323402129781, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -3135,10 +3127,6 @@ PrefabInstance:
     - target: {fileID: 6162096526345581630, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825585196105167816, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -47.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}

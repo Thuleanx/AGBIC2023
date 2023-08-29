@@ -1,10 +1,13 @@
+using UnityEngine;
 using System.Collections.Generic;
 using System;
 using Dan.Main;
 
 namespace GhostNirvana.Netcode {
 
-public class LeaderBoard {
+[CreateAssetMenu(fileName = "Leaderboard",
+    menuName = "~/Leaderboard", order = 1)]
+public class Leaderboard : ScriptableObject {
     public string publicKey;
 
     const int Time_SIZE = 4;
@@ -60,8 +63,8 @@ public class LeaderBoard {
         string entryData = "";
 
         entryData += string.Format("{0:0000}", record.Time);
-        entryData += string.Format("{0:0000.00}", record.MoneyAcquired);
-        entryData += string.Format("{0:0000.00}", record.MoneyTakeHome);
+        entryData += string.Format("{0:000000}", record.MoneyAcquired);
+        entryData += string.Format("{0:000000}", record.MoneyTakeHome);
         entryData += string.Format("{0:0000}", record.AppliancesRetrieved);
         for (int i = 0; i < record.BuffsTaken.Count; i++)
             entryData += (char) i;
