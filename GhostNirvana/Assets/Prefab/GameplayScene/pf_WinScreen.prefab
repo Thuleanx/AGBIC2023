@@ -643,7 +643,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: 7}
+  m_AnchoredPosition: {x: -91.4, y: 7}
   m_SizeDelta: {x: 596.77, y: 398.39}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7192896966585432631
@@ -674,20 +674,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Rank: Trainee lvl. {5}
+  m_text: 'Time taken: <color=#F2FF80>{0}</color>
 
-    Total money left: {4:C2}
+    Ghosts vanquished: <color=#69FCFF>{1}</color>
+
+    Appliance
+    collected: <color=#F2FF80>{2}</color>
+
+    Total money earned: <color=#69FCFF>{3:C2}</color>
 
 
-    Time taken:
-    {0}
+    Associate
+    Lvl. <color=#F2FF80>{5}</color>
 
-    Ghosts vanquished: {1}
-
-    Appliance collected: {2}
-
-    Total money
-    earned: {3:C2}
+    Total money left: <color=#69FCFF>{4:C2}</color>
 
 
 
@@ -941,8 +941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45.75}
-  m_SizeDelta: {x: -70, y: 100}
+  m_AnchoredPosition: {x: 25, y: -49.8}
+  m_SizeDelta: {x: -120, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2697298581363304586
 CanvasRenderer:
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Congratulations for finishing
+  m_text: Congratulations, great work today!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91918321134aede48a8105e962975bc0, type: 2}
   m_sharedMaterial: {fileID: -8868117428425314349, guid: 91918321134aede48a8105e962975bc0, type: 2}
@@ -999,8 +999,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 78
-  m_fontSizeBase: 78
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1538,11 +1538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2491302662564451437, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -346.25
+      value: -362.9
       objectReference: {fileID: 0}
     - target: {fileID: 2491302662564451437, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 210.5
+      value: 223.7
       objectReference: {fileID: 0}
     - target: {fileID: 2491302662564451437, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1832,11 +1832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 110845902519533332, guid: 9d066d8ce8c755c44b7d6c4f1cb890f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 309.25
+      value: 344.3
       objectReference: {fileID: 0}
     - target: {fileID: 110845902519533332, guid: 9d066d8ce8c755c44b7d6c4f1cb890f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 212.1
       objectReference: {fileID: 0}
     - target: {fileID: 110845902519533332, guid: 9d066d8ce8c755c44b7d6c4f1cb890f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

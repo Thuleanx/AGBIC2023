@@ -59,8 +59,8 @@ MonoBehaviour:
   payDescription: {fileID: 2874293319676184546}
   balanceMinusPriceDisplay: {fileID: 4328924057593396766}
   priceDisplay: {fileID: 6012199726002111805}
-  payDescriptionFormatting: "Congrats, you\u2019ve been promoted to Associate Lvl
-    <color=#ea44dc>{0}</color>! \r\nWe\u2019ve sent the air claw to retrieve <color=\"green\">{1}</color>
+  payDescriptionFormatting: "Congrats, you\u2019ve been promoted to Associate Lvl.
+    <color=#F2FF80>{0}</color>! \r\nWe\u2019ve sent the air claw to retrieve <color=\"green\">{1}</color>
     appliances, and paid <color=\"green\">{2:C2}</color> to your account. Take a
     look at our benefits store!\r\n\n{3}"
   balanceMinusPriceDisplayFormatting: '{0:C2}'
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 36
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 30
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0

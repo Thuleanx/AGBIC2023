@@ -734,6 +734,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_UpgradeOptionDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 3516202387376233168, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516202387376233168, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9851887
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516202387376233168, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.25943398
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516202387376233168, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294966082
+      objectReference: {fileID: 0}
     - target: {fileID: 4634347191480514063, guid: 8f20c5bcce4b7124996dded26b11341f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -953,13 +969,6 @@ PrefabInstance:
       propertyPath: upgradeOptionsParent
       value: 
       objectReference: {fileID: 716065139954929669}
-    - target: {fileID: 734844431955325425, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
-      propertyPath: payDescriptionFormatting
-      value: "Congrats, you\u2019ve been promoted to Associate Lvl <color=#FF46F6>{0}</color>!
-        \r\nWe\u2019ve sent the air claw to retrieve <color=\"green\">{1}</color>
-        appliances, and paid <color=\"green\">{2:C2}</color> to your account. Take
-        a look at our benefits store!\r\n\n{3}"
-      objectReference: {fileID: 0}
     - target: {fileID: 2097241044262228123, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_SizeDelta.y
       value: 196
@@ -984,6 +993,10 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2874293319676184546, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3696390855710520751, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Name
       value: pf_UpgradeMoneyDisplay
@@ -991,6 +1004,10 @@ PrefabInstance:
     - target: {fileID: 5136272856015764585, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -624.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012199726002111805, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7054984495851533559, guid: 6a02a479b1feae74a94e000cee2c8d7a, type: 3}
       propertyPath: m_Pivot.x
