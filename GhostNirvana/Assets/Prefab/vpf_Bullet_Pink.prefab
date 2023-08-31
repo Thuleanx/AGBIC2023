@@ -1305,7 +1305,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.5031409, a: 1}
+        key0: {r: 1, g: 0.2216981, b: 0.79413015, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 1.4943043, g: 0.98107475, b: 0, a: 0}
         key3: {r: 0.13172232, g: 1.3611305, b: 1.39772, a: 0}
@@ -5054,7 +5054,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.5707547, b: 0.96839064, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9766,7 +9766,7 @@ GameObject:
   - component: {fileID: 1097658304994715504}
   - component: {fileID: 7535031399048211607}
   m_Layer: 23
-  m_Name: vpf_Bullet
+  m_Name: vpf_Bullet_Pink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9915,6 +9915,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f8c6577cf1fc4441496d6e8892603f87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79473e4c766d3984da85e7d8e7dd6d48, type: 2}
     - target: {fileID: 919132149155446097, guid: f8c6577cf1fc4441496d6e8892603f87, type: 3}
       propertyPath: m_Name
       value: obj_bullet
