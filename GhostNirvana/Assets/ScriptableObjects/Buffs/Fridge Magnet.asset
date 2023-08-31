@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Fridge Magnet
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 9
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 02316fc2cef2fb24bbe1be149a73d159, type: 2}
     <AdditiveAmount>k__BackingField: 0

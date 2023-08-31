@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: "High Quality SoultySalt\u2122"
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 13
   floatBuffs: []
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}

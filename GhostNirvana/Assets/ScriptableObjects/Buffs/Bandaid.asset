@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Bandaid
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 4
   floatBuffs: []
   intBuffs: []
   replenishFloat: []

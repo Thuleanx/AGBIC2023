@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: "SpecialSaltGun\u2122 Rapidfire Module"
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 23
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
     <AdditiveAmount>k__BackingField: 0.9

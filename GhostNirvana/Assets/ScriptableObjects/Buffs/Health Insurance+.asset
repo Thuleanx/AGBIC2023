@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Health Insurance+
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 11
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 93c2ead6074c5114c8e789cc5146e879, type: 2}
     <AdditiveAmount>k__BackingField: 0.3333333

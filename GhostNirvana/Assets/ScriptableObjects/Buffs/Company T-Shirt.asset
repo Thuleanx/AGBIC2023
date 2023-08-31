@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Company T-Shirt
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 6
   floatBuffs: []
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}

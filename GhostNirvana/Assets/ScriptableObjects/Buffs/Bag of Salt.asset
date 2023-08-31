@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
   m_Name: Bag of Salt
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 3
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
     <AdditiveAmount>k__BackingField: 0.5

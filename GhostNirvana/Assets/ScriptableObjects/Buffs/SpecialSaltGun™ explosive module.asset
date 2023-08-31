@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SpecialSaltGun\u2122 Explosive Module"
+  m_Name: "SpecialSaltGun\u2122 explosive module"
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 20
   floatBuffs: []
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 54710aef4c29c6342941cdda3e1f91fb, type: 2}

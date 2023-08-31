@@ -3515,6 +3515,30 @@ PrefabInstance:
       propertyPath: OnTrigger.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 360306804935272545, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360306804935272545, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416834453287734454, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000988697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963142394025504676, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963142394025504676, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963142394025504676, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5082476496710056883, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
       propertyPath: m_RootOrder
       value: 2
