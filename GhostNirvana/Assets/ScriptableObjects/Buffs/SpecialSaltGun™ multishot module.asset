@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SpecialSaltGun\u2122 multishot module"
+  m_Name: "SpecialSaltGun\u2122 Multishot Module"
   m_EditorClassIdentifier: 
   <id>k__BackingField: 21
   floatBuffs:
@@ -32,7 +32,7 @@ MonoBehaviour:
     <color="green"/>+1</color>
     projectile.
 
-    <color="red"/>-20%</color> less attack speed.'
+    <color=#FF47DF/>-20%</color> less attack speed.'
   <BaseCost>k__BackingField: 3499
   <Weight>k__BackingField: 1
   purchaseLimit: 0

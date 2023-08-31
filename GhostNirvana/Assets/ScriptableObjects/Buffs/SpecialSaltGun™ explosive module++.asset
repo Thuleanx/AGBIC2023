@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SpecialSaltGun\u2122 explosive module++"
+  m_Name: "SpecialSaltGun\u2122 Explosive Module++"
   m_EditorClassIdentifier: 
   <id>k__BackingField: 18
   floatBuffs:
@@ -35,7 +35,7 @@ MonoBehaviour:
     Salt
     explosion deals <color="green">20%</color> more damage.
 
-    Bullets deal <color="red">10%</color>
+    Bullets deal <color=#FF47DF>10%</color>
     less damage.'
   <BaseCost>k__BackingField: 4999
   <Weight>k__BackingField: 0.4
