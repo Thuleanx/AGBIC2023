@@ -69,14 +69,16 @@ public class Leaderboard : ScriptableObject {
         for (int i = 0; i < record.BuffsTaken.Count; i++)
             entryData += (char) i;
 
-        LeaderboardCreator.UploadNewEntry(
-            publicKey, 
-            username: record.Name,
-            score: record.MoneyTakeHome,
-            extra: entryData,
-            regularCallback,
-            errorCallback
-        );
+        LeaderboardCreator.ResetPlayer(() => {
+            LeaderboardCreator.UploadNewEntry(
+                publicKey,
+                username: record.Name,
+                score: record.MoneyTakeHome,
+                extra: entryData,
+                regularCallback,
+                errorCallback
+            );
+        });
     }
 
     public void Load(int numberOfEntries, Action<List<Record>> callback) {
