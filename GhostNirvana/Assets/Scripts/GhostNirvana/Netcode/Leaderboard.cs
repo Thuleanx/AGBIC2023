@@ -55,6 +55,7 @@ public class Leaderboard : ScriptableObject {
             int id = c;
             record.BuffsTaken.Add(id);
         }
+        Debug.Log(entryData + " " + buffsTaken.Length);
 
         return (true, record);
     }
@@ -66,8 +67,11 @@ public class Leaderboard : ScriptableObject {
         entryData += string.Format("{0:000000}", record.MoneyAcquired);
         entryData += string.Format("{0:000000}", record.MoneyTakeHome);
         entryData += string.Format("{0:0000}", record.AppliancesRetrieved);
-        for (int i = 0; i < record.BuffsTaken.Count; i++)
-            entryData += (char) i;
+        foreach (int buffID in record.BuffsTaken) {
+            Debug.Log(buffID);
+            entryData += (char) buffID;
+        }
+        Debug.Log(entryData + " " + record.BuffsTaken.Count);
 
         LeaderboardCreator.ResetPlayer(() => {
             LeaderboardCreator.UploadNewEntry(
@@ -84,10 +88,10 @@ public class Leaderboard : ScriptableObject {
     public void Load(int numberOfEntries, Action<List<Record>> callback) {
         LeaderboardCreator.GetLeaderboard(
             publicKey,
-            isInAscendingOrder: true,
+            isInAscendingOrder: false,
             searchQuery: new Dan.Models.LeaderboardSearchQuery() {
                 Skip = 0,
-                Take = numberOfEntries,
+                Take = numberOfEntries
             },
             callback: (entries) => {
                 List<Record> records = new List<Record>();

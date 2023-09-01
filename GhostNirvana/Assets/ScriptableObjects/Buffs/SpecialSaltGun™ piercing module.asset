@@ -26,10 +26,10 @@ MonoBehaviour:
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: 'Invest in our module to shoot through!
 
-    <color="green"/>+1</color>
+    <color="green">+1</color>
     piercing.
 
-    <color=#FF47DF/>-1</color> bullet damage.'
+    <color=#FF47DF>-1</color> bullet damage.'
   <BaseCost>k__BackingField: 2499
   <Weight>k__BackingField: 1
   purchaseLimit: 0

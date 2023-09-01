@@ -23,10 +23,10 @@ MonoBehaviour:
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: 'Invest in our module to shoot faster!
 
-    <color="green"/>15%</color>
+    <color="green">15%</color>
     increased attack speed.
 
-    <color="green"/>20%</color> more attack speed.'
+    <color="green">20%</color> more attack speed.'
   <BaseCost>k__BackingField: 2199
   <Weight>k__BackingField: 1
   purchaseLimit: 0
