@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bae27bd2fb787d47be127f8dc6138e2, type: 3}
   m_Name: so_Miyu.bounce
   m_EditorClassIdentifier: 
-  BaseValue: 1
+  BaseValue: 0
   AdditiveScale: 0
   MultiplicativeScale: 1

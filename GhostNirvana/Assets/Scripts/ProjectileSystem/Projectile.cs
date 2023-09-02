@@ -1,10 +1,8 @@
 using UnityEngine;
-
 using Base;
 using Optimization;
 using CombatSystem;
 using NaughtyAttributes;
-using System.Collections;
 
 namespace Danmaku {
 
@@ -32,7 +30,7 @@ public class Projectile : PoolableEntity, IHitResponder {
 
     public void Initialize(int damage, float knockback, int pierce, int bounce, Vector3 velocity, bool faceDirection = true) {
         rigidbody.velocity = this.velocity = velocity;
-        speed = velocity.magnitude;
+        this.speed = velocity.magnitude;
         this.damage = damage;
         this.knockback = knockback;
         this.pierce = pierce;
@@ -75,18 +73,19 @@ public class Projectile : PoolableEntity, IHitResponder {
 			    this.Dispose();
             else {
                 // bounce
-                Vector3 currentVelocity = velocity; 
-                Vector3 normal = collision.contacts[0].normal.normalized;
+                Vector3 currentVelocity = velocity;
+                Vector3 normal = collision.contacts[0].normal;
 
-                /* Vector3 velocity = flatBounces ? Vector3.ProjectOnPlane(rigidbody.velocity, planeNormal: Vector3.up) : rigidbody.velocity; */
+                if (flatBounces) currentVelocity.y = normal.y = 0;
+
                 currentVelocity.Normalize();
-                /* Vector3 normal = flatBounces ? Vector3.ProjectOnPlane(collision.contacts[0].normal, planeNormal: Vector3.up) : collision.contacts[0].normal; */
                 normal.Normalize();
 
-                Vector3 reflect = 2 * Vector3.Dot(currentVelocity, normal) * currentVelocity - currentVelocity;
+                Vector3 reflect = currentVelocity - 2 * Vector3.Dot(currentVelocity, normal) * normal;
+                reflect.Normalize();
 
                 rigidbody.velocity = reflect * speed;
-                currentVelocity = rigidbody.velocity;
+                velocity = reflect * speed;
             }
         }
     }
