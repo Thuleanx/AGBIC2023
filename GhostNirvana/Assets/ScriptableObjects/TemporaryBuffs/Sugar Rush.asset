@@ -15,17 +15,16 @@ MonoBehaviour:
   <id>k__BackingField: 1
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
-    <AdditiveAmount>k__BackingField: 1
-    <MultiplicativeAmount>k__BackingField: 1
+    <AdditiveAmount>k__BackingField: 0
+    <MultiplicativeAmount>k__BackingField: 1.5
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
-    <AdditiveAmount>k__BackingField: 2
-    <MultiplicativeAmount>k__BackingField: 1
+    <AdditiveAmount>k__BackingField: 0
+    <MultiplicativeAmount>k__BackingField: 1.5
   intBuffs: []
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: Increases movement speed by <color="green">50%</color>
-    and attack speed by <color="green>33%</color>.
+  <description>k__BackingField: 
   <BaseCost>k__BackingField: 0
   <Weight>k__BackingField: 0
   purchaseLimit: 0
