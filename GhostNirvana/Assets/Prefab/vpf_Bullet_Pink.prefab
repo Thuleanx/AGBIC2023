@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.05
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -285,8 +285,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.5
+      scalar: 0.5
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -669,7 +669,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
-    m_Scale: {x: 0.1, y: 0.1, z: 0.1}
+    m_Scale: {x: 0.02, y: 0.02, z: 0.02}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -920,7 +920,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4076,26 +4076,26 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.6345815
         - serializedVersion: 3
-          time: 0.25533548
-          value: 0
-          inSlope: -2.102235
-          outSlope: -2.102235
+          time: 0.48223513
+          value: 0.20438428
+          inSlope: 0.6215534
+          outSlope: 0.6215534
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.11577652
+          inWeight: 0.40909922
+          outWeight: 0.5160985
         - serializedVersion: 3
-          time: 0.87566537
-          value: 0.25
-          inSlope: 0
-          outSlope: 0
+          time: 0.882654
+          value: 0.53091383
+          inSlope: -0.1548606
+          outSlope: -0.1548606
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0.5507609
+          outWeight: 0.5988942
         - serializedVersion: 3
           time: 1
-          value: 0.09848485
+          value: 0.43766484
           inSlope: -2
           outSlope: -2
           tangentMode: 0
@@ -4947,7 +4947,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4999,9 +4999,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.5
-      minScalar: 5
+      minMaxState: 3
+      scalar: 1
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5116,8 +5116,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.07
-      minScalar: 0.04
+      scalar: 0.05
+      minScalar: 0.02
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5751,7 +5751,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9819,9 +9819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4bf3b173cb2e44ab31a1d02783c271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flatBounces: 1
   damage: 1
   knockback: 0
   pierce: 0
+  bounce: 0
   hitbox: {fileID: 0}
   onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
 --- !u!114 &1097658304994715504
@@ -9836,7 +9838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25d7990f85ab4a4ab4e643ff97b960a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationSeconds: 4
+  durationSeconds: 60
   timeEnabled: 0
   disposalRequested: 0
 --- !u!135 &7535031399048211607
@@ -9873,7 +9875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8c6577cf1fc4441496d6e8892603f87, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.28158
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8c6577cf1fc4441496d6e8892603f87, type: 3}
       propertyPath: m_LocalPosition.x
