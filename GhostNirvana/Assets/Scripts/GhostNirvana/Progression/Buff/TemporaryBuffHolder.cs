@@ -6,7 +6,18 @@ using NaughtyAttributes;
 
 namespace GhostNirvana {
     public class TemporaryBuffHolder : MonoBehaviour {
-        [SerializeField] List<(LinearInt, TemporaryBuff)> allBuffs;
+        [System.Serializable]
+        struct TemporaryBuffApplication {
+            public LinearInt numberOfTimesToApply;
+            public TemporaryBuff buff;
+
+            public void Deconstruct(out LinearInt numberOfTimesToApply, out TemporaryBuff buff) {
+                numberOfTimesToApply = this.numberOfTimesToApply;
+                buff = this.buff;
+            }
+        }
+
+        [SerializeField] List<TemporaryBuffApplication> allBuffs;
 
         public void ApplyAllBuffs() {
             foreach (var (numberOfTimesToApply, buff) in allBuffs) {

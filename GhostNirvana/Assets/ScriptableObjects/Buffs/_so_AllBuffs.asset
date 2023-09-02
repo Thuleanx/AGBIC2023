@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: _so_AllBuffs
   m_EditorClassIdentifier: 
   All:
-  - {fileID: 11400000, guid: a5ab72bbf4813294fb045baecd912c04, type: 2}
   - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
   - {fileID: 11400000, guid: 40f97ec41f0457c498961d2ceb27237c, type: 2}
   - {fileID: 11400000, guid: fea9e10eb34de774da223342943f6d9c, type: 2}
@@ -38,3 +37,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 895b034b1d05dba4fb134aa672435698, type: 2}
   - {fileID: 11400000, guid: e3aa37e9cc565c14d8011c04256cd873, type: 2}
   - {fileID: 11400000, guid: 32a861163a43d774bb865e6b8c3516d0, type: 2}
+  - {fileID: 11400000, guid: 6e25fdb7de1151e4795e43aaa756eaf5, type: 2}

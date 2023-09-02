@@ -70,6 +70,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat")] public UnityEvent<Hit> OnHitEvent = new UnityEvent<Hit>();
     [BoxGroup("Combat")] public UnityEvent OnLifeHit;
     [BoxGroup("Combat")] public UnityEvent OnShieldHit;
+    [BoxGroup("Combat")] public UnityEvent<MovableAgent> OnKillEnemy;
     #endregion
 
     Timer iframeHappening;
@@ -95,10 +96,14 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     protected override void OnEnable() {
 		base.OnEnable();
         IHurtResponder.ConnectChildrenHurtboxes(this);
+
+        allEnemies.OnRemove += OnKill;
     }
 
     protected void OnDisable() {
         IHurtResponder.DisconnectChildrenHurtboxes(this);
+
+        allEnemies.OnRemove -= OnKill;
     }
 
     protected void Update() {
@@ -195,6 +200,8 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         // will be invoked by child
         OnHitEvent?.Invoke(hit);
     }
+
+    protected void OnKill(MovableAgent enemy) => OnKillEnemy?.Invoke(enemy);
 }
 
 }
