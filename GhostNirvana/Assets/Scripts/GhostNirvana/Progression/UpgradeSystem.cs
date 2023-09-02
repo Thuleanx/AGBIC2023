@@ -23,8 +23,7 @@ public class UpgradeSystem : MonoBehaviour {
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
 
-    [SerializeField, ReorderableList]
-    List<Buff> buffOptions = new List<Buff>();
+    [SerializeField] BuffList buffOptions;
     [SerializeField] UnityEvent OnLevelUp;
 
     Dictionary<Buff, int> buffsTaken = new Dictionary<Buff, int>();
@@ -70,7 +69,7 @@ public class UpgradeSystem : MonoBehaviour {
 
         foreach (UpgradeOption upgradeOption in upgradeOptions) {
             Buff buffChosen = randomBuffs.MoveNext() ?
-                randomBuffs.Current : buffOptions[Mathx.RandomRange(0, buffOptions.Count)];
+                randomBuffs.Current : buffOptions.All[Mathx.RandomRange(0, buffOptions.All.Count)];
             upgradeOption.Initialize(buffChosen);
         }
 
@@ -80,12 +79,12 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     IEnumerator<Buff> GetRandomBuffs() {
-        for (int excludeIndex = 0; excludeIndex < buffOptions.Count; excludeIndex++) {
+        for (int excludeIndex = 0; excludeIndex < buffOptions.All.Count; excludeIndex++) {
             int numAvailable = 0;
             float totalWeight = 0;
 
-            for (int i = excludeIndex; i < buffOptions.Count; i++) {
-                float weight = ComputeWeight(buffOptions[i],
+            for (int i = excludeIndex; i < buffOptions.All.Count; i++) {
+                float weight = ComputeWeight(buffOptions.All[i],
                     chooseOnlyAffordable: excludeIndex < numAffordableOptionEveryLevel);
                 totalWeight += weight;
                 numAvailable += weight > 0 ? 1 : 0;
@@ -97,25 +96,25 @@ public class UpgradeSystem : MonoBehaviour {
 
             int lastIndex = 0;
             bool buffChosen = false;
-            for (int i = excludeIndex; i < buffOptions.Count; i++) {
-                float weight = ComputeWeight(buffOptions[i],
+            for (int i = excludeIndex; i < buffOptions.All.Count; i++) {
+                float weight = ComputeWeight(buffOptions.All[i],
                     chooseOnlyAffordable: excludeIndex < numAffordableOptionEveryLevel);
                 if (weight == 0) continue;
                 lastIndex = i;
                 if (value <= weight) {
                     buffChosen = true;
-                    yield return buffOptions[i];
+                    yield return buffOptions.All[i];
                     if (i != excludeIndex)
-                        (buffOptions[i], buffOptions[excludeIndex]) = (buffOptions[excludeIndex], buffOptions[i]);
+                        (buffOptions.All[i], buffOptions.All[excludeIndex]) = (buffOptions.All[excludeIndex], buffOptions.All[i]);
                     break;
                 }
                 value -= weight;
             }
 
             if (!buffChosen) {
-                yield return buffOptions[lastIndex];
+                yield return buffOptions.All[lastIndex];
                 if (lastIndex != excludeIndex)
-                    (buffOptions[lastIndex], buffOptions[excludeIndex]) = (buffOptions[excludeIndex], buffOptions[lastIndex]);
+                    (buffOptions.All[lastIndex], buffOptions.All[excludeIndex]) = (buffOptions.All[excludeIndex], buffOptions.All[lastIndex]);
             }
         }
     }

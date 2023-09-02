@@ -145,6 +145,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
             damage: 1,
             knockback: 8,
             pierce: 1,
+            bounce: 0,
             velocity: bulletVelocity,
             faceDirection: true
         );

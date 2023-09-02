@@ -54,6 +54,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat"), SerializeField, Expandable] LinearInt projectileCount;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat projectileSpread;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearInt pierce;
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearInt bounce;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterInt magazine;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat reloadRate;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat pushbackStrengthOnDamage;
@@ -131,7 +132,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 
             Vector3 projectileDirection = Quaternion.Euler(0, rotDegrees, 0) * targetDirection;
 
-            bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, pierce.Value, projectileDirection * bulletSpeed.Value);
+            bullet.Initialize(bulletDamage.Value, bulletKnockback.Value, pierce.Value, bounce.Value, projectileDirection * bulletSpeed.Value);
             (bullet as IHitResponder).Owner = this;
         }
 

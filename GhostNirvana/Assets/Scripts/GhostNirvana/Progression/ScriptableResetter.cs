@@ -1,25 +1,24 @@
 using UnityEngine;
 using ScriptableBehaviour;
-using System.Collections.Generic;
+using NaughtyAttributes;
 
 namespace GhostNirvana {
 
 public class ScriptableResetter : MonoBehaviour {
     [SerializeField] Bank bank;
-    [SerializeField] List<LinearInt> intsToReset;
-    [SerializeField] List<LinearFloat> floatsToReset;
+    [SerializeField, Expandable] StatsList stats;
 
     void Awake() => ResetAllScriptableVariables();
 
     void ResetAllScriptableVariables() {
         bank.Withraw(bank.Balance);
-        foreach (LinearInt lint in intsToReset) {
+        foreach (LinearInt lint in stats.AllInts) {
             lint.AdditiveScale = 0;
             lint.MultiplicativeScale = 1;
             lint.Recompute();
             lint.OnAfterDeserialize();
         }
-        foreach (LinearFloat lfloat in floatsToReset) {
+        foreach (LinearFloat lfloat in stats.AllFloats) {
             lfloat.AdditiveScale = 0;
             lfloat.MultiplicativeScale = 1;
             lfloat.Recompute();

@@ -359,6 +359,7 @@ MonoBehaviour:
   projectileCount: {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
   projectileSpread: {fileID: 11400000, guid: 0e3f67fd098869e4b928a17f4719a06e, type: 2}
   pierce: {fileID: 11400000, guid: eba27c2a8ffed6b48bafcac52829a49e, type: 2}
+  bounce: {fileID: 11400000, guid: e0bab46baeabc0a4da95c6f54cb63071, type: 2}
   magazine: {fileID: 11400000, guid: 064309dfa43532347b0df21674559404, type: 2}
   reloadRate: {fileID: 11400000, guid: 5929504fd2cceed47ae5c2f2e4e5ea18, type: 2}
   pushbackStrengthOnDamage: {fileID: 11400000, guid: f7fad2df61e2ab04fa643ef0d05fb579, type: 2}

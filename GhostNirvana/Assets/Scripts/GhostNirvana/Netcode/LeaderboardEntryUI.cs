@@ -11,7 +11,7 @@ namespace GhostNirvana.Netcode {
         [SerializeField] TMP_Text MoneyTakeHome;
         [SerializeField] TMP_Text Time;
         [SerializeField] Image mostBoughtItem;
-        [SerializeField] List<Buff> buffs;
+        [SerializeField] BuffList buffs;
 
         public void Set(Leaderboard.Record record) {
             Name.text = record.Name;
@@ -48,7 +48,7 @@ namespace GhostNirvana.Netcode {
 
             mostBoughtItem.enabled = false;
 
-            foreach (Buff buff in buffs) {
+            foreach (Buff buff in buffs.All) {
                 if (buff.id == mostBoughtItemID) {
                     mostBoughtItem.enabled = true;
                     mostBoughtItem.sprite = buff.icon;
