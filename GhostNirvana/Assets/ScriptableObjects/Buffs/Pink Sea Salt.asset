@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: "SoultySweets\u2122"
+  m_Name: Pink Sea Salt
   m_EditorClassIdentifier: 
-  <id>k__BackingField: 25
+  <id>k__BackingField: 26
   floatBuffs: []
   intBuffs:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: ac2179087c0f15845a1900919a446b5e, type: 2}
+  - <Stat>k__BackingField: {fileID: 11400000, guid: 6cc96991abcdc4a4a93881abd7abb85c, type: 2}
     <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: 'Soulfully salty sweets for a sugar rush!
-
-    Grants
-    <color="green">Sugar Rush</color> for 4 seconds on kill, which grants <color="green">30%</color>
-    more movement speed and <color="green">30%</color> more attack speed.'
-  <BaseCost>k__BackingField: 1256
-  <Weight>k__BackingField: 1
+  <description>k__BackingField: It looks pretty- pretty fantastic!
+  <BaseCost>k__BackingField: 899
+  <Weight>k__BackingField: 100
   purchaseLimit: 1
-  <icon>k__BackingField: {fileID: -1828048630, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
+  <icon>k__BackingField: {fileID: -2016980451, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []

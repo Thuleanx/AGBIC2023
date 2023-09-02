@@ -4,12 +4,14 @@ using CombatSystem;
 using ScriptableBehaviour;
 using Optimization;
 using Utils;
+using System.Collections.Generic;
 using FMODUnity;
 
 namespace GhostNirvana {
 
 public class SpawnOnHit : MonoBehaviour {
-    [SerializeField] GameObject prefab;
+    [SerializeField] List<GameObject> prefab;
+    [SerializeField] ScriptableInt palette;
     [SerializeField] ScriptableInt numberOfHitsToSpawn;
     [SerializeField] ScriptableFloat damageScaling;
     [SerializeField] ScriptableInt bulletDamage;
@@ -49,7 +51,7 @@ public class SpawnOnHit : MonoBehaviour {
         spawnPosition.y = 0;
 
         GenericHitResponder hitResponder = ObjectPoolManager.Instance.Borrow(
-            gameObject.scene, prefab.transform,
+            gameObject.scene, prefab[palette.Value].transform,
             spawnPosition, Quaternion.identity
         ).GetComponent<GenericHitResponder>();
 

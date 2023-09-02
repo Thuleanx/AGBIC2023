@@ -153,9 +153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d234b39317734478847e56b6a2767e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palette: {fileID: 11400000, guid: 6cc96991abcdc4a4a93881abd7abb85c, type: 2}
   miyu: {fileID: 3751458875445000395}
   spawnSpeed: {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
-  prefab: {fileID: 6567878376966889744, guid: d34da400e3e434ef18b4cd790e6e142d, type: 3}
+  prefab:
+  - {fileID: 6567878376966889744, guid: d34da400e3e434ef18b4cd790e6e142d, type: 3}
+  - {fileID: 6567878376966889744, guid: 2b956bbe0b74e054b996f5a6016f7a1f, type: 3}
   damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
   bulletKnockback: {fileID: 11400000, guid: ec006686c7644fa478103fcfe88fd0d0, type: 2}
@@ -350,8 +353,11 @@ MonoBehaviour:
   deccelerationAlpha: 12
   TurnSpeed: 360
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
-  projectilePrefab: {fileID: 7531139996555314367, guid: 7bd32c0ea4fa9e84e9ad446556e782ec, type: 3}
+  projectilePrefab:
+  - {fileID: 7531139996555314367, guid: 7bd32c0ea4fa9e84e9ad446556e782ec, type: 3}
+  - {fileID: 7531139996555314367, guid: d1236f752c37caa48b2bcd201e0b8b42, type: 3}
   <BulletSource>k__BackingField: {fileID: 7795210605010872444}
+  palette: {fileID: 11400000, guid: 6cc96991abcdc4a4a93881abd7abb85c, type: 2}
   health: {fileID: 11400000, guid: c5fa1b4d7fe75a047afaca3477b8bdb7, type: 2}
   attackSpeed: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
@@ -736,7 +742,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b61eae6fc6cb642946cff6a5a6c6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6567878376966889744, guid: 19ec3b6c4a15e9047b4a5f08e006cc60, type: 3}
+  prefab:
+  - {fileID: 6567878376966889744, guid: 19ec3b6c4a15e9047b4a5f08e006cc60, type: 3}
+  - {fileID: 6567878376966889744, guid: 51e9d2ecbcce7e6498307be075ecfc14, type: 3}
+  palette: {fileID: 11400000, guid: 6cc96991abcdc4a4a93881abd7abb85c, type: 2}
   numberOfHitsToSpawn: {fileID: 11400000, guid: 54710aef4c29c6342941cdda3e1f91fb, type: 2}
   damageScaling: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   bulletDamage: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}

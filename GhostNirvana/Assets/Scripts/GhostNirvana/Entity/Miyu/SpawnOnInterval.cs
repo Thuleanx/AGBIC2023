@@ -3,14 +3,16 @@ using NaughtyAttributes;
 using ScriptableBehaviour;
 using Optimization;
 using CombatSystem;
+using System.Collections.Generic;
 using FMODUnity;
 
 namespace GhostNirvana {
 
 public class SpawnOnInterval : MonoBehaviour {
+    [SerializeField] ScriptableInt palette;
     [SerializeField] Miyu miyu;
     [SerializeField] ScriptableFloat spawnSpeed;
-    [SerializeField, ShowAssetPreview, Required] GameObject prefab;
+    [SerializeField] List<GameObject> prefab;
     [SerializeField] ScriptableFloat damageScaling;
     [SerializeField] ScriptableInt bulletDamage;
     [SerializeField] ScriptableFloat bulletKnockback;
@@ -24,7 +26,7 @@ public class SpawnOnInterval : MonoBehaviour {
 
     void Update() {
         if (miyu.IsDead) return;
-        if (!spawnSpeed || !prefab || spawnSpeed.Value == 0) return;
+        if (!spawnSpeed || prefab.Count == 0 || spawnSpeed.Value == 0) return;
         spawnProgress += Time.deltaTime * spawnSpeed.Value;
         while (spawnProgress >= 1) {
             Spawn();
@@ -34,7 +36,7 @@ public class SpawnOnInterval : MonoBehaviour {
 
     void Spawn() {
         GenericHitResponder hitResponder = ObjectPoolManager.Instance.Borrow(
-            gameObject.scene, prefab.transform,
+            gameObject.scene, prefab[palette.Value].transform,
             transform.position, Quaternion.identity
         ).GetComponent<GenericHitResponder>();
 

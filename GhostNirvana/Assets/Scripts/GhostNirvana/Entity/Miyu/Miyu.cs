@@ -8,6 +8,7 @@ using Utils;
 using ScriptableBehaviour;
 using UnityEngine.Events;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 
 namespace GhostNirvana {
@@ -43,9 +44,10 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [HorizontalLine(color:EColor.Blue)]
     [BoxGroup("Combat"), SerializeField, Required]
     MovableAgentRuntimeSet allEnemies;
-    [BoxGroup("Combat"), SerializeField, Required, ShowAssetPreview]
-    Projectile projectilePrefab;
+    [BoxGroup("Combat"), SerializeField]
+    List<Projectile> projectilePrefab;
     [field:SerializeField, BoxGroup("Combat")] public Transform BulletSource {get; private set; }
+    [BoxGroup("Combat"), SerializeField, Expandable] LinearInt palette;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearLimiterInt health;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearFloat attackSpeed;
     [BoxGroup("Combat"), SerializeField, Expandable] LinearInt bulletDamage;
@@ -132,7 +134,7 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
             }
 
             Projectile bullet = ObjectPoolManager.Instance.Borrow(gameObject.scene,
-                projectilePrefab, BulletSource.position, BulletSource.rotation);
+                projectilePrefab[palette.Value], BulletSource.position, BulletSource.rotation);
 
             Vector3 projectileDirection = Quaternion.Euler(0, rotDegrees, 0) * targetDirection;
 
