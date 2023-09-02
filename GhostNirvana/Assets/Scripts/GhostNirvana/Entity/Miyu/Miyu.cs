@@ -72,7 +72,6 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
     [BoxGroup("Combat")] public UnityEvent OnShieldHit;
     #endregion
 
-
     Timer iframeHappening;
 
     public Entity Owner => this;

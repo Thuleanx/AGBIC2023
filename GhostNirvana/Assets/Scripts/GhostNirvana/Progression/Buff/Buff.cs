@@ -66,5 +66,20 @@ namespace GhostNirvana {
                 replenish.Stat.CheckAndCorrectLimit();
             }
         }
+
+        public void Revert() {
+            foreach (LinearBuff<LinearFloat, float> buff in floatBuffs) {
+                ILinearlyScalable<float> stat = buff.Stat;
+                stat.AdditiveScale -= buff.AdditiveAmount;
+                if (stat.MultiplicativeScale != 0) stat.MultiplicativeScale /= buff.MultiplicativeAmount;
+                stat.Recompute();
+            }
+            foreach (LinearBuff<LinearInt, int> buff in intBuffs) {
+                ILinearlyScalable<int> stat = buff.Stat;
+                stat.AdditiveScale -= buff.AdditiveAmount;
+                if (buff.MultiplicativeAmount != 0) stat.MultiplicativeScale /= buff.MultiplicativeAmount;
+                stat.Recompute();
+            }
+        }
     }
 }
