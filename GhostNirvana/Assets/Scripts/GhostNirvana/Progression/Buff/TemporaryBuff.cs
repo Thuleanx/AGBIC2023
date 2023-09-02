@@ -17,6 +17,7 @@ namespace GhostNirvana {
 
         public void ApplyOnHost(MonoBehaviour host) {
             if (currentCoroutine != null && !stackable && buffCurrentlyActive) {
+                Revert();
                 host.StopCoroutine(currentCoroutine);
                 buffCurrentlyActive = false;
             }
@@ -35,6 +36,7 @@ namespace GhostNirvana {
 
         public virtual void OnAfterDeserialize() {
             currentCoroutine = null;
+            buffCurrentlyActive = false;
         }
 
         public virtual void OnBeforeSerialize() {
