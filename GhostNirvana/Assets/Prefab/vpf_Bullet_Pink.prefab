@@ -9699,7 +9699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8409639066681726162}
   - component: {fileID: 8722718024998288041}
-  - component: {fileID: 3463414844608538415}
+  - component: {fileID: 3759682963069314853}
   m_Layer: 31
   m_Name: Hitbox
   m_TagString: Untagged
@@ -9735,7 +9735,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3463414844608538415
+--- !u!114 &3759682963069314853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9744,7 +9744,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6472624670688422201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac87f7e49ffbea1488d449a0fa9f3ded, type: 3}
+  m_Script: {fileID: 11500000, guid: 64f2db22c104511488a30eaeb71c6922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 8722718024998288041}
@@ -9752,6 +9752,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1073741824
   hitNormalIsVelocityDirection: 1
+  forgetTime: 0.5
 --- !u!1 &7531139996555314357
 GameObject:
   m_ObjectHideFlags: 0
@@ -9825,6 +9826,7 @@ MonoBehaviour:
   pierce: 0
   bounce: 0
   ricochet: 0
+  ricochetRange: 0
   hitbox: {fileID: 0}
   onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
   allEnemiesObject: {fileID: 11400000, guid: a18ce3b9920bf1744be53a55a5b70692, type: 2}
