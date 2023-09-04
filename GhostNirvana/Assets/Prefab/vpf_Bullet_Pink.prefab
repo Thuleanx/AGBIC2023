@@ -4947,7 +4947,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5001,7 +5001,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5698,7 +5698,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5751,7 +5751,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9828,7 +9828,7 @@ MonoBehaviour:
   ricochet: 0
   ricochetRange: 0
   hitbox: {fileID: 0}
-  onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
+  onHitEffect: {fileID: 6669216701661252589, guid: e9c22f1d7c27f1a40869abc515378391, type: 3}
   allEnemiesObject: {fileID: 11400000, guid: a18ce3b9920bf1744be53a55a5b70692, type: 2}
 --- !u!114 &1097658304994715504
 MonoBehaviour:
