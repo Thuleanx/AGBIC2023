@@ -185,6 +185,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
+  allEnemiesGameObject: {fileID: 11400000, guid: a18ce3b9920bf1744be53a55a5b70692, type: 2}
   allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
   allAppliances: {fileID: 11400000, guid: 6f4e588dd4bd4b644bd428794ce810ab, type: 2}
   <PossessionDetection>k__BackingField: {fileID: 1459352399930716331}

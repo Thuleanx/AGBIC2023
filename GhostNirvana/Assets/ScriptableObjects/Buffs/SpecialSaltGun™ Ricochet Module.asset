@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c70fe40cca9fb4fa4573376cbf314c, type: 3}
-  m_Name: Pink Sea Salt
+  m_Name: "SpecialSaltGun\u2122 Ricochet Module"
   m_EditorClassIdentifier: 
-  <id>k__BackingField: 26
+  <id>k__BackingField: 24
   floatBuffs: []
   intBuffs:
-  - <Stat>k__BackingField: {fileID: 11400000, guid: 6cc96991abcdc4a4a93881abd7abb85c, type: 2}
+  - <Stat>k__BackingField: {fileID: 11400000, guid: b18626b5f9d0c794693d348f0c1688bf, type: 2}
     <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1
   replenishFloat: []
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
-  <description>k__BackingField: It looks pretty- pretty fantastic!
-  <BaseCost>k__BackingField: 899
-  <Weight>k__BackingField: 1
-  purchaseLimit: 1
-  <icon>k__BackingField: {fileID: -2016980451, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
+  <description>k__BackingField: "Invest in our module to shoot\u2026 ricochet?\nYour
+    bullet ricochet <color=\"green\">+1</color> times to a nearby enemy."
+  <BaseCost>k__BackingField: 2999
+  <Weight>k__BackingField: 100
+  purchaseLimit: 0
+  <icon>k__BackingField: {fileID: 1156567478, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []

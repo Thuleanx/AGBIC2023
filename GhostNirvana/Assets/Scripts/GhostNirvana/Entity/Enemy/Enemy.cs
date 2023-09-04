@@ -4,6 +4,7 @@ using CombatSystem;
 using Base;
 using NaughtyAttributes;
 using UnityEngine.Events;
+using ScriptableBehaviour;
 
 namespace GhostNirvana {
 
@@ -34,6 +35,7 @@ public abstract class Enemy<Input>
 
     List<Hitbox> hitboxes = new List<Hitbox>();
     [SerializeField, Required] protected MovableAgentRuntimeSet allEnemies;
+    [SerializeField, Required] protected GameObjectRuntimeSet allEnemiesGameObject;
     [SerializeField] HurtableRuntimeSet allHurtables;
 
     protected override void Awake() {
@@ -47,10 +49,12 @@ public abstract class Enemy<Input>
 		base.OnEnable();
         allEnemies.Add(this);
         allHurtables.Add(this);
+        allEnemiesGameObject.Add(gameObject);
     }
     protected virtual void OnDisable() {
         allEnemies.Remove(this);
         allHurtables.Remove(this);
+        allEnemiesGameObject.Remove(gameObject);
     }
 
     protected void CheckForHits() {

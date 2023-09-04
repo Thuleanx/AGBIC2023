@@ -145,6 +145,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
+  allEnemiesGameObject: {fileID: 11400000, guid: a18ce3b9920bf1744be53a55a5b70692, type: 2}
   allHurtables: {fileID: 11400000, guid: b0ddffa5ff5a3724092dce6e494713e6, type: 2}
   ghostyGoon: {fileID: 6133858924970157918, guid: 1648ca86f6117534da0d5d86d1851f0a, type: 3}
   allEnemyStatus: {fileID: 11400000, guid: 575bfd14d0d1e6f4fa33f7982feba7de, type: 2}

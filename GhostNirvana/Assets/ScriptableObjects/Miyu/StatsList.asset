@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eba27c2a8ffed6b48bafcac52829a49e, type: 2}
   - {fileID: 11400000, guid: 28b54ef3d7e0d384092084b12d901144, type: 2}
   - {fileID: 11400000, guid: ac2179087c0f15845a1900919a446b5e, type: 2}
+  - {fileID: 11400000, guid: b18626b5f9d0c794693d348f0c1688bf, type: 2}
   AllFloats:
   - {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
   - {fileID: 11400000, guid: 9f47c7c3de9a321448c465e1e77781e6, type: 2}
@@ -38,3 +39,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
   - {fileID: 11400000, guid: 93c2ead6074c5114c8e789cc5146e879, type: 2}
   - {fileID: 11400000, guid: a4e07bd334a5e3c4d9feb4109519f480, type: 2}
+  - {fileID: 11400000, guid: b463d28735ea11b45a57420acc5786b0, type: 2}

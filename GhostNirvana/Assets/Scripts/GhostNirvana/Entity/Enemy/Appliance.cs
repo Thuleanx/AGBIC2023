@@ -73,6 +73,7 @@ public partial class Appliance : Enemy<StandardMovementInput> {
         base.OnEnable();
 		allAppliances.Add(this);
         allEnemies.Remove(this);
+        allEnemiesGameObject.Remove(gameObject);
         FreezePosition = true;
     }
 

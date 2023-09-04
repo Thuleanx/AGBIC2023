@@ -96,6 +96,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         agent.Status.HealToFull();
         agent.Status.OnDeath.AddListener(OnDeath);
         agent.allEnemyStatus.Add(agent.Status);
+        agent.allEnemiesGameObject.Add(agent.gameObject);
         agent.OnBeforeDamage.AddListener(OnTakeDamage);
         IHurtResponder.ConnectChildrenHurtboxes(agent);
         IHitResponder.ConnectChildrenHitboxes(agent);
@@ -141,6 +142,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         IHurtResponder.DisconnectChildrenHurtboxes(agent);
         IHitResponder.DisconnectChildrenHitboxes(agent);
         agent.allEnemies.Remove(agent);
+        agent.allEnemiesGameObject.Remove(agent.gameObject);
     }
 
     void OnTakeDamage(IHurtable hurtable, int damageAmount, DamageType damageType, Hit hit) {

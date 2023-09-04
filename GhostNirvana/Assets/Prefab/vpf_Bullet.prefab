@@ -9824,8 +9824,11 @@ MonoBehaviour:
   knockback: 0
   pierce: 0
   bounce: 0
+  ricochet: 0
+  ricochetRange: 0
   hitbox: {fileID: 0}
   onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
+  allEnemiesObject: {fileID: 11400000, guid: a18ce3b9920bf1744be53a55a5b70692, type: 2}
 --- !u!114 &1097658304994715504
 MonoBehaviour:
   m_ObjectHideFlags: 0
