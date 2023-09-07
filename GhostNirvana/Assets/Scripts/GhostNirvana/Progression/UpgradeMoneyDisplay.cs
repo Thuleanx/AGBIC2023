@@ -17,9 +17,11 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
     [SerializeField] TMP_Text payDescription;
     [SerializeField] TMP_Text balanceMinusPriceDisplay;
     [SerializeField] TMP_Text priceDisplay;
+    [SerializeField] TMP_Text adviceDisplay;
     [ResizableTextArea, SerializeField] string payDescriptionFormatting;
     [ResizableTextArea, SerializeField] string balanceMinusPriceDisplayFormatting;
     [ResizableTextArea, SerializeField] string priceDisplayFormatting;
+    [ResizableTextArea, SerializeField] string adviceDisplayFormatting;
     [SerializeField] float exitBufferTime = 1;
     bool shouldHoverExit;
     float hoverExitTime;
@@ -37,6 +39,7 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
             bank.Value / CENTS_IN_DOLLAR
         );
         priceDisplay.gameObject.SetActive(false);
+		adviceDisplay.gameObject.SetActive(true);
     }
 
     void OnDisable() {
@@ -92,9 +95,11 @@ public class UpgradeMoneyDisplay : MonoBehaviour {
             tip = tipTexts[Mathx.RandomRange(0, tipTexts.Count)];
         payDescription.text = String.Format(
             payDescriptionFormatting,
-            rank, collectionCount, paymentAmount / CENTS_IN_DOLLAR,
-            tip
+            rank, collectionCount, paymentAmount / CENTS_IN_DOLLAR
         );
+		adviceDisplay.text = String.Format(
+			adviceDisplayFormatting, tip
+		);
     }
 
     protected void LateUpdate() {
