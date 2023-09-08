@@ -31,6 +31,12 @@ MonoBehaviour:
   <icon>k__BackingField: {fileID: -1828048630, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []
   useScriptableDuration: 0
-  duration: 3
+  duration: 1
   scriptableDuration: {fileID: 0}
   stackable: 0
+  OnApply:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExpire:
+    m_PersistentCalls:
+      m_Calls: []

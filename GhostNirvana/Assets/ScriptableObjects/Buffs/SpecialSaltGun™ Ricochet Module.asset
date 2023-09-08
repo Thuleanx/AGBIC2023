@@ -24,7 +24,7 @@ MonoBehaviour:
   <description>k__BackingField: "Invest in our module to shoot\u2026 bouncier?\nBullets
     ricochet <color=\"green\">+1</color> times to a nearby enemy."
   <BaseCost>k__BackingField: 2999
-  <Weight>k__BackingField: 100
+  <Weight>k__BackingField: 1
   purchaseLimit: 0
   <icon>k__BackingField: {fileID: 1156567478, guid: 3a7de9e4634fa2646aee77be3a681659, type: 3}
   Prerequisites: []

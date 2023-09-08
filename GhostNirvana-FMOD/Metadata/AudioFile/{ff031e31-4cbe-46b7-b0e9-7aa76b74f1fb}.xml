@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ff031e31-4cbe-46b7-b0e9-7aa76b74f1fb}">
+		<property name="assetPath">
+			<value>Music/ghost-waltz-120538.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>75.049795918367352</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9e5d85a6-7727-4ff2-999f-0273a05204ea}</destination>
+		</relationship>
+	</object>
+</objects>

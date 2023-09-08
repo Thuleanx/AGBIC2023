@@ -2496,6 +2496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_BossDirector
       objectReference: {fileID: 0}
+    - target: {fileID: 674498543020329024, guid: 6127e4fefac474d4587244f471dc0379, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 674498543020329031, guid: 6127e4fefac474d4587244f471dc0379, type: 3}
       propertyPath: m_RootOrder
       value: 11

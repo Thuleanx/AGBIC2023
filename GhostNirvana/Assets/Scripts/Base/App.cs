@@ -27,7 +27,7 @@ namespace Base {
 				if (app == null) throw new ApplicationException();
 			}
 			UnityEngine.Object.DontDestroyOnLoad(app);
-            DOTween.SetTweensCapacity(50000, 125);
+            DOTween.SetTweensCapacity(50000, 450);
 		}
 
 		#region App Scene Management

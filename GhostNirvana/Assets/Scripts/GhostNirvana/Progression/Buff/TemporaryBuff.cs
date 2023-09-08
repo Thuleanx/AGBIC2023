@@ -25,6 +25,7 @@ namespace GhostNirvana {
             if (!buffCurrentlyActive) OnApply?.Invoke();
             if (currentCoroutine != null && !stackable && buffCurrentlyActive) {
                 Revert();
+                OnExpire?.Invoke();
                 host.StopCoroutine(currentCoroutine);
                 buffCurrentlyActive = false;
             }
@@ -37,8 +38,8 @@ namespace GhostNirvana {
             float durationUse = useScriptableDuration ?
                 (scriptableDuration?.Value ?? duration) : duration;
             yield return new WaitForSeconds(durationUse);
-            Revert();
             OnExpire?.Invoke();
+            Revert();
             buffCurrentlyActive = false;
         }
 

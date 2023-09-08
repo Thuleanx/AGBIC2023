@@ -9,15 +9,23 @@ public class TemporaryBuffTracker : MonoBehaviour {
     [SerializeField] bool queryInitialState;
     [SerializeField] UnityEvent OnApply;
     [SerializeField] UnityEvent OnExpire;
+    bool previousFrameActive;
 
     void OnEnable() {
         if (!buff) return;
-        buff.OnApply.AddListener(_RunOnApplyEvent);
-        buff.OnExpire.AddListener(_RunOnExpireEvent);
         if (queryInitialState) {
             if (buff.IsActive)  _RunOnApplyEvent();
             else                _RunOnExpireEvent();
         }
+        previousFrameActive = buff.IsActive;
+    }
+
+    void Update() {
+        if (previousFrameActive ^ buff.IsActive) {
+            if (buff.IsActive)  _RunOnApplyEvent();
+            else                _RunOnExpireEvent();
+        }
+        previousFrameActive = buff.IsActive;
     }
     
     void OnDisable() {
