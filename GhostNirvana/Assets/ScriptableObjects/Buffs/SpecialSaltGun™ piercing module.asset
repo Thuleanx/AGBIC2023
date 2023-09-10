@@ -19,7 +19,7 @@ MonoBehaviour:
     <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
-    <AdditiveAmount>k__BackingField: -1
+    <AdditiveAmount>k__BackingField: -2
     <MultiplicativeAmount>k__BackingField: 1
   replenishFloat: []
   replenishInt: []
@@ -29,7 +29,7 @@ MonoBehaviour:
     <color="green">+1</color>
     piercing.
 
-    <color=#FF47DF>-1</color> bullet damage.'
+    <color=#FF47DF>-2</color> bullet damage.'
   <BaseCost>k__BackingField: 2499
   <Weight>k__BackingField: 1
   purchaseLimit: 0

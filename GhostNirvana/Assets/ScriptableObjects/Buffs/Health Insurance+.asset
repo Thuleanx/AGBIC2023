@@ -18,7 +18,10 @@ MonoBehaviour:
     <AdditiveAmount>k__BackingField: 0.3333333
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs: []
-  replenishFloat: []
+  replenishFloat:
+  - <Stat>k__BackingField: {fileID: 11400000, guid: db5743ccaf1680f4389ce51e76439642, type: 2}
+    <All>k__BackingField: 1
+    <Amount>k__BackingField: 0
   replenishInt: []
   discount: {fileID: 11400000, guid: aa2c6511986c5f74cb17b9ec948a2512, type: 2}
   <description>k__BackingField: "We\u2019ll take a hit for you- sometimes!\nRegenerate

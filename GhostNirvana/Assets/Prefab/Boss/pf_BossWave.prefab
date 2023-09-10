@@ -128,11 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4bf3b173cb2e44ab31a1d02783c271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flatBounces: 1
   damage: 1
   knockback: 0
   pierce: 0
+  bounce: 0
+  ricochet: 0
+  ricochetRange: 0
   hitbox: {fileID: 0}
   onHitEffect: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
+  allEnemiesObject: {fileID: 0}
 --- !u!114 &1097658304994715504
 MonoBehaviour:
   m_ObjectHideFlags: 0

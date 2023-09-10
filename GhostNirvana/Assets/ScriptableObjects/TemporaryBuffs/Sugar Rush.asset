@@ -16,10 +16,10 @@ MonoBehaviour:
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: 6df947571268c4a4a87ab014ba606bd7, type: 2}
     <AdditiveAmount>k__BackingField: 0
-    <MultiplicativeAmount>k__BackingField: 1.5
+    <MultiplicativeAmount>k__BackingField: 1.3
   - <Stat>k__BackingField: {fileID: 11400000, guid: 0bb442943dc63b142a0d61f458bbb61f, type: 2}
     <AdditiveAmount>k__BackingField: 0
-    <MultiplicativeAmount>k__BackingField: 1.5
+    <MultiplicativeAmount>k__BackingField: 1.3
   intBuffs: []
   replenishFloat: []
   replenishInt: []

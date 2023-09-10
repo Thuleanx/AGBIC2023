@@ -15,7 +15,7 @@ MonoBehaviour:
   <id>k__BackingField: 19
   floatBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: cd4f4efa909681a428e6404388cca430, type: 2}
-    <AdditiveAmount>k__BackingField: 0.35
+    <AdditiveAmount>k__BackingField: 0.25
     <MultiplicativeAmount>k__BackingField: 1
   intBuffs: []
   replenishFloat: []
@@ -24,7 +24,7 @@ MonoBehaviour:
   <description>k__BackingField: 'Invest in our module to shoot bigger!!!
 
     Increase
-    damage of salt explosion by <color="green">+35%</color> of bullet damage.'
+    damage of salt explosion by <color="green">+25%</color> of bullet damage.'
   <BaseCost>k__BackingField: 2199
   <Weight>k__BackingField: 1
   purchaseLimit: 0
