@@ -174,8 +174,15 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         ghost.transform.position = appliance.transform.position;
         ghost.gameObject.SetActive(true);
 
+        Vector3 knockbackDir = hit.Normal;
+        if (Miyu.Instance) {
+            Vector3 directionToPlayer = Miyu.Instance.transform.position - appliance.transform.position;
+            if (Vector3.Dot(knockbackDir, directionToPlayer) > 0)
+                knockbackDir *= -1; // reflect knockback
+        }
+
         (ghost as IKnockbackable).ApplyKnockback(
-            appliance.knockbackOnEjection, dir: -hit.Normal);
+            appliance.knockbackOnEjection, dir: hit.Normal);
 
         int ghostHealthBeforePossession = (int) appliance.StateMachine.Blackboard[BK_GhostHP];
         ghost.Status.SetHealth(ghostHealthBeforePossession);

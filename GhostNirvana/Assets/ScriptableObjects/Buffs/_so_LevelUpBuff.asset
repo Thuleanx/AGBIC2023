@@ -22,7 +22,7 @@ MonoBehaviour:
     <MultiplicativeAmount>k__BackingField: 1.1
   intBuffs:
   - <Stat>k__BackingField: {fileID: 11400000, guid: bf4154c3643764b48b8e795018e6e43e, type: 2}
-    <AdditiveAmount>k__BackingField: 0.6
+    <AdditiveAmount>k__BackingField: 1
     <MultiplicativeAmount>k__BackingField: 1.05
   replenishFloat: []
   replenishInt: []

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4732239297258548877}
   - component: {fileID: 2408813344641085289}
   - component: {fileID: 8002660414013666258}
+  - component: {fileID: 8541124009713942445}
   m_Layer: 0
   m_Name: pf_RotatingMassOfAppliances
   m_TagString: Untagged
@@ -76,8 +77,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8541124009713942445}
+        m_TargetAssemblyTypeName: ComposableBehaviour.TriggerableSpawner, ComposableBehaviour
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   centerOffset: {x: 0, y: 1, z: 0}
   vfxOnDetach: {fileID: 6567878376966889744, guid: 71c4145d40d374624b1c2ebed5cf8c89, type: 3}
+  healAllWhenOneDestroyed: 1
 --- !u!143 &7325894518190619365
 CharacterController:
   m_ObjectHideFlags: 0
@@ -139,6 +153,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 2102448695563409133, guid: 4fbbaad4770b3464e980f137d9b0ed99, type: 3}
+  inheritRotation: 0
+--- !u!114 &8541124009713942445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013804293767015676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0437e389a1c116e4fb9a8cd1cd5da8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 8906942794863357992, guid: b330fd9d43dfce64b8def8939cb309b9, type: 3}
   inheritRotation: 0
 --- !u!1 &4596105377879404262
 GameObject:

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9279f3a4f8e53c14399bbe311aa297b2, type: 3}
+  m_Name: so_build_BagOfSalt
+  m_EditorClassIdentifier: 
+  BuffsTakenInSequence:
+  - {fileID: 11400000, guid: fea9e10eb34de774da223342943f6d9c, type: 2}
+  - {fileID: 11400000, guid: 40f97ec41f0457c498961d2ceb27237c, type: 2}
+  - {fileID: 11400000, guid: 40f97ec41f0457c498961d2ceb27237c, type: 2}
+  - {fileID: 11400000, guid: 40f97ec41f0457c498961d2ceb27237c, type: 2}
+  - {fileID: 11400000, guid: 40f97ec41f0457c498961d2ceb27237c, type: 2}
+  - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
+  - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
+  - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
+  - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
+  - {fileID: 11400000, guid: 96453ea5805ae1046bac0d609cbf9d87, type: 2}
+  - {fileID: 11400000, guid: 209dbf50b629c054cb2bdb0910cc2815, type: 2}
+  - {fileID: 11400000, guid: 209dbf50b629c054cb2bdb0910cc2815, type: 2}
+  - {fileID: 11400000, guid: a7acc0a1a55cb274fa0904f5c61da5a8, type: 2}
+  - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
+  - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
+  - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
+  - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
+  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
+  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
+  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
+  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
+  onLevelUpBuff: {fileID: 11400000, guid: a5ab72bbf4813294fb045baecd912c04, type: 2}

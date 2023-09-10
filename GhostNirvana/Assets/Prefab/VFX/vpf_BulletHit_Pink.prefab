@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3521700504803412297, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
       propertyPath: m_Name
-      value: vpf_BulletHit_Pink Variant
+      value: vpf_BulletHit_Pink
       objectReference: {fileID: 0}
     - target: {fileID: 3975732528559706020, guid: bd1fa9b9b9deb4fdc9922fa16b6d4f22, type: 3}
       propertyPath: m_Materials.Array.data[0]

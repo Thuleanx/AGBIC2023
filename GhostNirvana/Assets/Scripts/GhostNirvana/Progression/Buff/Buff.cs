@@ -42,6 +42,7 @@ namespace GhostNirvana {
 
         [ReorderableList] public List<Buff> Prerequisites = new List<Buff>();
 
+        [Button]
         public virtual void Apply() {
             foreach (LinearBuff<LinearFloat, float> buff in floatBuffs) {
                 ILinearlyScalable<float> stat = buff.Stat;

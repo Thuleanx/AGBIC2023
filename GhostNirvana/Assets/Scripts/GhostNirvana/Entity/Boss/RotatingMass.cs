@@ -17,6 +17,7 @@ public class RotatingMass : PoolableEntity {
     [SerializeField] UnityEvent onDeath;
     [SerializeField] Vector3 centerOffset;
     [SerializeField, ShowAssetPreview] GameObject vfxOnDetach;
+    [SerializeField] bool healAllWhenOneDestroyed;
 
     List<PoolableEntity> rotators = new List<PoolableEntity>();
     int rotatorCount => rotators.Count;
@@ -71,10 +72,17 @@ public class RotatingMass : PoolableEntity {
                 status.transform.position,
                 Quaternion.LookRotation(forward: forward, upwards: outDirection)
             );
+
         }
 
         DetachStatus(status);
         rotators.Remove(status.GetComponent<PoolableEntity>());
+        if (healAllWhenOneDestroyed) {
+            foreach (PoolableEntity rotator in rotators) {
+                Status rotatorStatus = rotator.GetComponent<Status>();
+                rotatorStatus.HealToFull();
+            }
+        }
         if (rotators.Count <= rotatorsAtDeath) OnDeath();
     }
 

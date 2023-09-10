@@ -71,7 +71,7 @@ public class Hitbox : MonoBehaviour, IHitbox {
 
                 Vector3 normal = hit.normal;
                 bool canOverrideNormal = hitNormalIsVelocityDirection && _rigidbody && _rigidbody.velocity.sqrMagnitude > 0;
-                if (canOverrideNormal) normal = -_rigidbody.velocity.normalized;
+                if (canOverrideNormal) normal = _rigidbody.velocity.normalized;
 
                 Hit hitData = new Hit(
                     hit.point == Vector3.zero ? center : hit.point,
@@ -93,6 +93,7 @@ public class Hitbox : MonoBehaviour, IHitbox {
                     continue;
 
                 Vector3 normal = -(transform.position - collider.transform.position);
+                normal.y = 0;
                 if (normal.sqrMagnitude < 0.05) {
                     normal = Random.insideUnitCircle;
                     normal.z = normal.y;
@@ -101,7 +102,7 @@ public class Hitbox : MonoBehaviour, IHitbox {
                 normal.Normalize();
 
                 bool canOverrideNormal = hitNormalIsVelocityDirection && _rigidbody && _rigidbody.velocity.sqrMagnitude > 0;
-                if (canOverrideNormal) normal = -_rigidbody.velocity.normalized;
+                if (canOverrideNormal) normal = _rigidbody.velocity.normalized;
 
                 Hit hitData = new Hit(
                     collider.transform.position - normal * sphereCollider.radius,

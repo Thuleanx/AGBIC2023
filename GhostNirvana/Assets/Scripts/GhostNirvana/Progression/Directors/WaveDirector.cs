@@ -54,6 +54,7 @@ public class WaveDirector : Director {
 
     protected void OnEnable() {
         currentWave = 0;
+        lastFrameTime = timeElapsed.Value;
     }
 
     protected void Update() {
