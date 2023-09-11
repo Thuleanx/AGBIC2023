@@ -30,8 +30,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
   - {fileID: 11400000, guid: fa856a30d528f3146ba302c4d1bf7de1, type: 2}
-  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
-  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
-  - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
+  - {fileID: 11400000, guid: 07dd5e8878ada4c4b8a7d36b4792063a, type: 2}
+  - {fileID: 11400000, guid: a7acc0a1a55cb274fa0904f5c61da5a8, type: 2}
+  - {fileID: 11400000, guid: a7acc0a1a55cb274fa0904f5c61da5a8, type: 2}
   - {fileID: 11400000, guid: d1694fbf638fed74090a38f1fa9890ea, type: 2}
   onLevelUpBuff: {fileID: 11400000, guid: a5ab72bbf4813294fb045baecd912c04, type: 2}
