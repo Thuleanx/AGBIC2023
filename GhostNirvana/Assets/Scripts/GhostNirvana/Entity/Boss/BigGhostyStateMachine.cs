@@ -31,14 +31,12 @@ public class BigGhostySeek : State<BigGhosty, BigGhosty.States> {
 
         Vector3 desiredVelocity = agent.input.desiredMovement * 
             agent.Status.BaseStats.MovementSpeed * agent.currentHaste;
-        float maxSpeed = agent.currentHaste * agent.Status.BaseStats.MovementSpeed;
-        float acceleration = agent.Status.BaseStats.Acceleration * agent.currentHaste;
 
         agent.Velocity = Mathx.AccelerateTowards(
             currentVelocity: agent.Velocity,
             desiredVelocity,
-            acceleration: acceleration,
-            maxSpeed: maxSpeed,
+            acceleration: agent.currentAcceleration,
+            maxSpeed: agent.currentMaxSpeed,
             Time.deltaTime
         );
 
@@ -80,15 +78,12 @@ public class BigGhostySummon : State<BigGhosty, BigGhosty.States> {
         if ((bool) stateMachine.Blackboard[KEY_summonAnimFinish])
             return BigGhosty.States.Seek;
 
-        float maxSpeed = agent.currentHaste * agent.Status.BaseStats.MovementSpeed;
-        float acceleration = agent.Status.BaseStats.Acceleration * agent.currentHaste;
-
         // slow down
         agent.Velocity = Mathx.AccelerateTowards(
             currentVelocity: agent.Velocity,
             desiredVelocity: Vector3.zero,
-            acceleration: acceleration,
-            maxSpeed: maxSpeed,
+            acceleration: agent.currentAcceleration,
+            maxSpeed: agent.currentMaxSpeed,
             Time.deltaTime
         );
         if (agent.input.desiredMovement.sqrMagnitude > 0)
@@ -139,15 +134,12 @@ public class BigGhostyWave : State<BigGhosty, BigGhosty.States> {
         if ((bool) stateMachine.Blackboard[KEY_waveAttackFinish])
             return BigGhosty.States.Seek;
 
-        float maxSpeed = agent.currentHaste * agent.Status.BaseStats.MovementSpeed;
-        float acceleration = agent.Status.BaseStats.Acceleration * agent.currentHaste;
-
         // slow down
         agent.Velocity = Mathx.AccelerateTowards(
             currentVelocity: agent.Velocity,
             desiredVelocity: Vector3.zero,
-            acceleration: acceleration,
-            maxSpeed: maxSpeed,
+            acceleration: agent.currentAcceleration,
+            maxSpeed: agent.currentMaxSpeed,
             Time.deltaTime
         );
 

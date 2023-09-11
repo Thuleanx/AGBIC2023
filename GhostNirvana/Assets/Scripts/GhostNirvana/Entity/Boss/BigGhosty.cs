@@ -35,12 +35,19 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
     [SerializeField, BoxGroup("Combat"), MinMaxSlider(0, 100)] Vector2 summonCooldownSeconds;
     [SerializeField, BoxGroup("Combat"), MinMaxSlider(0, 100)] Vector2 attackCooldownSeconds;
     [SerializeField, BoxGroup("Combat")] AnimationCurve hasteScalingByHealth;
+    [SerializeField, BoxGroup("Combat")] float accelerationDoublingRange;
 
     float healthFraction => (float) Status.Health / Status.BaseStats.MaxHealth;
 
     Vector2 currentSummonCooldown => summonCooldownSeconds / currentHaste;
     Vector2 currentAttackCooldown => attackCooldownSeconds / currentHaste;
     float currentHaste => hasteScalingByHealth.Evaluate(healthFraction);
+
+    float currentMaxSpeed => currentHaste * Status.BaseStats.MovementSpeed;
+    float currentAcceleration => currentHaste * Status.BaseStats.Acceleration * (isCloseToPlayer ? 2 : 1);
+    bool isCloseToPlayer => Miyu.Instance ?
+        (Miyu.Instance.transform.position - transform.position).sqrMagnitude 
+        <= accelerationDoublingRange * accelerationDoublingRange : false;
 
     public UnityEvent<Ghosty> OnPossessionInterupt = new UnityEvent<Ghosty>();
     public BigGhostyStateMachine StateMachine {get; private set; }
