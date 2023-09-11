@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackResistance: 64
-  knockbackImmune: 0
+  knockbackImmune: 1
   FreezePosition: 0
   _OnDamage:
     m_PersistentCalls:
@@ -158,54 +158,30 @@ MonoBehaviour:
   waveSpeed: 5
   summonRange: 10
   summonBaseStats: {fileID: 11400000, guid: 8c888460f5c8f424bba1545651819dad, type: 2}
-  turnSpeedWhileAttacking: 32
+  turnSpeedWhileAttacking: 350
   turnSpeedWhileSummoning: 352
   summonCooldownSeconds: {x: 14.143646, y: 16.143646}
   attackCooldownSeconds: {x: 12.604052, y: 13.604052}
-  summonCooldownScalingByHealth:
+  hasteScalingByHealth:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.2000122
-      inSlope: 2.9766674
-      outSlope: 2.9766674
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.05934104
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.19999999
+      value: 3.0000002
+      inSlope: -0.03528265
+      outSlope: -0.03528265
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  attackCooldownScalingByHealth:
-    serializedVersion: 2
-    m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.2000122
-      inSlope: 2.9766674
-      outSlope: 2.9766674
+      time: 1
+      value: 1.0067724
+      inSlope: -0.07343971
+      outSlope: -0.07343971
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0.05934104
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
+      inWeight: 0.08876777
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

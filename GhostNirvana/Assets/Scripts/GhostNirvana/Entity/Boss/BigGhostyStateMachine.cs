@@ -29,13 +29,16 @@ public class BigGhostySeek : State<BigGhosty, BigGhosty.States> {
         if (stateMachine.CanEnter(States.Summon)) return States.Summon;
         if (stateMachine.CanEnter(States.LaunchAttack)) return States.LaunchAttack;
 
-        Vector3 desiredVelocity = agent.input.desiredMovement * agent.Status.BaseStats.MovementSpeed;
+        Vector3 desiredVelocity = agent.input.desiredMovement * 
+            agent.Status.BaseStats.MovementSpeed * agent.currentHaste;
+        float maxSpeed = agent.currentHaste * agent.Status.BaseStats.MovementSpeed;
+        float acceleration = agent.Status.BaseStats.Acceleration * agent.currentHaste;
 
         agent.Velocity = Mathx.AccelerateTowards(
             currentVelocity: agent.Velocity,
             desiredVelocity,
-            acceleration: agent.Status.BaseStats.Acceleration,
-            maxSpeed: agent.Status.BaseStats.MovementSpeed,
+            acceleration: acceleration,
+            maxSpeed: maxSpeed,
             Time.deltaTime
         );
 
@@ -76,12 +79,16 @@ public class BigGhostySummon : State<BigGhosty, BigGhosty.States> {
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
         if ((bool) stateMachine.Blackboard[KEY_summonAnimFinish])
             return BigGhosty.States.Seek;
+
+        float maxSpeed = agent.currentHaste * agent.Status.BaseStats.MovementSpeed;
+        float acceleration = agent.Status.BaseStats.Acceleration * agent.currentHaste;
+
         // slow down
         agent.Velocity = Mathx.AccelerateTowards(
             currentVelocity: agent.Velocity,
             desiredVelocity: Vector3.zero,
-            acceleration: agent.Status.BaseStats.Acceleration,
-            maxSpeed: agent.Status.BaseStats.MovementSpeed,
+            acceleration: acceleration,
+            maxSpeed: maxSpeed,
             Time.deltaTime
         );
         if (agent.input.desiredMovement.sqrMagnitude > 0)
@@ -131,12 +138,16 @@ public class BigGhostyWave : State<BigGhosty, BigGhosty.States> {
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
         if ((bool) stateMachine.Blackboard[KEY_waveAttackFinish])
             return BigGhosty.States.Seek;
+
+        float maxSpeed = agent.currentHaste * agent.Status.BaseStats.MovementSpeed;
+        float acceleration = agent.Status.BaseStats.Acceleration * agent.currentHaste;
+
         // slow down
         agent.Velocity = Mathx.AccelerateTowards(
             currentVelocity: agent.Velocity,
             desiredVelocity: Vector3.zero,
-            acceleration: agent.Status.BaseStats.Acceleration,
-            maxSpeed: agent.Status.BaseStats.MovementSpeed,
+            acceleration: acceleration,
+            maxSpeed: maxSpeed,
             Time.deltaTime
         );
 

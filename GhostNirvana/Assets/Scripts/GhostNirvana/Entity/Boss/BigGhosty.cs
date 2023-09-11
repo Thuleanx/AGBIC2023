@@ -34,24 +34,13 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
     [SerializeField, BoxGroup("Combat"), Range(0, 720)] float turnSpeedWhileSummoning = 100;
     [SerializeField, BoxGroup("Combat"), MinMaxSlider(0, 100)] Vector2 summonCooldownSeconds;
     [SerializeField, BoxGroup("Combat"), MinMaxSlider(0, 100)] Vector2 attackCooldownSeconds;
-    [SerializeField, BoxGroup("Combat")] AnimationCurve summonCooldownScalingByHealth;
-    [SerializeField, BoxGroup("Combat")] AnimationCurve attackCooldownScalingByHealth;
+    [SerializeField, BoxGroup("Combat")] AnimationCurve hasteScalingByHealth;
 
     float healthFraction => (float) Status.Health / Status.BaseStats.MaxHealth;
 
-    Vector2 currentSummonCooldown {
-        get {
-            float summonCooldownScaling = summonCooldownScalingByHealth.Evaluate(healthFraction);
-            return summonCooldownScaling * summonCooldownSeconds;
-        }
-    }
-
-    Vector2 currentAttackCooldown {
-        get {
-            float attackCooldownScaling = attackCooldownScalingByHealth.Evaluate(healthFraction);
-            return attackCooldownScaling * attackCooldownSeconds;
-        }
-    }
+    Vector2 currentSummonCooldown => summonCooldownSeconds / currentHaste;
+    Vector2 currentAttackCooldown => attackCooldownSeconds / currentHaste;
+    float currentHaste => hasteScalingByHealth.Evaluate(healthFraction);
 
     public UnityEvent<Ghosty> OnPossessionInterupt = new UnityEvent<Ghosty>();
     public BigGhostyStateMachine StateMachine {get; private set; }
@@ -93,6 +82,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
             canSummon = GetCanSummon();
             lastCanSummonUpdate = Time.time;
         }
+        Anim?.SetFloat("Haste", currentHaste);
     }
 
     [SerializeField] UnityEvent<BigGhosty> onSummonChanneled;
