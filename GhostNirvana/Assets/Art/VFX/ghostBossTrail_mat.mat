@@ -39,15 +39,16 @@ Material:
     - Vector1_43257789a71e44a490928ec34b6b3066: 2
     - _EdgeOffset: 0.5
     - _Mask: 1
-    - _NoiseScale: 0.1
+    - _NoiseScale: 0.61
+    - _PosterizeSteps: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 0.3
     - _Softness: 7
     m_Colors:
-    - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0.027450955, g: 0.24497534, b: 0.8627451, a: 1}
+    - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0.0018689969, g: 0.18004602, b: 0.3962264, a: 0.83137256}
     - Vector2_18dbb32e20f5447cad0bd48524f87547: {r: 2, g: 0, b: 0, a: 0}
-    - _WiggleSpeed: {r: 0.4, g: 0, b: 0, a: 0}
+    - _WiggleSpeed: {r: 0.3, g: 0, b: 0, a: 0}
     - _Wigglyness: {r: 0.3, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4970152978157976384
