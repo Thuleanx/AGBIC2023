@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8906942794863357995}
   - component: {fileID: 1542456405150813989}
-  - component: {fileID: 2059489528162190739}
   m_Layer: 0
   m_Name: pf_BossSpawnDirector
   m_TagString: Untagged
@@ -53,15 +52,3 @@ MonoBehaviour:
       weight: 1
     spawnFrequencyFixed: 150
     duration: 1e+11
---- !u!114 &2059489528162190739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906942794863357992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6409bf503b8cb3840a07c51ebede8963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
