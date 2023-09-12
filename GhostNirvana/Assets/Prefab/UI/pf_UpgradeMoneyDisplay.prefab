@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 2222084271739399714}
   - component: {fileID: 7669941175430547620}
   - component: {fileID: 304891119775591680}
+  - component: {fileID: 9038266782918670307}
   m_Layer: 0
   m_Name: Advice Description
   m_TagString: Untagged
@@ -493,6 +494,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &9038266782918670307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359811665617070901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cfc054f8ff3bf4da6e76deeffa05d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveSpread: 0.176
+  woobleScale: {x: 0, y: 2}
+  woobleFrequency: {x: 0.5, y: 0.75}
+  woobleTimeOffset: {x: 0, y: 2}
+  cutoff: 1
 --- !u!1 &8970613867469359794
 GameObject:
   m_ObjectHideFlags: 0
