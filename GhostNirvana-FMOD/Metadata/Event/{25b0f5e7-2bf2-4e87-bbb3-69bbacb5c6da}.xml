@@ -55,12 +55,12 @@
 			<destination>{0acf43ba-d1a7-49fe-a646-786b9602bebd}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{90a34b49-0f64-47cf-8f68-1b0e25e62c1d}</destination>
+			<destination>{548669bd-75f8-4028-b80c-958ec75b49ee}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{13b0dad1-9cfa-4ad8-9904-ece1fa8c945f}">
 		<property name="maxVoices">
-			<value>4</value>
+			<value>3</value>
 		</property>
 		<property name="priority">
 			<value>1</value>
@@ -102,6 +102,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6cb40db2-727e-47c1-a719-4e453aabdc64}">
+		<property name="volume">
+			<value>-1.5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{b51d7f71-b1a4-4fed-8b6b-b641db476fd0}</destination>
 		</relationship>

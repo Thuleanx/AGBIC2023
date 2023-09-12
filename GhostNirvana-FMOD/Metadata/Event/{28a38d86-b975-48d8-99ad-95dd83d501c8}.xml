@@ -55,12 +55,12 @@
 			<destination>{fcd4cc96-6342-4c6e-b057-2362d20cd14f}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{90a34b49-0f64-47cf-8f68-1b0e25e62c1d}</destination>
+			<destination>{548669bd-75f8-4028-b80c-958ec75b49ee}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{bb9b4bd8-0831-449c-b7fe-885b14e8f046}">
 		<property name="maxVoices">
-			<value>4</value>
+			<value>2</value>
 		</property>
 		<property name="triggerCooldown">
 			<value>100</value>

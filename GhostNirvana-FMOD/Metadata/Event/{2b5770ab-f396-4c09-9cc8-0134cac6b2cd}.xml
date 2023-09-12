@@ -54,12 +54,12 @@
 			<destination>{772538a7-35db-4dd7-b5ad-b5d3e5a8c540}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{90a34b49-0f64-47cf-8f68-1b0e25e62c1d}</destination>
+			<destination>{548669bd-75f8-4028-b80c-958ec75b49ee}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{c1b8d128-400c-4b40-aab8-35a74a524bf7}">
 		<property name="maxVoices">
-			<value>5</value>
+			<value>4</value>
 		</property>
 		<property name="voiceStealing">
 			<value>1</value>
@@ -93,7 +93,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{767a1ec7-6fa4-4c53-8a97-dfbefcc60b07}">
 		<property name="volume">
-			<value>3.5</value>
+			<value>2.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{62a587ee-b221-4f0f-991e-8c62c64d9d74}</destination>
