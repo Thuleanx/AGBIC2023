@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{3a93f77d-9119-4bc0-b35e-a2265a1ba99e}">
+		<property name="name">
+			<value>BigGhost</value>
+		</property>
+		<relationship name="folder">
+			<destination>{4a9f30aa-b304-4a3d-b89d-a4bac602d66b}</destination>
+		</relationship>
+	</object>
+</objects>

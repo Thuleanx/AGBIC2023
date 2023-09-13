@@ -3663,6 +3663,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5498854875194000368, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8.999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538231567540416036, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8.999992
+      objectReference: {fileID: 0}
     - target: {fileID: 6728344083405296946, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
       propertyPath: m_Follow
       value: 
@@ -3671,10 +3679,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1622784183}
-    - target: {fileID: 6728344083405296946, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
-      propertyPath: m_Transitions.m_BlendHint
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6728344083405296957, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
       propertyPath: m_RootOrder
       value: 0

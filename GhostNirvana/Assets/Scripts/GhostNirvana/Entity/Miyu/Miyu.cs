@@ -101,13 +101,13 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
 		base.OnEnable();
         IHurtResponder.ConnectChildrenHurtboxes(this);
 
-        allEnemies.OnRemove += OnKill;
+        allEnemies.OnRemove += OnEnemyRemoveFromField;
     }
 
     protected void OnDisable() {
         IHurtResponder.DisconnectChildrenHurtboxes(this);
 
-        allEnemies.OnRemove -= OnKill;
+        allEnemies.OnRemove -= OnEnemyRemoveFromField;
     }
 
     protected void Update() {
@@ -207,7 +207,10 @@ public partial class Miyu : PossessableAgent<Miyu.Input>, IHurtable, IHurtRespon
         OnHitEvent?.Invoke(hit);
     }
 
-    protected void OnKill(MovableAgent enemy) => OnKillEnemy?.Invoke(enemy);
+    protected void OnEnemyRemoveFromField(MovableAgent enemy) {
+        if (enemy.GetComponent<Status>()?.IsDead ?? false)
+            OnKillEnemy?.Invoke(enemy);
+    }
 }
 
 }
