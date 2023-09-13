@@ -260,7 +260,7 @@ MonoBehaviour:
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
+    m_BlendHint: 1
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
@@ -3671,6 +3671,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1622784183}
+    - target: {fileID: 6728344083405296946, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
+      propertyPath: m_Transitions.m_BlendHint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6728344083405296957, guid: ca6c22f5de711934fad3e1f78a4e9909, type: 3}
       propertyPath: m_RootOrder
       value: 0
