@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: flat_blue_mat
-    second: {fileID: 2100000, guid: 8d70cf7ff938ce846aab97ca6d751076, type: 2}
+    second: {fileID: 2100000, guid: 8d4ec1d448d7d3b4e8a30a5babecd9fb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
