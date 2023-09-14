@@ -52,11 +52,11 @@ Material:
     - Vector1_43257789a71e44a490928ec34b6b3066: 2
     - _Flash: 0
     - _Flashing: 0
-    - _Mask: 1
+    - _Mask: 0.907
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0, g: 0.11575675, b: 1.4980392, a: 0}
+    - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0, g: 0.270282, b: 3.4415908, a: 0}
     - Vector2_18dbb32e20f5447cad0bd48524f87547: {r: 0.7, g: 0.7, b: 0, a: 0}
     - _FlashColor: {r: 4, g: 4, b: 4, a: 0}
   m_BuildTextureStacks: []
