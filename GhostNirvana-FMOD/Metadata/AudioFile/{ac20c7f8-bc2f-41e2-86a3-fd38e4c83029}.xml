@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{ac20c7f8-bc2f-41e2-86a3-fd38e4c83029}">
 		<property name="assetPath">
-			<value>monster_roar.wav</value>
+			<value>SFX/monster_roar.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

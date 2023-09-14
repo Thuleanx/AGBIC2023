@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1439377284686011144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3602395957115751072}
+  - component: {fileID: 4217556797571983436}
+  m_Layer: 28
+  m_Name: sfx_bossAttackFinish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3602395957115751072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439377284686011144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2102448695563409134}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4217556797571983436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439377284686011144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1552234155
+      Data2: 1184816019
+      Data3: 638706063
+      Data4: -898760457
+    Path: event:/SFX/BigGhost/WaveAttackFire
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2102448695563409133
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +103,8 @@ Transform:
   - {fileID: 2916807563372763749}
   - {fileID: 3874699548110091295}
   - {fileID: 2700968977967549803}
+  - {fileID: 4778551471837291899}
+  - {fileID: 3602395957115751072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -411,6 +475,68 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!1 &7158439751680973070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4778551471837291899}
+  - component: {fileID: 4024991937756866955}
+  m_Layer: 28
+  m_Name: sfx_bossAttackSignal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4778551471837291899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158439751680973070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2102448695563409134}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4024991937756866955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158439751680973070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1369643959
+      Data2: 1113691718
+      Data3: -18718051
+      Data4: 1164786362
+    Path: event:/SFX/BigGhost/WaveAttackAnticipate
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &7498545043726311139
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,9 +675,41 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.12113613
       objectReference: {fileID: 0}
+    - target: {fileID: -238820063497118298, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 42050390075908025, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 31.767826
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
       propertyPath: m_Name
       value: ghostyBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292349122348236636, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -8.552325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292349122348236636, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -48.535976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292349122348236636, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 18.800673
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087744821956118167, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -19.261662
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087744821956118167, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 39.962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087744821956118167, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -11.475134
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0691564d3d9d5409ac9432efd2cb8c, type: 3}
@@ -645,6 +803,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4217556797571983436}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2769612595526544776}
@@ -690,6 +860,20 @@ MonoBehaviour:
       - m_Target: {fileID: 2769612595526544776}
         m_TargetAssemblyTypeName: GhostNirvana.BigGhosty, AD_GhostNirvana.Entity.Boss
         m_MethodName: AnimationOnly_SummonAnimationComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4024991937756866955}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

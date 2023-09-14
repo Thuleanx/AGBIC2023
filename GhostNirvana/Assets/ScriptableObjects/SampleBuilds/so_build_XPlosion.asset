@@ -32,5 +32,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ce057b4b1e4eef448d6735c8cb31070, type: 2}
   - {fileID: 11400000, guid: 4ef0635f9410543409e2fa6e81bdd918, type: 2}
   - {fileID: 11400000, guid: 44d39ac41c7973e42ba41e900b292814, type: 2}
-  - {fileID: 11400000, guid: 6e25fdb7de1151e4795e43aaa756eaf5, type: 2}
   onLevelUpBuff: {fileID: 11400000, guid: a5ab72bbf4813294fb045baecd912c04, type: 2}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{14d45152-8674-4d2c-8a2b-6e6ed7df3baa}">
+		<property name="assetPath">
+			<value>SFX/qubodup-WisdomMagic/qubodup-WisdomMagic5.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5712083333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9e5d85a6-7727-4ff2-999f-0273a05204ea}</destination>
+		</relationship>
+	</object>
+</objects>

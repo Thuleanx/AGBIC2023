@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{1b8a64d2-a404-4d19-84c8-ea20791fa586}">
 		<property name="assetPath">
-			<value>431979__horroraudio__kid-ghost-sigh.wav</value>
+			<value>SFX/431979__horroraudio__kid-ghost-sigh.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

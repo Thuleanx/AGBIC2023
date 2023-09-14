@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{f1a251f4-b8b9-4761-bab1-09d540a833fa}">
 		<property name="assetPath">
-			<value>209578__zott820__cash-register-purchase.wav</value>
+			<value>SFX/209578__zott820__cash-register-purchase.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

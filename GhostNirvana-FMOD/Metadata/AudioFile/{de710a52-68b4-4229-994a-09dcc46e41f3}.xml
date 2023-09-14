@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{de710a52-68b4-4229-994a-09dcc46e41f3}">
 		<property name="assetPath">
-			<value>542568__sidequesting__cash-register.wav</value>
+			<value>SFX/542568__sidequesting__cash-register.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

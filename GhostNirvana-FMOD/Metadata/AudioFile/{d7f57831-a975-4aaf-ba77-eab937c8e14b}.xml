@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{d7f57831-a975-4aaf-ba77-eab937c8e14b}">
 		<property name="assetPath">
-			<value>incarnatewav.wav</value>
+			<value>SFX/incarnatewav.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
