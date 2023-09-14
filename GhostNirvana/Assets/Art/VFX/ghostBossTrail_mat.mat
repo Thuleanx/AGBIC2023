@@ -9,14 +9,18 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ghostBossTrail_mat
   m_Shader: {fileID: -6465566751694194690, guid: 43481dce6c67d4513a22d37166ea7710, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _RECEIVE_SHADOWS_OFF
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -37,6 +41,11 @@ Material:
     - Vector1_2ec383a24afd49f78ab6d683d95d03a4: 0
     - Vector1_31badfa2f2494f13aff08b4daa9763c2: 0.2
     - Vector1_43257789a71e44a490928ec34b6b3066: 2
+    - _AlphaClip: 1
+    - _Blend: 0
+    - _CastShadows: 0
+    - _Cull: 2
+    - _DstBlend: 0
     - _EdgeOffset: 0.5
     - _Mask: 1
     - _NoiseScale: 0.61
@@ -44,7 +53,14 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 0.3
+    - _ReceiveShadows: 0
     - _Softness: 7
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0.0018689969, g: 0.18004602, b: 0.3962264, a: 0.83137256}
     - Vector2_18dbb32e20f5447cad0bd48524f87547: {r: 2, g: 0, b: 0, a: 0}
