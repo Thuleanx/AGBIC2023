@@ -9,7 +9,7 @@ public class PoolableEntity : Entity {
 
         if (bubble) {
             bubble.RequestDisposal();
-        } else Destroy(gameObject);
+        } else gameObject.SetActive(false);
 
         yield return null;
     }
