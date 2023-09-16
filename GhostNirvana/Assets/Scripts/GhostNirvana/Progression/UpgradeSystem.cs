@@ -32,7 +32,10 @@ public class UpgradeSystem : MonoBehaviour {
     ApplianceCollector collector;
     int level;
 
+    public static UpgradeSystem Instance;
+
     void Awake() {
+        Instance = this;
         collector = GetComponentInChildren<ApplianceCollector>();
 
         upgradeOptions.AddRange(GetComponentsInChildren<UpgradeOption>());

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
@@ -13,8 +14,8 @@ namespace GhostNirvana {
         [SerializeField, ShowIf("useScriptableDuration")] LinearFloat scriptableDuration;
 
         [SerializeField] bool stackable;
-        bool buffCurrentlyActive;
-        Coroutine currentCoroutine;
+        [NonSerialized] bool buffCurrentlyActive;
+        [NonSerialized] float timeExpire;
 
         [HideInInspector] public UnityEvent OnApply;
         [HideInInspector] public UnityEvent OnExpire;
@@ -23,29 +24,30 @@ namespace GhostNirvana {
 
         public void ApplyOnHost(MonoBehaviour host) {
             if (!buffCurrentlyActive) OnApply?.Invoke();
-            if (currentCoroutine != null && !stackable && buffCurrentlyActive) {
-                Revert();
-                OnExpire?.Invoke();
-                host.StopCoroutine(currentCoroutine);
-                buffCurrentlyActive = false;
-            }
-            currentCoroutine = host.StartCoroutine(_BuffDuration());
+            ExtendDuration();
+            if (stackable || !buffCurrentlyActive)
+                host.StartCoroutine(_BuffDuration());
+        }
+
+        void ExtendDuration() {
+            float durationUse = useScriptableDuration ?
+                (scriptableDuration?.Value ?? duration) : duration;
+            timeExpire = Time.time + durationUse;
         }
 
         IEnumerator _BuffDuration() {
             Apply();
             buffCurrentlyActive = true;
-            float durationUse = useScriptableDuration ?
-                (scriptableDuration?.Value ?? duration) : duration;
-            yield return new WaitForSeconds(durationUse);
-            OnExpire?.Invoke();
-            Revert();
+            while (Time.time < timeExpire)
+                yield return null;
             buffCurrentlyActive = false;
+            Revert();
+            OnExpire?.Invoke();
         }
 
         public virtual void OnAfterDeserialize() {
-            currentCoroutine = null;
             buffCurrentlyActive = false;
+            timeExpire = 0;
             OnApply?.RemoveAllListeners();
             OnExpire?.RemoveAllListeners();
         }

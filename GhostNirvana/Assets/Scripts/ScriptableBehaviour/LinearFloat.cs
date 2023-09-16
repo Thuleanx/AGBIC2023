@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using System;
 
 namespace ScriptableBehaviour {
 
@@ -7,9 +8,9 @@ namespace ScriptableBehaviour {
                  menuName = "~/Stats/LinearFloat", order = 1)]
 public class LinearFloat : ScriptableFloat, ISerializationCallbackReceiver, ILinearlyScalable<float> {
     public float BaseValue = 0;
-    [ReadOnly]
+    [NonSerialized]
     public float AdditiveScale;
-    [ReadOnly]
+    [NonSerialized]
     public float MultiplicativeScale;
 
     float ILinearlyScalable<float>.AdditiveScale { get => AdditiveScale; set => AdditiveScale = value; }

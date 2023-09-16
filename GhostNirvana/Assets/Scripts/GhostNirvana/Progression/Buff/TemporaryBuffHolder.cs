@@ -1,8 +1,7 @@
 using UnityEngine;
-using System.Collections;
+using Base;
 using System.Collections.Generic;
 using ScriptableBehaviour;
-using NaughtyAttributes;
 
 namespace GhostNirvana {
     public class TemporaryBuffHolder : MonoBehaviour {
@@ -21,8 +20,8 @@ namespace GhostNirvana {
 
         public void ApplyAllBuffs() {
             foreach (var (numberOfTimesToApply, buff) in allBuffs) {
-                int count = numberOfTimesToApply.Value;
-                while (count --> 0) buff.ApplyOnHost(this);
+                int count = numberOfTimesToApply?.Value ?? 1;
+                while (count --> 0) buff.ApplyOnHost(Upgrade.UpgradeSystem.Instance);
             }
         }
     }
