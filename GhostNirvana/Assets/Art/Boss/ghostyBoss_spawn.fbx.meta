@@ -57,7 +57,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.1917637
+      - time: 0.15150946
         functionName: AnimationOnly_Trigger
         data: 
         objectReferenceParameter: {instanceID: 0}

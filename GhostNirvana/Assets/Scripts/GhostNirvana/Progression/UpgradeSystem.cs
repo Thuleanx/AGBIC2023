@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using NaughtyAttributes;
 using ScriptableBehaviour;
 using Utils;
-using System;
+using System.Collections;
 
 namespace GhostNirvana.Upgrade {
 
@@ -20,11 +20,13 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField] UpgradeOptionDetails upgradeDetails;
     [SerializeField] UpgradeMoneyDisplay upgradeMoneyDetails;
     [SerializeField] int wage;
+    [SerializeField] float delayAfterUpgradeSelected;
     bool levelUpSequenceRunning;
     List<UpgradeOption> upgradeOptions = new List<UpgradeOption>();
 
     [SerializeField] BuffList buffOptions;
     [SerializeField] UnityEvent OnLevelUp;
+    [SerializeField] UnityEvent OnOptionSelected;
 
     Dictionary<Buff, int> buffsTaken = new Dictionary<Buff, int>();
     public List<Buff> BuffsTakenInSequence = new List<Buff>();
@@ -143,15 +145,23 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     public void EndLevelUpSequence(Buff chosenBuff) {
+        StartCoroutine(_EndLevelUpSequence(chosenBuff));
+    }
+
+    IEnumerator _EndLevelUpSequence(Buff chosenBuff) {
         buffsTaken.TryGetValue(chosenBuff, out int numberOfTimesBuffTaken);
         buffsTaken[chosenBuff] = numberOfTimesBuffTaken + 1;
+        BuffsTakenInSequence.Add(chosenBuff);
 
         levelUpBuff?.Apply();
         bank.Withraw(chosenBuff.Cost);
+
+        OnOptionSelected?.Invoke();
+        yield return new WaitForSecondsRealtime(delayAfterUpgradeSelected);
+
         levelUpSequenceRunning = false;
         levelUpOptionPanel.gameObject.SetActive(false);
         Time.timeScale = 1;
-        BuffsTakenInSequence.Add(chosenBuff);
     }
 
     public string GetRank() {
