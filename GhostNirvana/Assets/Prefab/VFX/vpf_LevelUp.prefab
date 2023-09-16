@@ -285,8 +285,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.1
+      scalar: 0.2
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9015,26 +9015,35 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 4.1118426
-          outSlope: 4.1118426
+          value: 0.085876465
+          inSlope: 3.7308455
+          outSlope: 3.7308455
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.22289518
+          outWeight: 0.18424058
         - serializedVersion: 3
-          time: 0.27277392
-          value: 0.37509385
-          inSlope: -0.52657837
-          outSlope: -0.52657837
+          time: 0.22761263
+          value: 0.37202635
+          inSlope: -0.07028883
+          outSlope: -0.07028883
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.22775035
+          outWeight: 1
+        - serializedVersion: 3
+          time: 0.45389986
+          value: 0.28056926
+          inSlope: -0.51783574
+          outSlope: -0.51376885
+          tangentMode: 65
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -0.5157871
+          inSlope: -0.51376885
           outSlope: -2.4991796
           tangentMode: 69
           weightedMode: 0
@@ -10066,7 +10075,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 20624
-        ctime1: 33731
+        ctime1: 36815
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -10116,8 +10125,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.5
+      scalar: 0.7
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10500,7 +10509,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1.5, y: 1.5, z: 0.5}
+    m_Scale: {x: 1.25, y: 1.5, z: 0.5}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0

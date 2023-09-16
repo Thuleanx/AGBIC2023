@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: flash_mat
+  m_Name: flashAppliance_mat
   m_Shader: {fileID: -6465566751694194690, guid: d740c32d0ad1fbe4f8bcb42f01420a3c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -50,5 +50,5 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Emission: {r: 0, g: 0.2174247, b: 2.52015, a: 0}
+    - _Emission: {r: 0, g: 0.69057775, b: 1.5529412, a: 1}
   m_BuildTextureStacks: []

@@ -56,7 +56,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0, g: 0.6288541, b: 1.513388, a: 0}
+    - Color_796fe05f9a4946b19ad3ef1d62d86ca7: {r: 0, g: 0.45301518, b: 3.0267768, a: 0}
     - Vector2_18dbb32e20f5447cad0bd48524f87547: {r: 0.7, g: 0.7, b: 0, a: 0}
     - _FlashColor: {r: 4, g: 4, b: 4, a: 0}
   m_BuildTextureStacks: []

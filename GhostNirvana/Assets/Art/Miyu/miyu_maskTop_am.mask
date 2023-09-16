@@ -54,11 +54,11 @@ AvatarMask:
   - m_Path: miyu_root/pelvis/spine1/spine2/backpack
     m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_L/glowstick2_L
     m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_R/glowstick2_R
     m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1/spine2/clavicle_L
@@ -96,10 +96,10 @@ AvatarMask:
   - m_Path: miyu_root/pelvis/spine1/spine2/neck/head/head_top
     m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_L/ear2_L
     m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_R/ear2_R
     m_Weight: 1
