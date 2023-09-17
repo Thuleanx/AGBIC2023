@@ -65,7 +65,7 @@ Material:
     - _QueueOffset: 0
     - _TrailStrength: 3
     m_Colors:
-    - _Color1: {r: 0, g: 5.0336547, b: 11.325851, a: 0}
+    - _Color1: {r: 0, g: 4.2694316, b: 22.651705, a: 0}
     - _Color2: {r: 0.33750835, g: 0, b: 2.831463, a: 0}
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _TrailSpeed: {r: -0.5, g: 0, b: 0, a: 0}
