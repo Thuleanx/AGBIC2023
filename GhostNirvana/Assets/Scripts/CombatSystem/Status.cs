@@ -41,6 +41,13 @@ public class Status : MonoBehaviour {
         if (Health <= 0) OnDeath?.Invoke(this);
     }
 
+    [Button]
+    public void Kill() {
+        if (IsDead || !this) return;
+        Health = 0;
+        OnDeath?.Invoke(this);
+    }
+
     public void HealToFull() => Health = BaseStatsHolder.Stats.MaxHealth;
     public void SetHealth(int health) => Health = Mathf.Clamp(health, 0, BaseStats.MaxHealth);
 }

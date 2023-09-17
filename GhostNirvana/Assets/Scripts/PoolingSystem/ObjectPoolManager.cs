@@ -64,7 +64,7 @@ public partial class ObjectPoolManager : MonoBehaviour {
 public partial class ObjectPoolManager : MonoBehaviour {
     public static ObjectPoolManager Instance;
 
-    const int BaseExpansionRate = 5;
+    const int BaseExpansionRate = 1;
     Hashtable pools;
     Dictionary<Scene, HashSet<Bubble>> sceneToBubbleMapping;
 
@@ -107,7 +107,7 @@ public partial class ObjectPoolManager : MonoBehaviour {
             pool = pools[prefabID] as Pool<T>;
         }
 
-        if (pool.content.Count == 0) 
+        if (pool.content.Count == 0)
             pool.Expand(Mathf.Max(pool.NumBubbles, BaseExpansionRate));
 
         T instantiatedObject = pool.content.Dequeue();

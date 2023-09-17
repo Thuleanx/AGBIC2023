@@ -158,8 +158,14 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         Appliance appliance = (status.Owner as Appliance);
         Ghosty ghost = appliance.StateMachine.Blackboard[BK_GhostPossessing] as Ghosty;
 
-        Hit lastHit = (Hit) appliance.StateMachine.Blackboard[BK_LastHit];
-        PushGhostOutOfAppliance(ghost, appliance, lastHit);
+        if (appliance.StateMachine.Blackboard.ContainsKey(BK_LastHit)) {
+            Hit lastHit = (Hit) appliance.StateMachine.Blackboard[BK_LastHit];
+            PushGhostOutOfAppliance(ghost, appliance, lastHit.Normal);
+        } else {
+            Vector3 pushDirection = Random.insideUnitSphere;
+            pushDirection.y = 0;
+            PushGhostOutOfAppliance(ghost, appliance, pushDirection.normalized);
+        }
 
         appliance.possessionCooldown = appliance.cooldownAfterPossession;
         appliance.StateMachine.Blackboard.Remove(BK_GhostPossessing);
@@ -170,11 +176,11 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         appliance.StateMachine.SetState(States.Idle);
     }
 
-    void PushGhostOutOfAppliance(Ghosty ghost, Appliance appliance, Hit hit) {
+    void PushGhostOutOfAppliance(Ghosty ghost, Appliance appliance, Vector3 normalDirectionOfHit) {
         ghost.transform.position = appliance.transform.position;
         ghost.gameObject.SetActive(true);
 
-        Vector3 knockbackDir = hit.Normal;
+        Vector3 knockbackDir = normalDirectionOfHit;
         if (Miyu.Instance) {
             Vector3 directionToPlayer = Miyu.Instance.transform.position - appliance.transform.position;
             if (Vector3.Dot(knockbackDir, directionToPlayer) > 0)
@@ -182,7 +188,7 @@ public class AppliancePossessed : State<Appliance, Appliance.States> {
         }
 
         (ghost as IKnockbackable).ApplyKnockback(
-            appliance.knockbackOnEjection, dir: hit.Normal);
+            appliance.knockbackOnEjection, dir: knockbackDir);
 
         int ghostHealthBeforePossession = (int) appliance.StateMachine.Blackboard[BK_GhostHP];
         ghost.Status.SetHealth(ghostHealthBeforePossession);

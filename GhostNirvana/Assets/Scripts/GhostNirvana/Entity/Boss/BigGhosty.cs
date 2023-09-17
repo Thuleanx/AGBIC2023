@@ -46,7 +46,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
     float currentMaxSpeed => currentHaste * Status.BaseStats.MovementSpeed;
     float currentAcceleration => currentHaste * Status.BaseStats.Acceleration * (isCloseToPlayer ? 2 : 1);
     bool isCloseToPlayer => Miyu.Instance ?
-        (Miyu.Instance.transform.position - transform.position).sqrMagnitude 
+        (Miyu.Instance.transform.position - transform.position).sqrMagnitude
         <= accelerationDoublingRange * accelerationDoublingRange : false;
 
     public UnityEvent<Ghosty> OnPossessionInterupt = new UnityEvent<Ghosty>();

@@ -3051,6 +3051,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3485354458633423780, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -362.89996
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485354458633423780, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 223.70001
+      objectReference: {fileID: 0}
     - target: {fileID: 4945835031860214305, guid: fe0ffbe19db233f4f98206360bc671ba, type: 3}
       propertyPath: upgradeSystem
       value: 
