@@ -9948,6 +9948,7 @@ MonoBehaviour:
   hitbox: {fileID: 0}
   onHitEffect: {fileID: 6567878376966889744, guid: 216521b31890c6547934acdba459f42a, type: 3}
   allEnemiesObject: {fileID: 0}
+  shouldPlayEffectOnHit: 1
 --- !u!114 &1097658304994715504
 MonoBehaviour:
   m_ObjectHideFlags: 0

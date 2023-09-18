@@ -24,6 +24,7 @@ public class Projectile : PoolableEntity, IHitResponder {
     [SerializeField, ReadOnly] Hitbox hitbox;
     [SerializeField, ShowAssetPreview] GameObject onHitEffect;
     [SerializeField] GameObjectRuntimeSet allEnemiesObject;
+	[SerializeField] bool shouldPlayEffectOnHit;
     Vector3 velocity;
     float speed;
     bool faceDirection;
@@ -67,15 +68,23 @@ public class Projectile : PoolableEntity, IHitResponder {
         (owner as IHitResponder)?.RespondToHit(hit);
 
         // if pierce count hit
-		if (this.gameObject.activeInHierarchy) {
-            if (ricochet-->0) {
-                Vector3? closestEnemyDir = FindClosestEnemyDirection(hit);
-
-                if (closestEnemyDir.HasValue)   Redirect(closestEnemyDir.Value.normalized);
-                else                            this.Dispose();
-            } else if (pierce--<=0) this.Dispose();
-        }
+		if (this.gameObject.activeInHierarchy)
+			HandleHitboxHit(hit);
     }
+
+	void HandleHitboxHit(Hit hit) {
+		if (ricochet > 0) {
+			Vector3? closestEnemyDir = FindClosestEnemyDirection(hit);
+			if (closestEnemyDir.HasValue) {
+				SpawnOnHitEffect(hit.Position);
+				Redirect(closestEnemyDir.Value.normalized);
+				ricochet--;
+				return;
+			}
+		}
+		if (pierce--<=0) this.Dispose();
+		if (shouldPlayEffectOnHit) SpawnOnHitEffect(hit.Position);
+	}
 
     Vector3? FindClosestEnemyDirection(Hit hit) {
         // redirect to closest enemy
@@ -103,17 +112,15 @@ public class Projectile : PoolableEntity, IHitResponder {
             }
         }
 
-
         return closestEnemyDir;
     }
 
     protected override IEnumerator IDispose() {
-        SpawnOnHitEffect();
+        SpawnOnHitEffect(null);
         return base.IDispose();
     }
 
     void Redirect(Vector3 direction) {
-        SpawnOnHitEffect();
         rigidbody.velocity = direction * speed;
         velocity = direction * speed;
         if (faceDirection) RotateToFaceVelocity();
@@ -142,15 +149,16 @@ public class Projectile : PoolableEntity, IHitResponder {
                 Vector3 reflect = currentVelocity - 2 * Vector3.Dot(currentVelocity, normal) * normal;
                 reflect.Normalize();
 
+				SpawnOnHitEffect(null);
                 Redirect(reflect);
             }
         }
     }
 
-    void SpawnOnHitEffect() {
+    void SpawnOnHitEffect(Vector3? pos) {
         if (onHitEffect)
             ObjectPoolManager.Instance?.Borrow(App.GetActiveScene(),
-                onHitEffect.transform, transform.position);
+                onHitEffect.transform, pos ?? transform.position);
     }
 }
 
