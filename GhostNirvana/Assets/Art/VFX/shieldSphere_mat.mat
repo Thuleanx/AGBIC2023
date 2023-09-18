@@ -34,8 +34,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EdgePower: 8.84
-    - _EdgeStrength: 15.08
+    - _EdgePower: 5
+    - _EdgeStrength: 10
     - _Fade: 4
     - _FresnelPower: 3
     - _MaskPower: 1
@@ -46,9 +46,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.49752536, g: 2.0681448, b: 0.68039155, a: 1}
-    - _EdgeColor: {r: 0.9380153, g: 1, b: 0.7783019, a: 0}
-    - _FresnelColor: {r: 1.053429, g: 1.4980392, b: 0.5647059, a: 0}
+    - _Color: {r: 2.0793407, g: 0.14876942, b: 2.3679132, a: 1}
+    - _EdgeColor: {r: 0.1989529, g: 0.27389362, b: 2, a: 0}
+    - _FresnelColor: {r: 1.9757547, g: 0.2896869, b: 2.670157, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4635573663713351323
 MonoBehaviour:

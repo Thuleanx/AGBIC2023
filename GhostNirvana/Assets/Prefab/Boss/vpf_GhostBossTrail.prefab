@@ -4031,7 +4031,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.34961203, b: 0.8396226, a: 1}
+      maxColor: {r: 0.042452812, g: 0.25056133, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5866,39 +5866,39 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.6839378
-          inSlope: 3.271849
-          outSlope: 3.271849
+          value: 0.7698273
+          inSlope: 0.75400496
+          outSlope: 0.75400496
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.4931826
+          outWeight: 1
         - serializedVersion: 3
-          time: 0.1188074
-          value: 0.87775147
-          inSlope: 0.547485
-          outSlope: 0.547485
+          time: 0.1875299
+          value: 0.86854917
+          inSlope: 0.22525492
+          outSlope: 0.22525492
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.34014255
+          outWeight: 0.33305395
         - serializedVersion: 3
-          time: 0.8030942
-          value: 0.9012716
-          inSlope: -0.35920155
-          outSlope: -0.35920155
+          time: 0.6775135
+          value: 0.769367
+          inSlope: -0.9000795
+          outSlope: -0.9000795
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.3173476
-          outWeight: 0.33333334
+          inWeight: 0.1761374
+          outWeight: 0.33401176
         - serializedVersion: 3
-          time: 0.98046875
-          value: 0.5958557
-          inSlope: -2.1885877
-          outSlope: -2.1885877
+          time: 1
+          value: 0
+          inSlope: -0.63557255
+          outSlope: -0.63557255
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.44045284
+          inWeight: 0.40414673
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
