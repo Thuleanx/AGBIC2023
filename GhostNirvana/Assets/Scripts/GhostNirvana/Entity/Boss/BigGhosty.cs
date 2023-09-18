@@ -72,6 +72,10 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
         Status.OnDeath.AddListener(OnDeath);
         allEnemyStatus.Add(Status);
         Status.HealToFull();
+
+		// delay first attacks
+		attackCooldown = 7;
+		summonCooldown = 10;
     }
 
     protected override void OnDisable() {
