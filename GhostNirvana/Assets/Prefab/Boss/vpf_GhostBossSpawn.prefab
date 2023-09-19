@@ -5071,13 +5071,13 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1113820109
-      Data2: 1078131214
-      Data3: -835409783
-      Data4: -484326163
-    Path: event:/SFX/Ghost/Death
+      Data1: 1686628015
+      Data2: 1178271516
+      Data3: 1678096780
+      Data4: -138051133
+    Path: event:/SFX/BigGhost/Spawn
   Event: 
-  PlayEvent: 11
+  PlayEvent: 0
   StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0

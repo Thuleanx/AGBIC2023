@@ -37,7 +37,7 @@ ModelImporter:
       takeName: ghostyBoss_spawn
       internalID: 6731302527781447011
       firstFrame: 1
-      lastFrame: 25
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -57,7 +57,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.15150946
+      - time: 0.5842723
         functionName: AnimationOnly_Trigger
         data: 
         objectReferenceParameter: {instanceID: 0}

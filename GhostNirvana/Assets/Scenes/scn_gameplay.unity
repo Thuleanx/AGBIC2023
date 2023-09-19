@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1622784183}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2
+    OrthographicSize: 6
     NearClipPlane: 1
     FarClipPlane: 100
     Dutch: 0
@@ -2051,6 +2051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071913148}
   - component: {fileID: 2071913149}
+  - component: {fileID: 2071913150}
   m_Layer: 0
   m_Name: BossSpawner
   m_TagString: Untagged
@@ -2086,6 +2087,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 2102448695563409133, guid: 4fbbaad4770b3464e980f137d9b0ed99, type: 3}
+  inheritRotation: 0
+--- !u!114 &2071913150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071913147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0437e389a1c116e4fb9a8cd1cd5da8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 4080660919475306535, guid: 60905102e6f4bd0478ef660644e48cde, type: 3}
   inheritRotation: 0
 --- !u!1001 &351630899702160124
 PrefabInstance:
@@ -2968,10 +2983,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1042316303}
     m_Modifications:
-    - target: {fileID: 1186450852813523517, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2120339522181263295, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
       propertyPath: m_IsActive
       value: 1
