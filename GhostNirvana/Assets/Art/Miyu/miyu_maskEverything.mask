@@ -6,7 +6,7 @@ AvatarMask:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: miyu_maskTop_am
+  m_Name: miyu_maskEverything
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   m_Elements:
   - m_Path: 
@@ -24,29 +24,29 @@ AvatarMask:
   - m_Path: miyu_geo/hat
     m_Weight: 0
   - m_Path: miyu_root
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_L/knee_L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_L/knee_L/ankle_L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_L/knee_L/ankle_L/ball_L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_L/knee_L/ankle_L/ball_L/toe_L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_R/knee_R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_R/knee_R/ankle_R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_R/knee_R/ankle_R/ball_R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/hip_R/knee_R/ankle_R/ball_R/toe_R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1
     m_Weight: 1
   - m_Path: miyu_root/pelvis/spine1/spine2

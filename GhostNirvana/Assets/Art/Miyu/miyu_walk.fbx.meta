@@ -57,9 +57,103 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: miyu_geo
+        weight: 0
+      - path: miyu_geo/backpack
+        weight: 0
+      - path: miyu_geo/body
+        weight: 0
+      - path: miyu_geo/glowstick_L
+        weight: 0
+      - path: miyu_geo/glowstick_R
+        weight: 0
+      - path: miyu_geo/hat
+        weight: 0
+      - path: miyu_root
+        weight: 1
+      - path: miyu_root/pelvis
+        weight: 1
+      - path: miyu_root/pelvis/hip_L
+        weight: 1
+      - path: miyu_root/pelvis/hip_L/knee_L
+        weight: 1
+      - path: miyu_root/pelvis/hip_L/knee_L/ankle_L
+        weight: 1
+      - path: miyu_root/pelvis/hip_L/knee_L/ankle_L/ball_L
+        weight: 1
+      - path: miyu_root/pelvis/hip_L/knee_L/ankle_L/ball_L/toe_L
+        weight: 1
+      - path: miyu_root/pelvis/hip_R
+        weight: 1
+      - path: miyu_root/pelvis/hip_R/knee_R
+        weight: 1
+      - path: miyu_root/pelvis/hip_R/knee_R/ankle_R
+        weight: 1
+      - path: miyu_root/pelvis/hip_R/knee_R/ankle_R/ball_R
+        weight: 1
+      - path: miyu_root/pelvis/hip_R/knee_R/ankle_R/ball_R/toe_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/backpack
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_L
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_L/glowstick2_L
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_R
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/backpack/glowstick1_R/glowstick2_R
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L/shoulder_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L/shoulder_L/elbow_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L/shoulder_L/elbow_L/wrist_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L/shoulder_L/elbow_L/wrist_L/hand1_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L/shoulder_L/elbow_L/wrist_L/hand1_L/hand2_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_L/shoulder_L/elbow_L/wrist_L/thumb_L
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R/shoulder_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R/shoulder_R/elbow_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R/shoulder_R/elbow_R/wrist_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R/shoulder_R/elbow_R/wrist_R/hand1_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R/shoulder_R/elbow_R/wrist_R/hand1_R/hand2_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/clavicle_R/shoulder_R/elbow_R/wrist_R/thumb_R
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/neck
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/neck/head
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/neck/head/head_top
+        weight: 1
+      - path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_L
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_L/ear2_L
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_R
+        weight: 0
+      - path: miyu_root/pelvis/spine1/spine2/neck/head/head_top/ear1_R/ear2_R
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: edb07663c202a7547b17afa84b67fcdf, type: 2}
       additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:

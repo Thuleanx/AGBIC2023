@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1622784183}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 6
+    OrthographicSize: 2
     NearClipPlane: 1
     FarClipPlane: 100
     Dutch: 0
@@ -558,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605347898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07444835, y: 1.1998262, z: 0.11000371}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2968,6 +2968,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1042316303}
     m_Modifications:
+    - target: {fileID: 1186450852813523517, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2120339522181263295, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3040,7 +3044,9 @@ PrefabInstance:
       propertyPath: shieldCharge
       value: 
       objectReference: {fileID: 858699636}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1302026836285851754, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+    - {fileID: 4025873677025556635, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
 --- !u!1001 &5602235785925773954
 PrefabInstance:
