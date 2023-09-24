@@ -4304,9 +4304,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1042316303}
     m_Modifications:
+    - target: {fileID: 2107208237860862739, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: gravity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107208237860862739, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: phiLimit
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107208237860862739, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: springDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107208237860862739, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: parentRotationDamp
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2120339522181263295, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024331273645474103, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: gravity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024331273645474103, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: phiLimit
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024331273645474103, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: springDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024331273645474103, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: parentRotationDamp
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3751458875445000393, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
       propertyPath: m_RootOrder
@@ -4356,6 +4388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miyu
       objectReference: {fileID: 0}
+    - target: {fileID: 4359613210670151859, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: springForce
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 4857738474537506043, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
       value: 
@@ -4372,6 +4408,10 @@ PrefabInstance:
       propertyPath: shieldCharge
       value: 
       objectReference: {fileID: 858699636}
+    - target: {fileID: 8756077934236605685, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
+      propertyPath: springForce
+      value: 125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd813e4c7f1bba446bb9093d008bb9b7, type: 3}
 --- !u!1001 &5602235785925773954

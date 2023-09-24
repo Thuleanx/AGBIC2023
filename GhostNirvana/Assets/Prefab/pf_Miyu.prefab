@@ -1746,7 +1746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04d5766606e90749890f7d44efa42e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springForce: 100
+  springForce: 125
   springDamping: 0
   gravity: 0
   parentRotationDamp: 64
@@ -1788,12 +1788,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springForce: 20
-  springDamping: 3
-  gravity: 10
-  parentRotationDamp: 8
+  springDamping: 0
+  gravity: 5
+  parentRotationDamp: 5
   reverseRight: 0
   debug: 1
-  phiLimit: 15
+  phiLimit: 50
   parentInitialLocalTransform:
     e00: 0
     e01: 0
@@ -2035,7 +2035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04d5766606e90749890f7d44efa42e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springForce: 100
+  springForce: 125
   springDamping: 0
   gravity: 0
   parentRotationDamp: 64
@@ -2077,12 +2077,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springForce: 20
-  springDamping: 3
-  gravity: 10
-  parentRotationDamp: 8
+  springDamping: 0
+  gravity: 5
+  parentRotationDamp: 5
   reverseRight: 1
   debug: 0
-  phiLimit: 15
+  phiLimit: 50
   parentInitialLocalTransform:
     e00: 0
     e01: 0
