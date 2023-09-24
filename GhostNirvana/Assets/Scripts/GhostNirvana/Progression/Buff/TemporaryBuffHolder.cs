@@ -24,5 +24,12 @@ namespace GhostNirvana {
                 while (count --> 0) buff.ApplyOnHost(Upgrade.UpgradeSystem.Instance);
             }
         }
+
+        void OnDisable() {
+            foreach (var (numberOfTimesToApply, buff) in allBuffs) {
+                int count = numberOfTimesToApply?.Value ?? 1;
+                if (buff.IsActive) buff.ForceRemoveBuff();
+            }
+        }
     }
 }

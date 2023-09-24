@@ -22,11 +22,13 @@ namespace GhostNirvana {
 
         public bool IsActive => buffCurrentlyActive;
 
+        Coroutine currentCoroutine;
+
         public void ApplyOnHost(MonoBehaviour host) {
             if (!buffCurrentlyActive) OnApply?.Invoke();
             ExtendDuration();
             if (stackable || !buffCurrentlyActive)
-                host.StartCoroutine(_BuffDuration());
+                currentCoroutine = host.StartCoroutine(_BuffDuration());
         }
 
         void ExtendDuration() {
@@ -53,6 +55,14 @@ namespace GhostNirvana {
         }
 
         public virtual void OnBeforeSerialize() {
+        }
+
+        public void ForceRemoveBuff() {
+            if (!buffCurrentlyActive) return;
+            currentCoroutine
+            buffCurrentlyActive = false;
+            Revert();
+            OnExpire?.Invoke();
         }
     }
 }
