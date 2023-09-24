@@ -64,6 +64,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 5
         messageOptions: 0
+      - time: 0.97073174
+        functionName: AnimationOnly_Trigger
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 6
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

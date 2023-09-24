@@ -14,6 +14,7 @@ namespace GhostNirvana {
 public partial class BigGhosty : Enemy<StandardMovementInput> {
     [System.Serializable]
     public enum States {
+        Spawn,
         Seek,
         Summon,
         LaunchAttack,
@@ -37,6 +38,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
     [SerializeField, BoxGroup("Combat")] AnimationCurve hasteScalingByHealth;
     [SerializeField, BoxGroup("Combat")] float accelerationDoublingRange;
 
+    bool spawnCompleted;
     float healthFraction => (float) Status.Health / Status.BaseStats.MaxHealth;
 
     Vector2 currentSummonCooldown => summonCooldownSeconds / currentHaste;
@@ -76,6 +78,7 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
 		// delay first attacks
 		attackCooldown = 7;
 		summonCooldown = 10;
+        spawnCompleted = false;
     }
 
     protected override void OnDisable() {
@@ -105,6 +108,8 @@ public partial class BigGhosty : Enemy<StandardMovementInput> {
     [SerializeField] UnityEvent<BigGhosty> onAttackComplete;
     public void AnimationOnly_AttackAnimationChanneled() => onAttackChanneled?.Invoke(this);
     public void AnimationOnly_AttackAnimationComplete() => onAttackComplete?.Invoke(this);
+
+    public void AnimationOnly_OnSpawnComplete() => spawnCompleted = true;
 
     void OnDeath(Status status) {
         StateMachine.SetState(States.Death);

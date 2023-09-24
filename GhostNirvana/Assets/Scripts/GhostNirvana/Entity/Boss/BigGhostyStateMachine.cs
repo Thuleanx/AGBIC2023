@@ -11,10 +11,11 @@ public class BigGhostyStateMachine : StateMachine<BigGhosty, BigGhosty.States> {
 
     void Awake() {
         Ghosty = GetComponent<BigGhosty>();
-        ConstructMachine(agent: Ghosty, defaultState: BigGhosty.States.Seek);
+        ConstructMachine(agent: Ghosty, defaultState: BigGhosty.States.Spawn);
     }
 
     public override void Construct() {
+        AssignState<BigGhosty.BigGhostySpawn>(BigGhosty.States.Spawn);
         AssignState<BigGhosty.BigGhostySeek>(BigGhosty.States.Seek);
         AssignState<BigGhosty.BigGhostySummon>(BigGhosty.States.Summon);
         AssignState<BigGhosty.BigGhostyWave>(BigGhosty.States.LaunchAttack);
@@ -23,6 +24,14 @@ public class BigGhostyStateMachine : StateMachine<BigGhosty, BigGhosty.States> {
 }
 
 public partial class BigGhosty {
+
+public class BigGhostySpawn : State<BigGhosty, BigGhosty.States> {
+    public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
+        if (stateMachine.CanEnter(States.Seek))
+            return States.Seek;
+        return null;
+    }
+}
 
 public class BigGhostySeek : State<BigGhosty, BigGhosty.States> {
     public override States? Update(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) {
@@ -52,6 +61,10 @@ public class BigGhostySeek : State<BigGhosty, BigGhosty.States> {
 
         return null;
     }
+
+    public override bool CanEnter(StateMachine<BigGhosty, States> stateMachine, BigGhosty agent) 
+        => agent.spawnCompleted;
+        
 }
 
 public class BigGhostySummon : State<BigGhosty, BigGhosty.States> {
