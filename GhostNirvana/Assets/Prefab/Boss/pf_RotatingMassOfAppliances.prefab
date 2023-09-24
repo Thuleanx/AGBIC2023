@@ -206,7 +206,7 @@ MonoBehaviour:
   FreezePosition: 0
   allEnemies: {fileID: 11400000, guid: 9effba36336f6a749880a8481ebb6d76, type: 2}
   acceleration: 1.2
-  movementSpeed: 5
+  movementSpeed: 3
 --- !u!114 &2408813344641085289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.3
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6470150605947906355
 MonoBehaviour:
