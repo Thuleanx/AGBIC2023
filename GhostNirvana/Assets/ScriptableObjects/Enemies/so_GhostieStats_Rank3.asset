@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a46af3b7e7e5646b05c3a1d0459652, type: 3}
   m_Name: so_GhostieStats_Rank3
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 40
+  <MaxHealth>k__BackingField: 45
   <Damage>k__BackingField: 1
   <MovementSpeed>k__BackingField: 1.9
   <Acceleration>k__BackingField: 1.9

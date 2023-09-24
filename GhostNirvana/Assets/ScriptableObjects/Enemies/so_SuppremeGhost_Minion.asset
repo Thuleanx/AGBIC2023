@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a46af3b7e7e5646b05c3a1d0459652, type: 3}
   m_Name: so_SuppremeGhost_Minion
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 500
+  <MaxHealth>k__BackingField: 625
   <Damage>k__BackingField: 1
   <MovementSpeed>k__BackingField: 2.3
   <Acceleration>k__BackingField: 2.3
