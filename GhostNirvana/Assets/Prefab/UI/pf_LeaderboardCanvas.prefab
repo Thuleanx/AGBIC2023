@@ -1685,6 +1685,10 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 3388265263017760660, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4283188488565338028, guid: d0900c17d2e20f243959f9147e3220a4, type: 3}
       propertyPath: m_Name
       value: pf_GhostButton

@@ -104,9 +104,10 @@ public class Projectile : PoolableEntity, IHitResponder {
             if (squaredDisplacementDistance >= ricochetRange * ricochetRange) continue;
 
             float displacementProjectedOntoVelocitySquared = Vector3.Dot(displacement, velocity);
-            displacementProjectedOntoVelocitySquared *= displacementProjectedOntoVelocitySquared;
+            displacementProjectedOntoVelocitySquared *= displacementProjectedOntoVelocitySquared * Mathf.Sign(displacementProjectedOntoVelocitySquared);
 
-            if (!closestEnemyDir.HasValue || bestDotSquared * squaredDisplacementDistance < displacementProjectedOntoVelocitySquared * closestEnemyDir.Value.sqrMagnitude) {
+            if (!closestEnemyDir.HasValue || bestDotSquared * squaredDisplacementDistance 
+                    < displacementProjectedOntoVelocitySquared * closestEnemyDir.Value.sqrMagnitude) {
                 closestEnemyDir = displacement;
                 bestDotSquared = displacementProjectedOntoVelocitySquared;
             }

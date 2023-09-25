@@ -24,7 +24,7 @@ MonoBehaviour:
   <description>k__BackingField: 'Soulfully salty sweets for a sugar rush!
 
     Grants
-    <color="green">Sugar Rush</color> for 4 seconds on kill, which grants <color="green">30%</color>
+    <color="green">Sugar Rush</color> for 0.5 seconds on kill, which grants <color="green">30%</color>
     more movement speed and <color="green">30%</color> more attack speed.'
   <BaseCost>k__BackingField: 1256
   <Weight>k__BackingField: 1

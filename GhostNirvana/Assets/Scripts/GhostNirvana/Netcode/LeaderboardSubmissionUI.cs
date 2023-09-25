@@ -47,7 +47,7 @@ namespace GhostNirvana.Netcode {
             Debug.Log("successful: " + successful);
             if (successful) {
                 OnSubmitSuccessEvent?.Invoke();
-                errorText.text = "Submitted";
+                errorText.text = "Submitted!";
             }
         }
 
