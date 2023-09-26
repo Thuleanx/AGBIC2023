@@ -35,13 +35,13 @@ public class Leaderboard : ScriptableObject {
             return (false, record); // data is corrupted
 
         int currentParsingIndex = 0;
-        int.TryParse(s: entryData.Substring(currentParsingIndex, Time_SIZE), 
+        int.TryParse(s: entryData.Substring(currentParsingIndex, Time_SIZE),
             result: out record.Time);
         currentParsingIndex += Time_SIZE;
-        int.TryParse(s: entryData.Substring(currentParsingIndex, Money_SIZE), 
+        int.TryParse(s: entryData.Substring(currentParsingIndex, Money_SIZE),
             result: out record.MoneyAcquired);
         currentParsingIndex += Money_SIZE;
-        int.TryParse(s: entryData.Substring(currentParsingIndex, Money_SIZE), 
+        int.TryParse(s: entryData.Substring(currentParsingIndex, Money_SIZE),
             result: out record.MoneyTakeHome);
         currentParsingIndex += Money_SIZE;
         int.TryParse(s: entryData.Substring(currentParsingIndex, ApplianceCount_SIZE), 

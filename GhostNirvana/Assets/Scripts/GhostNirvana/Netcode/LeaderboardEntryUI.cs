@@ -16,7 +16,7 @@ namespace GhostNirvana.Netcode {
         public void Set(Leaderboard.Record record) {
             Name.text = record.Name;
             Rank.text = record.Rank.ToString();
-            MoneyTakeHome.text = String.Format("{0:C}", record.MoneyAcquired/100.0f);
+            MoneyTakeHome.text = String.Format("{0:C}", record.MoneyTakeHome/100.0f);
 
             int secondsInMinute = 60;
             int timeMinutes = record.Time / secondsInMinute;
